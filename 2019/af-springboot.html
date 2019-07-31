@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>微服务架构之 SpringBoot | Tujidelv Code</title>
+  <meta name="keywords" content=" 分布式 ">
+  <meta name="description" content="微服务架构之 SpringBoot | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Tujidelv的技术小窝">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://lvzhiqiang.top/categories/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="Tujidelv的技术小窝">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-28T12:22:45.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="Tujidelv的技术小窝">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.gif">
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/tujidelv" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/1963654824" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tujide.lv@foxmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+    <a href="/2018/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"/>
+    </a>
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(29)</small></div></li>
+    
+        
+            
+            <li><div data-rel="开发语言">开发语言<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="应用框架">应用框架<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="软件工具">软件工具<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="经典示例">经典示例<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="科学上网">科学上网<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+<input type="hidden" id="yelog_site_word_count" value="115.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">screenshot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">eclipse</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">css</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">nodejs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssr</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vps</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">shadowsocks</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">idea</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a class="应用框架 " href="/2019/af-redis.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式缓存框架之 Redis&amp;Ehcache">分布式缓存框架之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-zookeeper.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2019-04-08 19:24:23">2019/04/08</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-springboot.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-jvm.html" data-tag="java" data-author="">
+            <span class="post-title" title="性能调优之JVM">性能调优之JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-8.html" data-tag="java" data-author="">
+            <span class="post-title" title="Java8新特性">Java8新特性</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2019/st-maven.html" data-tag="maven" data-author="">
+            <span class="post-title" title="项目管理工具之Maven">项目管理工具之Maven</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-mq-rocketmq.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-packages-install.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 常用程序包的安装与配置">Linux 常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-script-powerboot.html" data-tag="linux" data-author="">
+            <span class="post-title" title="CentOS7 添加开机启动服务/脚本">CentOS7 添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-db-backup.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Mysql 数据库自动备份脚本">Mysql 数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-sysadmin-first.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-shell.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-command.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-basic.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-advanced.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：进阶">SSR 搭建：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-basic.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：基础">SSR 搭建：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2018/te-select.html" data-tag="html,css,javascript" data-author="">
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-hexo.html" data-tag="nodejs,hexo" data-author="">
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-ashampoo-snap.html" data-tag="screenshot" data-author="">
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-finalshell.html" data-tag="ssh" data-author="">
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-workflow.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-remote.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-basic.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-advanced.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-basic.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-eclipse.html" data-tag="eclipse" data-author="">
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-nodejs.html" data-tag="nodejs" data-author="">
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2018/dl-markdown.html" data-tag="markdown" data-author="">
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-af-springboot" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">微服务架构之 SpringBoot</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="应用框架">应用框架</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">分布式</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-04-13 17:00:43">2019-04-04 18:17</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:7.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#微服务架构之-SpringBoot"><span class="toc-text">微服务架构之 SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是SpringBoot"><span class="toc-text">什么是SpringBoot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用SpringBoot"><span class="toc-text">为什么要用SpringBoot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与SpringMVC、SpringCloud之间的关系"><span class="toc-text">与SpringMVC、SpringCloud之间的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速入门"><span class="toc-text">快速入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web开发"><span class="toc-text">Web开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志管理"><span class="toc-text">日志管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据访问"><span class="toc-text">数据访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务管理"><span class="toc-text">事务管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监控管理"><span class="toc-text">监控管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能优化"><span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他内容"><span class="toc-text">其他内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-0版本新特性"><span class="toc-text">2.0版本新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写springboot框架"><span class="toc-text">手写springboot框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="微服务架构之-SpringBoot"><a href="#微服务架构之-SpringBoot" class="headerlink" title="微服务架构之 SpringBoot"></a>微服务架构之 SpringBoot</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#快速入门">快速入门</a></li>
+<li><a href="#正篇">正篇</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#结束语">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="什么是SpringBoot"><a href="#什么是SpringBoot" class="headerlink" title="什么是SpringBoot"></a><code>什么是SpringBoot</code></h3><pre><code>SpringBoot是一个快速开发的框架,能够快速整合第三方框架,简化XML配置完全采用注解形式,内置Web服务器(Jetty和Tomcat),最终以java应用程序进行执行。
+SpringBoot不是微服务框架。
+</code></pre><h3 id="为什么要用SpringBoot"><a href="#为什么要用SpringBoot" class="headerlink" title="为什么要用SpringBoot"></a><code>为什么要用SpringBoot</code></h3><pre><code>解决传统SSM项目的开发效率低、Jar冲突、配置多的问题。
+</code></pre><h3 id="与SpringMVC、SpringCloud之间的关系"><a href="#与SpringMVC、SpringCloud之间的关系" class="headerlink" title="与SpringMVC、SpringCloud之间的关系"></a><code>与SpringMVC、SpringCloud之间的关系</code></h3><pre><code>SpringCloud：
+    是一套完整的微服务解决框架,采用Http+Json格式的通讯协议,底层依赖于SpringBoot框架(web组件集成springmvc),使用SpringMVC书写Http协议接口。
+    采用SpringBoot+Dubbo也能实现微服务。
+SpringMVC：
+    SpringBoot默认集成了SpringMVC作为web层的框架。
+总结：
+    如果需要做微服务的话,就需要整合SpringBoot+SpringCloud;如果项目中不需要实现微服务,可以只单纯使用SpringBoot而不使用SpringCloud。
+</code></pre><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
+<li>创建一个普通 maven 工程,packaging类型为jar(可省略)</li>
+<li>pom文件中引入SpringBoot相关依赖<pre><code> &lt;parent&gt;
+     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+     &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+     &lt;version&gt;2.0.0.RELEASE&lt;/version&gt;
+ &lt;/parent&gt;
+ &lt;dependencies&gt;
+     &lt;dependency&gt;
+         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+     &lt;/dependency&gt;
+ &lt;/dependencies&gt;
+</code></pre><pre><code> spring-boot-starter-parent作用
+     统一整合第三方框架依赖信息,以后再申明其它dependency的时候就不需要写版本号了。
+ spring-boot-starter-web作用
+     把传统方式的SpringMVC依赖的所有jar全部给下载下来,
+ spring-boot-maven-plugin作用
+     如果直接通过Main启动spring，那么以下plugin必须要添加，否则是无法启动的。如果使用maven 的spring-boot:run的话是不需要此配置的。
+</code></pre></li>
+<li><p>编写helloworld服务</p>
+<pre><code> package top.lvzhiqiang.controller;
+ @RestController
+ @EnableAutoConfiguration
+ public class IndexController {
+
+     @RequestMapping(&quot;/index&quot;)
+     public String index(){
+         return &quot;hello springboot!&quot;;
+     }
+
+     public static void main(String[] args) {
+         SpringApplication.run(IndexController.class,args);
+     }
+ }
+</code></pre><pre><code> @RestController的作用
+     表示该Controller下所有的方法返回JSON格式,可以直接编写Restful接口;省略了在方法上加上@ResponseBody。
+     如果项目中的类加上了此注解,说明这个项目可能是一个微服务项目,需要统一接口,提供服务接口。
+ @EnableAutoConfiguration的作用
+     表示让Spring Boot根据添加的jar依赖来对Spring框架进行自动配置。
+     由于spring-boot-starter-web添加了Tomcat和Spring MVC，所以auto-configuration将假定你正在开发一个web应用并相应地对Spring进行设置。
+ @Configuration的作用
+     底层含有@Component,标注在类上,相当于把该类作为spring的xml配置文件中的&lt;beans&gt;
+     用来来配置spring容器(应用上下文)
+ @Bean的作用
+     标注在方法上(返回某个实例的方法),相当于spring的xml配置文件中的&lt;bean&gt;
+     用来注册bean对象(实例化bean,并交给spring管理)
+</code></pre></li>
+<li>启动应用<pre><code> 方法1：
+     直接启动main方法,main方法中指定IndexController为启动入口,默认端口号为8080。
+ 方法2：
+     @ComponentScan(basePackages = &quot;top.lvzhiqiang.controller&quot;)
+     @EnableAutoConfiguration
+     public class App {
+         public static void main(String[] args) {
+             SpringApplication.run(App.class, args);
+         }
+     }
+     单独写个类并使用@ComponentScan注解添加自动扫包范围。
+ 方法3：
+     @SpringBootApplication
+     public class App {
+         public static void main(String[] args) {
+             SpringApplication.run(App.class, args);
+         }
+     }
+     单独写个类并使用@SpringBootApplication注解,等同于@ComponentScan + @EnableAutoConfiguration。
+     扫包范围：当前包下或者子包下所有的类都可以扫到。
+</code></pre></li>
+</ol>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h3><ul>
+<li><code>静态资源访问</code><pre><code>  在我们开发Web应用的时候，需要引用大量的js、css、图片等静态资源。
+  Spring Boot默认提供静态资源目录位置需置于classpath(src/main/java或者src/main/resources)下，目录命名如下：
+      static、public、resources、META-INF/resources
+</code></pre></li>
+<li><code>渲染Web页面</code><pre><code>  如果需要返回html等页面时,Spring Boot提供了多种模板引擎,来帮助我们很快的上手开发动态网站。
+      Thymeleaf、FreeMarker、Velocity、Groovy、Mustache
+  Spring Boot建议使用模板引擎(例如FreeMarker)，避免使用JSP，若一定要使用JSP将无法实现Spring Boot的多种特性。
+      如果使用模板引擎,它们默认的模板配置路径为：src/main/resources/templates。当然也可以修改这个路径。
+</code></pre></li>
+<li><code>使用Freemarker模板引擎渲染Web视图</code><pre><code>  1.pom文件引入FreeMarker的依赖包
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-freemarker&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  2.在src/main/resources/创建一个templates文件夹,在templates下新建ftlIndex.ftl
+      @Controller
+      @EnableAutoConfiguration
+      public class IndexController {
+          @RequestMapping(&quot;/ftlIndex&quot;)
+          public String ftlIndex(Model model) {
+              model.addAttribute(&quot;name&quot;, &quot;张三&quot;);
+              model.addAttribute(&quot;sex&quot;, 1);
+              List&lt;String&gt; userList = new ArrayList&lt;&gt;();
+              userList.add(&quot;a&quot;);
+              userList.add(&quot;b&quot;);
+              userList.add(&quot;c&quot;);
+              model.addAttribute(&quot;userList&quot;, userList);
+              return &quot;ftlIndex&quot;;
+          }
+          ...
+      }
+  3.在ftl文件中填充数据
+      ${name}
+      &lt;#if sex == 1&gt;男
+      &lt;#elseif sex == 2&gt;女
+      &lt;#else&gt;其他
+      &lt;/#if&gt;
+      &lt;#list userList as user&gt;${user}
+      &lt;/#list&gt;
+  4.新建src/main/resources/下新建application.properties文件进行Freemarker配置(可以不配置,采用默认)
+      spring.freemarker.allow-request-override=false
+      spring.freemarker.cache=true
+      spring.freemarker.check-template-location=true
+      spring.freemarker.charset=UTF-8
+      spring.freemarker.content-type=text/html
+      spring.freemarker.expose-request-attributes=false
+      spring.freemarker.expose-session-attributes=false
+      spring.freemarker.expose-spring-macro-helpers=false
+      #spring.freemarker.prefix=
+      #spring.freemarker.request-context-attribute=
+      #spring.freemarker.settings.*=
+      spring.freemarker.suffix=.ftl
+      spring.freemarker.template-loader-path=classpath:/templates/
+      #comma-separated list
+      #spring.freemarker.view-names= # whitelist of view names that can be resolved
+</code></pre></li>
+<li><code>使用JSP渲染Web视图</code><pre><code>  1.pom文件引入Jsp相关的依赖包
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+          &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  2.新建src/main/resources/下新建application.properties文件进行Jsp配置
+      spring.mvc.view.prefix=/WEB-INF/jsp/
+      spring.mvc.view.suffix=.jsp
+  3.在src/main/webapp下创建/WEB-INF/jsp/目录,并在jsp目录下新建jspIndex.jsp
+      @Controller
+      @EnableAutoConfiguration
+      public class IndexController {
+          @RequestMapping(&quot;/jspIndex&quot;)
+          public String jspIndex() {
+              return &quot;jspIndex&quot;;
+          }
+          ...
+      }
+  4.如果找不到页面,可在pom文件中改为war类型项目
+</code></pre></li>
+<li><code>全局捕获异常</code><pre><code>  @ControllerAdvice(basePackages = &quot;top.lvzhiqiang.controller&quot;)
+  public class GlobalExceptionHandler {
+      @ExceptionHandler(RuntimeException.class)
+      @ResponseBody
+      public Map&lt;String, Object&gt; exceptionHandler() {
+          Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+          map.put(&quot;errorCode&quot;, &quot;101&quot;);
+          map.put(&quot;errorMsg&quot;, &quot;系統错误!&quot;);
+          return map;
+      }
+  }
+</code></pre><pre><code>  @ExceptionHandler表示拦截异常
+  @ControllerAdvice是controller的一个辅助类，最常用的就是作为全局异常处理的切面类
+      @ControllerAdvice可以指定扫描范围
+      @ControllerAdvice约定了几种可行的返回值，如果是直接
+          返回json，需要使用@ResponseBody进行json转换
+          返回页面，返回值类型为ModelAndView或者String
+  实际开发中,可在全局捕获异常中将异常日志信息写入nosql数据库中,如果是集群环境,可采用分布式日志收集系统(kafka,logstash等),方便排查
+</code></pre></li>
+</ul>
+<h3 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h3><ol>
+<li><code>使用log4j记录日志</code><pre><code> 1.pom文件引入log4j相关的依赖包
+     &lt;dependency&gt;
+         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+         &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+         &lt;exclusions&gt;
+             &lt;!-- 排除自带的logback依赖 --&gt;
+             &lt;exclusion&gt;
+                 &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                 &lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;
+             &lt;/exclusion&gt;
+         &lt;/exclusions&gt;
+     &lt;/dependency&gt;
+     &lt;dependency&gt;
+         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+         &lt;artifactId&gt;spring-boot-starter-log4j&lt;/artifactId&gt;
+         &lt;version&gt;1.3.8.RELEASE&lt;/version&gt;
+     &lt;/dependency&gt;
+ 2.新建src/main/resources/下新建log4j.properties文件进行log4j配置
+     log4j.rootLogger=info,error,CONSOLE,DEBUG
+     log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+     log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+     log4j.appender.CONSOLE.layout.ConversionPattern=%d{yyyy-MM-dd-HH-mm} [%t] [%c] [%p] - %m%n
+     log4j.logger.info=info
+     log4j.appender.info=org.apache.log4j.DailyRollingFileAppender
+     log4j.appender.info.layout=org.apache.log4j.PatternLayout
+     log4j.appender.info.layout.ConversionPattern=%d{yyyy-MM-dd-HH-mm} [%t] [%c] [%p] - %m%n
+     log4j.appender.info.datePattern=&#39;.&#39;yyyy-MM-dd
+     log4j.appender.info.Threshold = info
+     log4j.appender.info.append=true
+     log4j.appender.info.File=D:\\log4j\\springbootdemo\\info
+     log4j.logger.error=error
+     log4j.appender.error=org.apache.log4j.DailyRollingFileAppender
+     log4j.appender.error.layout=org.apache.log4j.PatternLayout
+     log4j.appender.error.layout.ConversionPattern=%d{yyyy-MM-dd-HH-mm} [%t] [%c] [%p] - %m%n
+     log4j.appender.error.datePattern=&#39;.&#39;yyyy-MM-dd
+     log4j.appender.error.Threshold = error
+     log4j.appender.error.append=true
+     log4j.appender.error.File=D:\\log4j\\springbootdemo\\error
+     log4j.logger.DEBUG=DEBUG
+     log4j.appender.DEBUG=org.apache.log4j.DailyRollingFileAppender
+     log4j.appender.DEBUG.layout=org.apache.log4j.PatternLayout
+     log4j.appender.DEBUG.layout.ConversionPattern=%d{yyyy-MM-dd-HH-mm} [%t] [%c] [%p] - %m%n
+     log4j.appender.DEBUG.datePattern=&#39;.&#39;yyyy-MM-dd
+     log4j.appender.DEBUG.Threshold = DEBUG
+     log4j.appender.DEBUG.append=true
+     log4j.appender.DEBUG.File=D:\\log4j\\springbootdemo\\debug
+</code></pre></li>
+<li><p><code>使用AOP统一处理Web请求日志</code></p>
+<pre><code> 1.pom文件新增aop依赖
+     &lt;dependency&gt;
+             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+             &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;
+     &lt;/dependency&gt;
+ 2.aop代码
+     @Aspect
+     @Component
+     public class WebLogAspect {
+         private static final Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
+
+         @Pointcut(&quot;execution(public * top.lvzhiqiang.controller.*.*(..))&quot;)
+         public void webLog() {
+         }
+
+         @Before(&quot;webLog()&quot;)
+         public void doBefore(JoinPoint joinPoint) throws Throwable {
+             // 接收到请求，记录请求内容
+             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+             HttpServletRequest request = attributes.getRequest();
+             // 记录下请求内容
+             logger.info(&quot;URL : &quot; + request.getRequestURL().toString());
+             logger.info(&quot;HTTP_METHOD : &quot; + request.getMethod());
+             logger.info(&quot;IP : &quot; + request.getRemoteAddr());
+             Enumeration&lt;String&gt; enu = request.getParameterNames();
+             while (enu.hasMoreElements()) {
+                 String name = (String) enu.nextElement();
+                 logger.info(&quot;name:{},value:{}&quot;, name, request.getParameter(name));
+             }
+         }
+
+         @AfterReturning(returning = &quot;ret&quot;, pointcut = &quot;webLog()&quot;)
+         public void doAfterReturning(Object ret) throws Throwable {
+             // 处理完请求，返回内容
+             logger.info(&quot;RESPONSE : &quot; + ret);
+         }
+     }
+</code></pre></li>
+<li><p><code>Spring Boot集成lombok让代码更简洁</code></p>
+<pre><code> 0.IDE开发工具需要先安装lombok插件(lombok底层使用asm字节码技术,在编译时修改字节码文件,来生成相应的set,get等相应方法)
+ 1.pom文件引入lombok相关的依赖包
+     &lt;dependency&gt;
+         &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+         &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+     &lt;/dependency&gt;
+ 2.实体类测试
+     @Slf4j
+     @Setter
+     @Getter
+     public class UserEntity {
+         // @Getter
+         // @Setter
+         private String userName;
+         // @Getter
+         // @Setter
+         private Integer age;
+
+         @Override
+         public String toString() {
+             return &quot;UserEntity [userName=&quot; + userName + &quot;, age=&quot; + age + &quot;]&quot;;
+         }
+
+         public static void main(String[] args) {
+             UserEntity userEntity = new UserEntity();
+             userEntity.setUserName(&quot;zhangsan&quot;);
+             userEntity.setAge(20);
+             System.out.println(userEntity.toString());
+             log.info(&quot;####我是日志##########&quot;);
+         }
+     }
+</code></pre><pre><code> 其他特性：
+     @Data: 自动生成set/get方法，toString方法，equals方法，hashCode方法，不带参数的构造方法
+     @Setter/@Getter: 自动生成set和get方法 
+     @ToString: 自动生成toString方法 
+     @NonNull: 让你不在担忧并且爱上NullPointerException 
+     @CleanUp: 自动资源管理,不用再在finally中添加资源的close方法 
+     @EqualsAndHashcode: 从对象的字段中生成hashCode和equals的实现 
+     @NoArgsConstructor/@RequiredArgsConstructor/@AllArgsConstructor: 自动生成构造方法
+     @Value: 用于注解final类 
+     @Builder: 产生复杂的构建器api类 
+     @SneakyThrows: 异常处理（谨慎使用） 
+     @Synchronized : 同步方法安全的转化 
+     @Log: 支持各种logger对象，使用时用对应的注解，如：@Log4j
+</code></pre></li>
+</ol>
+<h3 id="数据访问"><a href="#数据访问" class="headerlink" title="数据访问"></a>数据访问</h3><ul>
+<li><code>整合mybatis</code><pre><code>  1.pom文件引入mybatis相关的依赖包
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+          &lt;version&gt;1.1.1&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;mysql&lt;/groupId&gt;
+          &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+          &lt;version&gt;5.1.21&lt;/version&gt;
+      &lt;/dependency&gt;
+  2.修改application.properties
+      spring.datasource.jdbc-url=jdbc:mysql://localhost:3306/test
+      spring.datasource.username=root
+      spring.datasource.password=root
+      spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+  3.Mapper代码
+      public interface UserMapper {
+          @Select(&quot;SELECT * FROM USERS WHERE NAME = #{name}&quot;)
+          User findByName(@Param(&quot;name&quot;) String name);
+          @Insert(&quot;INSERT INTO USERS(NAME, AGE) VALUES(#{name}, #{age})&quot;)
+          int insert(@Param(&quot;name&quot;) String name, @Param(&quot;age&quot;) Integer age);
+      }
+  4.在启动类上加上@MapperScan(basePackages = &quot;top.lvzhiqiang.mapper&quot;)
+      也可以在Mapper接口上加上@Mapper,不过这样比较繁琐
+</code></pre><pre><code>  Mybatis整合分页插件(pageHelper)
+      PageHelper是一款好用的开源免费的Mybatis第三方物理分页插件
+      支持常见的12种数据库。Oracle,MySql,MariaDB,SQLite,DB2,PostgreSQL,SqlServer等
+      支持多种分页方式
+      支持常见的 RowBounds(PageRowBounds)，PageHelper.startPage方法调用，Mapper接口参数调用
+  ------------------
+  1.添加maven依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
+          &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;
+          &lt;version&gt;1.2.5&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+          &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;
+          &lt;version&gt;3.7&lt;/version&gt;
+      &lt;/dependency&gt;
+  2.添加配置
+      pagehelper.helperDialect=mysql
+      pagehelper.reasonable=true
+      pagehelper.supportMethodsArguments=true
+      pagehelper.params=count=countSql
+      pagehelper.page-size-zero=true
+  3.service层
+      public PageInfo&lt;User&gt; findUserList(int pageNo, int pageSize) {
+          // 开启分页插件,放在查询语句上面
+          PageHelper.startPage(pageNo, pageSize);
+          List&lt;User&gt; listUser = userMapper.findUserList();
+          // 封装分页之后的数据
+          PageInfo&lt;User&gt; pageInfoUser = new PageInfo&lt;User&gt;(listUser);
+          return pageInfoUser;
+      }
+      //以上方法上的公共代码可用模板设计模式或者aop思想抽出来
+</code></pre></li>
+<li><code>整合jdbcTemplate</code><pre><code>  1.pom文件引入jdbcTemplate相关的依赖包
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;mysql&lt;/groupId&gt;
+          &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+          &lt;version&gt;5.1.21&lt;/version&gt;
+      &lt;/dependency&gt;
+  2.修改application.properties
+      spring.datasource.jdbc-url=jdbc:mysql://localhost:3306/test
+      spring.datasource.username=root
+      spring.datasource.password=root
+      spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+  3.代码
+      @Service
+      public class UserServiceImpl implements UserService {
+          @Autowired
+          private JdbcTemplate jdbcTemplate;
+          public void createUser(String name, Integer age) {
+              jdbcTemplate.update(&quot;insert into users values(null,?,?);&quot;, name, age);
+          }
+      }
+</code></pre></li>
+<li><p><code>整合多数据源</code></p>
+<pre><code>  1.修改application.properties新增两个数据源
+      ###datasource1
+      spring.datasource.test1.driver-class-name = com.mysql.jdbc.Driver
+      spring.datasource.test1.jdbc-url = jdbc:mysql://localhost:3306/test01?useUnicode=true&amp;characterEncoding=utf-8
+      spring.datasource.test1.username = root
+      spring.datasource.test1.password = root
+      ###datasource2
+      spring.datasource.test2.driver-class-name = com.mysql.jdbc.Driver
+      spring.datasource.test2.jdbc-url = jdbc:mysql://localhost:3306/test02?useUnicode=true&amp;characterEncoding=utf-8
+      spring.datasource.test2.username = root
+      spring.datasource.test2.password = root
+  2.在top/lvzhiqiang/下新建datasource目录(任意),新建DataSourceConfig类,采用分包(业务)机制来读取不同的数据源
+      //datasource1
+      @Configuration
+      @MapperScan(basePackages = &quot;top.lvzhiqiang.user1&quot;, sqlSessionFactoryRef = &quot;test1SqlSessionFactory&quot;)
+      public class DataSource1Config {
+          @Bean(name = &quot;test1DataSource&quot;)
+          @Primary
+          @ConfigurationProperties(prefix = &quot;spring.datasource.test1&quot;)
+          public DataSource testDataSource() {
+              return DataSourceBuilder.create().build();
+          }
+          @Bean(name = &quot;test1SqlSessionFactory&quot;)
+          @Primary
+          public SqlSessionFactory testSqlSessionFactory(@Qualifier(&quot;test1DataSource&quot;) DataSource dataSource)
+                  throws Exception {
+              SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+              bean.setDataSource(dataSource);
+              //bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(&quot;classpath:mybatis/mapper/test1/*.xml&quot;));
+              return bean.getObject();
+          }
+          @Bean(name = &quot;test1TransactionManager&quot;)
+          @Primary
+          public DataSourceTransactionManager testTransactionManager(@Qualifier(&quot;test1DataSource&quot;) DataSource dataSource) {
+              return new DataSourceTransactionManager(dataSource);
+          }
+
+          @Bean(name = &quot;test1SqlSessionTemplate&quot;)
+          public SqlSessionTemplate testSqlSessionTemplate(@Qualifier(&quot;test1SqlSessionFactory&quot;) SqlSessionFactory sqlSessionFactory)
+                  throws Exception {
+              return new SqlSessionTemplate(sqlSessionFactory);
+          }
+      }
+      ------------------------------
+      //datasource2
+      @Configuration
+      @MapperScan(basePackages = &quot;top.lvzhiqiang.user2&quot;, sqlSessionFactoryRef = &quot;test2SqlSessionFactory&quot;)
+      public class DataSource2Config {
+          @Bean(name = &quot;test2DataSource&quot;)
+          @ConfigurationProperties(prefix = &quot;spring.datasource.test2&quot;)
+          public DataSource testDataSource() {
+              return DataSourceBuilder.create().build();
+          }
+          ...
+      }
+  3.创建分包Mapper
+      public interface User1Mapper {
+          @Insert(&quot;insert into users values(null,#{name},#{age});&quot;)
+          public int addUser(@Param(&quot;name&quot;) String name, @Param(&quot;age&quot;) Integer age);
+      }
+  4.多数据源事务注意事项
+      在多数据源的情况下，使用@Transactional注解时，应该指定事务管理器
+      @Transactional(transactionManager = &quot;test2TransactionManager&quot;)
+</code></pre></li>
+</ul>
+<h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><ul>
+<li><code>SpringBoot整合事物管理</code><pre><code>  springboot默认集成并开启事物,只要在方法上加上@Transactional即可
+</code></pre></li>
+<li><p><code>SpringBoot分布式事物管理</code></p>
+<pre><code>  针对多数据源的分布式事务解决方案：jta+atomikos
+  针对微服务的分布式事务解决方案：mq或者tcc等
+</code></pre><pre><code>  1.pom文件引入atomikos相关的依赖包
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-jta-atomikos&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  2.新增多数据源配置信息,修改application.properties
+      # Mysql 1
+      mysql.datasource.test1.url = jdbc:mysql://localhost:3306/test01?useUnicode=true&amp;characterEncoding=utf-8
+      mysql.datasource.test1.username = root
+      mysql.datasource.test1.password = root
+      mysql.datasource.test1.minPoolSize = 3
+      mysql.datasource.test1.maxPoolSize = 25
+      mysql.datasource.test1.maxLifetime = 20000
+      mysql.datasource.test1.borrowConnectionTimeout = 30
+      mysql.datasource.test1.loginTimeout = 30
+      mysql.datasource.test1.maintenanceInterval = 60
+      mysql.datasource.test1.maxIdleTime = 60
+      # Mysql 2
+      mysql.datasource.test2.url =jdbc:mysql://localhost:3306/test02?useUnicode=true&amp;characterEncoding=utf-8
+      mysql.datasource.test2.username =root
+      mysql.datasource.test2.password =root
+      mysql.datasource.test2.minPoolSize = 3
+      mysql.datasource.test2.maxPoolSize = 25
+      mysql.datasource.test2.maxLifetime = 20000
+      mysql.datasource.test2.borrowConnectionTimeout = 30
+      mysql.datasource.test2.loginTimeout = 30
+      mysql.datasource.test2.maintenanceInterval = 60
+      mysql.datasource.test2.maxIdleTime = 60
+  3.读取多数据源配置信息,可在top/lvzhiqiang/下新建config目录(任意),新建2个config类
+      @Data
+      @ConfigurationProperties(prefix = &quot;mysql.datasource.test1&quot;)
+      public class DBConfig1 {
+          private String url;
+          private String username;
+          private String password;
+          private int minPoolSize;
+          private int maxPoolSize;
+          private int maxLifetime;
+          private int borrowConnectionTimeout;
+          private int loginTimeout;
+          private int maintenanceInterval;
+          private int maxIdleTime;
+          private String testQuery;
+      }
+      ----------------------
+      @Data
+      @ConfigurationProperties(prefix = &quot;mysql.datasource.test2&quot;)
+      public class DBConfig2 {
+          private String url;
+          private String username;
+          private String password;
+          private int minPoolSize;
+          private int maxPoolSize;
+          private int maxLifetime;
+          private int borrowConnectionTimeout;
+          private int loginTimeout;
+          private int maintenanceInterval;
+          private int maxIdleTime;
+          private String testQuery;
+      }
+  4.将多数据源注册到atomikos中去,在top/lvzhiqiang/下新建datasource目录(任意),新建DataSourceConfig类
+      @Configuration
+      @MapperScan(basePackages = &quot;top.lvzhiqiang.test01&quot;, sqlSessionTemplateRef = &quot;testSqlSessionTemplate&quot;)
+      public class MyBatisConfig1 {
+          @Primary
+          @Bean(name = &quot;testDataSource&quot;)
+          public DataSource testDataSource(DBConfig1 testConfig) throws SQLException {
+              MysqlXADataSource mysqlXaDataSource = new MysqlXADataSource();
+              mysqlXaDataSource.setUrl(testConfig.getUrl());
+              mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
+              mysqlXaDataSource.setPassword(testConfig.getPassword());
+              mysqlXaDataSource.setUser(testConfig.getUsername());
+              mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
+
+              AtomikosDataSourceBean xaDataSource = new AtomikosDataSourceBean();
+              xaDataSource.setXaDataSource(mysqlXaDataSource);
+              xaDataSource.setUniqueResourceName(&quot;testDataSource&quot;);
+
+              xaDataSource.setMinPoolSize(testConfig.getMinPoolSize());
+              xaDataSource.setMaxPoolSize(testConfig.getMaxPoolSize());
+              xaDataSource.setMaxLifetime(testConfig.getMaxLifetime());
+              xaDataSource.setBorrowConnectionTimeout(testConfig.getBorrowConnectionTimeout());
+              xaDataSource.setLoginTimeout(testConfig.getLoginTimeout());
+              xaDataSource.setMaintenanceInterval(testConfig.getMaintenanceInterval());
+              xaDataSource.setMaxIdleTime(testConfig.getMaxIdleTime());
+              xaDataSource.setTestQuery(testConfig.getTestQuery());
+              return xaDataSource;
+          }
+          @Primary
+          @Bean(name = &quot;testSqlSessionFactory&quot;)
+          public SqlSessionFactory testSqlSessionFactory(@Qualifier(&quot;testDataSource&quot;) DataSource dataSource)
+                  throws Exception {
+              SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+              bean.setDataSource(dataSource);
+              return bean.getObject();
+          }
+          @Primary
+          @Bean(name = &quot;testSqlSessionTemplate&quot;)
+          public SqlSessionTemplate testSqlSessionTemplate(@Qualifier(&quot;testSqlSessionFactory&quot;) SqlSessionFactory sqlSessionFactory)
+                  throws Exception {
+              return new SqlSessionTemplate(sqlSessionFactory);
+          }
+      }
+      ----------------------
+      @Configuration
+      @MapperScan(basePackages = &quot;top.lvzhiqiang.test02&quot;, sqlSessionTemplateRef = &quot;test2SqlSessionTemplate&quot;)
+      public class MyBatisConfig2 {
+          @Bean(name = &quot;test2DataSource&quot;)
+          public DataSource testDataSource(DBConfig2 testConfig) throws SQLException {
+              MysqlXADataSource mysqlXaDataSource = new MysqlXADataSource();
+              mysqlXaDataSource.setUrl(testConfig.getUrl());
+              mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
+              ...
+          }
+          ...
+      }
+  5.在启动类加上此注解以开启读取配置文件
+      @EnableConfigurationProperties(value = { DBConfig1.class, DBConfig2.class })
+</code></pre></li>
+</ul>
+<h3 id="监控管理"><a href="#监控管理" class="headerlink" title="监控管理"></a>监控管理</h3><ul>
+<li><code>Actuator监控应用</code><pre><code>  什么是SpringBoot监控中心
+      Actuator是spring boot的一个附加功能,可帮助你在应用程序生产环境时监视和管理应用程序。
+      特别对于微服务管理十分有意义,缺点是没有可视化界面(返回json格式)。
+      默认情况下,监控中心只提供3个接口权限。
+      在SpringBoot2.0后,监控中心接口地址发生变化,需要在访问接口前面中上/actuator。
+  主要用途
+      针对微服务服务器监控,包括服务器的内存变化(堆内存、线程、日志管理等)
+      检测服务配置连接地址(懒加载形式)是否可用(模拟访问)
+      统计当前Spring容器中有多少个bean
+      统计SpringMVC有多少个@RuquestMapping(http接口)
+  应用场景
+      生产环境
+</code></pre><pre><code>  1.添加maven依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  2.yml配置
+      ###通过下面的配置启用所有的监控端点，默认情况下，这些端点是禁用的
+      management:
+          endpoints:
+              web:
+                  exposure:
+                      include: &quot;*&quot;
+  3.开始访问(通过actuator/+端点名就可以获取相应的信息)
+      /actuator/beans    显示应用程序中所有Spring bean的完整列表。
+      /actuator/mappings    显示所有@RequestMapping的url完整列表。
+      /actuator/configprops    显示所有配置信息。
+      /actuator/env    显示所有的环境变量。
+      /actuator/health    显示应用程序运行状况信息,up表示成功,down失败。
+      /actuator/info    查看自定义应用信息(显示在配置文件配置info开头的配置信息)     
+</code></pre></li>
+<li><code>Admin-UI分布式微服务监控中心</code><ul>
+<li>Admin-UI底层基于actuator实现能够返回界面展示监控信息,原理是将所有服务的监控中心管理存放在admin-ui平台上。</li>
+</ul>
+<hr>
+<pre><code>  Admin-UI-Server
+  --------------------
+  1.添加maven依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;
+          &lt;version&gt;2.0.0&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-webflux&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.jolokia&lt;/groupId&gt;
+          &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.googlecode.json-simple&lt;/groupId&gt;
+          &lt;artifactId&gt;json-simple&lt;/artifactId&gt;
+          &lt;version&gt;1.1&lt;/version&gt;
+      &lt;/dependency&gt;
+  2.yml配置
+      spring:
+          application:
+              name: spring-boot-admin-server
+  3.启动server端
+      @Configuration
+      @EnableAutoConfiguration
+      @EnableAdminServer
+      public class AdminServerApplication {
+          public static void main(String[] args) {
+              SpringApplication.run(AdminServerApplication.class, args);
+          }
+      }
+  4.访问
+      http://localhost:8080
+</code></pre><pre><code>  Admin-UI-Client
+  --------------------
+  1.添加maven依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-admin-starter-client&lt;/artifactId&gt;
+          &lt;version&gt;2.0.0&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.jolokia&lt;/groupId&gt;
+          &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.googlecode.json-simple&lt;/groupId&gt;
+          &lt;artifactId&gt;json-simple&lt;/artifactId&gt;
+          &lt;version&gt;1.1&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  2.yml配置
+      spring:
+          boot:
+              admin:
+                  client:
+                      url: http://localhost:8080    ###配置client端注册到admin-ui平台
+      server:
+          port: 8081
+      management:
+          endpoints:
+              web:
+                  exposure:
+                      include: &quot;*&quot;
+              endpoint:
+                  health:
+                      show-details: ALWAYS
+  3.启动client端
+      @SpringBootApplication
+      public class AppClient {
+          public static void main(String[] args) {
+              SpringApplication.run(AppClient.class, args);
+          }
+      }
+</code></pre></li>
+</ul>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ul>
+<li><code>JVM参数调优(运行优化)</code><pre><code>  -Xms和-Xmx最好设置成一样,不然会频繁造成GC
+  外部运行调优使用：java -server -Xms32m -Xmx32m  -jar springboot.jar
+</code></pre></li>
+<li><code>扫包优化(启动优化,非运行优化)</code><pre><code>  针对大项目时不要用@SpringBootApplication注解,会扫描到无用的包,可以采用@ComponentScan来扫描指定的包
+</code></pre></li>
+<li><code>将Servlet容器变成Undertow</code><pre><code>  默认情况下，Spring Boot 使用 Tomcat 来作为内嵌的 Servlet 容器,可以将 Web 服务器切换到 Undertow 来提高应用性能。
+      Undertow 是一个采用 Java 开发的灵活的高性能 Web 服务器，提供包括阻塞和基于NIO的非堵塞机制。
+      Undertow 是红帽公司的开源产品，是 Wildfly 默认的 Web 服务器。
+  可用jmeter作吞吐量测试,结果是tomcat吞吐量为5000,undertow为8000
+</code></pre><pre><code>  1.从依赖信息里移除Tomcat
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+          &lt;exclusions&gt;
+              &lt;exclusion&gt;
+                  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                  &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+              &lt;/exclusion&gt;
+          &lt;/exclusions&gt;
+      &lt;/dependency&gt;
+  2.添加Undertow依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-starter-undertow&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+</code></pre></li>
+</ul>
+<h3 id="其他内容"><a href="#其他内容" class="headerlink" title="其他内容"></a>其他内容</h3><ul>
+<li><code>使用@Scheduled创建定时任务</code><pre><code>  在启动类中加入@EnableScheduling注解，启用定时任务的配置
+  -------------------
+  @Component
+  public class ScheduledTasks {
+      private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;HH:mm:ss&quot;);
+      @Scheduled(fixedRate = 5000)
+      public void reportCurrentTime() {
+          System.out.println(&quot;现在时间：&quot; + dateFormat.format(new Date()));
+      }
+  }
+</code></pre></li>
+<li><code>使用@Async异步执行方法</code><pre><code>  在启动类加上@EnableAsync来开启异步调用,并在需要执行异步的方法上加上@Async
+      @Async注解使用AOP技术在运行时创建一个单线程来执行这个方法
+</code></pre></li>
+<li><code>使用@Value自定义参数</code><pre><code>  application.properties文件
+      name=lvzhiqiang.top
+  代码中
+      @Value(&quot;${name}&quot;)
+      private String name;
+      @ResponseBody
+      @RequestMapping(&quot;/getValue&quot;)
+      public String getValue() {
+          return name;
+      }
+</code></pre></li>
+<li><code>区分不同环境配置文件</code><pre><code>  1.在src/main/resources下新建各个环境的配置文件
+      application-dev.properties：开发环境
+      application-uat.properties：测试环境
+      application-pre.properties：生产环境
+  2.在application.properties中进行切换
+      spring.profiles.active=uat
+</code></pre></li>
+<li><code>修改端口号</code><pre><code>  server.port=8888
+  server.context-path=/springbootdemo
+</code></pre></li>
+<li><code>Spring Boot yml 使用</code><pre><code>  SpringBoot默认读取application.yml|properties
+  YML比properties配置文件更加简约（结构）
+  ---------------
+  server:
+    port: 8081
+    context-path: /springbootdemo
+</code></pre></li>
+<li><code>发布打包</code><pre><code>  jar类型打包方式
+      1.使用mvn celan  package 打包
+      2.使用java –jar 包名
+  war类型打包方式
+      1.使用mvn celan  package 打包
+      2.将war包放入到tomcat webapps下运行即可
+      注意:springboot2.0内置tomcat8.5.25，建议使用外部Tomcat9.0版本运行即可,否则报错版本不兼容。
+</code></pre><pre><code>  如果执行java -jar命令提示没有主清单属性时,可在pom文件中新增如下代码
+      &lt;build&gt;
+          &lt;plugins&gt;
+              &lt;plugin&gt;
+                  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                  &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                  &lt;configuration&gt;
+                      &lt;source&gt;1.8&lt;/source&gt;
+                      &lt;target&gt;1.8&lt;/target&gt;
+                  &lt;/configuration&gt;
+              &lt;/plugin&gt;
+              &lt;plugin&gt;
+                  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                  &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                  &lt;configuration&gt;
+                      &lt;mainClass&gt;top.lvzhiqiang.StartApp&lt;/mainClass&gt;
+                  &lt;/configuration&gt;
+                  &lt;executions&gt;
+                      &lt;execution&gt;
+                          &lt;goals&gt;
+                              &lt;goal&gt;repackage&lt;/goal&gt;
+                          &lt;/goals&gt;
+                      &lt;/execution&gt;
+                  &lt;/executions&gt;
+              &lt;/plugin&gt;
+          &lt;/plugins&gt;
+      &lt;/build&gt;
+</code></pre></li>
+<li><code>热部署</code><pre><code>  1.什么是热部署
+      在应用程序不停止的情况下，实现新的部署
+  2.热部署原理
+      使用类加载器重新读取字节码文件到JVM中去
+  3.纯手写实现一个热部署功能
+      监听class文件是否发生改变(版本号或者修改时间),如果class文件发生改变,就使用classloader进行得新读取
+  4.优缺点
+      适合本地开发,提高运行效率,不用重启服务器;缺点是项目比较大时,非常卡,比较占内存.
+</code></pre><pre><code>  1.引入devtools依赖
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+          &lt;optional&gt;true&lt;/optional&gt;
+          &lt;scope&gt;true&lt;/scope&gt;
+      &lt;/dependency&gt;
+  2.Devtools原理
+      1.devtools会监听classpath下的文件变动，并且会立即重启应用（发生在保存时机），注意：因为其采用的虚拟机机制，该项重启是很快的。  
+      2.devtools可以实现页面热部署（即页面修改后会立即生效，这个可以直接在application.properties文件中配置spring.thymeleaf.cache=false来实现(这里注意不同的模板配置不一样) 
+  3.不推荐使用
+</code></pre></li>
+<li><code>整合拦截器</code><pre><code>  1.创建拦截器
+      @Slf4j
+      @Component
+      //创建模拟登录拦截器，验证请求是否有token参数
+      public class LoginIntercept implements HandlerInterceptor {
+          public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+                  throws Exception {
+              log.info(&quot;开始拦截登录请求....&quot;);
+              String token = request.getParameter(&quot;token&quot;);
+              if (StringUtils.isEmpty(token)) {
+                  response.getWriter().println(&quot;not found token&quot;);
+                  return false;
+              }
+              return true;
+          }
+      }
+  2.注册拦截器
+      @Configuration
+      public class WebAppConfig {
+          @Autowired
+          private LoginIntercept loginIntercept;
+          @Bean
+          public WebMvcConfigurer WebMvcConfigurer() {
+              return new WebMvcConfigurer() {
+                  public void addInterceptors(InterceptorRegistry registry) {
+                      registry.addInterceptor(loginIntercept).addPathPatterns(&quot;/*&quot;);
+                  };
+              };
+          }
+      }
+</code></pre><pre><code>  拦截器与过滤器区别
+      拦截器是AOP( Aspect-Oriented Programming)的一种实现，底层通过动态代理模式完成。
+      （1）拦截器是基于java的反射机制的，而过滤器是基于函数回调。
+      （2）拦截器不依赖于servlet容器，而过滤器依赖于servlet容器。
+      （3）拦截器只能对Controller请求起作用，而过滤器则可以对几乎所有的请求起作用。
+      （4）在Controller的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。
+  过滤器应用场景:设置编码字符、过滤铭感字符
+  拦截器应用场景:拦截未登陆用户、审计日志
+</code></pre></li>
+</ul>
+<h3 id="2-0版本新特性"><a href="#2-0版本新特性" class="headerlink" title="2.0版本新特性"></a>2.0版本新特性</h3><ul>
+<li><code>以Java 8 为基准</code><pre><code>  Spring Boot 2.0 要求 Java 版本必须 8 以上， Java 6 和 7 不再支持。
+</code></pre></li>
+<li><code>内嵌容器包结构调整</code><pre><code>  为了支持reactive使用场景，内嵌的容器包结构被重构了的幅度有点大。EmbeddedServletContainer被重命名为WebServer，
+  并且org.springframework.boot.context.embedded 包被重定向到了org.springframework.boot.web.embedded包下。
+  举个例子，如果你要使用TomcatEmbeddedServletContainerFactory回调接口来自定义内嵌Tomcat容器，你现在应该使用TomcatServletWebServerFactory。
+</code></pre></li>
+<li><code>Servlet-specific 的server properties调整</code><pre><code>  大量的Servlet专属的server.* properties被移到了server.servlet下：
+      Old property    New property
+      server.context-parameters.*    server.servlet.context-parameters.*
+      server.context-path    server.servlet.context-path
+      server.jsp.class-name    server.servlet.jsp.class-name
+      server.jsp.init-parameters.*    server.servlet.jsp.init-parameters.*
+      server.jsp.registered    server.servlet.jsp.registered
+      server.servlet-path    server.servlet.path
+  由此可以看出一些端倪，那就是server不再是只有servlet了，还有其他的要加入。
+</code></pre></li>
+<li><code>Actuator 默认映射</code><pre><code>  actuator的端点（endpoint）现在默认映射到/application，比如，/info 端点现在就是在/application/info。但你可以使用management.context-path来覆盖此默认值。
+</code></pre></li>
+<li><code>Spring Loaded不再支持</code><pre><code>  由于Spring Loaded项目已被移到了attic了，所以不再支持Spring Loaded了。现在建议你去使用Devtools。Spring Loaded不再支持了。
+</code></pre></li>
+<li><code>支持Quartz Scheduler</code><pre><code>  Spring Boot 2.0针对Quartz调度器提供了支持。你可以加入spring-boot-starter-quartz starter来启用。而且支持基于内存和基于jdbc两种存储。
+</code></pre></li>
+<li><code>OAuth 2.0 支持</code><pre><code>  Spring Security OAuth 项目中的功能将会迁移到Spring Security中。将会OAuth 2.0。
+</code></pre></li>
+<li><code>支持Spring WebFlux</code><pre><code>  WebFlux 模块的名称是 spring-webflux，名称中的 Flux 来源于 Reactor 中的类 Flux。该模块中包含了对反应式 HTTP、服务器推送事件和
+   WebSocket 的客户端和服务器端的支持。对于开发人员来说，比较重要的是服务器端的开发，这也是本文的重点。在服务器端，WebFlux 支持两种
+   不同的编程模型：第一种是 Spring MVC 中使用的基于 Java 注解的方式；第二种是基于 Java 8 的 lambda 表达式的函数式编程模型。这两种
+   编程模型只是在代码编写方式上存在不同。它们运行在同样的反应式底层架构之上，因此在运行时是相同的。WebFlux 需要底层提供运行时的支持，
+   WebFlux 可以运行在支持 Servlet 3.1 非阻塞 IO API 的 Servlet 容器上，或是其他异步运行时环境，如 Netty 和 Undertow。
+</code></pre></li>
+<li><code>版本要求</code><pre><code>  Jetty
+      要求Jetty最低版本为9.4。
+  Tomcat
+      要求Tomcat最低版本为8.5。
+  Hibernate
+      要求Hibernate最低版本为5.2。
+  Gradle
+      要求Gradle最低版本为3.4。
+  SendGrid
+      SendGrid最低支持版本是3.2。为了支持这次升级，username和password已经被干掉了。因为API key现在是唯一支持的认证方式。
+</code></pre></li>
+</ul>
+<h3 id="手写springboot框架"><a href="#手写springboot框架" class="headerlink" title="手写springboot框架"></a>手写springboot框架</h3><ul>
+<li>springboot核心原理<pre><code>  基于springmvc无配置文件完全注解化(纯java)+内置tomcat-embed-core来实现springboot框架,main函数启动
+  快速整合第三方框架
+      原理:Maven继承依赖关系
+  完全无配置文件采用注解化
+      原理:使用java代码(spring3内置注解)来对springmvc容器进行初始化
+  内置web服务器
+      原理:Java提供内置Tomcat容器框架,使用java语言创建并操作tomcat容器,加载class文件
+</code></pre></li>
+<li><p>内置web服务器</p>
+<pre><code>  1.添加pom依赖
+      &lt;!--Java语言操作tomcat --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+          &lt;artifactId&gt;tomcat-embed-core&lt;/artifactId&gt;
+          &lt;version&gt;8.5.16&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- spring-web --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+          &lt;version&gt;5.0.4.RELEASE&lt;/version&gt;
+          &lt;scope&gt;compile&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- spring-mvc --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+          &lt;version&gt;5.0.4.RELEASE&lt;/version&gt;
+          &lt;scope&gt;compile&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- tomcat对jsp支持 --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+          &lt;artifactId&gt;tomcat-jasper&lt;/artifactId&gt;
+          &lt;version&gt;8.5.16&lt;/version&gt;
+      &lt;/dependency&gt;
+  2.创建servlet类
+      public class IndexServet extends HttpServlet {
+          @Override
+          protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+              doPost(req, resp);
+          }
+          @Override
+          protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+              resp.getWriter().print(&quot;springboot2.0&quot;);
+          }
+      }
+  3.创建tomcat运行
+      private static int PORT = 8080;// 端口号
+      private static String CONTEXTPATH = &quot;/demo&quot;;// 项目名称
+
+      public static void main(String[] args) throws LifecycleException {
+          // 创建Tomcat服务器
+          Tomcat tomcatServer = new Tomcat();
+          // 设置Tomcat端口号
+          tomcatServer.setPort(PORT);
+          tomcatServer.getHost().setAutoDeploy(false);
+          // 创建Context上下文
+          StandardContext standardContext = new StandardContext();
+          standardContext.setPath(CONTEXTPATH);
+          standardContext.addLifecycleListener(new FixContextListener());
+          // tomcat容器添加standardContext
+          tomcatServer.getHost().addChild(standardContext);
+          // 创建servlet
+          tomcatServer.addServlet(CONTEXTPATH, &quot;IndexServet&quot;, new IndexServet());
+          // 添加servleturl映射
+          standardContext.addServletMappingDecoded(&quot;/index&quot;, &quot;IndexServet&quot;);
+          tomcatServer.start();
+          tomcatServer.getServer().await();
+      }
+</code></pre></li>
+<li><p>完全无配置文件采用注解化</p>
+<pre><code>  1.加载SpringMVC的DispatcherServlet
+      AbstractAnnotationConfigDispatcherServletInitializer这个类负责配置DispatcherServlet、初始化Spring MVC容器和Spring容器。
+      getRootConfigClasses()方法用于获取Spring应用容器的配置文件，这里我们给定预先定义的RootConfig.class；
+      getServletConfigClasses负责获取Spring MVC应用容器，这里传入预先定义好的WebConfig.class；
+      getServletMappings()方法负责指定需要由DispatcherServlet映射的路径，这里给定的是&quot;/&quot;，意思是由DispatcherServlet处理所有向该应用发起的请求。
+
+      public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+          // 加载根容器
+          protected Class&lt;?&gt;[] getRootConfigClasses() {
+              return new Class[] { RootConfig.class };
+          }
+          // 加载SpringMVC容器
+          protected Class&lt;?&gt;[] getServletConfigClasses() {
+              return new Class[] { WebConfig.class };
+          }
+          // SpringMVCDispatcherServlet 拦截的请求
+          protected String[] getServletMappings() {
+              return new String[] { &quot;/&quot; };
+          }
+      }
+  2.加载SpringMVC容器
+      @Configuration
+      @EnableWebMvc
+      @ComponentScan(&quot;top.lvzhiqiang.controller&quot;)
+      public class WebConfig extends WebMvcConfigurerAdapter {
+          // 创建SpringMVC视图解析器
+          @Bean
+          public ViewResolver viewResolver() {
+              InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+              viewResolver.setPrefix(&quot;/WEB-INF/views/&quot;);
+              viewResolver.setSuffix(&quot;.jsp&quot;);
+              viewResolver.setExposeContextBeansAsAttributes(true);//可以在JSP页面中通过${}访问beans
+              return viewResolver;
+          }
+      }
+  3.加载RootConfig容器
+      @Configuration
+      @ComponentScan(basePackages = &quot;top.lvzhiqiang&quot;)
+      public class RootConfig {
+      }
+  4.运行
+      public static void main(String[] args) throws ServletException, LifecycleException {
+          start();
+      }
+      public static void start() throws ServletException, LifecycleException {
+          // 创建Tomcat容器
+          Tomcat tomcatServer = new Tomcat();
+          // 端口号设置
+          tomcatServer.setPort(9090);
+          // 读取项目路径,主要用来加载一些静态资源
+          StandardContext ctx = (StandardContext) tomcatServer.addWebapp(&quot;/&quot;, new File(&quot;src/main&quot;).getAbsolutePath());
+          // 禁止重新载入
+          ctx.setReloadable(false);
+          // class文件读取地址
+          File additionWebInfClasses = new File(&quot;target/classes&quot;);
+          // 创建WebRoot
+          WebResourceRoot resources = new StandardRoot(ctx);
+          // tomcat内部读取Class执行
+          resources.addPreResources(new DirResourceSet(resources, &quot;/WEB-INF/classes&quot;, additionWebInfClasses.getAbsolutePath(), &quot;/&quot;));
+          tomcatServer.start();
+          // 异步等待请求执行
+          tomcatServer.getServer().await();
+      }
+</code></pre></li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>微服务架构之 SpringBoot</p>
+    <p><span>文章字数:</span><span class="post-count">7.9k</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
+    <p><span>发布时间:</span>2019-04-04, 18:17:48</p>
+    <p><span>最后更新:</span>2019-04-13, 17:00:43</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/af-springboot.html" title="微服务架构之 SpringBoot">https://lvzhiqiang.top/2019/af-springboot.html</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: location.pathname,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Tujide.lv</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#java','#markdown','#linux','#分布式','#screenshot','#ssh','#eclipse','#git','#html','#css','#javascript','#nodejs','#maven','#ssr','#vps','#shadowsocks','#idea','#hexo',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-bg-img.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+@-webkit-keyframes links {
+    0% {
+        -webkit-transform: rotate(-2deg)
+    }
+    100% {
+        -webkit-transform: rotate(2deg)
+    }
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+
+</html>

@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Linux 系统入门：Shell 脚本 | Tujidelv Code</title>
+  <meta name="keywords" content=" linux ">
+  <meta name="description" content="Linux 系统入门：Shell 脚本 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Tujidelv的技术小窝">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://lvzhiqiang.top/categories/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="Tujidelv的技术小窝">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-28T12:22:45.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="Tujidelv的技术小窝">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.gif">
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/tujidelv" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/1963654824" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tujide.lv@foxmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+    <a href="/2018/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"/>
+    </a>
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(29)</small></div></li>
+    
+        
+            
+            <li><div data-rel="开发语言">开发语言<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="应用框架">应用框架<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="软件工具">软件工具<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="经典示例">经典示例<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="科学上网">科学上网<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+<input type="hidden" id="yelog_site_word_count" value="115.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">screenshot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">eclipse</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">css</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">nodejs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssr</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vps</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">shadowsocks</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">idea</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a class="应用框架 " href="/2019/af-redis.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式缓存框架之 Redis&amp;Ehcache">分布式缓存框架之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-zookeeper.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2019-04-08 19:24:23">2019/04/08</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-springboot.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-jvm.html" data-tag="java" data-author="">
+            <span class="post-title" title="性能调优之JVM">性能调优之JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-8.html" data-tag="java" data-author="">
+            <span class="post-title" title="Java8新特性">Java8新特性</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2019/st-maven.html" data-tag="maven" data-author="">
+            <span class="post-title" title="项目管理工具之Maven">项目管理工具之Maven</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-mq-rocketmq.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-packages-install.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 常用程序包的安装与配置">Linux 常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-script-powerboot.html" data-tag="linux" data-author="">
+            <span class="post-title" title="CentOS7 添加开机启动服务/脚本">CentOS7 添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-db-backup.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Mysql 数据库自动备份脚本">Mysql 数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-sysadmin-first.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-shell.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-command.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-basic.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-advanced.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：进阶">SSR 搭建：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-basic.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：基础">SSR 搭建：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2018/te-select.html" data-tag="html,css,javascript" data-author="">
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-hexo.html" data-tag="nodejs,hexo" data-author="">
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-ashampoo-snap.html" data-tag="screenshot" data-author="">
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-finalshell.html" data-tag="ssh" data-author="">
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-workflow.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-remote.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-basic.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-advanced.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-basic.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-eclipse.html" data-tag="eclipse" data-author="">
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-nodejs.html" data-tag="nodejs" data-author="">
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2018/dl-markdown.html" data-tag="markdown" data-author="">
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-os-linux-shell" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">Linux 系统入门：Shell 脚本</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="操作系统">操作系统</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">linux</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-03-02 17:38:38">2019-01-02 20:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-系统入门：Shell-脚本"><span class="toc-text">Linux 系统入门：Shell 脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件测试"><span class="toc-text">条件测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流程控制语句"><span class="toc-text">流程控制语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-系统入门：Shell-脚本"><a href="#Linux-系统入门：Shell-脚本" class="headerlink" title="Linux 系统入门：Shell 脚本"></a>Linux 系统入门：Shell 脚本</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#正篇">正篇</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#结束语">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>shell脚本编程笔记…</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li><code>shebang</code><pre><code>  #!/bin/bash
+  #!/usr/bin/python
+  #!/usr/bin/perl
+</code></pre></li>
+<li><code>运行脚本</code><pre><code>  1.给予执行权限,通过具体的文件路径指定文件执行    
+      eg: ~]# ./first.sh
+  2.直接运行解释器,将脚本作为解释器程序的参数运行
+</code></pre></li>
+<li><code>bash自定义退出状态码</code><pre><code>  exit [n]：
+      注：脚本中一旦遇到exit命令,脚本会立即终止;终止退出状态取决于exit命令后面的数字
+  注：如果未给脚本指定退出状态码，整个脚本的退出状态码取决于脚本中执行的最后一条命令的状态码
+</code></pre></li>
+<li><p><code>bash脚本编程之用户交互</code></p>
+<pre><code>  # read [option]... [name ...]    从标准输入读入一行,并可将其切割成字段对位放入变量中 
+      -p &#39;PROMPT&#39;：添加提示信息
+          也可这样写：$ echo -n &quot;Enter a user name:&quot;;read name
+          对bash而言,在同一行中使用分号隔开,2个命令会顺序执行
+      -t TIMEOUT：设置命令等待的超时时间,单位为秒,在交互中用户如果超时没输入可以在脚本中给默认值
+  # bash -n /path/to/some_script
+      检测脚本中的语法错误,不能检查逻辑错误
+  # bash -x /path/to/some_script
+      调试(单步)执行,它能显示其中执行的每一个代码的详细过程
+</code></pre><pre><code>  #!/bin/bash
+  # Version: 0.0.1
+  # Author: MageEdu
+  # Description: read testing
+
+  read -p &quot;Enter a disk special file: &quot; diskfile
+  [ -z &quot;$diskfile&quot; ] &amp;&amp; echo &quot;Fool&quot; &amp;&amp; exit 1
+
+  if fdisk -l | grep &quot;^Disk $diskfile&quot; &amp;&gt; /dev/null; then
+      fdisk -l $diskfile
+  else
+      echo &quot;Wrong disk special file.&quot;
+      exit 2
+  fi
+</code></pre></li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>强类型：定义变量时必须指定类型，参与运算必须符合类型要求;调用未声明的变量会产生错误<br>弱类型：无需指定类型,默认均为字符型,参与运算会自动进行隐式转换;变量无须事先定义可直接调用</p>
+<hr>
+<ul>
+<li><code>变量类型会决定数据存储格式,存储空间大小,参与运算种类</code><pre><code>  字符型：
+  数值型：整型,浮点型
+      declare -i name：声明一个整型变量
+</code></pre></li>
+<li><code>变量命名法则</code><pre><code>  1.不能使用程序中的保留字,如if,for等
+  2.只能使用数字,字母及下划线,且不能以数字开头
+  3.见名知义
+</code></pre></li>
+<li><code>只读变量</code><pre><code>  readonly name
+  declare -r name
+</code></pre></li>
+<li><p><code>bash中变量种类</code></p>
+<pre><code>  根据变量的生效范围等标准：
+      本地变量：生效范围为当前shell进程,对当前shell之外的其它shell进程,当前shell的子进程均无效    
+          变量赋值：name=&quot;value&quot;,将赋值符号后面的数据存储于变量名指向的内存空间
+              value：可以使用引用
+                  1.可以是直接字串：name=&quot;username&quot;    
+                  2.变量引用：name=&quot;$username&quot;
+                  3.命令引用：name=`COMMAND`,name=$(COMMAND),命令执行的返回值    
+          变量引用：${name},$name
+              单引号：强引用，其中的变量引用不会被替换为变量值,而保持原字符串
+              双引号：弱引用，其中的变量引用会被替换为变量值
+          显示已定义的所有变量：
+              set
+          销毁变量：
+              unset name
+      环境变量：生效范围为当前shell进程及其子进程
+          变量声明\赋值：
+              export name=VALUE
+              declare -x name=VALUE
+          变量引用：同本地变量
+          显示所有环境变量：
+              export
+              env
+              printenv
+          销毁变量：同本地变量
+      局部变量：生效范围为当前shell进程中某代码片段(通常指函数)
+      位置变量：用于让脚本在脚本代码中调用通过命令行传递给它的参数
+          $1,$2,...：对应调用第1,第2等参数
+
+          $0：命令本身
+
+          $*：传递个脚本的所有参数(当做一个字符串)    
+          $@：传递个脚本的所有参数(多个字符串)
+          $#：传递个脚本的参数的个数
+      特殊变量：$?
+</code></pre><p>  <img src="/2019/os-linux-shell/os-linux-shell-001.png" alt="抱歉,图片休息了"></p>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li><code>逻辑运算符</code><pre><code>  短路与：&amp;&amp;
+  短路或：||
+  逻辑异或：^
+  逻辑非：!
+</code></pre></li>
+<li><p><code>算数运算符</code></p>
+<pre><code>  +,-,*,/,%,++,--,
+  ----------
+  实现算数运算：
+      1.let var=算数表达式
+      2.var=$[算数表达式]
+      3.var=$((算数表达式))    
+      4.var=$(expr arg1 arg2 arg3 ...)
+          乘法符号有些场景中需要转义
+
+      bash中有内建的随机数生成器：$RANDOM
+          eg: ~]# echo $[$RANDOM%60+1]
+</code></pre><p>  <img src="/2019/os-linux-shell/os-linux-shell-002.png" alt="抱歉,图片休息了"></p>
+</li>
+<li><code>赋值运算符</code><pre><code>  增强型赋值：+=,-=,*=,/=,%=,
+      let varOPERvalue
+          eg:let count+=1
+      自增：let var+=1 &lt;==&gt; let var++
+      自减：let var-=1 &lt;==&gt; let var--
+</code></pre></li>
+</ul>
+<h3 id="条件测试"><a href="#条件测试" class="headerlink" title="条件测试"></a>条件测试</h3><p>判断某需求是否满足,需要由测试机制来实现,专用的测试表达式需要由测试命令辅助完成测试过程.</p>
+<hr>
+<ul>
+<li><p><code>测试命令</code></p>
+<pre><code>  test EXPRESSION
+  [ EXPRESSION ]
+  [[ EXPRESSION ]]
+
+  注：EXPRESSION前后必须有空白字符,否则语法错误
+</code></pre></li>
+<li><p><code>bash的测试类型</code></p>
+<pre><code>  数值测试：
+      -gt：是否大于
+      -ge：是否大于等于
+      -eq：是否等于
+      -ne：是否不等于
+      -lt：是否小于
+      -le：是否小于等于
+  字符串测试：
+      ==：是否等于
+          也可以用=                    
+      &gt;：是否大于
+      &lt;：是否小于
+      !=：是否不等于
+      =~：左侧字符串是否能够被右侧的PATTERN所匹配
+          此表达式一般用于[[  ]]中
+      -z &quot;STRING&quot;：测试字符串是否为空,空则为真,不空则为假
+      -n &quot;STRING&quot;：测试字符串是否为不空,不空则为真,空则为假
+
+      注：用于字符串比较时用到的操作数都应该使用引号
+  文件测试：
+      存在性测试：
+          -a FILE
+          -e FILE：文件存在性测试，存在为真，否则为假
+      存在性及类别测试：
+          -b FILE：是否存在且为块设备文件
+          -c FILE：是否存在且为字符设备文件
+          -d FILE：是否存在且为目录文件
+          -f FILE：是否存在且为普通文件
+          -h/L FILE：是否存在且为符号链接文件
+          -p FILE：是否存在且为命名管道文件
+          -S FILE：是否存在且为套接字文件
+      文件权限测试：
+          -r FILE：是否存在且可读
+          -w FILE：是否存在且可写
+          -x FILE：是否存在且可执行
+      文件特殊权限测试：
+          -g FILE：是否存在且拥有sgid权限
+          -u FILE：是否存在且拥有suid权限
+          -k FILE：是否存在且拥有sticky权限
+      文件大小测试：
+          -s FILE：是否存在且非空
+      文件是否打开测试：
+          -t fd：fd表示文件描述符是否已经打开且与某终端相关    
+
+          -N FILE：文件自上一次被读取之后是否被修改过
+          -O FILE：当前有效用户是否为文件属主
+          -G FILE：当前有效用户是否为文件属组
+      双目测试：
+          FILE1 -ef FILE2：FILE1与FILE2是否指向同一个设备上的相同inode
+          FILE1 -nt FILE2：FILE1是否新于FILE2
+              常用于备份中
+          FILE1 -ot FILE2：FILE1是否旧于FILE2
+              常用于备份中
+</code></pre><p>  <img src="/2019/os-linux-shell/os-linux-shell-003.png" alt="抱歉,图片休息了"></p>
+</li>
+<li><code>组合测试条件</code><pre><code>  逻辑运算：
+      第一种方式：
+          COMMAND1 &amp;&amp; COMMAND2
+          COMMAND1 || COMMAND2
+          ! COMMAND
+      第二种方式：必须使用测试命令进行
+          EXPRESSION1 -a EXPRESSION2
+          EXPRESSION1 -o EXPRESSION2
+          ! EXPRESSION
+</code></pre>  <img src="/2019/os-linux-shell/os-linux-shell-004.png" alt="抱歉,图片休息了"></li>
+</ul>
+<h3 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h3><ul>
+<li><code>顺序执行</code></li>
+<li><code>选择执行</code><pre><code>  判断条件：
+      a. 根据bash命令的执行状态结果(true或false),具体取决于用到的命令 
+      b. 测试命令
+  if语句可嵌套使用
+</code></pre><pre><code>  单分支：
+      if 判断条件; then
+          条件为真的分支代码
+      fi
+  双分支：
+      if 判断条件; then
+          条件为真的分支代码
+      else
+          条件为假的分支代码
+      fi
+  多分支：自上而下进行条件判断，第一次遇到为“真”的条件时，执行其分支，而后结束；
+      if CONDITION1; then
+          if-true
+      elif CONDITION2; then
+          if-ture 
+      elif CONDITION3; then
+          if-ture 
+      ...
+      esle
+          all-false
+      fi
+</code></pre></li>
+<li><code>循环执行</code><pre><code>  循环：
+      循环次数已知：遍历
+          for
+      循环次数未知：
+          while
+          until
+  循环可以嵌套
+</code></pre><pre><code>  for循环：
+      for 变量名 in 列表; do
+          循环体(要执行的代码；可能要执行n遍)
+      done
+      ---------------------
+      执行机制：
+          依次将列表中的元素赋值给“变量名”; 每次赋值后都要执行一次循环体; 直到列表中的元素耗尽，循环结束; 
+      列表生成方式：
+          (1) 直接给出列表；
+          (2) 整数列表；
+              (a) {start..end}
+              (b) $(seq [start [step]] end) 
+          (3) 返回列表的命令；例如ls /var等等
+              $(COMMAND)
+          (4) 文件名通配机制；
+              例如for file in /var/*;do
+          (b) 变量引用；
+              $@, $*
+  while循环：
+      while 测试条件; do
+          循环体
+      done
+      ---------------------
+      执行机制：
+          测试条件为真，进入循环；测试条件为假，退出循环；
+          测试条件一般通过变量来描述，需要在循环体不变量地改变变量的值，以确保某一时刻测试条件为假，进而结束循环；
+  until循环：
+      until 测试条件; do
+          循环体
+      done
+      ---------------------
+      执行机制：
+          测试条件为假，进入循环；测试条件为真，退出循环；
+          测试条件一般通过变量来描述，需要在循环体不变量地改变变量的值，以确保某一时刻测试条件为真，进而结束循环；
+</code></pre></li>
+</ul>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><ul>
+<li>写一个脚本,实现如下功能:如果user1用户存在,就显示其存在,否则添加之;显示添加的用户的id号等信息<pre><code>  #!/bin/bash
+  id user1 &amp;&gt; /dev/null &amp;&amp; echo &quot;user1 exists.&quot; || useradd user1
+  id user1
+</code></pre></li>
+<li>写一个脚本,完成如下功能:如果root用户登录了当前系统,就显示root用户在线,否则说明其未登录<pre><code>  #!/bin/bash
+  w | grep &#39;^root\&gt;&#39; &amp;&gt; /dev/null &amp;&amp; echo &quot;root logged.&quot; || echo &quot;root not logged.&quot;
+</code></pre></li>
+<li>写一个脚本,计算/etc/passwd文件中的第10个用户和第20个用户的ID之和<pre><code>  #!/bin/bash
+  userid1=$(head -n 10 /etc/passwd | tail -n 1 | cut -d: -f3)
+  userid2=$(head -n 20 /etc/passwd | tail -n 1 | cut -d: -f3)
+  useridsum=$[$userid1+$userid2]
+  echo &quot;uid sum: $useridsum&quot;
+</code></pre></li>
+<li>写一个脚本,传递两个文件路径作为参数给脚本,计算这两个文件中所有空白行之和<pre><code>  #!/bin/bash
+  spaceline1=$(grep &#39;^[[:space:]]*$&#39; $1 | wc -l)
+  spaceline2=$(grep &#39;^[[:space:]]*$&#39; $2 | wc -l)
+  echo &quot;The sum of space line: $[$spaceline1+$spaceline2]&quot;
+</code></pre></li>
+<li>写一个脚本,统计/etc,/var,/usr目录中共有多少个一级子目录和文件<pre><code>  #!/bin/bash
+  sumEtc=$(ls -l /etc | grep &#39;^[dbclsp]&#39; | wc -l)
+  sumVar=$(ls -l /var | grep &#39;^[dbclsp]&#39; | wc -l)
+  sumUsr=$(ls -l /usr | grep &#39;^[dbclsp]&#39; | wc -l)
+  echo &quot;The total count of files: $[${sumEtc}+${sumVar}+${sumUsr}] lines.&quot;
+</code></pre></li>
+<li>写一个脚本,接受一个文件路径作为参数,如果参数个数小于1,则提示用户”至少应该给一个参数”,并立即退出;如果参数个数不小于1,则显示第一个参数所指向的文件中的空白行数<pre><code>  #!/bin/bash
+  [ &quot;$#&quot; -lt 1 ] &amp;&amp; echo &quot;The must one arg.&quot; &amp;&amp; exit 20
+  [ -e &quot;$1&quot; ] || { echo &quot;No such file or directory&quot; &amp;&amp; exit 30;}
+  echo &quot;The blankspace is $(grep &#39;^[[:space:]]*$&#39; $1 | wc -l) lines.&quot;
+</code></pre></li>
+</ul>
+<hr>
+<ul>
+<li><p>写一个脚本,添加用户</p>
+<pre><code class="bash">  #!/bin/bash
+  #
+
+  if [ $# -lt 1 ]; then
+          echo &quot;At least one argument.&quot;
+          exit 1
+  fi
+
+  if id $1 &amp;&gt; /dev/null; then
+          echo &quot;$1 exists.&quot;
+          exit 0
+  else
+          useradd $1
+          [ $? -eq 0 ] &amp;&amp; echo &quot;$1&quot; | passwd --stdin $1 &amp;&gt; /dev/null &amp;&amp; exit 0 || exit 2
+  fi
+</code></pre>
+</li>
+<li><p>用户键入文件路径，脚本来判断文件类型</p>
+<pre><code class="bash">  #!/bin/bash
+  #
+
+  read -p &quot;Enter a file path: &quot; filename
+
+  if [ -z &quot;$filename&quot; ]; then
+      echo &quot;Usage: Enter a file path.&quot;
+      exit 2
+  fi
+
+  if [ ! -e $filename ]; then
+      echo &quot;No such file.&quot;
+      exit 3
+  fi
+
+  if [ -f $filename ]; then
+      echo &quot;A common file.&quot;
+  elif [ -d $filename ]; then
+      echo &quot;A directory.&quot;
+  elif [ -L $filename ]; then
+      echo &quot;A symbolic file.&quot;
+  else
+      echo &quot;Other type.&quot;
+  fi
+</code></pre>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>添加10个用户, user1-user10；密码同用户名</p>
+<pre><code class="bash">  #!/bin/bash
+  #
+
+  if [ ! $UID -eq 0 ]; then
+      echo &quot;Only root.&quot;
+      exit 1
+  fi
+
+  for i in {1..10}; do
+      if id user$i &amp;&gt; /dev/null; then
+          echo &quot;user$i exists.&quot;
+      else
+          useradd user$i
+          if [ $? -eq 0 ]; then
+              echo &quot;user$i&quot; | passwd --stdin user$i &amp;&gt; /dev/null
+              echo &quot;Add user$i finished.&quot;
+          fi
+      fi
+  done
+</code></pre>
+</li>
+<li><p>判断某路径下所有文件的类型</p>
+<pre><code class="bash">  #!/bin/bash
+  #
+
+  for file in $(ls /var); do
+      if [ -f /var/$file ]; then
+      echo &quot;Common file.&quot;
+      elif [ -L /var/$file ]; then
+      echo &quot;Symbolic file.&quot;
+      elif [ -d /var/$file ]; then
+      echo &quot;Directory.&quot;
+      else
+      echo &quot;Other type.&quot;
+      fi
+  done
+</code></pre>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>Linux 系统入门：Shell 脚本</p>
+    <p><span>文章字数:</span><span class="post-count">3k</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
+    <p><span>发布时间:</span>2019-01-02, 20:51:18</p>
+    <p><span>最后更新:</span>2019-03-02, 17:38:38</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/os-linux-shell.html" title="Linux 系统入门：Shell 脚本">https://lvzhiqiang.top/2019/os-linux-shell.html</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: location.pathname,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Tujide.lv</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#java','#markdown','#linux','#分布式','#screenshot','#ssh','#eclipse','#git','#html','#css','#javascript','#nodejs','#maven','#ssr','#vps','#shadowsocks','#idea','#hexo',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-bg-img.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+@-webkit-keyframes links {
+    0% {
+        -webkit-transform: rotate(-2deg)
+    }
+    100% {
+        -webkit-transform: rotate(2deg)
+    }
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+
+</html>

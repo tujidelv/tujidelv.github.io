@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>项目管理工具之Maven | Tujidelv Code</title>
+  <meta name="keywords" content=" maven ">
+  <meta name="description" content="项目管理工具之Maven | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Tujidelv的技术小窝">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://lvzhiqiang.top/categories/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="Tujidelv的技术小窝">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-28T12:22:45.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="Tujidelv的技术小窝">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.gif">
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/tujidelv" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/u/1963654824" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:tujide.lv@foxmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+    <a href="/2018/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"/>
+    </a>
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(29)</small></div></li>
+    
+        
+            
+            <li><div data-rel="开发语言">开发语言<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="操作系统">操作系统<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="应用框架">应用框架<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="软件工具">软件工具<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="经典示例">经典示例<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="科学上网">科学上网<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+<input type="hidden" id="yelog_site_word_count" value="115.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">screenshot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">eclipse</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">css</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">nodejs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssr</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vps</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">shadowsocks</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">idea</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a class="应用框架 " href="/2019/af-redis.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式缓存框架之 Redis&amp;Ehcache">分布式缓存框架之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-zookeeper.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2019-04-08 19:24:23">2019/04/08</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-springboot.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-jvm.html" data-tag="java" data-author="">
+            <span class="post-title" title="性能调优之JVM">性能调优之JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2019/dl-java-8.html" data-tag="java" data-author="">
+            <span class="post-title" title="Java8新特性">Java8新特性</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2019/st-maven.html" data-tag="maven" data-author="">
+            <span class="post-title" title="项目管理工具之Maven">项目管理工具之Maven</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2019/af-mq-rocketmq.html" data-tag="分布式" data-author="">
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-packages-install.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 常用程序包的安装与配置">Linux 常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-script-powerboot.html" data-tag="linux" data-author="">
+            <span class="post-title" title="CentOS7 添加开机启动服务/脚本">CentOS7 添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2019/te-db-backup.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Mysql 数据库自动备份脚本">Mysql 数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-sysadmin-first.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2019/os-linux-shell.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-command.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        
+        <a class="操作系统 " href="/2018/os-linux-basic.html" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-advanced.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：进阶">SSR 搭建：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="科学上网 " href="/2018/si-ssr-basic.html" data-tag="ssr,vps,shadowsocks" data-author="">
+            <span class="post-title" title="SSR 搭建：基础">SSR 搭建：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        
+        <a class="经典示例 " href="/2018/te-select.html" data-tag="html,css,javascript" data-author="">
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-hexo.html" data-tag="nodejs,hexo" data-author="">
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-ashampoo-snap.html" data-tag="screenshot" data-author="">
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-finalshell.html" data-tag="ssh" data-author="">
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-workflow.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-remote.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-git-basic.html" data-tag="git" data-author="">
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-advanced.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-idea-basic.html" data-tag="idea" data-author="">
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="软件工具 " href="/2018/st-eclipse.html" data-tag="eclipse" data-author="">
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="应用框架 " href="/2018/af-nodejs.html" data-tag="nodejs" data-author="">
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        
+        <a class="开发语言 " href="/2018/dl-markdown.html" data-tag="markdown" data-author="">
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-st-maven" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">项目管理工具之Maven</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="软件工具">软件工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">maven</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-04-04 19:58:16">2019-03-14 17:44</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#项目管理工具之Maven"><span class="toc-text">项目管理工具之Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#maven是什么"><span class="toc-text">maven是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要用maven"><span class="toc-text">为什么要用maven</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装与配置"><span class="toc-text">安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven项目结构约定"><span class="toc-text">Maven项目结构约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven核心概念"><span class="toc-text">Maven核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven私服"><span class="toc-text">Maven私服</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="项目管理工具之Maven"><a href="#项目管理工具之Maven" class="headerlink" title="项目管理工具之Maven"></a>项目管理工具之Maven</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#正篇">正篇</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#结束语">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="maven是什么"><a href="#maven是什么" class="headerlink" title="maven是什么"></a><code>maven是什么</code></h3><pre><code>Maven是Apache提供的一款跨平台的项目管理工具。主要服务于基于Java平台的项目构建，依赖管理和项目信息管理。
+    开发团队基本不用花多少时间就能自动完成工程的基础构建配置,因为maven使用了一个标准的目录结构和一个默认的构建生命周期。
+------------------
+什么是理想的项目构建？
+    高度自动化，跨平台，可重用的组件，标准化的
+什么是依赖？为什么要进行依赖管理？
+    自动下载，统一依赖管理
+有哪些项目信息？
+    项目名称描述等，开发人员信息，开发者信息等
+</code></pre><h3 id="为什么要用maven"><a href="#为什么要用maven" class="headerlink" title="为什么要用maven"></a><code>为什么要用maven</code></h3><pre><code>IDE：
+    1. 手工操作较多，编译、测试、部署等工作都是独立的，很难一步完成
+    2. 每个人的IDE配置都不同，很容易出现本地代码换个地方编译就出错
+Ant：
+    1. 没有一个约定的目录结构
+    2. 必须明确让ant做什么，什么时候做，然后编译，打包
+    3. 没有生命周期，必须定义目标及其实现的任务序列
+    4. 没有集成依赖管理
+Maven：
+    1. 拥有约定的目录结构，知道你的代码在哪里，放到哪里去
+    2. 拥有一个生命周期，例如执行 mvn install 就可以自动执行编译，测试，打包等构建过程
+    3. 只需要定义一个pom.xml,然后把源码放到默认的目录，Maven帮你处理其他事情
+    4. 拥有依赖管理，仓库管理
+</code></pre><h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a><code>安装与配置</code></h3><ol>
+<li>确认当前系统正确的配置了JDK 环境变量<pre><code> # java -version
+ java version &quot;1.8.0_91&quot;
+ Java(TM) SE Runtime Environment (build 1.8.0_91-b15)
+ Java HotSpot(TM) 64-Bit Server VM (build 25.91-b15, mixed mode)
+</code></pre></li>
+<li>将Maven程序的压缩包解压到一个非中文无空格目录<pre><code> 下载地址：
+     http://maven.apache.org/download.cgi
+ 安装目录介绍：
+     bin：含有mvn运行的脚本
+     boot：含有plexus-classworlds类加载器框架
+     conf：含有settings.xml配置文件
+     lib：含有Maven运行时所需要的java类库
+     LICENSE.txt, NOTICE.txt, README.txt针对Maven版本，第三方软件等简要介绍
+</code></pre></li>
+<li>配置MAVEN_HOME或M2_HOME环境变量并添加到PATH中<pre><code> MAVEN_HOME=E:\Ebook\JavaSE\develop\apache-maven-3.0.5
+ PATH=%MAVEN_HOME%\bin
+</code></pre></li>
+<li>验证是否成功<pre><code> C:\Users\Tujide.lv&gt;mvn -v
+ Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 21:51:28+0800)
+ Maven home: E:\Ebook\JavaSE\develop\apache-maven-3.0.5\bin\..
+ Java version: 1.8.0_91, vendor: Oracle Corporation
+ Java home: E:\Ebook\JavaSE\develop\Java\jdk1.8.0_91\jre
+ Default locale: zh_CN, platform encoding: GBK
+ OS name: &quot;windows 10&quot;, version: &quot;10.0&quot;, arch: &quot;amd64&quot;, family: &quot;dos&quot;
+</code></pre></li>
+<li>修改本地仓库的默认位置<pre><code> 1. 修改E:\Ebook\JavaSE\develop\apache-maven-3.0.5\conf\settings.xml文件
+     &lt;localRepository&gt;E:\Ebook\JavaSE\workspace_maven\repository&lt;/localRepository&gt;
+ 2. 复制此文件到E:\Ebook\JavaSE\workspace_maven中
+     用户级别的仓库在全局配置中一旦设置，全局配置将不再生效，转用用户所设置的仓库，否则使用默认路径仓库
+</code></pre></li>
+</ol>
+<h3 id="Maven项目结构约定"><a href="#Maven项目结构约定" class="headerlink" title="Maven项目结构约定"></a><code>Maven项目结构约定</code></h3><pre><code>src
+    main
+        java —— 存放项目的.java文件
+        resources —— 存放项目资源文件，如spring, hibernate配置文件
+        webapp —— web工程有
+    test
+        java —— 存放所有测试.java文件，如JUnit测试类
+        resources —— 存放测试资源文件
+target —— 运行会自动创建,项目输出位置
+pom.xml —— maven项目核心配置文件
+</code></pre><h3 id="Maven核心概念"><a href="#Maven核心概念" class="headerlink" title="Maven核心概念"></a><code>Maven核心概念</code></h3><ul>
+<li>坐标<pre><code>  Maven坐标主要组成
+      groupId：组织名称,定义当前Maven项目隶属项目
+      artifactId：项目名称,定义实际项目中的一个模块
+      version： 当前项目版本号,定义当前项目的当前版本
+      packaging：定义该项目的打包方式,jar或war,可省略。另外，值为pom时，表示这是一个父工程
+  Maven为什么使用坐标？
+      Maven世界拥有大量构建，我们需要找一个用来唯一标识一个构建的统一规范
+      拥有了统一规范，就可以把查找工作交给机器
+</code></pre></li>
+<li>依赖管理<br>  <img src="/2019/st-maven/st-maven-001.png" alt="抱歉,图片休息了"><br>  <img src="/2019/st-maven/st-maven-002.png" alt="抱歉,图片休息了"> <pre><code>  传递性依赖：
+      例如B中使用A,C中使用B,则称B是C的直接依赖,A是C的间接依赖
+  可选依赖：
+      &lt;optional&gt;true/false&lt;/optional&gt; 设置自己的依赖是否向下传递
+  排除依赖：
+      &lt;exclusions&gt;&lt;exclusion&gt; 设置当前依赖中是否使用间接依赖
+  --------------
+  依赖冲突：
+      如果直接与间接依赖中包含有同一个坐标不同版本的资源依赖，以直接依赖的版本为准（就近原则）
+      如果直接依赖中包含有同一个坐标不同版本的资源依赖，以配置顺序下方的版本为准（就近原则）
+</code></pre></li>
+<li>生命周期<pre><code>  Maven生命周期就是为了对所有的构建过程进行抽象和统一
+  包括清理，编译，测试，报告，打包，安装，部署等几乎所有构建步骤
+      清理(mvn clean)：表示在编译代码前将之前生成的内容删除
+      编译(mvn compile)：将源代码编译为字节码
+      测试(mvn test)：运行单元测试用例程序
+      报告：测试程序的结果
+      打包(mvn package)：将 java 项目打成 jar 包；将 Web 项目打成 war 包
+      安装(mvn install)：将 jar 或 war 生成到 Maven 本地仓库中 
+      部署(mvn deploy)：将 jar 或 war 从Maven 本地仓库复制到远程仓库中,以让其他开发人员与项目共享
+</code></pre>  <img src="/2019/st-maven/st-maven-003.png" alt="抱歉,图片休息了"> </li>
+<li>插件和目标<pre><code>  Maven的核心程序并不包含具体功能，仅定义了抽象的生命周期来负责宏观调度。具体功能由插件来完成。
+      Maven核心程序会到本地仓库中查找插件。如果本地仓库中没有就会从远程中央仓库下载。此时如果不能上网则无法执行Maven的具体功能。
+      为了解决这个问题，我们可以将Maven的本地仓库指向一个在联网情况下下载好的目录。 
+  每个插件都能实现多个功能，每个功能就是一个插件目标
+  Maven的生命周期与插件目标相互绑定，以完成某个具体的构建任务
+      例如compile就是插件maven-compiler-plugin的一个插件目标
+</code></pre><pre><code class="xml">  &lt;build&gt;
+      &lt;plugins&gt;
+          &lt;plugin&gt;&lt;!--将源码打包的功能--&gt;
+              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+              &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.2.1&lt;/version&gt;
+                &lt;executions&gt;&lt;!--设置插件的的执行位置 --&gt;
+                  &lt;execution&gt;&lt;!--具体的的执行位置 --&gt;
+                      &lt;goals&gt;
+                          &lt;goal&gt;jar-no-fork&lt;/goal&gt;
+                      &lt;/goals&gt;
+                      &lt;phase&gt;verify&lt;/phase&gt;
+                  &lt;/execution&gt;
+               &lt;/executions&gt;
+            &lt;/plugin&gt;
+      &lt;/plugins&gt;
+  &lt;/build&gt;
+</code></pre>
+</li>
+<li><p>继承</p>
+<pre><code>  何为继承？
+      继承为了消除重复，把很多相同的配置提取出来
+      例如：grouptId，version等
+  父工程设置为被继承
+      &lt;packaging&gt;pom&lt;/packaging&gt;
+  子工程继承父工程
+      子工程中可以省略父工程中定义的坐标(artifactId除外)中的所有设定
+
+      &lt;parent&gt;
+          &lt;groupId&gt;…&lt;/groupId&gt;
+          &lt;artifactId&gt;… &lt;/artifactId&gt;
+          &lt;version&gt;… &lt;/version&gt;
+          &lt;relativePath&gt;../父工程项目名&lt;/relativePath&gt;    ----如果网络仓库上有父工程,这行可不写上
+      &lt;/parent&gt;
+</code></pre><pre><code>  父工程统一管理子工程依赖版本
+      &lt;dependencyManagement&gt;    
+          &lt;dependencies&gt;
+              //添加公共依赖包
+          &lt;/dependencies&gt;
+      &lt;/dependencyManagement&gt;
+      子工程仅仅添加依赖包，无需添加版本，版本由父工程继承而来
+      为了进一步便于管理，将所有的版本管理设置在一起，设置为系统属性值
+      &lt;properties&gt;
+          &lt;junit.version&gt;4.9&lt;/junit.version&gt;
+          ……
+      &lt;/properties&gt;
+      引用使用${junit.version}格式进行，只能在依赖范围设置
+  父工程统一管理子工程依赖关系
+      如果所有子工程都需要依赖某些包，父工程可以通过设置依赖，将依赖关系传递到子工程中
+      &lt;dependencies&gt;
+          //添加公共依赖包
+      &lt;/dependencies&gt;
+</code></pre></li>
+<li>聚合<pre><code>  何为聚合？
+      如果我们想一次对多个项目模块进行快速构建，那我们就需要对多个项目模块进行聚合
+      &lt;modules&gt;
+          &lt;module&gt;../子项目名称1&lt;/module&gt;
+          &lt;module&gt;../子项目名称2&lt;/module&gt;
+           &lt;module&gt;../子项目名称3&lt;/module&gt;
+      &lt;/modules&gt;
+</code></pre></li>
+<li>仓库管理<pre><code>  何为Maven仓库？
+      用来统一存储所有Maven共享构建的位置
+  Maven仓库布局
+      根据Maven坐标定义每个构建在仓库中唯一存储路径
+      大致为：groupId/artifactId/version/artifactId-version.packaging
+  仓库的分类
+      本地仓库
+          每个用户只有一个本地仓库,默认在~/.m2/repository/
+      远程仓库
+          中央仓库：Maven默认的远程仓库，不包含版权资源
+              http://repo1.maven.org/maven2
+              http://repo2.maven.org/maven2
+          私服：是一种特殊的远程仓库，它是架设在局域网内的仓库
+              例如nexus
+</code></pre></li>
+</ul>
+<h3 id="Maven私服"><a href="#Maven私服" class="headerlink" title="Maven私服"></a><code>Maven私服</code></h3><ul>
+<li>nexus私服搭建<pre><code>  1.下载nexus.war包，然后拷贝到tomcat下的webapps目录中
+  2.启动tomcat,并访问http://localhost:8080/nexus/
+  3.点击右上角“log in”    ，输入username：admin 和Password：admin123登录
+  4.点击Views/Repositories 中的Repositories
+      Nexus内置仓库说明：
+          （1）Central：该仓库代理Maven中央仓库，其策略为Release，因此只会下载和缓存中央仓库中的发布版本构件。
+          （2）Releases：这是一种策略为Release的宿主类型仓库，用来部署组织内部的发布版本构件。
+          （3）Snapshots：这是一个策略为Snapshot的宿主类型仓库，用来部署组织内部的快照版本构件。
+          （4）3rd party：这是一个策略为Release的宿主类型仓库，用来部署无法从公共仓库获得的第三方发布版本构件。例如oracel的驱动jar。
+          （5）Public Repositories：该仓库组将上述所有策略为Release的仓库聚合并通过一致的地址提供服务。
+  5.创建宿主仓库和代理仓库
+      Hosted：宿主仓库，通常我们会部署自己的构件到这一类型的仓库。 
+          包括3rd party仓库，Releases仓库，Snapshots仓库
+      Proxy：代理仓库，它们被用来代理远程的公共仓库，如maven中央仓库。 
+      Group：仓库组，用来合并多个hosted/proxy仓库，通常我们配置maven依赖仓库组。
+  6.创建仓库组
+      点击Public Repositories仓库，在Configurations栏中选取需要合并的仓库,点击箭头加到左边保存即可
+  7.下载中央仓库Index索引并进行构建搜索（GAV搜索）
+      可自动下载,也可手动添加索引
+      拷贝indexer.zip/central-ctx目录下的的所有文件覆盖到~/sonatype-work/nexus/indexer/central-ctx下
+</code></pre></li>
+<li>nexus私服相关配置<ol>
+<li>配置所有构建均从私服下载(即本地仓库与nexus进行关联)，setting.xml(2个都要改)中配置如下<pre><code> 方法1：
+     &lt;mirrors&gt;&lt;!--私服策略--&gt;
+         &lt;mirror&gt;
+             &lt;id&gt;alimaven&lt;/id&gt;
+             &lt;name&gt;aliyun maven&lt;/name&gt;
+             &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;&lt;!--此处配置所有的构建均从私有仓库中下载 *代表所有，也可以写central --&gt;
+             &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+         &lt;/mirror&gt;
+         &lt;mirror&gt;
+             &lt;id&gt;repo2&lt;/id&gt;
+             &lt;name&gt;repo2 maven&lt;/name&gt;
+             &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+             &lt;url&gt;http://repo2.maven.org/maven2&lt;/url&gt;
+         &lt;/mirror&gt;
+     &lt;/mirrors&gt;
+ 方法2：
+     &lt;profiles&gt;
+         &lt;profile&gt;
+             &lt;id&gt;nexus&lt;/id&gt;
+             &lt;!—所有请求均通过镜像 --&gt;
+             &lt;repositories&gt;
+                 &lt;repository&gt;
+                     &lt;id&gt;central&lt;/id&gt;
+                     &lt;url&gt;&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+                     &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;
+                     &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;
+                 &lt;/repository&gt;
+             &lt;/repositories&gt;
+             &lt;pluginRepositories&gt;
+                 &lt;pluginRepository&gt;
+                     &lt;id&gt;central&lt;/id&gt;
+                     &lt;url&gt;&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+                     &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;
+                     &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;
+                 &lt;/pluginRepository&gt;
+             &lt;/pluginRepositories&gt;
+         &lt;/profile&gt;
+     &lt;/profiles&gt;
+     &lt;activeProfiles&gt;&lt;!--配置激活,指定profile才生效起作用--&gt;
+         &lt;activeProfile&gt;nexus&lt;/activeProfile&gt;
+     &lt;/activeProfiles&gt;
+</code></pre></li>
+<li>(如项目不上传到私服可省略)部署构建到Nexus，包含Release和Snapshot， 一般在父工程中的根目录pom.xml中配置<pre><code> &lt;distributionManagement&gt; 
+     &lt;repository&gt; 
+         &lt;id&gt;releases&lt;/id&gt; 
+         &lt;name&gt;Internal Releases&lt;/name&gt; 
+         &lt;url&gt;http://localhost:8000/nexus/content/repositories/releases/&lt;/url&gt; 
+     &lt;/repository&gt; 
+     &lt;snapshotRepository&gt; 
+         &lt;id&gt;snapshots&lt;/id&gt; 
+         &lt;name&gt;Internal Snapshots&lt;/name&gt; 
+         &lt;url&gt;http://localhost:8000/nexus/content/repositories/snapshots/&lt;/url&gt; 
+     &lt;/snapshotRepository&gt; 
+ &lt;/distributionManagement&gt;
+</code></pre></li>
+<li>(如不进行步骤2可省略)Nexus的访问权限控制，在setting.xml(2个都要改)中配置如下<pre><code> &lt;servers&gt;
+      &lt;server&gt;
+          &lt;id&gt;releases&lt;/id&gt;
+         &lt;username&gt;admin&lt;/username&gt;
+         &lt;password&gt;admin123&lt;/password&gt;
+     &lt;/server&gt;
+     &lt;server&gt;
+         &lt;id&gt;snapshots&lt;/id&gt;
+         &lt;username&gt;admin&lt;/username&gt;
+         &lt;password&gt;admin123&lt;/password&gt;
+     &lt;/server&gt;
+ &lt;/servers&gt;
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>项目管理工具之Maven</p>
+    <p><span>文章字数:</span><span class="post-count">3.3k</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
+    <p><span>发布时间:</span>2019-03-14, 17:44:01</p>
+    <p><span>最后更新:</span>2019-04-04, 19:58:16</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/st-maven.html" title="项目管理工具之Maven">https://lvzhiqiang.top/2019/st-maven.html</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: location.pathname,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Tujide.lv</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#java','#markdown','#linux','#分布式','#screenshot','#ssh','#eclipse','#git','#html','#css','#javascript','#nodejs','#maven','#ssr','#vps','#shadowsocks','#idea','#hexo',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-bg-img.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+@-webkit-keyframes links {
+    0% {
+        -webkit-transform: rotate(-2deg)
+    }
+    100% {
+        -webkit-transform: rotate(2deg)
+    }
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+
+</html>
