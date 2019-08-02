@@ -455,6 +455,15 @@ div.ac > ul > li:before,
 .icon-reddit:before {
   content: "\e60c";
 }
+.icon-qq:before {
+  content: "\e626";
+}
+.icon-kugou:before {
+  content: "\e6ce";
+}
+.neteasemusic:before {
+  content: "\e607";
+}
 .iconfont-svg {
   width: 1em;
   height: 1em;
@@ -696,6 +705,15 @@ div.ac > ul > li:before,
 .nav-left .icon a.reddit:before {
   content: "\eac6";
 }
+.nav-left .icon a.qq:before {
+  content: "\e626";
+}
+.nav-left .icon a.neteasemusic:before {
+  content: "\e607";
+}
+.nav-left .icon a.kugou:before {
+  content: "\e6ce";
+}
 .nav-left ul {
   margin: 0;
   padding: 0;
@@ -795,7 +813,7 @@ div.ac > ul > li:before,
   user-select: none;
 }
 .nav-right .title-list {
-  margin-left: 0px;
+  margin-left: 0;
   transition: margin-left 0.5s;
 }
 .nav-right .title-list.friend {
@@ -805,7 +823,7 @@ div.ac > ul > li:before,
   height: 65px;
   border-bottom: 1px solid #e5e8ec;
   position: absolute;
-  top: 0px;
+  top: 0;
   width: 100%;
 }
 .nav-right .title-list form .cross {
@@ -823,8 +841,8 @@ div.ac > ul > li:before,
 .nav-right .title-list form .search {
   width: 250px;
   margin-top: 12px;
-  padding: 20px 0px 0px 20px;
-  color: #2eb695;
+  padding: 20px 0 0 20px;
+  color: #383636;
   font-size: 18px;
   font-family: inherit;
   background: inherit;
@@ -872,7 +890,7 @@ div.ac > ul > li:before,
   outline: 0;
 }
 .nav-right .title-list form span #tagsWitchIcon:after {
-  left: 0px;
+  left: 0;
   content: '';
   width: 14px;
   height: 14px;
@@ -1073,7 +1091,7 @@ div.ac > ul > li:before,
 .nav-right .title-list nav a .post-date,
 .nav-right .title-list #local-search-result a .post-date {
   font-size: 15px;
-  margin: 8px 0px;
+  margin: 8px 0;
   padding-right: 3px;
   color: #9aa4af;
   float: right;
@@ -1085,7 +1103,7 @@ div.ac > ul > li:before,
   position: absolute;
 }
 .nav-right .friends-area.friend {
-  margin-left: 0px;
+  margin-left: 0;
 }
 .nav-right .friends-area .friends-title {
   height: 66px;
@@ -1104,6 +1122,10 @@ div.ac > ul > li:before,
 .nav-right .friends-area .friends-title .back-title-list:before {
   cursor: pointer;
   content: "\e968";
+}
+.nav-right .friends-area .friends-content {
+  overflow-y: auto;
+  height: calc(100vh - 66px);
 }
 .nav-right .friends-area .friends-content a {
   line-height: 30px;
@@ -1452,13 +1474,15 @@ div.ac > ul > li:before,
 .post .pjax article figure {
   margin: 0;
   padding: 10px 0;
+  text-align: center;
 }
 .post .pjax article img {
-  max-width: 100%;
+  max-width: 95%;
   -display: block;
   display: inline-block;
 /*margin auto*/
   cursor: zoom-in;
+  padding: 1px;
 }
 .post .pjax article .img_alt {
   text-align: center;
@@ -1623,9 +1647,16 @@ div.ac > ul > li:before,
   background-color: #83b3c1;
   border-radius: 8px;
   font-weight: 700;
-  line-height: 7px;
+  line-height: 22px;
   color: #444;
   font-size: 16px;
+}
+.post .article_copyright .copy-title {
+  color: #000;
+  margin-right: 10px;
+}
+.post .article_copyright>p {
+  margin: 0;
 }
 .post .article_copyright a {
   color: #595f67;
@@ -1965,7 +1996,10 @@ img.pswp__img {
   .nav-right .title-list nav a .post-title {
     width: calc(100vw - 32px);
   }
-  .nav-right .friends-content ul {
+  .nav-right .friends-area .friends-content {
+    height: calc(100vh - 232px);
+  }
+  .nav-right .friends-area .friends-content ul {
     margin-left: 30px;
   }
   .nav-right nav a .post-title {
@@ -2001,7 +2035,7 @@ img.pswp__img {
     font-size: 1.6em;
   }
   .post .article_copyright {
-    font-size: 8px;
+    font-size: 14px;
   }
   .full-toc .full {
     top: 0px;
