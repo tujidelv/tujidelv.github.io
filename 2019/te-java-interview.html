@@ -6,17 +6,17 @@
   <meta name="keywords" content=" java ">
   <meta name="description" content="Java常见面试题 | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Tujidelv的技术小窝">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://lvzhiqiang.top/categories/index.html">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
 <meta property="og:site_name" content="Tujidelv Code">
-<meta property="og:description" content="Tujidelv的技术小窝">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-28T12:22:45.071Z">
+<meta property="og:updated_time" content="2018-12-04T10:24:59.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Tujidelv的技术小窝">
+<meta name="twitter:title" content="关于&amp;留言板">
+<meta name="twitter:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 
 
 <link rel="icon" href="/img/favicon.gif">
@@ -613,7 +613,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-19 00:15:41">2019-08-18 16:46</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-19 00:22:58">2019-08-18 16:46</time>
         
     </div>
     <div class="article-meta">
@@ -679,51 +679,48 @@
       编译时异常：非RuntimeException,必须要处理,否则编译不通过
           IOException、SQLException
 </code></pre></li>
-<li><p>throw、throws的区别</p>
-<pre><code>  throw：
+<li>throw、throws的区别<pre><code>  throw：
       在方法体中,后面跟的是异常对象,并且只能是一个
       throw抛出的是一个异常对象,说明这里肯定有一个异常产生了
   throws：
       在方法声明上,后面跟的是异常的类名,可以是多个
       throws是声明方法有异常,是一种可能性,这个异常并不一定会产生    
-</code></pre><ul>
+</code></pre></li>
 <li><p>final、finally、finalize的区别</p>
-<pre><code>final：最终的意思,可以修饰类,变量,方法
-    修饰类,该类不能被继承;修饰变量,该变量常量,不能被重新赋值;修饰方法,该方法不能被重写
-finally：是异常处理的一种机制,用来保护重点代码一定要被执行,例如关闭资源,释放锁等 
-    一般来说,代码肯定会执行,特殊情况,例如在执行finally之前jvm退出了
-finalize：是Object类的一个方法,会在垃圾回收对象前调用,来释放资源,每个对象的finalize方法只会被GC调用一次
-    GC根据GCroot算法进行来分析对象的可达性来判断对象是否存活,如果不可达被判定为垃圾对象后,会先判断该对象是否覆盖finalize方法,
-    如果没有覆盖说明对象不需要经过特殊处理,可以直接回收,否则会将该对象放入一个F-Queue队列中,会被一个低优先级的对列调用,再次进行
-    可达性分析,来判断是否复活还是回收.不建议使用,容易引起挂起和死锁.
+<pre><code>  final：最终的意思,可以修饰类,变量,方法
+      修饰类,该类不能被继承;修饰变量,该变量常量,不能被重新赋值;修饰方法,该方法不能被重写
+  finally：是异常处理的一种机制,用来保护重点代码一定要被执行,例如关闭资源,释放锁等 
+      一般来说,代码肯定会执行,特殊情况,例如在执行finally之前jvm退出了
+  finalize：是Object类的一个方法,会在垃圾回收对象前调用,来释放资源,每个对象的finalize方法只会被GC调用一次
+      GC根据GCroot算法进行来分析对象的可达性来判断对象是否存活,如果不可达被判定为垃圾对象后,会先判断该对象是否覆盖finalize方法,
+      如果没有覆盖说明对象不需要经过特殊处理,可以直接回收,否则会将该对象放入一个F-Queue队列中,会被一个低优先级的对列调用,再次进行
+      可达性分析,来判断是否复活还是回收.不建议使用,容易引起挂起和死锁.
 
 </code></pre></li>
-<li>异常处理原则<pre><code>尽量捕获特定异常,来快速定位问题,而不是捕获通用异常
-不要生吞异常,而不是捕获后什么都不做
-只捕获有必要的代码段,捕获会耗资源
-不要使用异常处理块控制代码流程
+<li>异常处理原则<pre><code>  尽量捕获特定异常,来快速定位问题,而不是捕获通用异常
+  不要生吞异常,而不是捕获后什么都不做
+  只捕获有必要的代码段,捕获会耗资源
+  不要使用异常处理块控制代码流程
 </code></pre></li>
-<li>string、sringbuffer、stringbuilder的区别<pre><code>String：长度和内容不可变的,内部被final修饰,缓存于字符串常量池中,底层结构是char[]
-    String对象是否真的不可变?可通过反射进行改变
-        String s = &quot;Hello World&quot;; //创建字符串&quot;Hello World&quot;,并赋给引用变量s
-        System.out.println(&quot;s=&quot; + s);
-        Field valueFieldOfString = String.class.getDeclaredField(&quot;value&quot;); //获取String类的value字段
-        valueFieldOfString.setAccessible(true); //改变value属性的访问权限
-        char[] value = (char[]) valueFieldOfString.get(s); //获取s对象上的value属性值
-        value[5] = &#39;_&#39;; //改变value所应用的数组中的第5个字符
-        System.out.println(&quot;s=&quot; + s);
-StringBuffer、StringBuilder：长度和内容可变的,内部被final修饰,继承自AbstractStringBuilder,默认大小是16,可指定,底层结构是char[]
-    append操作：会先判断char[]的总长度是否能容纳新添加的字符串,不够的话会进行扩容,默认扩容至是&quot;value.length * 2 + 2&quot;,如果该大小
-    小于最终需要的长度,则将后者设为需要扩容的长度,调用System.arraycopy方法来实现数组拷贝
-应用场景：
-    String：适用于内容不经常发生改变的场景,例如常量声明,少量的字符串拼接操作等
-    StringBuffer：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行多线程环境下,例如XML解析,HTTP参数解析与封装等
-        线程安全,效率低,采用synchronized
-    StringBuilder：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行单线程环境下,例如SQL语句拼装,JSON封装等
-        线程不安全,效率高
+<li>string、sringbuffer、stringbuilder的区别<pre><code>  String：长度和内容不可变的,内部被final修饰,缓存于字符串常量池中,底层结构是char[]
+      String对象是否真的不可变?可通过反射进行改变
+          String s = &quot;Hello World&quot;; //创建字符串&quot;Hello World&quot;,并赋给引用变量s
+          System.out.println(&quot;s=&quot; + s);
+          Field valueFieldOfString = String.class.getDeclaredField(&quot;value&quot;); //获取String类的value字段
+          valueFieldOfString.setAccessible(true); //改变value属性的访问权限
+          char[] value = (char[]) valueFieldOfString.get(s); //获取s对象上的value属性值
+          value[5] = &#39;_&#39;; //改变value所应用的数组中的第5个字符
+          System.out.println(&quot;s=&quot; + s);
+  StringBuffer、StringBuilder：长度和内容可变的,内部被final修饰,继承自AbstractStringBuilder,默认大小是16,可指定,底层结构是char[]
+      append操作：会先判断char[]的总长度是否能容纳新添加的字符串,不够的话会进行扩容,默认扩容至是&quot;value.length * 2 + 2&quot;,如果该大小
+      小于最终需要的长度,则将后者设为需要扩容的长度,调用System.arraycopy方法来实现数组拷贝
+  应用场景：
+      String：适用于内容不经常发生改变的场景,例如常量声明,少量的字符串拼接操作等
+      StringBuffer：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行多线程环境下,例如XML解析,HTTP参数解析与封装等
+          线程安全,效率低,采用synchronized
+      StringBuilder：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行单线程环境下,例如SQL语句拼装,JSON封装等
+          线程不安全,效率高
 </code></pre></li>
-</ul>
-</li>
 <li>HashMap的原理实现<pre><code>  底层数据结构为哈希表/散列表,是一个元素为链表的数组,链表中的Node包括hash,key,value,next
   hashmap是非线程安全的,因为put的时候有个扩容操作,会有一个复制数组的操作,有可能会操作旧的数组
   jdk8对hashmap加入了红黑树,在链表的长度&gt;8的时候会进行一个红黑树的转换
@@ -839,7 +836,7 @@ StringBuffer、StringBuilder：长度和内容可变的,内部被final修饰,继
     <p><span class="copy-title">文章字数:</span><span class="post-count">3.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2019-08-18, 16:46:58</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-19, 00:15:41</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-19, 00:22:58</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/te-java-interview.html" title="Java常见面试题">https://lvzhiqiang.top/2019/te-java-interview.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
