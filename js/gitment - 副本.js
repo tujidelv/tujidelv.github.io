@@ -938,7 +938,6 @@ var Gitment =
                     this.isComputing = false;
                     return res;
                 };
-                ;
                 ComputedValue.prototype.observe = function (listener, fireImmediately) {
                     var _this = this;
                     var firstTime = true;
@@ -968,7 +967,6 @@ var Gitment =
                 ComputedValue.prototype.valueOf = function () {
                     return toPrimitive(this.get());
                 };
-                ;
                 ComputedValue.prototype.whyRun = function () {
                     var isTracking = Boolean(globalState.trackingDerivation);
                     var observing = unique(this.isComputing ? this.newObserving : this.observing).map(function (dep) {
@@ -1649,7 +1647,7 @@ var Gitment =
                 ObservableArrayAdministration.prototype.setArrayLength = function (newLength) {
                     if (typeof newLength !== "number" || newLength < 0) throw new Error("[mobx.array] Out of range: " + newLength);
                     var currentLength = this.values.length;
-                    if (newLength === currentLength) return;else if (newLength > currentLength) {
+                    if (newLength === currentLength) else if (newLength > currentLength) {
                         var newItems = new Array(newLength - currentLength);
                         for (var i = 0; i < newLength - currentLength; i++) {
                             newItems[i] = undefined;

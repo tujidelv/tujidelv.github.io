@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
+    <lastmod>2019-10-29T13:57:15.464Z</lastmod>
+  </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-mac-software.html</loc>
-    <lastmod>2019-10-27T14:14:51.445Z</lastmod>
+    <lastmod>2019-10-29T13:57:15.451Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-mac-basic.html</loc>
     <lastmod>2019-10-27T14:13:54.581Z</lastmod>
@@ -27,9 +30,6 @@
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-ssr-basic.html</loc>
     <lastmod>2019-10-20T12:33:14.866Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
-    <lastmod>2019-10-20T12:33:14.765Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/st-maven.html</loc>
     <lastmod>2019-10-20T12:00:14.405Z</lastmod>

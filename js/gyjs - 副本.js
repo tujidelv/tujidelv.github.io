@@ -384,35 +384,35 @@ function Url(sUrl)
 Url.prototype.getParam = function(sName)
 {
   return (this.bValid && (sName in this.mapParams)) ? this.mapParams[sName] : null;
-}
+};
 
 Url.getRegexp = function()
 {
   var regexp = /(https?)\:\/\/([\w\-]+(?:\.[\w\-]+)+)(?:\:(\d+))?(\/[\w\-\/\.\+\(\)\*%!@~=\,\:]*)?(\?(?:[\w\-]+=[\w\-\/\.\+\(\)\*%!@~\,\:]*)?(?:&[\w\-]+=[\w\-\/\.\+\(\)\*%!@~\,\:]*)*)?(#[\w\-\/\.\+\(\)\*%!@~=\,\:&]*)?/i;
   return regexp;
-}
+};
 
 Url.getRegexpStr = function(needEscape)
 {
   var str = Url.getRegexp().toString();
   str = str.substring(1, str.length - 2);
   return needEscape ? str.replace(/&/g, "&amp;") : str;
-}
+};
 
 Url.getDomain = function()
 {
   return "program-think.blogspot.com";
-}
+};
 
 Url.isMirror = function()
 {
   return !(location.hostname.match(/^program\-think\.blogspot\.(?:\w+|com\.\w+|co\.\w+)$/i));
-}
+};
 
 Url.getFeedUrlPrefix = function()
 {
   return "/feeds";
-}
+};
 
 Url.preprocess = function(sText, sExcludeChars, func)
 {
@@ -424,7 +424,7 @@ Url.preprocess = function(sText, sExcludeChars, func)
   var regex = new RegExp("(^|"+sExcludeChars+")" + "("+sUrlPattern+")" + "($|"+sExcludeChars+")", "g");
   sText = sText.replace(regex, func);
   return sText.replace(regex, func);  // to process overlap
-}
+};
 
 
 

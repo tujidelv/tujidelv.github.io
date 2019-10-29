@@ -792,6 +792,10 @@ div.ac > ul > li:before,
 .nav-left .left-bottom a.about {
   display: inline-block;
 }
+.nav-left .left-bottom a.about.hasFriend {
+  border-right: 1px solid #fff;
+  width: 49%;
+}
 .nav-left .left-bottom a.friends {
   display: inline-block;
 }
@@ -1272,7 +1276,7 @@ div.ac > ul > li:before,
   height: 100%;
   font-size: 18px;
   line-height: 1.6;
-  --background: #fff;
+  -background: #fff;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -1284,20 +1288,6 @@ div.ac > ul > li:before,
   color: #fff;
   background: #33caa6;
   text-shadow: none;
-}
-.post {
-  --background: url("/img/article-content-bg-img.jpg");
-  -background-color: #050a10;
-  --background-attachment: fixed;
-  --background-repeat: no-repeat;
-  --background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  --background-size: cover;
-  -height: 100%;
-  -left: 0;
-  -top: 0;
-  -z-index: -1;
 }
 .post .pjax {
   max-width: 1000px;
@@ -1478,9 +1468,8 @@ div.ac > ul > li:before,
 }
 .post .pjax article img {
   max-width: 95%;
-  -display: block;
   display: inline-block;
-/*margin auto*/
+  margin: auto;
   cursor: zoom-in;
   padding: 1px;
 }
@@ -1510,6 +1499,17 @@ div.ac > ul > li:before,
 }
 .post .pjax article p {
   margin: 0 0 16px;
+}
+.post .pjax article .inner-toc {
+  border: #e2dede solid 1px;
+  border-radius: 10px;
+}
+.post .pjax article .inner-toc h2 {
+  border-bottom: none;
+  margin: 10px 20px;
+}
+.post .pjax article .inner-toc ol {
+  list-style: none;
 }
 .post .pjax article ol>li {
   margin-bottom: 10px;
@@ -1935,8 +1935,12 @@ img.pswp__img {
     color: #fff;
     display: block;
     z-index: 100;
-    bottom: 5px;
-    right: 30px;
+    bottom: 32px;
+    right: 0;
+    border: solid 1px;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    line-height: 20px;
   }
   .nav-left .left-bottom {
     top: 108px;
@@ -1949,6 +1953,10 @@ img.pswp__img {
     border-top: none;
     border-right: none !important;
     display: inline;
+    margin-right: 126px;
+  }
+  .nav-left .left-bottom a.about.hasFriend {
+    margin-right: 0;
   }
   .nav-left .left-bottom a.about:after {
     content: '·';
