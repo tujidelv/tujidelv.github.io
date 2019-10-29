@@ -352,7 +352,7 @@ $(".full-toc .full,.semicircle").click(function (e) {
             $(".full-toc .full").addClass('fullscreen').dequeue();
         });
 
-        $(".post .pjax").css("max-width","1080px");
+        $(".post .pjax").css("max-width",$(window).width() * 0.75);
     } else {
         $(".full-toc .full").children().removeClass("max").addClass("min");
         $(".nav, .hide-list").removeClass("fullscreen");
@@ -360,7 +360,7 @@ $(".full-toc .full,.semicircle").click(function (e) {
             $(".full-toc .full").removeClass('fullscreen').dequeue();
         });
 
-        $(".post .pjax").css("max-width","780px");
+        $(".post .pjax").css("max-width","1000px");
     }
 });
 
