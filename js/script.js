@@ -356,11 +356,16 @@ $(".full-toc .full,.semicircle").click(function (e) {
     } else {
         $(".full-toc .full").children().removeClass("max").addClass("min");
         $(".nav, .hide-list").removeClass("fullscreen");
+
+        if($(window).innerWidth() <= 1468){
+            $(".post .pjax").css("max-width","780px");
+        }else{
+            $(".post .pjax").css("max-width","1000px");
+        }
+
         content.delay(300).queue(function () {
             $(".full-toc .full").removeClass('fullscreen').dequeue();
         });
-
-        $(".post .pjax").css("max-width","1000px");
     }
 });
 
