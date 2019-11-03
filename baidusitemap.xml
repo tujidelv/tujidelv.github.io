@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
-    <lastmod>2019-10-29T13:57:15.464Z</lastmod>
+    <loc>https://lvzhiqiang.top/2019/os-mac-basic.html</loc>
+    <lastmod>2019-11-03T12:21:29.764Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-mac-software.html</loc>
-    <lastmod>2019-10-29T13:57:15.451Z</lastmod>
+    <lastmod>2019-11-03T09:43:03.233Z</lastmod>
   </url>  <url>
-    <loc>https://lvzhiqiang.top/2019/os-mac-basic.html</loc>
-    <lastmod>2019-10-27T14:13:54.581Z</lastmod>
+    <loc>https://lvzhiqiang.top/2019/te-personal-development.html</loc>
+    <lastmod>2019-11-02T10:13:14.228Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2019/te-investment-financing.html</loc>
+    <lastmod>2019-11-02T10:13:14.208Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-git-basic.html</loc>
+    <lastmod>2019-11-02T10:13:14.176Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/git-navi.html</loc>
+    <lastmod>2019-11-02T10:04:00.874Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
+    <lastmod>2019-10-29T13:57:15.464Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-linux-packages-install.html</loc>
     <lastmod>2019-10-27T13:44:23.845Z</lastmod>
@@ -19,14 +31,8 @@
     <loc>https://lvzhiqiang.top/2019/os-linux-script-powerboot.html</loc>
     <lastmod>2019-10-27T13:44:23.654Z</lastmod>
   </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/git-navi.html</loc>
-    <lastmod>2019-10-26T07:20:28.413Z</lastmod>
-  </url>  <url>
     <loc>https://lvzhiqiang.top/2019/dl-java-interview.html</loc>
     <lastmod>2019-10-20T13:19:13.581Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2019/te-investment-financing.html</loc>
-    <lastmod>2019-10-20T13:19:13.478Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-ssr-basic.html</loc>
     <lastmod>2019-10-20T12:33:14.866Z</lastmod>
@@ -93,9 +99,6 @@
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-git-workflow.html</loc>
     <lastmod>2018-12-01T09:56:49.394Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-git-basic.html</loc>
-    <lastmod>2018-12-01T09:44:43.760Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/af-nodejs.html</loc>
     <lastmod>2018-12-01T08:46:57.200Z</lastmod>

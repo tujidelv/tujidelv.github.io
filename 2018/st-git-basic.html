@@ -138,7 +138,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(33)</small></div></li>
+    <li><div class="all active">全部文章<small>(34)</small></div></li>
     
         
             
@@ -174,7 +174,7 @@
     
         
             
-            <li><div data-rel="经典示例">经典示例<small>(2)</small></div>
+            <li><div data-rel="经典示例">经典示例<small>(3)</small></div>
                 
             </li>
             
@@ -190,8 +190,8 @@
     </div>
     <div><a class="about  hasFriend  site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="33">
-<input type="hidden" id="yelog_site_word_count" value="130.1k">
+<input type="hidden" id="yelog_site_posts_number" value="34">
+<input type="hidden" id="yelog_site_word_count" value="133.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -275,11 +275,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">java</a>
+        <a href="javascript:" class="color4">markdown</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">markdown</a>
+        <a href="javascript:" class="color5">java</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -303,6 +303,10 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">鸡汤</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">html</a>
     </li>
     
@@ -323,11 +327,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">maven</a>
+        <a href="javascript:" class="color5">投资理财</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">投资理财</a>
+        <a href="javascript:" class="color1">maven</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -363,6 +367,13 @@
             <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
             <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
         </a>
+        
+        
+        <a class="经典示例 " href="/2019/te-personal-development.html" data-tag="鸡汤" data-author="">
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
         
         
         <a class="操作系统 " href="/2019/os-mac-software.html" data-tag="mac" data-author="">
@@ -626,12 +637,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-12-01 17:44:43">2018-12-01 17:25</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-02 18:13:14">2018-12-01 17:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:3.5k</span>
+        <span>字数:3.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -769,6 +780,7 @@
   - git commit -m &quot;wrote a readme file&quot;      //告诉git把文件提交到仓库的分支（-m 后面输入的是本次提交的说明），一次可提交多个文件
       - 实际上就是一次性把暂存区的所有修改提交到分支（master）
   - git status      //查看工作区/暂存区的状态
+      - git status -s    //返回一个简单版的 git status。我设置这个命令为默认 git status 来减少噪音。
   - git diff [FILE]      //如果git status提示有文件被修改，可以用此命令查看指定文件修改了哪些内容，显示的格式是Unix通用的diff格式
       - 比较的是版本库（暂存区和分支中的任意一个）与工作区同名文件相比是否相同，而git diff --cached比较的是暂存区有无内容
       - git diff HEAD [FILE]      //将工作区中的文件和本地库历史记录比较 
@@ -778,6 +790,7 @@
   - git reset HEAD &lt;FILE&gt;...      //撤销此文件在暂存区的修改，回退到工作区
       - git reset HEAD *      //撤销暂存区所有的修改
   - git rm FILE      //当想从版本库中删除文件时，可先在工作区删除，然后调用此命令，再commit
+      - git rm –cached FILE    //只删除远程文件，但是不影响本地文件。这对删除已经推送过的忽略文件记录而且不影响本地文件是非常的方便的。
   - git log      //显示从最近到最远的提交日志。其中commit(快照) id是用SHA1算出的16进制数字
       - 后面加上--pretty=oneline可以精简信息
       - 后面加上--graph可以看到分支合并情况
@@ -793,6 +806,9 @@
       - 当手头工作没有完成时(工作区/暂存区有变动时),先把工作现场git stash隐藏一下,这样git status查看工作区是干净的,然后去修复bug,修复后,再git stash pop,回到份工作现场
       - git stash list      //查看隐藏的工作现场                                    
       - git stash pop      //恢复隐藏的工作现场,同时删除stash内容    
+</code></pre></li>
+<li>其他命令<pre><code>  - git shortlog -sn    //显示提交记录的参与者列表。和GitHub的参与者列表相同。
+  - git reflog    //显示你在本地已完成的操作列表。
 </code></pre></li>
 </ul>
 <h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><img src="/2018/st-git-basic/st-git-basic-003.png" alt="抱歉,图片休息了" title="分支操作流程图"></p>
@@ -932,10 +948,10 @@ $ git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%C
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>Git 札记：基础</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">3.5k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2018-12-01, 17:25:42</p>
-    <p><span class="copy-title">最后更新:</span>2018-12-01, 17:44:43</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-02, 18:13:14</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/st-git-basic.html" title="Git 札记：基础">https://lvzhiqiang.top/2018/st-git-basic.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1018,7 +1034,7 @@ $ git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%C
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#分布式','#java','#markdown','#linux','#screenshot','#ssh','#eclipse','#git','#html','#css','#javascript','#nodejs','#mac','#maven','#投资理财','#idea','#ssr','#vps','#shadowsocks','#hexo',],
+            'data': ['#分布式','#markdown','#java','#linux','#screenshot','#ssh','#eclipse','#git','#鸡汤','#html','#css','#javascript','#nodejs','#mac','#投资理财','#maven','#idea','#ssr','#vps','#shadowsocks','#hexo',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

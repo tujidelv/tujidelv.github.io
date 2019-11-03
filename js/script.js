@@ -349,10 +349,10 @@ $(".full-toc .full,.semicircle").click(function (e) {
         $(".full-toc .full").children().removeClass("min").addClass("max");
         $(".nav, .hide-list").addClass("fullscreen");
         content.delay(200).queue(function () {
+            $(".post .pjax").css("max-width",$(window).width() * 0.75);
             $(".full-toc .full").addClass('fullscreen').dequeue();
         });
-
-        $(".post .pjax").css("max-width",$(window).width() * 0.75);
+        $('.post-toc').addClass('open');
     } else {
         $(".full-toc .full").children().removeClass("max").addClass("min");
         $(".nav, .hide-list").removeClass("fullscreen");
@@ -362,10 +362,12 @@ $(".full-toc .full,.semicircle").click(function (e) {
         }else{
             $(".post .pjax").css("max-width","1000px");
         }
+        $('.post-toc').removeClass('open');
 
         content.delay(300).queue(function () {
             $(".full-toc .full").removeClass('fullscreen').dequeue();
         });
+        content.clearQueue();
     }
 });
 
