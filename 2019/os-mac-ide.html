@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>categories | Tujidelv Code</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="categories | Tujidelv Code">
+  <title>MacOS 系统进阶：开发环境Java + Node + Docker | Tujidelv Code</title>
+  <meta name="keywords" content=" mac ">
+  <meta name="description" content="MacOS 系统进阶：开发环境Java + Node + Docker | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -634,24 +634,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <article id="post-os-mac-ide" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">categories</h1>
+        <h1 class="article-title">MacOS 系统进阶：开发环境Java + Node + Docker</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="操作系统">操作系统</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">mac</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-11-28 20:22:45">2018-11-28 20:22</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-24 18:44:44">2019-11-24 17:20</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -681,7 +693,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK"><span class="toc-text">JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA"><span class="toc-text">IDEA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven"><span class="toc-text">Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle"><span class="toc-text">Gradle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL5-7"><span class="toc-text">MySQL5.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node"><span class="toc-text">Node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -697,7 +709,121 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#正篇">正篇</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#结束语">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录从Windows切换到Mac环境IDE的搭建。</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a><strong>Git</strong></h3><ul>
+<li>官网下载：<a href="http://git-scm.com/download/mac" target="_blank" rel="noopener">http://git-scm.com/download/mac</a></li>
+<li>安装过程和 Windows 没啥区别，都是下一步下一步。</li>
+<li>IDEA对Git的支持很好，也不需要额外配置什么，IDEA的Git操作都很便捷，强烈使用IDEA作为Git的GUI操作工具。</li>
+<li><code>Homebrew方式(推荐)</code>：brew install git</li>
+</ul>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a><strong>JDK</strong></h3><ul>
+<li>官网下载 JDK7：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html</a></li>
+<li>官网下载 JDK8：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+<li>安装过程和 Windows 没啥区别，都是下一步下一步，只是比 Windows 简单，连安装路径都不需要改而已。<pre><code>  # JDK 1.8
+  JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
+  JRE_HOME=$JAVA_HOME/jre
+  PATH=$PATH:$JAVA_HOME/bin
+  CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+  export JAVA_HOME
+  export JRE_HOME
+  export PATH
+  export CLASSPATH
+</code></pre></li>
+<li>卸载<pre><code>  sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+  sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
+  sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk
+</code></pre></li>
+</ul>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a><strong>IDEA</strong></h3><ul>
+<li>官网下载：<a href="http://www.jetbrains.com/idea" target="_blank" rel="noopener">http://www.jetbrains.com/idea</a></li>
+<li>安装过程和 Windows 没啥区别，都是下一步下一步。<pre><code>  如果启动Tomcat的时候报：Permission denied，你则可以：打开终端，进入 Tomcat\bin 目录，然后执行：chmod 777 *.sh
+  如果启动Tomcat之后，控制台乱码了，那你可以尝试下在 Tomcat VM 参数上加上：-Dfile.encoding=UTF-8
+  Git 的路径配置：Preferences -- Version Control -- Git -- Path to Git executable 的值是：/usr/local/git/bin/git
+  如果已经安装了zsh，终端路径可以改成zsh的，配置方法在 Preferences -- Tools -- Terminal -- Shell path 的值改为是：/bin/zsh
+</code></pre></li>
+<li>IDEA在Mac下的配置文件保存路径<pre><code>  下面内容中：XXXXXX，表示 IntelliJ IDEA 的版本号，IntelliJ IDEA 的配置目录是跟版本号有关系的。
+  /Users/你的用户名/Library/Application Support/IntelliJIdeaXXXXXX，用于保存安装的插件
+  /Users/你的用户名/Library/Caches/IntelliJIdeaXXXXXX，用于保存缓存、日志、以及本地的版本控制信息（local history 这个功能）
+  /Users/你的用户名/Library/Preferences/IntelliJIdeaXXXXXX，用于保存你的个人配置、授权文件，等价于 Windows 下的 config 目录
+</code></pre></li>
+</ul>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a><strong>Maven</strong></h3><ul>
+<li>官网下载：<a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a></li>
+<li>Maven是绿色版的，任何系统都适用。</li>
+<li>安装方式和Windows、Linux没啥本质区别，都是把zip文件夹解压，然后新增几个系统变量，修改Maven配置文件参数。<pre><code>  把Maven解压后，直接把Windows的settings.xml复制过来，修改下该文件本地仓库的路径，其他没啥可以改的了。
+  然后本地仓库的那些依赖包是直接从Windows下拷贝过来的，这个是任何系统下都兼容的，不需要额外处理。
+  最后再用DEA对Maven 配置路径重新做下修改。
+</code></pre><pre><code>  # Maven
+  MAVEN_HOME=/Users/你的用户名/my_software/work_software/maven3.3.9
+  PATH=$PATH:$MAVEN_HOME/bin
+  export MAVEN_HOME
+  export PATH
+</code></pre></li>
+</ul>
+<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a><strong>Gradle</strong></h3><ul>
+<li>官网下载：<a href="https://gradle.org/releases" target="_blank" rel="noopener">https://gradle.org/releases</a></li>
+<li>Gradle和Maven思路是一模一样的。<pre><code>  # Gradle
+  GRADLE_HOME=/Users/youmeek/my_software/work_software/gradle4.2
+  PATH=$PATH:$GRADLE_HOME/bin
+  export GRADLE_HOME
+  export PATH
+</code></pre></li>
+</ul>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a><strong>Docker</strong></h3><ul>
+<li>官网下载：<a href="https://download.docker.com/mac/stable/Docker.dmg" target="_blank" rel="noopener">https://download.docker.com/mac/stable/Docker.dmg</a></li>
+<li>修改register的方式可以参看这篇文章：<a href="http://www.runoob.com/docker/macos-docker-install.html" target="_blank" rel="noopener">http://www.runoob.com/docker/macos-docker-install.html</a></li>
+</ul>
+<h3 id="MySQL5-7"><a href="#MySQL5-7" class="headerlink" title="MySQL5.7"></a><strong>MySQL5.7</strong></h3><ul>
+<li>官网下载：<a href="http://dev.mysql.com/downloads/mysql" target="_blank" rel="noopener">http://dev.mysql.com/downloads/mysql</a></li>
+<li>MySQL5.7版本：<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></li>
+<li>MySQL官网提供的Mac系统的安装包，是下一步下一步安装类型的，安装结束后，会提示你它生成的一个随机密码，你要复制下，等下要用。</li>
+<li>如何修改root密码<pre><code>  打开：系统偏好设置 -- 底部的 MySQL -- 点击：Stop MySQL Server，根据提示输入你的 Mac 用户密码。
+  连接：sudo /usr/local/mysql/bin/mysql -h 127.0.0.1 -u root -P 3306 -p，输入刚刚复制的密码
+  – 修改密码：set password = password(&#39;123456&#39;);
+</code></pre></li>
+<li>MySQL配置文件设置(vim /etc/my.cnf)<pre><code>  [mysql]
+  default-character-set = utf8mb4
+  [mysqld]
+  symbolic-links=0
+  log-error=/var/log/mysql/error.log
+  default-storage-engine = InnoDB
+  collation-server = utf8mb4_unicode_520_ci
+  init_connect = &#39;SET NAMES utf8mb4&#39;
+  character-set-server = utf8mb4
+  lower_case_table_names = 1
+  max_allowed_packet = 50M
+</code></pre></li>
+</ul>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a><strong>Node</strong></h3><ul>
+<li><code>Homebrew方式(推荐，因为避免权限问题)</code>：brew install node<pre><code>  # 卸载
+  brew uninstall node
+  sudo rm -rf /usr/local/share/systemtap
+  sudo rm -rf /usr/local/lib/dtrace/node
+</code></pre></li>
+<li>官网安装包下载：<a href="https://nodejs.org/zh-cn" target="_blank" rel="noopener">https://nodejs.org/zh-cn</a><pre><code>  # 卸载
+  sudo rm -rf /usr/local/{bin/{node,npm,node-debug,node-gyp},include/node*,lib/node_modules/npm,lib/node,share/man/*/node*}
+  sudo rm -rf ~/.npm*
+  sudo rm -rf ~/.node*
+  sudo rm -rf /usr/local/lib/node*
+  sudo rm -rf /usr/local/share/doc/node*
+</code></pre></li>
+<li>使用nrm切换源<pre><code>  安装：npm install -g nrm
+  列表源：nrm ls
+  使用源：nrm use taobao
+</code></pre></li>
+<li>npm安装很容易出现权限相关的问题，遇到了可以类似这样：sudo npm install –unsafe-perm=true –allow-root –global gulp</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://www.youmeek.com/mac-java" target="_blank" rel="noopener">http://www.youmeek.com/mac-java</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>未完待续…</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
     </div>
@@ -708,6 +834,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>MacOS 系统进阶：开发环境Java + Node + Docker</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-24, 17:20:38</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 18:44:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/os-mac-ide.html" title="MacOS 系统进阶：开发环境Java + Node + Docker">https://lvzhiqiang.top/2019/os-mac-ide.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>categories | Tujidelv Code</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="categories | Tujidelv Code">
+  <title>MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim | Tujidelv Code</title>
+  <meta name="keywords" content=" mac ">
+  <meta name="description" content="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -634,24 +634,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
+        <article id="post-os-mac-terminal" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">categories</h1>
+        <h1 class="article-title">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="操作系统">操作系统</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">mac</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2018-11-28 20:22:45">2018-11-28 20:22</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-24 17:32:28">2019-11-24 14:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -681,7 +693,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介iTerm2"><span class="toc-text">简介iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装iTerm2"><span class="toc-text">安装iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用iTerm2"><span class="toc-text">使用iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介Zsh"><span class="toc-text">简介Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Zsh"><span class="toc-text">安装Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Zsh"><span class="toc-text">使用Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介Vim"><span class="toc-text">简介Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Vim"><span class="toc-text">安装Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Vim"><span class="toc-text">使用Vim</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -697,7 +709,244 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#正篇">正篇</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#结束语">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>方便前/后端开发人员更好的通过终端解决问题。</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="简介iTerm2"><a href="#简介iTerm2" class="headerlink" title="简介iTerm2"></a><strong>简介iTerm2</strong></h3><ul>
+<li>iTerm2官网：<a href="https://iterm2.com" target="_blank" rel="noopener">https://iterm2.com</a></li>
+<li>Mac的默认终端Terminal太难用了，需要一个新的终端来代替它，iTerm2 + Zsh就是其中一种方案。</li>
+<li>iTerm2作为后端开发者必须学会的一个技能，不管是为了简化安装一些软件或是处理一些事情，还有工作中的后端程序的软件部署，都会跟 shell 打交道。</li>
+</ul>
+<h3 id="安装iTerm2"><a href="#安装iTerm2" class="headerlink" title="安装iTerm2"></a><strong>安装iTerm2</strong></h3><ol>
+<li>官网下载下来是一个zip压缩包，解压出来有一个.app文件，双击运行即可安装，或是拖到应用程序里面。</li>
+<li>更改配色方案：Preferences-&gt;Profiles-&gt;Colors。<pre><code> 例如设置配色方案为solarized，iTerm2默认是有带的，如果没有则访问：https://github.com/altercation/solarized，
+ 在项目中找到solarized/iterm2-colors-solarized 目录，下面有两个文件：Solarized Dark.itermcolors和Solarized Light.itermcolors，
+ 双击这两个文件就可以把配置文件导入到 iTerm 里了，同时还要再切换到Text标签，把Draw bold text in bold font的勾去掉。
+</code></pre></li>
+</ol>
+<h3 id="使用iTerm2"><a href="#使用iTerm2" class="headerlink" title="使用iTerm2"></a><strong>使用iTerm2</strong></h3><ul>
+<li><code>智能选中</code><ul>
+<li>在iTerm2中，连续双击选中，连续三击选中整行，连续四击智能选中（智能规则可配置），可以识别网址，引号引起的字符串，邮箱地址等。</li>
+<li>在iTerm2中，选中即复制，即任何选中状态的字符串都被放到了系统剪切板中。</li>
+</ul>
+</li>
+<li><code>快速调出窗口(Hotkey Window)</code><ul>
+<li>有时候只是在终端执行几行命令，然后就不再使用它，可是我们还是必须要打开终端，使用完成后关闭它。</li>
+<li>使用iTerm2这个功能只要按快捷键，出来虚化的终端，输入命令，然后再把光标放在其他地方自动就消失了。</li>
+<li>默认iTerm2没有开启此功能，可去设置快捷键：Preferences-&gt;Keys-&gt;Hotkey。</li>
+</ul>
+</li>
+<li><code>常用快捷键</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Command + /</td>
+<td style="text-align:left">按完之后，整个屏幕变成白茫茫的，而光标位置是一个小圆圈清除显示出来</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + f</td>
+<td style="text-align:left">查找，所查找的内容会被自动复制 ,输入查找的部分字符，找到匹配的值按 tab，即可复制，带有补全功能</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + option + e</td>
+<td style="text-align:left">全屏并排展示所有已经打开的标签页，带有可以搜索。</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + Option + b</td>
+<td style="text-align:left">历史回放，类似视频录像的东西，有记录你最近时间内的操作。存放内容设置（Preferences -&gt; Genernal -&gt; Instant Replay）。</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + Option + 数字</td>
+<td style="text-align:left">切换 Window 窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + shift + d</td>
+<td style="text-align:left">水平分屏</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + shift + h</td>
+<td style="text-align:left">查看剪贴板历史，在光标位置下方会出现一列你输入过的历史记录</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + Shift + m</td>
+<td style="text-align:left">可以保存当前位置，之后可以按Command + Shift + j跳回这个位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + shift + alt + w</td>
+<td style="text-align:left">关闭所有窗口</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Command + 方向键</td>
+<td style="text-align:left">切换标签页</td>
+<td style="text-align:left">Control + t</td>
+<td style="text-align:left">交换光标和之前的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + 数字</td>
+<td style="text-align:left">切换到指定数字标签页</td>
+<td style="text-align:left">Control + c</td>
+<td style="text-align:left">结束当前状态，另起一行</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + ;</td>
+<td style="text-align:left">根据(输入的前缀)历史记录自动补全</td>
+<td style="text-align:left">Control + k</td>
+<td style="text-align:left">删除从光标到行尾的内容</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + [ 或 ]</td>
+<td style="text-align:left">切换屏幕</td>
+<td style="text-align:left">Control + w</td>
+<td style="text-align:left">删除光标之前的单词</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + enter</td>
+<td style="text-align:left">进入全屏模式，再按一次返回</td>
+<td style="text-align:left">Control + d</td>
+<td style="text-align:left">删除光标所在位置的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + 鼠标单击</td>
+<td style="text-align:left">可以打开文件/文件夹/链接</td>
+<td style="text-align:left">Control + h</td>
+<td style="text-align:left">删除光标之前的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + n</td>
+<td style="text-align:left">新建新的 Window 窗口</td>
+<td style="text-align:left">Control + y</td>
+<td style="text-align:left">召回最近用命令删除的文字</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + t</td>
+<td style="text-align:left">新建标签页</td>
+<td style="text-align:left">Control + r</td>
+<td style="text-align:left">搜索历史命令</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + w</td>
+<td style="text-align:left">关闭当前标签或是窗口</td>
+<td style="text-align:left">Control + n</td>
+<td style="text-align:left">下一条命令，相当于方向键下</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + d</td>
+<td style="text-align:left">竖直分屏</td>
+<td style="text-align:left">Control + p</td>
+<td style="text-align:left">上一条命令，相当于方向键上</td>
+</tr>
+<tr>
+<td style="text-align:left">Command + r</td>
+<td style="text-align:left">清屏</td>
+<td style="text-align:left">Control + b</td>
+<td style="text-align:left">向后移动，相当于方向键左</td>
+</tr>
+<tr>
+<td style="text-align:left">Control + u</td>
+<td style="text-align:left">清空当前行，无论光标在什么位置</td>
+<td style="text-align:left">Control + f</td>
+<td style="text-align:left">向前移动，相当于方向键右</td>
+</tr>
+<tr>
+<td style="text-align:left">Control + a</td>
+<td style="text-align:left">移动到行首</td>
+<td style="text-align:left">Control + e</td>
+<td style="text-align:left">移动到行尾</td>
+</tr>
+</tbody>
+</table>
+<h3 id="简介Zsh"><a href="#简介Zsh" class="headerlink" title="简介Zsh"></a><strong>简介Zsh</strong></h3><ul>
+<li>Zsh官网：<a href="https://www.zsh.org" target="_blank" rel="noopener">https://www.zsh.org</a></li>
+<li>oh-my-Zsh官网：<a href="http://ohmyz.sh" target="_blank" rel="noopener">http://ohmyz.sh</a></li>
+<li>Zsh和oh-my-Zsh的关系<pre><code>  Mac和一般的Linux发行版默认采用的shell是bash，并不是很好用。
+  Zsh是Shell中的一种，由于Zsh配置门槛有点高(需要专门花时间去了解Zsh)，因为这样，用户也就相对少了。
+  直到有一天oh-my-Zsh的作者诞生，他想要整理出一个配置框架出来，让大家直接使用他的这个公认最好的Zsh配置，省去繁琐的配置过程。
+  所以，oh-my-Zsh 就诞生了，它只是会了让你减少Zsh的配置，然后又可以好好享受Zsh这个Shell。
+</code></pre></li>
+<li>修改终端配置就变成了：vim ~/.zshrc，而不是：vim ~/.bash_profile，同时更新修改后的配置文件也从：变成了：source ~/.zshrc。</li>
+</ul>
+<h3 id="安装Zsh"><a href="#安装Zsh" class="headerlink" title="安装Zsh"></a><strong>安装Zsh</strong></h3><ol>
+<li>安装Git<blockquote>
+<p>$ brew install git</p>
+</blockquote>
+</li>
+<li>安装wget<blockquote>
+<p>$ brew install wget</p>
+</blockquote>
+</li>
+<li>安装Zsh<blockquote>
+<p>$ brew install Zsh</p>
+</blockquote>
+</li>
+<li><p>安装oh-my-Zsh</p>
+<blockquote>
+<p>$ sh -c “$(wget <a href="https://raw.githubusercontent.com/robbyrussell/oh-my-Zsh/master/tools/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/robbyrussell/oh-my-Zsh/master/tools/install.sh</a> -O -)”</p>
+</blockquote>
+<blockquote>
+<p>下载完后，会提示你输入当前登录系统的用户密码，输入完成之后就会从 bash 切换到 Zsh，如果你没有输入密码直接跳过了，<br> 可以运行该命令进行手动切换：chsh -s /bin/Zsh gitnavi(你当前系统用户名),切换完成之后，关掉终端，重新打开终端即可。</p>
+</blockquote>
+</li>
+<li>修改oh-my-Zsh主题、安装Zsh插件(可选)</li>
+</ol>
+<h3 id="使用Zsh"><a href="#使用Zsh" class="headerlink" title="使用Zsh"></a><strong>使用Zsh</strong></h3><ul>
+<li>不区分大小写智能提示，按Tab键进行提示。</li>
+<li>按下tab键显示出所有待选项后，再按一次tab键，即进入选择模式，按tab/shift + tab 切向下/上一个选项，ctrl+f/b/n/p 可以向前后左右切换。</li>
+<li>kill + 空格键 + Tab键，列出运行的进程，要杀哪个进程不需要再知道PID了。<ul>
+<li>zsh提供了让你知道PID的方法：例如输入kill vim，再按下tab，会变成：kill 5643</li>
+</ul>
+</li>
+<li>ls *<em>/</em>，分层级地列出当前目录下所有文件及目录，并递归目录<ul>
+<li>ls *.png 查找当前目录下所有 png 文件</li>
+<li>ls *<em>/</em>.png 递归查找</li>
+</ul>
+</li>
+<li>zsh的目录跳转很智能，你无需输入cd就可直接输入路径即可。比如：..表示后退一级目录，../../表示后退两级，依次类推。</li>
+<li>在命令窗口中输入：d，将列出当前session访问过的所有目录，再按提示的数字即可进入相应目录。</li>
+<li>给man命令增加结果高亮显示，可编辑配置文件：vim ~/.zshrc，增加下面内容<pre><code>  # man context highlight
+  export LESS_TERMCAP_mb=$&#39;\E[01;31m&#39;       # begin blinking
+  export LESS_TERMCAP_md=$&#39;\E[01;38;5;74m&#39;  # begin bold
+  export LESS_TERMCAP_me=$&#39;\E[0m&#39;           # end mode
+  export LESS_TERMCAP_se=$&#39;\E[0m&#39;           # end standout-mode
+  export LESS_TERMCAP_so=$&#39;\E[38;5;246m&#39;    # begin standout-mode - info box
+  export LESS_TERMCAP_ue=$&#39;\E[0m&#39;           # end underline
+  export LESS_TERMCAP_us=$&#39;\E[04;38;5;146m&#39; # begin underline
+</code></pre></li>
+<li>常用插件<pre><code>  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  vim ~/.zshrc，在 plugins 里面换行，分别添加：zsh-autosuggestions，zsh-syntax-highlighting
+</code></pre></li>
+</ul>
+<h3 id="简介Vim"><a href="#简介Vim" class="headerlink" title="简介Vim"></a><strong>简介Vim</strong></h3><p>略</p>
+<h3 id="安装Vim"><a href="#安装Vim" class="headerlink" title="安装Vim"></a><strong>安装Vim</strong></h3><p>brew install vim</p>
+<h3 id="使用Vim"><a href="#使用Vim" class="headerlink" title="使用Vim"></a><strong>使用Vim</strong></h3><p>下载配置：curl <a href="https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc" target="_blank" rel="noopener">https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc</a> &gt; ~/.vimrc</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://www.youmeek.com/mac-iterm2" target="_blank" rel="noopener">http://www.youmeek.com/mac-iterm2</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>未完待续…</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
     </div>
@@ -708,6 +957,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.8k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-24, 14:02:26</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 17:32:28</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/os-mac-terminal.html" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">https://lvzhiqiang.top/2019/os-mac-terminal.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
