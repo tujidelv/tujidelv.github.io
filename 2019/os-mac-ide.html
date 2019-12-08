@@ -6,17 +6,17 @@
   <meta name="keywords" content=" mac ">
   <meta name="description" content="MacOS 系统进阶：开发环境Java + Node + Docker | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="https://lvzhiqiang.top/404.html">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
 <meta property="og:site_name" content="Tujidelv Code">
-<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-28T12:58:15.557Z">
+<meta property="og:updated_time" content="2018-12-04T10:24:59.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404 Not Found：该页无法显示">
-<meta name="twitter:description" content="很抱歉，您所访问的地址并不存在">
+<meta name="twitter:title" content="关于&amp;留言板">
+<meta name="twitter:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：tujide.lv@foxmail.com">
 
 
 <link rel="icon" href="/img/favicon.gif">
@@ -275,11 +275,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">java</a>
+        <a href="javascript:" class="color4">markdown</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">markdown</a>
+        <a href="javascript:" class="color5">java</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -291,11 +291,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">screenshot</a>
+        <a href="javascript:" class="color4">ssh</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">ssh</a>
+        <a href="javascript:" class="color1">screenshot</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -311,6 +311,14 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">nodejs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">html</a>
     </li>
     
@@ -323,19 +331,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">nodejs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">maven</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">投资理财</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">idea</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -348,6 +344,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color2">shadowsocks</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">idea</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -658,7 +658,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-11-24 18:44:44">2019-11-24 17:20</time>
+        创建时间:<time class="date" title="更新时间: 2019-12-08 15:06:50">2019-11-24 17:20</time>
         
     </div>
     <div class="article-meta">
@@ -726,18 +726,14 @@
 <li>官网下载 JDK7：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html</a></li>
 <li>官网下载 JDK8：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
 <li>安装过程和 Windows 没啥区别，都是下一步下一步，只是比 Windows 简单，连安装路径都不需要改而已。<pre><code>  # JDK 1.8
-  JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
-  JRE_HOME=$JAVA_HOME/jre
-  PATH=$PATH:$JAVA_HOME/bin
-  CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-  export JAVA_HOME
-  export JRE_HOME
-  export PATH
-  export CLASSPATH
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+  export JRE_HOME=$JAVA_HOME/jre
+  export PATH=$JAVA_HOME/bin:$PATH
+  export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 </code></pre></li>
 <li>卸载<pre><code>  sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
   sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
-  sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk
+  sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk
 </code></pre></li>
 </ul>
 <h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a><strong>IDEA</strong></h3><ul>
@@ -760,10 +756,8 @@
   然后本地仓库的那些依赖包是直接从Windows下拷贝过来的，这个是任何系统下都兼容的，不需要额外处理。
   最后再用DEA对Maven 配置路径重新做下修改。
 </code></pre><pre><code>  # Maven
-  MAVEN_HOME=/Users/你的用户名/my_software/work_software/maven3.3.9
-  PATH=$PATH:$MAVEN_HOME/bin
-  export MAVEN_HOME
-  export PATH
+  export MAVEN_HOME=/Users/你的用户名/my_software/work_software/maven3.3.9
+  export PATH=$MAVEN_HOME/bin:$PATH
 </code></pre></li>
 </ul>
 <h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a><strong>Gradle</strong></h3><ul>
@@ -840,7 +834,7 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-24, 17:20:38</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-24, 18:44:44</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-08, 15:06:50</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/os-mac-ide.html" title="MacOS 系统进阶：开发环境Java + Node + Docker">https://lvzhiqiang.top/2019/os-mac-ide.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -923,7 +917,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#分布式','#java','#markdown','#linux','#mac','#screenshot','#ssh','#eclipse','#git','#鸡汤','#html','#css','#javascript','#nodejs','#maven','#投资理财','#idea','#ssr','#vps','#shadowsocks','#hexo',],
+            'data': ['#分布式','#markdown','#java','#linux','#mac','#ssh','#screenshot','#eclipse','#git','#鸡汤','#nodejs','#maven','#html','#css','#javascript','#投资理财','#ssr','#vps','#shadowsocks','#idea','#hexo',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
