@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lvzhiqiang.top/2018/st-ssr-basic.html</loc>
+    <lastmod>2020-03-07T11:23:07.495Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
+    <lastmod>2020-03-07T11:23:07.167Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2019/st-maven.html</loc>
+    <lastmod>2020-03-07T09:39:54.398Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2020/st-jrebel-activate.html</loc>
+    <lastmod>2020-03-07T09:39:54.379Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-git-workflow.html</loc>
+    <lastmod>2020-03-07T09:39:54.367Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-git-remote.html</loc>
+    <lastmod>2020-03-07T09:39:54.352Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/st-git-basic.html</loc>
+    <lastmod>2020-03-07T09:39:54.312Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2019/st-datagrip-basic.html</loc>
+    <lastmod>2020-03-07T09:39:54.307Z</lastmod>
+  </url>  <url>
+    <loc>https://lvzhiqiang.top/2018/git-navi.html</loc>
+    <lastmod>2020-01-18T07:33:33.666Z</lastmod>
+  </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-idea-basic.html</loc>
     <lastmod>2019-12-15T12:32:12.241Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-idea-advanced.html</loc>
     <lastmod>2019-12-15T12:32:12.231Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2019/st-datagrip-basic.html</loc>
-    <lastmod>2019-12-15T12:32:12.194Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/git-navi.html</loc>
-    <lastmod>2019-12-15T10:54:17.470Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-mac-ide.html</loc>
     <lastmod>2019-12-08T07:06:50.009Z</lastmod>
@@ -28,17 +49,11 @@
     <loc>https://lvzhiqiang.top/2019/os-mac-software.html</loc>
     <lastmod>2019-11-24T11:16:20.974Z</lastmod>
   </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-git-basic.html</loc>
-    <lastmod>2019-11-24T03:50:32.279Z</lastmod>
-  </url>  <url>
     <loc>https://lvzhiqiang.top/2019/te-personal-development.html</loc>
     <lastmod>2019-11-02T10:13:14.228Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/te-investment-financing.html</loc>
     <lastmod>2019-11-02T10:13:14.208Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-ssr-advanced.html</loc>
-    <lastmod>2019-10-29T13:57:15.464Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2019/os-linux-packages-install.html</loc>
     <lastmod>2019-10-27T13:44:23.845Z</lastmod>
@@ -52,12 +67,6 @@
     <loc>https://lvzhiqiang.top/2019/dl-java-interview.html</loc>
     <lastmod>2019-10-20T13:19:13.581Z</lastmod>
   </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-ssr-basic.html</loc>
-    <lastmod>2019-10-20T12:33:14.866Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2019/st-maven.html</loc>
-    <lastmod>2019-10-20T12:00:14.405Z</lastmod>
-  </url>  <url>
     <loc>https://lvzhiqiang.top/2019/af-redis.html</loc>
     <lastmod>2019-10-20T11:55:25.047Z</lastmod>
   </url>  <url>
@@ -69,9 +78,6 @@
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/os-linux-command.html</loc>
     <lastmod>2019-08-18T08:39:27.177Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-git-remote.html</loc>
-    <lastmod>2019-08-01T04:15:22.212Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/os-linux-basic.html</loc>
     <lastmod>2019-07-31T12:03:00.966Z</lastmod>
@@ -108,9 +114,6 @@
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/st-ashampoo-snap.html</loc>
     <lastmod>2018-12-01T10:23:16.125Z</lastmod>
-  </url>  <url>
-    <loc>https://lvzhiqiang.top/2018/st-git-workflow.html</loc>
-    <lastmod>2018-12-01T09:56:49.394Z</lastmod>
   </url>  <url>
     <loc>https://lvzhiqiang.top/2018/af-nodejs.html</loc>
     <lastmod>2018-12-01T08:46:57.200Z</lastmod>
