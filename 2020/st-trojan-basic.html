@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim | Tujidelv Code</title>
-  <meta name="keywords" content=" mac ">
-  <meta name="description" content="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim | Tujidelv Code">
+  <title>Trojan科学上网：基础 | Tujidelv Code</title>
+  <meta name="keywords" content=" fq ">
+  <meta name="description" content="Trojan科学上网：基础 | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -647,9 +647,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-os-mac-terminal" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-st-trojan-basic" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</h1>
+        <h1 class="article-title">Trojan科学上网：基础</h1>
     
     <div class="article-meta">
         
@@ -657,26 +657,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="操作系统">操作系统</a>
+                <a href="javascript:" data-rel="软件工具">软件工具</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">mac</a>
+            <a href="javascript:" class="color3">fq</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-12-07 19:18:31">2019-11-24 14:02</time>
+        创建时间:<time class="date" title="更新时间: 2020-03-14 17:15:14">2020-03-08 13:40</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.7k</span>
+        <span>字数:1.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -706,7 +706,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正篇"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介iTerm2"><span class="toc-text">简介iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装iTerm2"><span class="toc-text">安装iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用iTerm2"><span class="toc-text">使用iTerm2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介Zsh"><span class="toc-text">简介Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Zsh"><span class="toc-text">安装Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Zsh"><span class="toc-text">使用Zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介Vim"><span class="toc-text">简介Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Vim"><span class="toc-text">安装Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Vim"><span class="toc-text">使用Vim</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Trojan科学上网：基础"><span class="toc-text">Trojan科学上网：基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端"><span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-text">客户端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题总结"><span class="toc-text">常见问题总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-text">结束语</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -722,223 +722,99 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+        <h1 id="Trojan科学上网：基础"><a href="#Trojan科学上网：基础" class="headerlink" title="Trojan科学上网：基础"></a>Trojan科学上网：基础</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><a href="#简介">简介</a></li>
-<li><a href="#正篇">正篇</a></li>
+<li><a href="#部署">部署</a></li>
+<li><a href="#常见问题总结">常见问题总结</a></li>
 <li><a href="#参考链接">参考链接</a></li>
 <li><a href="#结束语">结束语</a></li>
 </ul>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>方便前/后端开发人员更好的通过终端解决问题。</p>
-<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="简介iTerm2"><a href="#简介iTerm2" class="headerlink" title="简介iTerm2"></a><strong>简介iTerm2</strong></h3><ul>
-<li>iTerm2官网：<a href="https://iterm2.com" target="_blank" rel="noopener">https://iterm2.com</a></li>
-<li>Mac的默认终端Terminal太难用了，需要一个新的终端来代替它，iTerm2 + Zsh就是其中一种方案。</li>
-<li>iTerm2是Terminal的替代品，是iTerm的后继产品。iTerm2将终端带入了您从未想过一直想要的功能，使其进入了现代时代。</li>
-</ul>
-<h3 id="安装iTerm2"><a href="#安装iTerm2" class="headerlink" title="安装iTerm2"></a><strong>安装iTerm2</strong></h3><ul>
-<li>方法1：官网下载下来是一个zip压缩包，解压出来有一个.app文件(特殊的文件夹)，双击运行即可安装，或是拖到应用程序里面。</li>
-<li>方法2：直接使用Homebrew进行安装，命令参考<code>brew cask install iterm2</code>。</li>
-</ul>
-<hr>
-<ul>
-<li>更改配色方案：Preferences-&gt;Profiles-&gt;Colors-&gt;Color Presets-&gt;Import。<pre><code>  例如设置配色方案为solarized，iTerm2默认是有带的，如果没有则访问：https://github.com/altercation/solarized，
-  在项目中找到solarized/iterm2-colors-solarized 目录，下面有两个文件：Solarized Dark.itermcolors和Solarized Light.itermcolors，
-  双击这两个文件就可以把配置文件导入到 iTerm 里了，同时还要再切换到Text标签，把Draw bold text in bold font的勾去掉。
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>介绍<pre><code>  Trojan模仿了互联网上最常见的Https协议,以诱骗GFW封锁认为它就是Https,从而不被识别.
+  Trojan处理来自外界的Https请求,如果是合法的,那么为该请求提供服务,否则将该流量转交给Web服务器Nginx,由Nginx为其提供服务.
+  基于这个工作过程可以知道,Trojan的一切表现与Nginx一致,不会引入额外特征,从页达到无法识别的效果.
 </code></pre></li>
-<li>设置背景图片：Preferences-&gt;Profiles-&gt;Window-&gt;Background Image。</li>
-<li>设置字体：Preferences-&gt;Profiles-&gt;Text-&gt;Font-&gt;Chanage Font。</li>
-<li>将iTerm2设为默认终端并设置默认窗口大小。</li>
+<li>Trojan与V2ray ws协议的区别<pre><code>  V2ray是Nginx侦听443,数据-&gt;Nginx-&gt;V2ray;Trojan是自己侦听443,都是伪装成网站.
+</code></pre></li>
+<li>系统要求及脚本介绍<pre><code>  1、系统支持centos7+/debian9+/ubuntu16+
+  2、域名需要解析到VPS并生效。
+  3、脚本自动续签https证书
+  4、自动配置伪装网站，位于/usr/share/nginx/html/目录下，可在脚本中自行替换其中内容
+  5、请不要在任何生产环境使用一键脚本，此条适用于本站所有脚本，专门用来科学上网的VPS可以随意使用。
+  6、trojan不能用CDN，不要开启CDN
+  7、如果你在用谷歌云、阿里云等产品的时候，需要在控制台开放80、443端口。
+  9、可参考ssr文章安装相关的BBR加速
+</code></pre></li>
 </ul>
-<h3 id="使用iTerm2"><a href="#使用iTerm2" class="headerlink" title="使用iTerm2"></a><strong>使用iTerm2</strong></h3><ul>
-<li><code>智能选中</code><ul>
-<li>在iTerm2中，连续双击选中，连续三击选中整行，可以识别网址，引号引起的字符串，邮箱地址等。</li>
-<li>在iTerm2中，选中即复制，即任何选中状态的字符串都被放到了系统剪切板中。</li>
-</ul>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a><code>服务端</code></h3><ol>
+<li><p>下载并执行脚本</p>
+<pre><code>  [root@host ssr]# wget --no-check-certificate https://raw.githubusercontent.com/atrandys/trojan/master/trojan_mult.sh
+  [root@host ssr]# chmod +x trojan_mult.sh
+  [root@host ssr]# ./trojan_mult.sh 2&gt;&amp;1 | tee trojan_mult.log
+</code></pre><p><img src="/2020/st-trojan-basic/st-trojan-basic-001.png" alt="抱歉,图片休息了" title="trojan脚本主界面"></p>
 </li>
-<li><code>快速调出窗口(Hotkey Window)</code><ul>
-<li>有时候只是在终端执行几行命令，然后就不再使用它，可是我们还是必须要打开终端，使用完成后关闭它。</li>
-<li>只要按快捷键就能开启iTerm2热启动功能，出来虚化的终端，输入命令，然后再把光标放在其他地方自动就消失了。</li>
-<li>默认iTerm2没有开启此功能，可去设置快捷键：Preferences-&gt;Keys-&gt;Hotkey。</li>
-</ul>
-</li>
-<li><code>常用快捷键</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Command + Option + 数字</td>
-<td style="text-align:left">切换窗口</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + 方向键</td>
-<td style="text-align:left">切换标签页</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + 数字</td>
-<td style="text-align:left">切换到指定数字标签页</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + d</td>
-<td style="text-align:left">竖直分屏</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + shift + d</td>
-<td style="text-align:left">水平分屏</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + n</td>
-<td style="text-align:left">新建窗口</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + t</td>
-<td style="text-align:left">新建标签页</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + w</td>
-<td style="text-align:left">关闭当前标签或是窗口</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + shift + h</td>
-<td style="text-align:left">查看剪贴板历史</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + ;</td>
-<td style="text-align:left">根据(输入的前缀)历史记录自动补全</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + enter</td>
-<td style="text-align:left">进入全屏模式，再按一次返回</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + 鼠标单击</td>
-<td style="text-align:left">可以打开文件/文件夹/链接</td>
-</tr>
-<tr>
-<td style="text-align:left">Command + r</td>
-<td style="text-align:left">清屏</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Control + k</td>
-<td style="text-align:left">删除光标位置(包括)到行尾之间的内容</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + w</td>
-<td style="text-align:left">删除光标位置(不包括)到行首之前的内容</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + d</td>
-<td style="text-align:left">删除光标所在位置的字符</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + h</td>
-<td style="text-align:left">删除光标所在位置前一个字符</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + y</td>
-<td style="text-align:left">召回最近用命令删除的文字</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + r</td>
-<td style="text-align:left">搜索历史命令</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + c</td>
-<td style="text-align:left">结束当前状态，另起一行</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + u</td>
-<td style="text-align:left">清空当前行，无论光标在什么位置</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + a</td>
-<td style="text-align:left">移动到行首</td>
-</tr>
-<tr>
-<td style="text-align:left">Control + e</td>
-<td style="text-align:left">移动到行尾</td>
-</tr>
-</tbody>
-</table>
-<h3 id="简介Zsh"><a href="#简介Zsh" class="headerlink" title="简介Zsh"></a><strong>简介Zsh</strong></h3><ul>
-<li>Zsh官网：<a href="https://www.zsh.org" target="_blank" rel="noopener">https://www.zsh.org</a><pre><code>  Mac和一般的Linux发行版默认采用的shell是bash，并不是很好用。
-  Zsh是Shell中的一种，由于Zsh配置门槛有点高(需要专门花时间去了解Zsh)，因为这样，用户也就相对少了。
-</code></pre></li>
-<li>oh-my-Zsh官网：<a href="http://ohmyz.sh" target="_blank" rel="noopener">http://ohmyz.sh</a><pre><code>  直到有一天oh-my-Zsh的作者诞生，他想要整理出一个配置框架出来，让大家直接使用他的这个公认最好的Zsh配置，省去繁琐的配置过程。
-  所以，oh-my-Zsh就诞生了，它只是为了让你减少Zsh的配置，然后又可以好好的享受Zsh这个Shell。
-  oh-my-Zsh是基于zsh一个扩展工具集，提供了丰富的扩展功能，包括主题配置，插件机制，已经内置的便捷操作。
-</code></pre></li>
-<li>修改终端配置就变成了：vim ~/.zshrc，而不是：vim ~/.bash_profile。</li>
-</ul>
-<h3 id="安装Zsh"><a href="#安装Zsh" class="headerlink" title="安装Zsh"></a><strong>安装Zsh</strong></h3><ol>
-<li>安装Zsh<pre><code> $ brew install zsh
-</code></pre></li>
-<li>安装wget<pre><code> $ brew install wget
-</code></pre></li>
-<li>安装oh-my-Zsh<pre><code> $ sh -c &quot;$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
-</code></pre> 或者<pre><code> $ sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
-</code></pre> 下载完后，会提示你输入当前登录系统的用户密码，输入完成之后就会从bash切换到zsh，如果你没有输入密码直接跳过了，<br> 可以运行该命令进行手动切换：chsh -s /bin/zsh gitnav(系统用户名),切换完成之后，关掉终端，重新打开终端即可。</li>
-<li>设置oh-my-Zsh主题(可选)<ul>
-<li>主题列表：<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></li>
-<li>oh-my-Zsh自带了一些默认主题，存放在 ~/.oh-my-zsh/themes 目录中。</li>
-<li>固定主题：例如在.zshrc文件中修改(或添加)<code>ZSH_THEME=&quot;agnoster&quot;</code>。</li>
-<li>随机主题：<code>ZSH_THEME=&quot;random&quot;</code>。</li>
-</ul>
-</li>
-<li>安装Zsh插件(可选)<ul>
-<li>oh-my-Zsh自带了一些默认插件，存放在 ~/.oh-my-zsh/plugins 目录中。</li>
-</ul>
+<li><p>选择安装trojan，然后输入解析到VPS的域名并回车（不要带http://），开始安装，然后等待安装完成即可。<br><img src="/2020/st-trojan-basic/st-trojan-basic-002.png" alt="抱歉,图片休息了" title="trojan安装完成"></p>
 </li>
 </ol>
-<h3 id="使用Zsh"><a href="#使用Zsh" class="headerlink" title="使用Zsh"></a><strong>使用Zsh</strong></h3><ul>
-<li>不区分大小写智能提示，按Tab键进行提示。</li>
-<li>按下tab键显示出所有待选项后，再按一次tab键，即进入选择模式，按tab/shift + tab 切向下/上一个选项，ctrl+f/b/n/p 可以向前后左右切换。</li>
-<li>kill + 空格键 + Tab键，列出运行的进程，要杀哪个进程不需要再知道PID了。<ul>
-<li>zsh提供了让你知道PID的方法：例如输入kill vim，再按下tab，会变成：kill 5643</li>
+<hr>
+<p>对于有安装宝塔面板的前提下,一般会事先安装好Nginx,而且已搭建Https的网站,如何已Trojan共存</p>
+<pre><code>方法一：让自己所有搭建的网站取消SSL证书,这样Nginx就能只启动80端口,而不会与Trojan的443端口冲突.只是不能用Https方式访问自己搭建的网站了.
+方法二：可更改Trojan运行在非443端口上,修改相关配置文件(服务端和客户端)即可;然后通过Nginx反向代理Trojan域名到该非443端口上.
+</code></pre><p>—1</p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a><code>客户端</code></h3><ul>
+<li><strong>Windows系统</strong><pre><code>  服务端安装完成后，会展示一条下载地址，复制地址，并下载下来运行即可。
+  如果你真的忘记下载了，那么进入/usr/share/nginx/html/目录下，找到一个乱码文件夹，进入会看到客户端文件，使用sftp下载下来即可。
+  解压缩下载的trojan-cli.zip的压缩包，进入文件夹并开启Trojan服务，Trojan会监听本地1080端口。
+</code></pre><img src="/2020/st-trojan-basic/st-trojan-basic-003.png" alt="抱歉,图片休息了" title="trojan客户端"><pre><code>  1.如果软件支持配置socks5,直接指向127.0.0.1:1080即可.如Firefox,IDM等.
+  2.如果软件不支持配置socks5,可选择v2rayN/sstap/sockscap64/supercap等软件曲线实现代理.
+  3.浏览器插件:谷歌浏览器--SwitchyOmega
+</code></pre><img src="/2020/st-trojan-basic/st-trojan-basic-004.png" alt="抱歉,图片休息了" title="SwitchyOmega设置">    </li>
 </ul>
-</li>
-<li>ls *<em>/</em>，分层级地列出当前目录下所有文件及目录，并递归目录<ul>
-<li>ls *.png 查找当前目录下所有 png 文件</li>
-<li>ls *<em>/</em>.png 递归查找</li>
-</ul>
-</li>
-<li>zsh的目录跳转很智能，你无需输入cd就可直接输入路径即可。比如：..表示后退一级目录，../../表示后退两级，依次类推。</li>
-<li>在命令窗口中输入：d，将列出当前session访问过的所有目录，再按提示的数字即可进入相应目录。</li>
-<li>给man命令增加结果高亮显示，可编辑配置文件：vim ~/.zshrc，增加下面内容<pre><code>  # man context highlight
-  export LESS_TERMCAP_mb=$&#39;\E[01;31m&#39;       # begin blinking
-  export LESS_TERMCAP_md=$&#39;\E[01;38;5;74m&#39;  # begin bold
-  export LESS_TERMCAP_me=$&#39;\E[0m&#39;           # end mode
-  export LESS_TERMCAP_se=$&#39;\E[0m&#39;           # end standout-mode
-  export LESS_TERMCAP_so=$&#39;\E[38;5;246m&#39;    # begin standout-mode - info box
-  export LESS_TERMCAP_ue=$&#39;\E[0m&#39;           # end underline
-  export LESS_TERMCAP_us=$&#39;\E[04;38;5;146m&#39; # begin underline
-</code></pre></li>
-<li>常用插件<pre><code>  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  vim ~/.zshrc，在 plugins 里面换行，分别添加：zsh-autosuggestions，zsh-syntax-highlighting
+<hr>
+<p>►V2rayN客户端：<a href="https://github.com/2dust/v2rayN/releases" target="_blank" rel="noopener">https://github.com/2dust/v2rayN/releases</a><br>►SocksCap64：<a href="https://www.sockscap64.com/sockscap-64-free-download-zh-hans" target="_blank" rel="noopener">https://www.sockscap64.com/sockscap-64-free-download-zh-hans</a><br>►SSTap：<a href="https://www.sockscap64.com/changelog-of-sstap" target="_blank" rel="noopener">https://www.sockscap64.com/changelog-of-sstap</a><br>►SwitchyOmega情景模式：<img src="/2020/st-trojan-basic/dowload.png" width="16" height="16" align="center"><a href="https://pan.baidu.com/s/1nN60uMMsit4XNYS90eASaw" target="_blank" rel="noopener">网盘下载</a> <code>提取码8cp7</code><br>►SwitchyOmega规则GFWList：<a href="https://github.com/gfwlist/gfwlist" target="_blank" rel="noopener">https://github.com/gfwlist/gfwlist</a></p>
+<hr>
+<ul>
+<li><strong>Mac系统</strong><pre><code>  1.如果软件支持配置socks5,直接指向127.0.0.1:1080即可.如Firefox,IDM等.
+  2.如果软件不支持配置socks5,可选择v2rayU/mellow等软件曲线实现代理.
+  3.浏览器插件:谷歌浏览器--SwitchyOmega
 </code></pre></li>
 </ul>
-<h3 id="简介Vim"><a href="#简介Vim" class="headerlink" title="简介Vim"></a><strong>简介Vim</strong></h3><p>略</p>
-<h3 id="安装Vim"><a href="#安装Vim" class="headerlink" title="安装Vim"></a><strong>安装Vim</strong></h3><p>brew install vim</p>
-<h3 id="使用Vim"><a href="#使用Vim" class="headerlink" title="使用Vim"></a><strong>使用Vim</strong></h3><p>下载配置：curl <a href="https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc" target="_blank" rel="noopener">https://raw.githubusercontent.com/wklken/vim-for-server/master/vimrc</a> &gt; ~/.vimrc</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://www.youmeek.com/mac-iterm2" target="_blank" rel="noopener">http://www.youmeek.com/mac-iterm2</a></li>
+<hr>
+<p>►Trojan Mac客户端：<a href="https://github.com/trojan-gfw/trojan/releases" target="_blank" rel="noopener">https://github.com/trojan-gfw/trojan/releases</a><br>►V2rayU客户端：<a href="https://github.com/yanue/V2rayU/releases" target="_blank" rel="noopener">https://github.com/yanue/V2rayU/releases</a></p>
+<hr>
+<ul>
+<li><strong>Android系统</strong><br><img src="/2020/st-trojan-basic/st-trojan-basic-005.png" alt="抱歉,图片休息了" title="Igniter客户端"></li>
 </ul>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>未完待续…</p>
+<hr>
+<p>►Android客户端（选择app-release.apk）：<a href="https://github.com/trojan-gfw/igniter/releases" target="_blank" rel="noopener">https://github.com/trojan-gfw/igniter/releases</a><br>►Trojan项目地址：<a href="https://github.com/trojan-gfw/trojan" target="_blank" rel="noopener">https://github.com/trojan-gfw/trojan</a></p>
+<hr>
+<ul>
+<li><strong>IOS系统</strong></li>
+</ul>
+<p>需下载Shadowrocket软件</p>
+<h2 id="常见问题总结"><a href="#常见问题总结" class="headerlink" title="常见问题总结"></a>常见问题总结</h2><ol>
+<li>Trojan客户端打开无法运行，提示缺少找不到vcruntime140.dll或找不到msvcp140.dll。<pre><code> 原因缺少运行库，下载链接中的两个软件，一个是32位一个是64位，请全部安装即可：
+ https://www.microsoft.com/en-us/download/details.aspx?id=48145
+</code></pre></li>
+<li>如果遇到vcruntime140_1的错误，下载下面的文件放到C:\windows\system32目录下即可<pre><code> 下载140_1.dll：https://github.com/atrandys/trojan/raw/master/vcruntime140_1.dll
+</code></pre></li>
+<li>trojan服务端怎么修改密码<pre><code> trojan服务端配置文件路径如下，如需修改内容，修改以下文件即可。
+ /usr/src/trojan/server.conf
+ 修改完成后，重启trojan服务端即可，同时客户端的密码也要同步修改哦。
+ systemctl restart trojan
+</code></pre></li>
+<li>chrome插件switchyomega无法安装<pre><code> 参考这篇文章，离线安装chrome插件方法：https://www.atrandys.com/2019/2149.html
+</code></pre></li>
+<li>关于申请证书没有成果的处理<pre><code> 可能的原因1：
+     一些原因导致使用nginx申请证书时出错，要么防火墙端口没开放，要么nginx未正常。建议用最纯净的系统安装。
+ 可能的原因2:
+     出现这个问题最可能的原因之一是你的同一个域名多次申请证书，导致let’s encrypt官方的限制，同一域名每周最多5次申请。
+</code></pre></li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.youtube.com/watch?v=eiI2e4gnO4w&amp;t=610s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=eiI2e4gnO4w&amp;t=610s</a><br><a href="https://www.youtube.com/watch?v=0_b34pfmhzA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=0_b34pfmhzA</a></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
@@ -952,12 +828,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.7k</span></p>
+    <p><span class="copy-title">文章标题:</span>Trojan科学上网：基础</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.3k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-24, 14:02:26</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-07, 19:18:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/os-mac-terminal.html" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">https://lvzhiqiang.top/2019/os-mac-terminal.html</a>
+    <p><span class="copy-title">发布时间:</span>2020-03-08, 13:40:47</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-14, 17:15:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/st-trojan-basic.html" title="Trojan科学上网：基础">https://lvzhiqiang.top/2020/st-trojan-basic.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
