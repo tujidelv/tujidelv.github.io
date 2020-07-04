@@ -6,17 +6,17 @@
   <meta name="keywords" content=" BigData ">
   <meta name="description" content="消息中间件之 Kafka | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta name="description" content="Tujidelv的技术小窝">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="https://lvzhiqiang.top/404.html">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="https://lvzhiqiang.top/tags/index.html">
 <meta property="og:site_name" content="Tujidelv Code">
-<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:description" content="Tujidelv的技术小窝">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-28T12:58:15.557Z">
+<meta property="og:updated_time" content="2018-12-01T10:59:15.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404 Not Found：该页无法显示">
-<meta name="twitter:description" content="很抱歉，您所访问的地址并不存在">
+<meta name="twitter:title" content="tags">
+<meta name="twitter:description" content="Tujidelv的技术小窝">
 
 
 <link rel="icon" href="/img/favicon.gif">
@@ -191,7 +191,7 @@
     <div><a class="about  hasFriend  site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="45">
-<input type="hidden" id="yelog_site_word_count" value="159.2k">
+<input type="hidden" id="yelog_site_word_count" value="160.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -343,11 +343,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">BigData</a>
+        <a href="javascript:" class="color5">hexo</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">hexo</a>
+        <a href="javascript:" class="color3">BigData</a>
     </li>
     
     <div class="clearfix"></div>
@@ -710,12 +710,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2020-05-17 21:29:13">2020-04-21 13:40</time>
+        创建时间:<time class="date" title="更新时间: 2020-07-04 19:05:48">2020-04-21 13:40</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:7.5k</span>
+        <span>字数:8.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1101,7 +1101,7 @@ Consumer事务
                   }
               });
           }
-          // 4.关闭资源 会做一些资源的回收,防止没达到send的要求时数据发送不出去
+          // 4.关闭资源 会做一些资源的回收(包括拦截器，分区器等资源的收尾处理)，同时防止没达到send的要求时数据发送不出去
           producer.close();
       }
   }
@@ -1229,32 +1229,27 @@ Consumer事务
   位到每个分区最近提交的offset位置继续消费。要实现自定义存储offset，需要借助ConsumerRebalanceListener，以下
   为示例代码，其中提交和获取offset的方法，需要根据所选的offset存储系统自行实现。
 </code></pre><pre><code class="java">  @Slf4j
-  public class CustomConsumer {
+  public class CustomOffsetConsumer {
       private static Map&lt;TopicPartition, Long&gt; currentOffset = new HashMap&lt;&gt;();
 
-      public static void main(String[] args) {
-          //创建配置信息
-          Properties props = new Properties();
-          //kafka集群，broker-list
-          props.put(&quot;bootstrap.servers&quot;, &quot;144.34.207.84:9093&quot;);
-          //消费者组，只要group.id相同，就属于同一个消费者组
-          props.put(&quot;group.id&quot;, &quot;test&quot;);
-          //关闭自动提交offset
-          props.put(&quot;enable.auto.commit&quot;, &quot;false&quot;);
-          //Key和Value的反序列化类
-          props.put(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);
-          props.put(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);
-          //创建一个消费者
-          KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props);
+      public static void main(String[] args) throws IOException {
           SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-          //消费者订阅主题
+          // 1.读取kafka消费者的配置信息 具体配置参数可参考ConsumerConfig,CommonClientConfigs
+          Properties props = new Properties();
+          props.load(ClassLoader.getSystemResourceAsStream(&quot;newConsumer.properties&quot;));
+          // 1.1重置消费者的offset,可选earliest(最早的)和latest(最新的,默认)
+          props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, &quot;earliest&quot;);
+          // 1.2关闭自动提交offset
+          props.put(&quot;enable.auto.commit&quot;, &quot;false&quot;);
+          // 2.创建consumer对象
+          KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(props);
+          // 3.订阅主题
           consumer.subscribe(Arrays.asList(&quot;test&quot;), new ConsumerRebalanceListener() {
               //该方法会在Rebalance之前调用
               @Override
               public void onPartitionsRevoked(Collection&lt;TopicPartition&gt; partitions) {
                   commitOffset(currentOffset);
               }
-
               //该方法会在Rebalance之后调用
               @Override
               public void onPartitionsAssigned(Collection&lt;TopicPartition&gt; partitions) {
@@ -1266,15 +1261,21 @@ Consumer事务
               }
           });
           while (true) {
-              //消费者拉取数据
+              // 4.拉取数据
               ConsumerRecords&lt;String, String&gt; records = consumer.poll(Duration.ofMillis(1000L));
-              //消费数据
+              // 4.1消费数据
               for (ConsumerRecord&lt;String, String&gt; record : records) {
-                  log.info(&quot;{},offset={},key={},value={}&quot;, sdf.format(new Date()), record.offset(), record.key(), record.value());
-                  currentOffset.put(new TopicPartition(record.topic(), record.partition()), record.offset());
+                  log.info(&quot;分区:{},偏移量:{},值:{}&quot;, record.partition(), record.offset(), record.value());
               }
-              //异步提交
-              commitOffset(currentOffset);
+              // 4.2.b异步提交
+              consumer.commitAsync(new OffsetCommitCallback() {
+                  @Override
+                  public void onComplete(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets, Exception exception) {
+                      if (exception != null) {
+                          log.error(&quot;Commit failed for {}&quot;, offsets, exception);
+                      }
+                  }
+              });
           }
       }
 
@@ -1290,7 +1291,172 @@ Consumer事务
 </code></pre>
 </li>
 </ul>
-<h3 id="自定义Interceptor"><a href="#自定义Interceptor" class="headerlink" title="自定义Interceptor"></a><code>自定义Interceptor</code></h3><h2 id="kafka监控"><a href="#kafka监控" class="headerlink" title="kafka监控"></a>kafka监控</h2><h2 id="flume对接kafka"><a href="#flume对接kafka" class="headerlink" title="flume对接kafka"></a>flume对接kafka</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<h3 id="自定义Interceptor"><a href="#自定义Interceptor" class="headerlink" title="自定义Interceptor"></a><code>自定义Interceptor</code></h3><ul>
+<li>拦截器原理<pre><code>  Producer拦截器(interceptor)是在 Kafka0.10版本被引入的，主要用于实现clients端的定制化控制逻辑。
+  对于producer而言，interceptor使得用户在消息发送前以及producer回调逻辑前有机会对消息做一些定制化需求，比如修改消息等。
+  同时，producer允许用户指定多个interceptor按序作用于同一条消息从而形成一个拦截链(interceptor chain)。
+  Intercetpor的实现接口是org.apache.kafka.clients.producer.ProducerInterceptor，其定义的方法包括：
+  ---
+  (1)configure(configs)：
+  获取配置信息和初始化数据时调用。
+  (2)onSend(ProducerRecord)：
+  该方法封装进KafkaProducer.send方法中，即它运行在用户主线程中。Producer确保在消息被序列化以及计算分区前调用该方法。 
+  用户可以在该方法中对消息做任何操作，但最好保证不要修改消息所属的topic和分区，否则会影响目标分区的计算。
+  (3)onAcknowledgement(RecordMetadata, Exception)：
+  该方法会在消息从RecordAccumulator成功发送到Kafka Broker之后，或者在发送过程中失败时调用。并且通常都是在producer回调逻辑触发
+  之前。onAcknowledgement运行在producer的IO线程中，因此不要在该方法中放入很重的逻辑，否则会拖慢producer的消息发送效率。
+  (4)close：
+  关闭interceptor，主要用于执行一些资源清理工作。
+</code></pre><pre><code>  如前所述，interceptor可能被运行在多个线程中，因此在具体实现时用户需要自行确保线程安全。
+  另外倘若指定了多个interceptor，则producer将按照指定顺序调用它们。
+  并仅仅是捕获每个interceptor可能抛出的异常记录到错误日志中而非在向上传递。
+</code></pre></li>
+<li><p>案例</p>
+<pre><code class="java">  @Slf4j
+  public class CustomInterceptor implements ProducerInterceptor&lt;String, String&gt; {
+      private int errorCounter = 0;
+      private int successCounter = 0;
+
+      @Override
+      public ProducerRecord onSend(ProducerRecord producerRecord) {
+          // 创建一个新的record，把时间戳写入消息体的最前部
+          return new ProducerRecord(producerRecord.topic(),
+                  producerRecord.partition(),
+                  producerRecord.timestamp(),
+                  producerRecord.key(),
+                  System.currentTimeMillis() + &quot;,&quot; + producerRecord.value().toString());
+      }
+
+      @Override
+      public void onAcknowledgement(RecordMetadata recordMetadata, Exception e) {
+          // 统计成功和失败的次数
+          if (e == null) {
+              successCounter++;
+          } else {
+              errorCounter++;
+          }
+      }
+
+      @Override
+      public void close() {
+          // 保存结果
+          log.error(&quot;Successful sent: {}&quot;, successCounter);
+          log.error(&quot;Failed sent: {}&quot;, errorCounter);
+      }
+
+      @Override
+      public void configure(Map&lt;String, ?&gt; map) {
+      }
+  }
+</code></pre>
+<pre><code class="java">  @Slf4j
+  public class InterceptorProducer {
+      // 带回调函数的API
+      public static void main(String[] args) throws IOException {
+          SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+          // 1.读取kafka生产者的配置信息 具体配置参数可参考ProducerConfig,CommonClientConfigs
+          Properties props = new Properties();
+          props.load(ClassLoader.getSystemResourceAsStream(&quot;newProducer.properties&quot;));
+          // 1.1自定义分区器,可选
+          props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, &quot;top.lvzhiqiang.testnewapi.CustomPartitioner&quot;);
+          // 1.2自定义拦截器链,可选
+          List&lt;String&gt; interceptors = new ArrayList&lt;&gt;();
+          interceptors.add(&quot;top.lvzhiqiang.testnewapi.CustomInterceptor&quot;);
+          props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, interceptors);
+          // 2.创建producer对象
+          KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
+          // 3.发送数据
+          for (int i = 0; i &lt; 10; i++) {
+              String value = &quot;testnewapi&quot; + i;
+              // 每条数据都要封装成一个ProducerRecord对象
+              producer.send(new ProducerRecord&lt;&gt;(&quot;test&quot;, value), new Callback() {
+                  // 回调函数，该方法会在Producer收到ack时调用，为异步调用。
+                  // 该方法有两个参数，分别是RecordMetadata和Exception，如果Exception为null，说明消息发送成功，反之说明消息发送失败。
+                  // 注：消息发送失败会自动重试，不需要我们在回调函数中手动重试。
+                  @Override
+                  public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                      if (null == e) {
+                          log.info(&quot;分区:{},偏移量:{},值:{}&quot;, recordMetadata.partition(), recordMetadata.offset(), value);
+                      } else {
+                          log.error(&quot;{}&quot;, sdf.format(new Date()), e);
+                      }
+                  }
+              });
+          }
+          // 4.关闭资源 一定要关闭producer，这样才会调用interceptor的close方法
+          producer.close();
+      }
+  }
+</code></pre>
+</li>
+</ul>
+<h2 id="kafka监控"><a href="#kafka监控" class="headerlink" title="kafka监控"></a>kafka监控</h2><ol>
+<li>修改kafka启动命令<pre><code> 修改kafka-server-start.sh命令中
+     if [ &quot;x$KAFKA_HEAP_OPTS&quot; = &quot;x&quot; ]; then
+         export KAFKA_HEAP_OPTS=&quot;-Xmx512m -Xms512m&quot;
+     fi
+ 为
+     if [ &quot;x$KAFKA_HEAP_OPTS&quot; = &quot;x&quot; ]; then
+         #export KAFKA_HEAP_OPTS=&quot;-Xmx512m -Xms512m&quot;
+         export KAFKA_HEAP_OPTS=&quot;-server -Xms512m -Xmx512m -XX:PermSize=128m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:ParallelGCThreads=8 -XX:ConcGCThreads=5 -XX:InitiatingHeapOccupancyPercent=70&quot;
+         export JMX_PORT=&quot;9999&quot;  
+     fi
+</code></pre></li>
+<li>下载<a href="http://download.kafka-eagle.org" target="_blank" rel="noopener">kafka-eagle</a>程序包<pre><code> wget -P /opt/setups -O kafka-eagle-1.4.7.tar.gz https://github.com/smartloli/kafka-eagle-bin/archive/v1.4.7.tar.gz
+</code></pre></li>
+<li>解压到指定目录<pre><code> # mkdir -pv /usr/program
+ # tar -zxvf kafka-eagle-1.4.7.tar.gz -C /usr/program/
+ # cd /usr/program/kafka-eagle-bin-1.4.7
+ # tar -zxvf kafka-eagle-web-1.4.7-bin.tar.gz -C ../
+ # rm -rf ../kafka-eagle-bin-1.4.7
+</code></pre></li>
+<li>配置环境变量<pre><code> [root@144 ~]# vim /etc/profile.d/my.sh
+ # kafka-eagle
+ KE_HOME=/usr/program/kafka-eagle-web-1.4.7
+ PATH=$KE_HOME/bin:$PATH
+ export KE_HOME
+ export PATH
+ [root@144 ~]# source /etc/profile.d/my.sh
+</code></pre></li>
+<li>给启动文件执行权限<pre><code> # chmod +x ${KE_HOME}/bin/ke.sh
+</code></pre></li>
+<li>修改配置文件<pre><code> [root@144 ~]# vim ${KE_HOME}/conf/system-config.properties
+ ######################################
+ # multi zookeeper&amp;kafka cluster list
+ ######################################
+ kafka.eagle.zk.cluster.alias=cluster1
+ cluster1.zk.list=127.0.0.1:2181
+ ######################################
+ # kafka offset storage
+ ######################################
+ cluster1.kafka.eagle.offset.storage=kafka
+ ######################################
+ # enable kafka metrics
+ ######################################
+ kafka.eagle.metrics.charts=true
+ kafka.eagle.sql.fix.error=false
+ ######################################
+ # kafka jdbc driver address
+ ######################################
+ kafka.eagle.driver=com.mysql.jdbc.Driver
+ kafka.eagle.url=jdbc:mysql://127.0.0.1:3306/kafka-ke?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull
+ kafka.eagle.username=root
+ kafka.eagle.password=000000
+</code></pre></li>
+<li>启动(需要先启动ZK以及KAFKA)<pre><code> [root@144 bin]# ./ke.sh start
+ Version 1.4.7 -- Copyright 2016-2020
+ *******************************************************************
+ * Kafka Eagle Service has started success.
+ * Welcome, Now you can visit &#39;http://ip:8048/ke&#39;
+ * Account:admin ,Password:123456
+ *******************************************************************
+ * &lt;Usage&gt; ke.sh [start|status|stop|restart|stats] &lt;/Usage&gt;
+ * &lt;Usage&gt; https://www.kafka-eagle.org/ &lt;/Usage&gt;
+ *******************************************************************
+</code></pre></li>
+<li>登录页面查看监控数据<br> <img src="/2020/af-mq-kafka/af-mq-kafka-010.png" alt="抱歉,图片休息了"></li>
+</ol>
+<h2 id="flume对接kafka"><a href="#flume对接kafka" class="headerlink" title="flume对接kafka"></a>flume对接kafka</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
 <li>未完待续…</li>
 </ul>
 
@@ -1307,10 +1473,10 @@ Consumer事务
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>消息中间件之 Kafka</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">7.5k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">8.8k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-21, 13:40:23</p>
-    <p><span class="copy-title">最后更新:</span>2020-05-17, 21:29:13</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-04, 19:05:48</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/af-mq-kafka.html" title="消息中间件之 Kafka">https://lvzhiqiang.top/2020/af-mq-kafka.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1393,7 +1559,7 @@ Consumer事务
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#分布式','#java','#markdown','#linux','#mac','#screenshot','#eclipse','#ssh','#互联网工程','#jetbrains','#fq','#鸡汤','#html','#css','#javascript','#nodejs','#maven','#投资理财','#BigData','#hexo',],
+            'data': ['#分布式','#java','#markdown','#linux','#mac','#screenshot','#eclipse','#ssh','#互联网工程','#jetbrains','#fq','#鸡汤','#html','#css','#javascript','#nodejs','#maven','#投资理财','#hexo','#BigData',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
