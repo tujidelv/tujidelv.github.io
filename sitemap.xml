@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lvzhiqiang.top/2020/af-zookeeper.html</loc>
+    
+    <lastmod>2020-07-31T03:32:30.404Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lvzhiqiang.top/2020/af-nosql-hbase.html</loc>
+    
+    <lastmod>2020-07-30T23:51:27.506Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lvzhiqiang.top/2018/st-git-remote.html</loc>
     
     <lastmod>2020-07-04T11:47:50.286Z</lastmod>
@@ -250,13 +264,6 @@
     <loc>https://lvzhiqiang.top/2019/af-mq-rocketmq.html</loc>
     
     <lastmod>2019-04-13T08:53:12.680Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lvzhiqiang.top/2019/af-zookeeper.html</loc>
-    
-    <lastmod>2019-04-08T11:28:53.805Z</lastmod>
     
   </url>
   
