@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NodeJS 札记 | Tujidelv Code</title>
+  <meta name="keywords" content=" nodejs ">
+  <meta name="description" content="NodeJS 札记 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-af-nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">NodeJS 札记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="应用框架">应用框架</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">nodejs</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2018-12-01 16:28</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NodeJS-%E6%9C%AD%E8%AE%B0"><span class="toc-text">NodeJS 札记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="toc-text">发展历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85"><span class="toc-text">模块与包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-text">模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85"><span class="toc-text">包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9D%97"><span class="toc-text">基本模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web%E5%BC%80%E5%8F%91"><span class="toc-text">Web开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NodeJS-札记"><a href="#NodeJS-札记" class="headerlink" title="NodeJS 札记"></a>NodeJS 札记</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2">发展历史</a></li>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E6%A8%A1%E5%9D%97%E4%B8%8E%E5%8C%85">模块与包</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9D%97">基本模块</a></li>
+<li><a href="#Web%E5%BC%80%E5%8F%91">Web开发</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>Node.js 是一个能够在<strong>服务器端</strong>运行 JavaScript 的开源、 跨平台 <strong>JavaScript 运行环境</strong>。</li>
+<li>Node.js 采用 Google 开发的 V8 引擎运行 js 代码，使用<strong>事件驱动</strong>、<strong>非阻塞</strong>和<strong>异步 I&#x2F;O</strong> 模型等技术来提高性能，可优化应用程序的传输量和规模。</li>
+<li>特点：<ul>
+<li>非阻塞、异步的 I&#x2F;O</li>
+<li>事件和回调函数</li>
+<li>单线程（主线程单线程，后台 I&#x2F;O 线程池）</li>
+<li>跨平台</li>
+</ul>
+</li>
+<li>用途：<ul>
+<li>Web 服务 API，比如 REST</li>
+<li>实时多人游戏</li>
+<li>在后台编写单线程的服务器</li>
+<li>基于 Web 的应用</li>
+<li>多客户端的通信，如即时通信</li>
+</ul>
+</li>
+</ul>
+<h2 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h2><ol>
+<li>2004 年，非科班出身的Ryan Dahl(瑞安·达尔)，在纽约的罗彻斯特大学数学系读博士。</li>
+<li>2006 年，也许是厌倦了读博的无聊，他产生了”世界那么大， 我想去看看”的念头，做出了退学的决定，然后一个人来到智利的 Valparaiso 小镇。</li>
+<li>从那起，Ryan Dahl 不知道是否因为生活的关系，他开始学习网站开发了，走上了码农的道路。</li>
+<li>那时候 Ruby on Rails(Ruby 的一个 web 框架)很火，他也不例外的学习了它，后来的 Node.js 也是借鉴了它才写出来的。</li>
+<li>从那时候开始，Ryan Dahl 的生活方式就是接项目，然后去客户的地方工作，在他眼中，拿工资和上班其实就是去那里旅行。</li>
+<li>Ryan Dahl 经过两年的工作后，成为了高性能 Web 服务器的专家，从接开发应用到变成专门帮客户解决性能问题的专家。</li>
+<li>期间他开始写一些开源项目帮助客户解决 Web 服务器的高并发性能问题，他尝试了很多种语言，发现很多语言虽然同时提供了同步 IO 和异步 IO，但是开发人员一旦用了同步 IO，他们就再也懒得写异步 IO 了，所以，最终，Ryan瞄向了 JavaScript。<ul>
+<li>对于高性能，异步 IO、事件驱动是基本原则。</li>
+<li>JavaScript 是单线程执行，根本不能进行同步 IO 操作，所以，JavaScript 的这一“缺陷”导致了它只能使用异步 IO。</li>
+</ul>
+</li>
+<li>选定了开发语言，还要有运行时引擎，他曾考虑过自己写一个，不过明智地放弃了，因为 V8 就是开源的 JavaScript引擎。让 Google 投资去优化 V8，他只负责改造一下拿来用，还不用付钱，这个买卖很划算。</li>
+<li>2009 年 2 月，他开始着手编写 web.js，目的是用 JavaScript 去编写一个高性能的 Web 服务器。</li>
+<li>同年，Ryan Dahl 正式推出了基于JavaScript语言和V8引擎的开源Web服务器项目，命名为Node.js，并在GitHub上发布最初版本。<ul>
+<li>虽然名字很土，但是 Node.js 第一次把 JavaScript 带入到后端服务器开发，加上世界上已经有无数的 JavaScript 开发人员，所以 Node.js 一下子就火了起来。</li>
+<li>在 Node.js 上运行的 JavaScript 相比其他后端开发语言，最大的优势是借助 JavaScript 天生的事件驱动机制加 V8 高性能引擎，使编写高性能 Web 服务轻而易举。</li>
+</ul>
+</li>
+<li>2010 年 1 月，Node.js 的包管理器 npm 诞生。</li>
+<li>2010 年 12 月，Joyent 公司(美国的一个服务器供应商)赞助 Node.js 的开发，Ryan Dahl 加入旗下，全职负责 Node.js。</li>
+<li>2011 年 7 月，Node.js 在微软的帮助下发布了 windows 版本。</li>
+<li>2011 年 11 月，Node.js 超越 Ruby on Rails，称为 GitHub 上关注度最高的项目。</li>
+<li>2012 年 1 月，Ryan Dahl 离开 Node.js 项目。</li>
+<li>2014 年 12 月，Node.js 虽然由社区推动，但幕后一直由 Joyent 公司资助，由于一群开发者对 Joyent 公司的策略不满，Fedor Indutny 从 Node.js 项目 fork 出了 io.js 项目，决定单独发展，但两者实际上是兼容的。</li>
+<li>2015 年 1 月，Joyent 公司感觉势头不对，Node.js感觉要完，于是联合 IBM、Intel、微软成立了 Node.js 基金会。</li>
+<li>2015 年 9 月，正所谓”分久必合，合久必分”，分家后没多久，Joyent 公司表示要和解，于是 io.js 项目又决定回归 Node.js，Node.js 4.0发布。<ul>
+<li>奇数版为开发版本,偶数版为稳定版本。</li>
+</ul>
+</li>
+<li>2016 年，Node.js 6.0 发布。</li>
+<li>2017 年，Node.js 8.0 发布。</li>
+</ol>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>下载与安装<ul>
+<li>在 Git Bash 中输入 <code>node -v</code> 打印版本号即成功。</li>
+</ul>
+</li>
+<li>IDEA 中安装 NodeJS 插件，方便在 js 文件中右键调试代码<ul>
+<li>也可以在 Terminal 中输入 <code>node js文件名</code> 运行js文件。</li>
+<li>可在 <code>settings-&gt;Lnaguages &amp; Frameworks-&gt;Node.js and NPM</code>中勾选<code>Coding assistance for Node.js</code>，来打开 Node.js 的核心代码提示。</li>
+</ul>
+</li>
+</ul>
+<h2 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h2><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
+<li>ECMAScript 标准的缺陷<ul>
+<li>ES5 中没有原生支持模块化，我们只能通过 script 标签引入js文件来实现模块化(ES6 有了)。</li>
+<li>标准库较少。</li>
+<li>没有标准接口。</li>
+<li>缺乏管理系统。</li>
+</ul>
+</li>
+<li>CommonJS 规范<ul>
+<li>CommonJS 规范的提出，主要是为了弥补当前 JavaScript 没有模块化标准的缺陷。</li>
+<li>CommonJS 规范为 JS 指定了一个美好的愿景， 希望 JS 能够在任何地方运行。</li>
+<li>在 Node.js 中为了对模块管理，引入了 CommonJS 规范，<strong>从而大大提高了代码的复用性和可维护性。</strong></li>
+<li>CommonJS 规范对模块的定义十分简单：<strong>模块定义</strong>，<strong>模块引用</strong>，<strong>模块标识</strong>。</li>
+</ul>
+</li>
+<li>模块定义<ul>
+<li><strong>在 Node.js 中，一个 js 文件就是一个模块。</strong></li>
+<li>在 Node.js 中，默认情况下每一个 js 文件中的 js 代码都是独立运行在一个函数中。<ul>
+<li>而不是全局作用域，所以一个模块的中的变量和函数在其他模块中无法访问。</li>
+<li>实际上模块中的代码都是包装在一个函数中执行的，并且在函数执行时，同时传递进了5个实参  <pre><code class="hljs plaintext">var load = function (exports, require, module, __filename, __dirname) &#123;
+    //js文件内容
+    ...
+    // 参数解释
+    exports
+        - 该对象用来将变量或函数暴露到外部
+    require
+        - 函数，用来引入外部的模块
+    module
+        - module 代表的是当前模块本身
+        - exports 就是 module 的属性
+        - 既可以使用 exports 导出，也可以使用 module.exports 导出
+    __filename
+        - 当前模块的完整路径
+    __dirname
+        - 当前模块所在文件夹的完整路径
+&#125;</code></pre>
+  <pre><code class="hljs plaintext">导出变量和函数
+    - 通过exports只能使用.的方式来向外暴露内部变量或函数
+        exports.xxx = xxx
+    - 通过module.exports既可以使用.的形式，也可以直接赋值
+        module.exports.xxx = xxx
+        module.exports = &#123;xxx:xxx,xxx:xxx,...&#125;</code></pre>
+  <pre><code class="hljs javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>.<span class="hljs-property">callee</span> + <span class="hljs-string">&quot;&quot;</span>); <span class="hljs-comment">//这个属性保存的是当前执行的函数对象</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span>); <span class="hljs-comment">//5</span></code></pre></li>
+</ul>
+</li>
+<li>在 Node.js 中有一个全局对象 global，它的作用和网页中 window 类似。<ul>
+<li>在全局中创建的变量都会作为global的属性保存</li>
+<li>在全局中创建的函数都会作为global的方法保存  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;
+b = <span class="hljs-number">20</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">global</span>.<span class="hljs-property">a</span>); <span class="hljs-comment">//undefined</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">global</span>.<span class="hljs-property">b</span>); <span class="hljs-comment">//20</span></code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模块引用<ul>
+<li>在 Node.js 中，<strong>通过 require()函数来引入外部的模块</strong>，该函数会返回一个对象，这个对象代表的是引入的模块。</li>
+<li>格式：var 变量 &#x3D; require(“模块的标识”);</li>
+</ul>
+</li>
+<li>模块标识<ul>
+<li>**模块的标识就是模块的名字(去掉.js后缀的文件名)或文件路径(绝对路径,相对路径)**，也就是传递给 require()方法的参数。</li>
+<li>对于<strong>核心模块</strong>（npm 中下载的模块或者 Node.js 引擎提供的模块），直接使用模块的名字对其进行引入。  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);</code></pre></li>
+<li>对于<strong>文件模块</strong>(用户自己创建的模块)，使用文件的路径来对其进行引入，如果是相对路径必须以.&#x2F;或 ..&#x2F;开头。  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> router = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./router&quot;</span>);</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
+<li>CommonJS 的包规范允许我们将一组相关的模块组合到一起，形成一组完整的工具。<ul>
+<li><strong>将多个模块组合为一个完整的功能，就是一个包。</strong></li>
+<li><strong>增强版的模块。</strong></li>
+</ul>
+</li>
+<li>CommonJS 的包规范由包结构和包描述文件两个部分组成。 <ul>
+<li>包结构：用于组织包中的各种文件  <pre><code class="hljs plaintext">包实际上就是一个压缩文件，解压以后还原为目录。符合规范的目录，应该包含如下文件：    
+    – package.json 包的描述文件，必须的 
+    – bin 二进制可执行文件，一般都是一些工具包中才有
+    – lib js文件 
+    – doc 文档 
+    – test 测试代码</code></pre></li>
+<li>包描述文件：描述包的相关信息，类似于简历，以供外部读取分析  <pre><code class="hljs plaintext">它是一个json格式的文件，在它里面保存了包各种相关的信息，里面不能写注释
+    - name 包名
+    - version 版本
+    - dependencies 依赖
+    - devDependencies 开发依赖
+    - main 包的主文件
+    - maintainers 主要贡献者
+    - keywords 关键字,方便搜索该包</code></pre></li>
+</ul>
+</li>
+<li>NPM(Node Package Manager) ：Node.js 的包管理器<ul>
+<li>CommonJS 包规范是理论，NPM 是其中一种实践。 </li>
+<li>通过 NPM 可以对 Node.js 中的第三方模块进行上传发布、下载安装、搜索和依赖等操作。</li>
+<li><strong>NPM 会在安装完 Node.js 以后，自动安装。</strong></li>
+<li>NPM 常用命令  <pre><code class="hljs plaintext">npm      //帮助说明
+npm -v      //查看npm的版本
+npm version      //查看所有模块的版本
+npm config list      //查看npm配置信息
+npm s/search 包名      //搜索模块包,需联网	
+-------------------------------------
+npm init      //初始化项目（创建package.json）,安装包时根据 package.json 是否存在来识别当前目录是一个包,不然可能会安装到其他地方
+npm i/install      //安装当前项目所依赖的包
+npm i/install 包名      //在当前目录安装指定的包
+npm i/install 包名 --save      //在当前目录安装指定的包并在package.json中添加依赖
+npm i/install 包名 --save-dev      //在当前目录安装指定的包并在package.json中添加开发依赖
+npm i/install 包名 -g       //全局模式安装指定的包（一般都是一些工具）,可以供命令行使用
+npm i/install 包名 -registry=地址      //从镜像源安装
+npm i/install 文件路径      //从本地安装
+npm r/remove 包名      //删除一个模块包
+npm r/remove 包名 --save     //删除一个模块包,并在package.json中移除依赖关系
+npm r/remove 包名 --save-dev     //删除一个模块包,并在package.json中移除开发依赖关系
+npm r/remove 包名 -g      //删除一个全局模式安装的模块包
+npm update 包名      //更新指定的已安装模块包的版本
+npm update 包名 -g      //更新指定的全局安装模块包的版本
+-------------------------------------
+npm config get prefix      //查看默认的全局安装路径
+npm config get cache      //查看默认的全局安装缓存路径
+npm config set prefix &quot;E:\Ebook\JavaSE\develop\nodejs\node_global&quot;      //设置默认的全局安装路径,需重新修改环境变量
+npm config set cache &quot;E:\Ebook\JavaSE\develop\nodejs\node_cache&quot;      //设置默认的全局安装缓存路径
+npm ls/list -g --depth 0      //查看全局安装过的包</code></pre></li>
+<li>通过 NPM 下载的包都放到 node_modules 文件夹中，直接通过包名引入即可(<strong>全局模式安装的需要配置NODE_PATH环境变量</strong>)。  <pre><code class="hljs plaintext">Node.js 在使用模块名字来引入模块时，它会首先在当前目录的 node_modules 中寻找是否含有该模块
+    如果有则直接使用，如果没有则去上一级目录的 node_modules 中寻找;
+    如果有则直接使用，如果没有则再去上一级目录寻找，直到找到为止;
+    直到找到磁盘的根目录，如果依然没有，则报错.</code></pre></li>
+</ul>
+</li>
+<li>CNPM ：淘宝 NPM 镜像<ul>
+<li>这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。  <pre><code class="hljs plaintext">使用说明
+    - 你可以使用我们定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:
+        $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+    - 或者你直接通过添加 npm 参数 alias 一个新命令:
+        $ alias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+            --cache=$HOME/.npm/.cache/cnpm \
+            --disturl=https://npm.taobao.org/dist \
+            --userconfig=$HOME/.cnpmrc&quot;
+        # Or alias it in .bashrc or .zshrc
+        $ echo &#x27;\n#alias for cnpm\nalias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \
+            --cache=$HOME/.npm/.cache/cnpm \
+            --disturl=https://npm.taobao.org/dist \
+            --userconfig=$HOME/.cnpmrc&quot;&#x27; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="基本模块"><a href="#基本模块" class="headerlink" title="基本模块"></a>基本模块</h2><h2 id="Web开发"><a href="#Web开发" class="headerlink" title="Web开发"></a>Web开发</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501245426ad4b91f2b880464ba876a8e3043fc8ef000">Node.js - 廖雪峰的官方网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://npm.taobao.org/">淘宝 NPM 镜像</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>NodeJS 札记</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">3.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2018-12-01, 16:28:22</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/01/af-nodejs.html" title="NodeJS 札记">https://lvzhiqiang.top/2018/12/01/af-nodejs.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

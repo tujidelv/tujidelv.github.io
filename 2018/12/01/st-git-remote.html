@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Git 札记：远程库 | Tujidelv Code</title>
+  <meta name="keywords" content=" 互联网工程 ">
+  <meta name="description" content="Git 札记：远程库 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-st-git-remote" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Git 札记：远程库</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软件工具">软件工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">互联网工程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2018-12-01 17:46</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-%E6%9C%AD%E8%AE%B0%EF%BC%9A%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="toc-text">Git 札记：远程库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E7%BD%91"><span class="toc-text">外网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub"><span class="toc-text">GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E6%90%AD%E5%BB%BA"><span class="toc-text">原生搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitBucket"><span class="toc-text">GitBucket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gogs"><span class="toc-text">Gogs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-札记：远程库"><a href="#Git-札记：远程库" class="headerlink" title="Git 札记：远程库"></a>Git 札记：远程库</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%88%86%E7%B1%BB">分类</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>代码托管中心：用来维护远程仓库</p>
+<pre><code class="hljs plaintext">外网环境：Github,码云等等
+内网环境：Gitlab,GitBucket 等等</code></pre>
+
+<h2 id="外网"><a href="#外网" class="headerlink" title="外网"></a>外网</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><code>GitHub</code></h3><pre><code class="hljs plaintext">- 既是一个免费托管开源代码的远程仓库，可将个人的开源项目放上去；
+    还是一个开源协作社区，即可让别人参与你的开源项目，也可参与别人的开源项目。
+- Github 常用按钮说明
+    - Watch：关注该项目，作者有更新的时候，会在你的 Github 主页有通知消息。
+    - Star：收藏该项目，在你的头像上有一个 “Your stars” 链接，可以看到你的收藏列表，以方便下次进来。
+    - Fork：复制一份项目到自己的 Github 空间上，你可以自己开发自己的这个地址项目，然后 Pull Request 给项目原主人。
+```    
+---
+- 本地创建 SSH Key
+</code></pre>
+<p>1.在用户主目录下，如果有.ssh目录并且该目录下有id_rsa和id_rsa.pub两个文件，则跳过这步；否则在window 下打开Git Bash。<br>    $ ssh-keygen -t rsa -C “<a href="mailto:&#116;&#117;&#106;&#x69;&#100;&#101;&#x2e;&#x6c;&#118;&#64;&#102;&#111;&#x78;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#116;&#117;&#106;&#x69;&#100;&#101;&#x2e;&#x6c;&#118;&#64;&#102;&#111;&#x78;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>“<br>2.一直默认回车，生成的2个文件就是SSH Key的秘钥对，id_rsa是私钥，不能泄露，id_rsa.pub是公钥，可以告诉别人。</p>
+<pre><code class="hljs plaintext">- GitHub 添加本地 SSH Key
+</code></pre>
+<p>1.登陆GitHub，打开”Settings”&#x3D;&gt;”SSH Keys”页面，点击”New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容，点击”Add Key”。<br>    可以添加多个，这样有这些公钥的电脑就可以将本地仓库代码推送到GitHub远程仓库中。</p>
+<pre><code class="hljs plaintext">- 添加远程仓库
+</code></pre>
+<p>1.登录GitHub，打开”New repository”,在”Repository name”填入learngit，其他保持默认设置，点击”Create repository”，就创建了一个新的Git仓库。<br>    该仓库为默认公开的，可通过交保护费让GitHub把仓库变成私有(被微软收购后免费)，或自己搭建Git服务器。<br>    该仓库默认是空的，可以与本地仓库关联，把本地仓库的内容推送到该仓库。</p>
+<pre><code class="hljs plaintext">- 关联远程仓库并推送
+</code></pre>
+<ol>
+<li>查看远程库的详细信息<br> $ git remote -v<br>2.关联远程库并创建别名<br> $ git remote add &lt;远程仓库别名&gt; <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>:GitHub账户名&#x2F;learngit.git<br> 注：如果在使用命令git remote add时报错(fatal: remote origin already exists.),说明本地库已经关联了一个名叫origin的远程库，有如下2种处理方案。<br> 1.删除已有的远程仓库origin关联,再重新关联<br>     - $ git remote rm origin<br> 2.因为git是分布布,支持同步到多个远程库,远程仓库的名字不能一样<br>     - $ git remote add gitee <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x65;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x65;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a>:xxx&#x2F;xxx.git<br>     - $ git remote add github <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:xxx&#x2F;xxx.git</li>
+</ol>
+<p>3.将本地库的内容(指定分支)推送到远程库对应的远程分支上(不存在时会自动新建)<br>    $ git push &lt;远程仓库别名&gt; 分支名<br>    注：-u 参数，第一次推送时需要,会把本地分支和远程分支关联起来，在以后的推送或拉取可以简化命令。<br>注：IDEA中可以通过”Share Project on GitHub”将项目直接分享到GitHub上。</p>
+<pre><code class="hljs plaintext">- 从远程仓库克隆
+</code></pre>
+<p>1.SSH协议Clone,没有添加Key将不能推送;Https协议Clone,需要登陆有权限的GitHub帐号才能推送。<br>    - 没加入团队是无法推送的,项目发起者可在’Settings’-&gt;’Collaborators’中邀请GitHub成员加入团队,并把邀请链接发给成员,成员登陆自己的帐号访问邀请链接以同意加入团队,即可进行远程推送。<br>    - HTTPS协议是无法记住登陆帐号的,第一次推送登陆后,而再次推送无需登陆,是因为win10系统的’凭据管理器’中的’Windows凭据’记住了密码,如果下次想切换别的帐号登陆,可以到此删除掉重新登陆。<br>2.把远程库下载到本地,因为是读操作,不需要验证身份<br>    $ git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;</a>:GitHub账户名&#x2F;gitskills.git<br>    注：会关联远程库并创建别名,同时会把本地仓库master分支与远程仓库的master分支关联起来,在以后的推送或拉取时可以简化命令。<br>        1.–depth&#x3D;1,用于指定克隆深度,为1表示只克隆最近一次commit,历史旧数据不clone,可用于解决项目过大时clone导致timeout的问题,但他只会把默认分支 clone 下来,其他远程分支并不在本地,<br>            如需要的话可如下命令拉取其他分支。<br>            $ git remote set-branches origin ‘remote_branch_name’<br>            $ git fetch –depth&#x3D;1 origin remote_branch_name<br>    注：GitHub还会给出多个地址，如<code>https://github.com/GitHub账户名/gitskills.git</code>，因为Git支持多种协议，默认是通过ssh支持的原生git协议，速度最快；也可用https等其他协议，速度慢，<br>        每次推送必须输入口令。</p>
+<pre><code class="hljs plaintext">- 拉取
+</code></pre>
+<p>1.首先,可以试图用”git push origin branch-name”推送自己的修改。<br>2.如果推送失败,则因为不是基于GitHub远程库的最新版所做的修改(即远程分支比你的本地更新),需先用”git pull&#x2F;fetch”抓取远程的新提交,因为是读操作,不需要验证身份。<br>    - fetch<br>        - 把远程的更新下载到本地,可”git checkout origin&#x2F;master”切换查看内容,并没有修改工作区,可”git merge origin&#x2F;master”进行合并操作。<br>    - pull &#x3D; fetch + merge<br>        - 如果”git pull”提示”no tracking information”,则说明没有创建本地分支和远程分支的链接关系,用命令”git branch –set-upstream-to&#x3D;origin&#x2F;branch-name branch-name”再进行git pull。<br>        $ git pull      &#x2F;&#x2F;如果当前分支只有一个追踪分支,可以省略远程仓库名即可更新并合并<br>        $ git pull origin      &#x2F;&#x2F;如果当前分支有多个追踪分支,可以指定当前分支与指定的远程追踪分支进行更新并合并<br>        $ git pull origin master      &#x2F;&#x2F;指定当前分支与指定的远程master分支进行更新并合并<br>        $ git pull origin master1:master2      &#x2F;&#x2F;指定本地的master2分支与指定的远程master1分支进行更新并合并<br>3.如果合并有冲突,则手动解决冲突(解决的方法和分支管理中的解决冲突完全一样),并在本地提交。<br>4.没有冲突或者解决掉冲突后,再用”git push origin branch-name”推送就能成功。</p>
+<pre><code class="hljs plaintext">- 跨团队协作/参与一个开源项目
+</code></pre>
+<p>1.以自己身份进入开源项目主页,点击”fork”克隆到自己的远程仓库下。<br>2.从自己的远程仓库下克隆项目到本地,这样才能推送修改。ll<br>3.如果想修复开源项目的一个bug，或者新增一个功能，立刻就可以开始干活，干完后，往自己的远程仓库推送。<br>4.如果希望开源项目的官方能接受你的修改，可以在GitHub上发起一个pull request,对方是否接受你的pull request就不一定了。<br>    1. 在自己远程仓库项目主页中,点击’Pull requests’&#x2F;‘New pull request’,此时’bask fork’选择官方作者,’head fork’选择自己,点击’Create pull request’,填好标题和说明(可选)确认。<br>    2. 此时官方作者可在项目主页中,点击’Pull requests’,能看到自己刚刚发送的请求,进去后可在里面跟请求者对话,点击’Files changed’审核代码,没问题的话可点击’Merge pull request’合并代码。<br>    3. 在自己远程仓库项目主页中,如果官方作者有回复内容,可在刚发送的请送中看到官方的回复内容,也可回复。<br>5.如果官方作者有提交新的代码,可在自己项目主页中,点击’Pull requests’&#x2F;‘New pull request’,此时’bask fork’选择自己,’head fork’选择官方作者,点击’Create pull request’,填好标题和说明(可选)确认。								<br>    - 没问题的点击’Merge pull request’合并代码以获取官方作者的最新代码。</p>
+<pre><code class="hljs plaintext">      
+### `码云`
+
+- 同 GitHub 一样,提供免费的 Git 仓库;此外，还集成了代码质量检测、项目演示等功能。对于团队协作开发，码云还提供了项目管理、代码托管、文档管理的服务，5 人以下小团队免费。
+    - 码云的免费版本也提供私有库功能，只是有 5人 的成员上限。
+- 使用方法同 GitHub。
+
+## 内网
+
+### `GitLab`
+
+- 官网地址			
+	- 首页：&lt;https://about.gitlab.com/&gt; 
+	- 安装说明：&lt;https://about.gitlab.com/installation/&gt;
+- 安装命令摘录
+    ```shell
+    sudo yum install -y curl policycoreutils-python openssh-server cronie
+    sudo lokkit -s http -s ssh
+    sudo yum install postfix
+    sudo service postfix start
+    sudo chkconfig postfix on
+    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+    sudo EXTERNAL_URL=&quot;http://gitlab.example.com&quot; yum -y install gitlab-ee</code></pre>
+<pre><code> - 实际问题：yum 安装 gitlab-ee(或ce)时，需要联网下载几百 M 的安装文件，非常耗时，所以应提前把所需 RPM 包下载并安装好。
+ 下载地址为：&lt;https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7/gitlab-ce-10.8.2-ce.0.el7.x86_64.rpm&gt;，调整后的安装过程：			
+<pre><code class="hljs shell">sudo rpm -ivh /opt/gitlab-ce-10.8.2-ce.0.el7.x86_64.rpm		
+sudo yum install -y curl policycoreutils-python openssh-server cronie  		
+sudo lokkit -s http -s ssh		
+sudo yum install postfix		
+sudo service postfix start		
+sudo chkconfig postfix on		
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash		
+sudo EXTERNAL_URL=&quot;http://gitlab.example.com&quot; yum -y install gitlab-ce</code></pre>
+- 当前步骤完成后重启		
+</code></pre>
+<ul>
+<li>GitLab 服务操作<ul>
+<li>初始化配置 gitlab  <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">gitlab-ctl reconfigure</span></code></pre></li>
+<li>启动&#x2F;停止 gitlab 服务  <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">gitlab-ctl start/stop</span></code></pre></li>
+</ul>
+</li>
+<li>浏览器访问<ul>
+<li>访问 Linux 服务器 IP 地址即可，如果想访问 EXTERNAL_URL 指定的域名还需要配置域名服务器或本地 hosts 文件。<ul>
+<li>应该会需要停止防火墙服务  <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">service firewalld stop</span></code></pre></li>
+</ul>
+</li>
+<li>初次登录时需要为 gitlab 的 root 用户设置密码。</li>
+</ul>
+</li>
+</ul>
+<h3 id="原生搭建"><a href="#原生搭建" class="headerlink" title="原生搭建"></a><code>原生搭建</code></h3><ol>
+<li>安装 Git												 <pre><code class="hljs plaintext">$ apt-get install git  (Debian系列系统)
+$ yum install -y git   (RetHat系列系统)</code></pre></li>
+<li>创建Git用户，用来管理 Git服务，并为 Git 用户设置密码 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">id</span> git</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">useradd git</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;git&#x27;</span> | passwd --stdin git &amp;&gt; /dev/null</span></code></pre></li>
+<li>创建 Git 仓库<ol>
+<li>先选定一个目录作为 Git 仓库，假定是&#x2F;www&#x2F;wwwroot&#x2F;hexo.lvzhiqiang.top&#x2F;hexo-blog.git&#x2F;，在&#x2F;www&#x2F;wwwroot&#x2F;hexo.lvzhiqiang.top&#x2F;目录下输入如下命令,Git<br> 就会创建一个裸仓库，裸仓库没有工作区。 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git init --bare sample.git</span></code></pre></li>
+<li>因为服务器上的 Git 仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的 Git 仓库通常都以 .git 结尾。然后把 owner 改为 git。 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">chown</span> -R git:git sample.git</span></code></pre>
+ 注：如果执行了第4步,可再执行这个命令。</li>
+</ol>
+</li>
+<li>配置 git hooks 来生成对应的工作区(<strong>非必须</strong>)<ul>
+<li>这里要使用的是 <code>post-receive</code> 的 hook，这个 hook 会在整个 git 操作过程完结以后被运行。</li>
+</ul>
+<ol>
+<li>在&#x2F;home&#x2F;data&#x2F;git&#x2F;sample.git&#x2F;hooks目录下创建hook钩子函数，可新建<code>post-receive</code>文件,填入如下内容 <pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/sh</span>
+git --work-tree=/www/wwwroot/hexo.lvzhiqiang.top/hexo-blog --git-dir=/www/wwwroot/hexo.lvzhiqiang.top/hexo-blog.git checkout -f</code></pre></li>
+<li>为文件添加可执行权限 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">chmod</span> +x post-receive</span></code></pre></li>
+</ol>
+</li>
+<li>Git 打开 RSA 认证<ol>
+<li>进入&#x2F;etc&#x2F;ssh目录，编辑 sshd_config，打开以下三个配置的注释，然后重启 sshd 服务 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">vim sshd_config</span>
+    RSAAuthentication yes
+    PubkeyAuthentication yes
+    AuthorizedKeysFile .ssh/authorized_keys
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">systemctl restart sshd</span>
+    或者$ /etc/rc.d/init.d/sshd restart</code></pre>
+ Tips：由 AuthorizedKeysFile 得知公钥的存放路径是.ssh&#x2F;authorized_keys，实际上是 $Home&#x2F;.ssh&#x2F;authorized_keys，由于管理 Git 服务的用户是git，所以实际存放公钥的路径是&#x2F;home&#x2F;git&#x2F;.ssh&#x2F;authorized_keys</li>
+<li>在&#x2F;home&#x2F;git&#x2F;下创建目录 .ssh,然后把 .ssh 文件夹的 owner 修改为 git <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">mkdir</span> .ssh</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">chown</span> -R git:git .ssh</span></code></pre></li>
+</ol>
+</li>
+<li>创建证书登录(添加客户端公钥到服务器)<ol>
+<li>收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到&#x2F;home&#x2F;git&#x2F;.ssh&#x2F;authorized_keys 文件里，一行一个 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ssh git@server <span class="hljs-string">&#x27;cat &gt;&gt; .ssh/authorized_keys&#x27;</span> &lt; ~/.ssh/id_rsa.pub</span></code></pre>
+ 或者 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ssh-copy-id -i ~/.ssh/id_rsa.pub git@服务器IP -p 端口号(默认22时可不用此参数)</span></code></pre>
+ Tips：需要输入服务器端 git 用户的密码</li>
+<li>查看服务器端 .ssh 下是否存在 authorized_keys 文件 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ll git/.ssh/</span></code></pre></li>
+<li>修改 .ssh 目录的权限为 700(rwx——)，修改 .ssh&#x2F;authorized_keys 文件的权限为600(rw——-) <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">chmod</span> 700 .ssh</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">chmod</span> 600 authorized_keys</span></code></pre></li>
+<li>测试能否登录，此时的 ssh 登录 git 用户不需要密码！否则就有错,可尝试重启<code>sshd</code>服务 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">ssh git@server_ip -p 端口号(默认22时可不用此参数)</span></code></pre></li>
+</ol>
+</li>
+<li>禁止 git 用户 ssh 登录服务器<ul>
+<li>出于安全考虑，第二步创建的 git 用户不允许登录 shell，这可以通过编辑&#x2F;etc&#x2F;passwd 文件完成。将 bash 修改为 git-shell,找到类似下面的一行：  <pre><code class="hljs plaintext">git:x:1001:1001:,,,:/home/git:/bin/bash改为：git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</code></pre></li>
+<li>这样，git 用户可以正常通过 ssh 使用 git，但无法登录 shell，因为我们为 git 用户指定的 git-shell 每次一登录就自动退出。</li>
+</ul>
+</li>
+<li>客户端克隆远程仓库 <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git <span class="hljs-built_in">clone</span> git@server:/www/wwwroot/hexo.lvzhiqiang.top/hexo-blog.git</span></code></pre>
+ Tips：如果 SSH 用的不是默认的 22 端口，则需要使用以下的命令（假设 SSH 端口号是 7700） <pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git <span class="hljs-built_in">clone</span> ssh://git@server:7700/www/wwwroot/hexo.lvzhiqiang.top/hexo-blog.git</span></code></pre></li>
+<li>管理公钥<ul>
+<li>如果团队很小，把每个人的公钥收集起来放到服务器的&#x2F;home&#x2F;git&#x2F;.ssh&#x2F;authorized_keys文件里就是可行的。如果团队有几百号人，就没法这么玩了，这时，可以用 Gitosis 来管理公钥。</li>
+</ul>
+</li>
+<li>管理权限<ul>
+<li>因为 Git 是为 Linux 源代码托管而开发的，所以 Git 也继承了开源社区的精神，不支持权限控制。</li>
+<li>不过，因为 Git 支持钩子（hook），所以，可以在服务器端编写一系列脚本来控制提交等操作，达到权限控制的目的，Gitolite 就是这个工具。</li>
+</ul>
+</li>
+</ol>
+<h3 id="GitBucket"><a href="#GitBucket" class="headerlink" title="GitBucket"></a><code>GitBucket</code></h3><ul>
+<li>待更新…</li>
+</ul>
+<h3 id="Gogs"><a href="#Gogs" class="headerlink" title="Gogs"></a><code>Gogs</code></h3><ul>
+<li>官⽹：<a target="_blank" rel="noopener" href="https://gogs.io/">https://gogs.io</a></li>
+<li>介绍：Gogs是⼀款开源的轻量级Git web服务，其特点是简单易用、文档齐全、国际化做的相当不错。  <pre><code class="hljs plaintext">其主要功能如下: 
+1. 提供Http与ssh两种协议访问源码服务。
+2. 提供可WEB界⾯可查看修改源码代码 。
+3. 提供较完善的权限管理功能，其中包括组织、团队、个⼈等仓库权限 。
+4. 提供简单的项⽬viki功能。 
+5. 提供⼯单管理与⾥程碑管理。</code></pre></li>
+<li>安装<ol>
+<li>下载 <a target="_blank" rel="noopener" href="https://gogs.io/docs/installation">Gogs</a>，选择Linux amd64 <pre><code class="hljs plaintext">$ wget -P /opt/setups/ https://dl.gogs.io/0.11.91/gogs_0.11.91_linux_amd64.zip</code></pre></li>
+<li>解压到指定目录 <pre><code class="hljs plaintext"># mkdir -pv /usr/program
+# unzip gogs_0.11.91_linux_amd64.zip -d /usr/program/</code></pre></li>
+<li>启动 <pre><code class="hljs plaintext">$ nohup ./gogs web &gt; log.out &amp;</code></pre></li>
+<li>访问<a target="_blank" rel="noopener" href="http://0.0.0.0:3000/">http://0.0.0.0:3000</a></li>
+</ol>
+</li>
+<li>定时备份与恢复<ul>
+<li>备份与恢复  <pre><code class="hljs bash">    <span class="hljs-comment"># 查看备份相关参数</span>
+    ./gogs backup -h
+    <span class="hljs-comment"># 默认备份,备份在当前目录</span>
+    ./gogs backup
+    <span class="hljs-comment"># 参数化备份  --target 输出目录 --database-only 只备份db</span>
+    ./gogs backup --target=./backupes --database-only --exclude-repos
+    <span class="hljs-comment"># 恢复 执行该命令前要先删除custom.bak</span>
+    ./gogs restore --from=gogs-backup-20180411062712.zip
+    ```  
+- ⾃动备份脚本
+    ```bash
+    <span class="hljs-comment">#!/bin/sh -e</span>
+    gogs_home=<span class="hljs-string">&quot;/usr/program/gogs&quot;</span>
+    backup_dir=<span class="hljs-string">&quot;<span class="hljs-variable">$gogs_home</span>/backups&quot;</span>
+    
+    <span class="hljs-built_in">cd</span> `<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>`
+    <span class="hljs-comment"># 执行备份命令</span>
+    ./gogs backup --target=<span class="hljs-variable">$backup_dir</span>
+    
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;backup sucess&#x27;</span>
+    day=7
+    <span class="hljs-comment">#查找并删除 7天前的备份  </span>
+    find <span class="hljs-variable">$backup_dir</span> -name <span class="hljs-string">&#x27;*.zip&#x27;</span> -mtime +7 -<span class="hljs-built_in">type</span> f |xargs <span class="hljs-built_in">rm</span> -f;
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;delete expire back data!&#x27;</span></code></pre></li>
+<li>添加定时任务  <pre><code class="hljs plaintext"># 打开任务编辑器
+crontab -e
+# 输入如下命令 00 04 * * * 每天凌晨4点执行 do-backup.sh 并输出日志至 #backup.log
+00 04 * * * /usr/program/gogs/do-backup.sh &gt;&gt; /usr/program/gogs/log/backup.log 2&gt;&amp;1</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Git 官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程 - 廖雪峰的官方网站</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+<li>update by 20190801  <pre><code class="hljs plaintext">1.如果在github pushr的过程中提示&quot;Connection reset by 13.250.177.223 port 22 fatal: Could not read from remote repository.&quot;
+2.可尝试&quot;ping github.com&quot;看是否能Ping通,超时则应该是本地DNS无法解析导致的
+3.可修改&quot;C:\Windows\System32\drivers\etc\hosts&quot;添加
+    192.30.255.112  github.com git 
+    185.31.16.184 github.global.ssl.fastly.net
+4.可继续2步骤测试</code></pre></li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Git 札记：远程库</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">4.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2018-12-01, 17:46:49</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/01/st-git-remote.html" title="Git 札记：远程库">https://lvzhiqiang.top/2018/12/01/st-git-remote.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

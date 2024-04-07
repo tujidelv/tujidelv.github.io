@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DataGrip札记：基础 | Tujidelv Code</title>
+  <meta name="keywords" content=" jetbrains ">
+  <meta name="description" content="DataGrip札记：基础 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-st-datagrip-basic" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">DataGrip札记：基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软件工具">软件工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">jetbrains</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2019-12-10 09:52</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E8%B1%A1"><span class="toc-text">数据库对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">智能文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%9F%A5%E8%AF%A2"><span class="toc-text">运行查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6"><span class="toc-text">处理文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">数据编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E9%80%89%E9%A1%B9"><span class="toc-text">导入导出选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA"><span class="toc-text">导航</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%AD%A3%E7%AF%87">正篇</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>DataGrip是面向开发人员的数据库管理环境。它旨在查询，创建和管理数据库。</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="数据库对象"><a href="#数据库对象" class="headerlink" title="数据库对象"></a><strong>数据库对象</strong></h3><ul>
+<li><p><code>数据源分组</code></p>
+<blockquote>
+<p>可根据自定义类型对数据源分组，比如数据库供应商。按下F6或从上下文菜单中(右键-&gt;Move to Group…)选择移至分组…。<br>新建组可使用拖放操作完成，只需将一个数据源拖放到另一个数据源上。如果要将数据源放到现有组中，只需拖放进来。</p>
+</blockquote>
+</li>
+<li><p><code>为选定的对象生成SQL文件</code></p>
+<blockquote>
+<p>可以使用SQL生成器 (Ctrl+Alt+G)(SQL Scripts→SQL Generator…)为数据库对象生成SQL文件，只需点击右窗格的Save按钮即可。<br>并提供两种输出布局：每个对象一个文件和每个对象一个文件，且按顺序。</p>
+</blockquote>
+</li>
+<li><p><code>快速备份表</code></p>
+<blockquote>
+<p>可以通过拖放操作将表复制到同一个数据源中，如果您需要在进行任何关键数据操作之前创建表的快速备份，这可能非常方便。</p>
+</blockquote>
+</li>
+<li><p><code>修改表结构/表数据</code></p>
+<blockquote>
+<p>在数据库或SQ脚本中的表名称中按下Ctrl+F6即可对它们进行修改，并提供即时预览功能。要编辑表中的数据，请按下F4查看数据编辑器。</p>
+</blockquote>
+</li>
+<li><p><code>编辑源代码</code></p>
+<blockquote>
+<p>按下Ctrl+B，可以获得过程或函数的DDL语句，并进行Edit操作。<br>间距（文本编辑器左侧的垂直条)将高亮显示所做的更改，在点击工具栏上的Submit后，对话框将显示生成的SQL代码以更新源代码。<br>DataGrip将数据库的源代码保存在本地存储中，您可以查看您已更改的源代码部分，而且可以将任意改动还原到服务器版本。</p>
+</blockquote>
+</li>
+<li><p><code>图表</code></p>
+<blockquote>
+<p>按下Ctrl+Alt+U或通过右键”Diagrams-&gt;Show Visualisation”，可以随时在图表中查看它们之间的关系。<br>带有主键和外键的列可以从图表中隐藏，只在相关行上显示，如有必要，这些图表可以导出至图像文件。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="智能文本编辑器"><a href="#智能文本编辑器" class="headerlink" title="智能文本编辑器"></a><strong>智能文本编辑器</strong></h3><ul>
+<li><p><code>代码格式化</code></p>
+<blockquote>
+<p>按下Ctrl+Alt+L可以灵活根据用户定义的代码样式，自动完成SQL代码格式化。<br>在Settings → Editor → Code Style → SQL中调整代码样式，比如您可以定义关键词是否使用首字母大写。</p>
+</blockquote>
+</li>
+<li><p><code>关键字自动大写</code></p>
+<blockquote>
+<p>可去”Editor-&gt;Code Style-&gt;SQL”中找到对应的数据库方言，在”Case-&gt;Word Case-&gt;Keywords”中将值设为To upper。<br>如果使用了小写，可以将光标停留在需要转换的字段或表名上，使用Ctrl+shift+U快捷键自动转换。</p>
+</blockquote>
+</li>
+<li><p><code>多光标模式</code></p>
+<blockquote>
+<p>在许多情况下，多个光标是修改SQL代码最有效的方式。要添加多个光标，连续按两次Ctrl并按住不放，然后使用方向键放置新光标。<br>或者按住Shift+Alt不放并点击，也有同样效果。 或者先使用文本搜索功能，然后通过Select All Occurrences功能实现。</p>
+</blockquote>
+</li>
+<li><p><code>代码注释</code></p>
+<blockquote>
+<p>选中要注释的代码，按下Ctrl+&#x2F;或Ctrl+shift+&#x2F;快捷键，能注释代码，或取消注释。</p>
+</blockquote>
+</li>
+<li><p><code>实时模板</code></p>
+<blockquote>
+<p>按下Ctrl+J即可查看所有实时模板，并根据选择生成相应SQL代码的重复部分。<br>每个实时模板都有自己的缩写，只要输入缩写并按下Tab键即可粘贴完整的代码。比如输入selw就可以粘贴SELECT * FROM和WHERE。</p>
+</blockquote>
+</li>
+<li><p><code>从剪贴板历史记录粘贴</code></p>
+<blockquote>
+<p>按下Ctrl+Shift+V可以访问剪贴板历史记录，并快速粘贴最近复制到剪贴板中的项。<br>当启动应用程序时，DataGrip会开始将复制的项记录到它的剪贴板历史记录中，并且在关闭应用程序时清除历史记录。 </p>
+</blockquote>
+</li>
+<li><p><code>管理代码片段</code></p>
+<blockquote>
+<p>无需为移动代码块执行这么繁琐的复制粘贴操作，您可以直接使用这些热键来管理选定的行或者代码块。<br>— 按下Ctrl+D以复制行。<br>— 通过Ctrl+Y删除行。<br>— 通过Alt+Shift+上下箭头键移动行。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="运行查询"><a href="#运行查询" class="headerlink" title="运行查询"></a><strong>运行查询</strong></h3><ul>
+<li><p><code>查询控制台</code></p>
+<blockquote>
+<p>每个数据源都有自己的默认控制台。进入上下文菜单，然后点击Open Console即可打开。或使用快捷键F4。<br>如果出于任何原因，您想为数据源创建另一个控制台，也可以通过：上下文菜单 → New → Console。</p>
+</blockquote>
+</li>
+<li><p><code>执行查询</code></p>
+<blockquote>
+<p>按Ctrl+Enter执行光标停留的语句，可在setting-&gt;Database-General中设置smallest statement。<br>对于希望在新的tab窗口显示查询结果，可以点击”Pin Tab”按钮，那新查询将不会再当前tab中展示，而是新打开一个tab。</p>
+</blockquote>
+</li>
+<li><p><code>评估表达式</code></p>
+<blockquote>
+<p>在其他基IntelliJ的IDE中，在对象上按Ctrl+Alt+F8或者Alt+Click可以让您获得快速评估。<br>在DataGrip中，在查询器中的表中调用它可以查看那个表中的数据，在列名称中按Ctrl+Alt+F8将显示预期结果集中那个列的值。</p>
+</blockquote>
+</li>
+<li><p><code>运行查询的历史记录</code></p>
+<blockquote>
+<p>在每个控制台的工具栏上有一个按钮Browse Console History。按下它可以查看该数据源运行的所有查询的历史记录。</p>
+</blockquote>
+</li>
+<li><p><code>完整SQL日志</code></p>
+<blockquote>
+<p>IDE的所有查询均记录在文本文件中。要打开该文件，请转到Help | Show SQL log in Explorer。</p>
+</blockquote>
+</li>
+<li><p><code>执行计划</code></p>
+<blockquote>
+<p>选中要执行的语句右键”Explain plan(Raw)”将展示数据库要执行的操作，它可以帮助您优化查询。可以以表格或图表的形式表示。 </p>
+</blockquote>
+</li>
+<li><p><code>用户参数</code></p>
+<blockquote>
+<p>当您从其他应用程序中获得SQL查询时，它可以添加参数。参数值用”:a”类似符号代替，再点击工具栏的View Parameters按钮。<br>您可以在”Database → User Parameters”中找到编辑参数模式的 UI。正则表达式会高亮显示，您可以选择模式有效的方言。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="处理文件"><a href="#处理文件" class="headerlink" title="处理文件"></a><strong>处理文件</strong></h3><ul>
+<li><p><code>附加目录</code></p>
+<blockquote>
+<p>可以在”Files”工具窗口中管理文件和目录，请使用工具栏上的”Attach Directory”按钮将所需目录附加到Files工具窗口中。</p>
+</blockquote>
+</li>
+<li><p><code>文件语言</code></p>
+<blockquote>
+<p>右键选择”Change Dialect”可以更改任何文件(SQL)的语言(方言)，以获得正确的高亮显示和解析建议。</p>
+</blockquote>
+</li>
+<li><p><code>版本控制</code></p>
+<blockquote>
+<p>DataGrip为Git、SVN和Mercurial等所有主要的版本控制系统提供了统一的支持，可以从不同的VCS处理不同项目并随意切换项目。<br>要获得VCS支持，可以通过”Settings → Plugins”安装相应的JetBrains插件。<br>另请参阅：<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/datagrip/2018/06/01/tutorial-how-to-use-git-with-datagrip/?_ga=2.177277036.872413008.1576052747-1727377903.1572920689">如何在DataGrip中处理Git</a>与<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/datagrip/2018/12/11/datagrip-and-github-step-by-step-integration/?_ga=2.149995903.872413008.1576052747-1727377903.1572920689">DataGrip和GitHub集成</a>。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="数据编辑器"><a href="#数据编辑器" class="headerlink" title="数据编辑器"></a><strong>数据编辑器</strong></h3><ul>
+<li><p><code>全文搜索</code></p>
+<blockquote>
+<p>选择要搜索的数据源或数据源组甚至单独的表，并从上下文菜单调用”Full-text search”或者快捷键”Ctrl+Alt+Shift+F”即可。<br>点击结果以打开数据编辑器，如果由于列过多而无法定位数据，请在数据编辑器中使用文本搜索：Ctrl+F。</p>
+</blockquote>
+</li>
+<li><p><code>筛选数据</code></p>
+<blockquote>
+<p>无需输入任何WHERE子句，只要在结果列表上方的”Filter criteria”输入栏中输入搜索条件即可查看您需要的数据。</p>
+</blockquote>
+</li>
+<li><p><code>文本搜索</code></p>
+<blockquote>
+<p>在表编辑器中通过Ctrl+F调用，无需编写语句即可快速在表中查找数据。<br>如果您不知道要查找的数据位于哪一列，该功能就特别实用。同时您可以轻松隐藏无关行，以及使用正则表达式。</p>
+</blockquote>
+</li>
+<li><p><code>行转列</code></p>
+<blockquote>
+<p>对于字段比较多的表，查看数据要左右推动，可以切换成列显示，在结果集视图区域使用Ctrl+Q快捷键开启并点击”Transposed View”。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="导入导出选项"><a href="#导入导出选项" class="headerlink" title="导入导出选项"></a><strong>导入导出选项</strong></h3><ul>
+<li><p><code>从CSV文件导入数据</code></p>
+<blockquote>
+<p>点击要导入的schema，然后从上下文菜单中选择”Import Data from File…”，然后选择存储数据的CSV文件将看到导入对话框窗口。<br>CSV，意为逗号分隔值或者字符分隔值，其文件以纯文本形式存储表格数据，记录间以某种换行符分隔，字段间以逗号或制表符分隔。<br>左边的面板显示行分隔符，字段分隔符，空值以及第一行是页眉处理的相关设置。<br>右边的面板将看到要创建表的框架和结果数据预览，如果想从已有的表中导入数据，那么请使用该表的上下文菜单并选择从文件导入…。</p>
+</blockquote>
+</li>
+<li><p><code>CSV编辑器</code></p>
+<blockquote>
+<p>DataGrip可以将CSV文件作为表进行编辑并可以即时预览表。在上下文菜单中点击”Edit as Table…”。</p>
+</blockquote>
+</li>
+<li><p><code>表数据导出</code></p>
+<blockquote>
+<p>表可以导出至文件。表的上下文菜单 → 向文件转储数据 (Dump data to file)。<br>导出至其他已有表 (Another existing table)。表的上下文菜单 → 将表复制到 (Copy Table to)（或在表上按F5）→ 选择已有表。<br>导出至任意数据库供应商的任意数据源中的新表。表的上下文菜单 → 将表复制到（或在表上按F5） → 选择目标架构。</p>
+</blockquote>
+</li>
+<li><p><code>SQL查询导出</code></p>
+<blockquote>
+<p>SQL查询可以作为结果导出到文件中。语句的上下文菜单 → 执行到文件 (Execute to file) → 选择格式。<br>如果查询比较慢，该功能很实用；如果你导出结果集，查询将再次运行，在这种情况下，您只需要运行一次。</p>
+</blockquote>
+</li>
+<li><p><code>结果集导出</code></p>
+<blockquote>
+<p>结果集可以导出至文件。 转储按钮(Dump Data)  → To File。<br>导出至剪贴板。 转储按钮(Dump Data) → 至剪贴板。<br>导出至其他已有表。导出按钮(Export to Database…) → 选择已有表。<br>导出至任意数据库供应商中任意数据源中的新表。 导出按钮(Export to Database…) → 选择目标架构。</p>
+</blockquote>
+</li>
+<li><p><code>导出格式</code></p>
+<blockquote>
+<p>每次导出到文件或剪贴板时，都需要选择格式。 通常是CSV文件，但在许多情况下，您需要JSON、XML甚至是DML语句。<br>SQL查询：任何表或结果集都可以用一组INSERT语句展示，请从下拉列表中选择”SQL Inserts”，它还可以选择”SQL Updates”帮您修改数据。<br>CSV、TSV：列表中有两个预设格式(逗号分隔值和Tab分隔值)。您可以根据DSV创建任意自定义格式。<br>HTML&#x2F;XML：有一个您无法更改的预设提取工具(HTML表)。此外还有脚本提取工具(HTML-Groovy.html.groovy和XML-Groovy.xml.groovy)等。<br>JSON：JSON-Groovy.json.groovy提取工具可以将您的表或结果集导出至JSON。<br>自定义格式：要处理更加复杂的形式，在提取工具菜单中选择转到脚本目录(Go to Scripts Directory)，导航至它们的存储文件夹。<br>这些脚本是用Groovy编写的，但也可以用JavaScript编写，而且通常位于Scratches和Consoles&#x2F;Extensions&#x2F;Database Tools and SQL&#x2F;data&#x2F;extractors中。修改已有提取工具或在这里添加您自己的提取工具。</p>
+</blockquote>
+</li>
+<li><p><code>转储/恢复工具</code></p>
+<blockquote>
+<p>DataGrip集成了mysqldump和pg_dump。要转储对象，请使用上下文菜单中的Dump with…选项。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a><strong>导航</strong></h3><ul>
+<li><p><code>随处搜索</code></p>
+<blockquote>
+<p>如果不确定在哪里查找所需内容，可尝试按两次Shift键来调用Search Everywhere。<br>查找操作：Ctrl+Shift+A，切换到Actions。搜索某些你知道但不知道如何访问的功能。<br>查找表&#x2F;过程：Ctrl+N，切换到Tables。如果是表，会打开一个数据编辑器，要查看该表的DDL，请按DDL按钮。<br>查找文件：Shift+Ctrl+N，切换到Files。文件会打开。<br>查找符号：Shift+Ctrl+Alt+N，切换到Symbols。可以访问数据库视图中的任何数据库对象，包括列、约束、索引等。</p>
+</blockquote>
+</li>
+<li><p><code>从SQL导航</code></p>
+<blockquote>
+<p>在SQL的编辑区域，针对SQL的关键字例如表名、字段名或者函数名上可做如下操作进行相关导航。<br>Edit source(F4)可将您转至数据或DDL。Go to declaration(Ctrl+B)可将您转至数据库树。Ctrl+Q悬浮查看表结构。<br>可去”Setting-&gt;Database-&gt;General-&gt;Navigation”定义导航位置的选项。 </p>
+</blockquote>
+</li>
+<li><p><code>在数据库树视图中快速搜索</code></p>
+<blockquote>
+<p>任何树（列表、弹出窗口、下拉菜单）都支持快速搜索。请注意匹配的数据库对象只有在其节点已打开时才会高亮显示。<br>关于快速搜索的另一个实用之处在于其支持缩写。例如使用“sbs”就可以找到“sales_by_store”。</p>
+</blockquote>
+</li>
+<li><p><code>最近的文件</code></p>
+<blockquote>
+<p>按下Ctrl+E打开Recent Files窗口。控制台、数据编辑器、文本文件一切都在这里，光标默认放在最后访问的项目。</p>
+</blockquote>
+</li>
+<li><p><code>最近的位置</code></p>
+<blockquote>
+<p>按下Ctrl+Shift+E打开Recent Locations窗口。列出您最近访问&#x2F;改变的代码位置。它以代码段的形式显示代码位置前后几行。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/datagrip/features">https://www.jetbrains.com/zh-cn/datagrip/features</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>DataGrip札记：基础</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">3.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-10, 09:52:05</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/10/st-datagrip-basic.html" title="DataGrip札记：基础">https://lvzhiqiang.top/2019/12/10/st-datagrip-basic.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

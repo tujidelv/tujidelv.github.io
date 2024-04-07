@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>消息中间件之 RocketMQ | Tujidelv Code</title>
+  <meta name="keywords" content=" 分布式 ">
+  <meta name="description" content="消息中间件之 RocketMQ | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-af-mq-rocketmq" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">消息中间件之 RocketMQ</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="应用框架">应用框架</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">分布式</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2019-03-10 10:06</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8B-RocketMQ"><span class="toc-text">消息中间件之 RocketMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%8E%86%E5%8F%B2"><span class="toc-text">简介及历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JMS%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-text">JMS基本概念及使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D"><span class="toc-text">特性介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-text">集群搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">API&amp;源码分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="消息中间件之-RocketMQ"><a href="#消息中间件之-RocketMQ" class="headerlink" title="消息中间件之 RocketMQ"></a>消息中间件之 RocketMQ</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%AD%A3%E7%AF%87">正篇</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>整理下学习RoctetMQ时的知识点.</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="简介及历史"><a href="#简介及历史" class="headerlink" title="简介及历史"></a><code>简介及历史</code></h3><ul>
+<li>什么是RocketMQ  <pre><code class="hljs plaintext">阿里开源的用 java 编写的以队列为模型的分布式消息中间件，具有高可用、高吞吐量等特点。
+- 消息
+    - 消息即为数据，数据就会有规则，有长度，有大小。
+    - 标准JMS（JSR914）：https://www.jcp.org/en/jsr/detail?id=914
+- 中间件
+    - 为我们提供发送消息的程序或者服务。
+    - 主流的有： RocketMQ(没有严格遵循jms规范)、 Kafka、ActiveMQ（严格遵循jms规范）、RabbitMQ、zeroMQ</code></pre></li>
+<li>为什么要用消息中间件<br>  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-001.png" alt="抱歉,图片休息了"> </li>
+<li>为什么选择 RocketMQ  <pre><code class="hljs plaintext">1. 稳定无单点故障,原生支持分布式,不会因为某台机器或者某个节点宕机而影响系统正常使用
+2. 可严格保证消息的顺序性
+3. 经历过双十一
+4. java语言实现,java版本的kafka
+5. 架构轻,分布式协调采用NameServer来代替了Zookeeper
+6. 开源社区活跃</code></pre></li>
+<li>发展历史  <pre><code class="hljs plaintext">1. 2007年，淘宝实施了“五彩石”项目，“五彩石”用于将交易系统从单机变成分布式，也是在这个过程中产生了阿里巴巴第一代消息引擎——Notify。
+2. 2010年，阿里巴巴B2B部门基于ActiveMQ的5.1版本也开发了自己的一款消息引擎，称为Napoli。
+    这款消息引擎在B2B里面广泛地被使用，不仅仅是在交易领域，在很多的后台异步解耦等方面也得到了广泛的应用。
+3. 2011年，业界出现了现在被很多大数据领域所推崇的Kafka消息引擎，阿里巴巴在研究了Kafka的整体机制和架构设计之后，基于Kafka的设计使用Java进行了完全重写并推出了MetaQ 1.0版本。
+    主要是用于解决顺序消息和海量堆积的问题。
+4. 2012年，阿里巴巴对MetaQ进行了架构重组升级，开发出了MetaQ 2.0，这时就发现MetaQ原本基于Kafka的架构在阿里巴巴如此庞大的体系下很难进行水平扩展，所以在2012年的时候就开发了RocketMQ 3.0版本。
+    RocketMQ 3.0和MetaQ 3.0这两者是等价的版本，只不过阿里内部使用的称为MetaQ 3.0，外部开源称之为RocketMQ 3.0。
+5. 2015年，又基于RocketMQ开发了阿里云上的Aliware MQ和Notify 3.0。
+    MetaQ主要使用了拉模型，解决了顺序消息和海量堆积问题。
+    Notify主要使用了推模型，解决了事务消息。
+    Aliware MQ则是提供了商业化的版本。
+6. 2016年，阿里巴巴将RocketMQ的内核引擎捐赠给了Apache基金会。</code></pre></li>
+</ul>
+<h3 id="JMS基本概念及使用"><a href="#JMS基本概念及使用" class="headerlink" title="JMS基本概念及使用"></a><code>JMS基本概念及使用</code></h3><ul>
+<li>JMS全称<code>Java消息服务(Java Message Service)</code>，是Java平台上有关面向MOM的技术规范,旨在提供标准的生产、发布、订阅和消费消息的API简化企业应用的开发。<ul>
+<li>类似于JDBC和关系型数据通信方式的抽象。</li>
+</ul>
+</li>
+<li>JMS提供的元素  <pre><code class="hljs plaintext">Provider提供方：服务提供者
+Producer生产者：生产和发布JMS消息的客户端
+Consumer消费者：订阅和消费JMS消息的客户端
+Client客户端：生产或订阅消息的基于Java的应用&amp;进程
+Message消息：服务端与客户端之间的传输数据对象
+Queue队列 ：包含待读取消息的准备区域（点对点）
+Topic主题：发布消息的分布机制（发布&amp;订阅）
+Destination：消息被寻址,发送以及接受的对象</code></pre></li>
+<li>JMS消息的组成  <pre><code class="hljs plaintext">消息头：提供消息的接受端和发送端两个客户端和JMS规范的元数据,JMS消息的复杂性在这里
+    1. 由JMS规范提供的，客户端调用send()方法时，自动设置的消息头。
+        JMSDestination：
+            JMS发送消息的目的地。这对于使用来自多个目的地的消息的客户端很有价值。
+            相关方法：public abstract Destination getJMSDestination()
+        JMSDeliveryMode：
+            JMS传送模式。支持两种模式：持久模式和非持久模式。默认的传递模式是持久。
+            相关方法：public abstract int getJMSDeliveryMode()
+        JMSMessageID：
+            JMS消息ID。它是一个String类型的值，唯一标识了一条消息，并且必须以ID开头。
+            相关方法：public abstract String getJMSMessageID()
+        JMSTimestamp：
+            JMS时间戳。它包含的是JMS提供者接受消息的时间，而不是该消息实际传送的时间。这条消息头用于确认发送消息和它被消费者实际接受的时间间隔。
+            相关方法：public abstract long getJMSTimestamp()
+        JMSExpiration：
+            JMS消息的超时时间。这个头信息被用来阻止过期消息的传递。对于那些数据仅在某一个时间段内有效的消息来说，非常有用的。
+            相关方法：public abstract long getJMSExpiration()
+        JMSRedelivered：
+            JMS重发。表示该消息将被重新传送给消费者。如果该消息被重新传送，JMSRedelivered消息头就为true，否则为false。
+            相关方法：public abstract boolean getJMSRedelivered()
+        JMSPriority：
+            JMS优先级。在传送一条消息时，消息生产者能够为该消息分配一个优先级。
+            相关方法：public abstract int getJMSPriority()
+    2. 开发者分配的消息头。
+        JMSReplyTo：
+            JMS响应。一个JMS消息生产者可能会要求消费者对一条消息作出应答,JMSReplyTo消息头包含了一个javax.jms.Destination，表明JMS消费者应该应答的地址。
+            相关方法：public abstract Destination getJMSReplyTo()。
+        JMSCorrelationID：
+            JMS关联ID。提供了一个消息头，用于将当前的消息和先前的某些消息或应用程序特定的ID关联起来，这个消息头通常用于将响应消息与请求消息。
+            相关方法：public abstract String getJMSCorrelationID()。
+        JMSType：
+            JMS类型。用于语义标识消息类型，是由JMS客户端设置的一个可选消息头。它的主要作用是标示消息结构和有效负载的类型。
+            相关方法：public abstract String getJMSType()。
+消息属性：消息属性就像可以分配一条消息的附加消息头一样。它们允许开发者添加有关消息的不透明附加消息。它们还用于暴露消息选择器在消息过滤时使用的数据。
+    1. 应用程序特定的属性
+    2. JMS定义的属性
+    3. 提供者特定的属性
+消息体：消息的实际内容，JMS为消息体定义了六种类型载体,通过这个类型,你可以发送各种各样的数据。
+    1. StreamMessage：Java原始类型的流数据
+    2. MapMessage：key-value键值队作为数据载体。key一般使用字符串，value可以为Java原始类型。
+    3. TextMessage：文本消息、字符串数据载体,一般用来发送简单的文本,XML数据
+    4. ObjectMessage：序列化后的完整Java类。包括使用复杂Java类型。也支持集合
+    5. BytesMessage：使用一个二进制数据来做数据载体。
+    6. Message：最基础的消息体，没有数据载体。仅仅包含了消息体和属性，一般用做简单的时间通知。</code></pre></li>
+<li>JMS消息模型(消息传递方式)  <pre><code class="hljs plaintext">点对点(P2P)：
+    使用queue作为Destination,消息可被同步或异步的发送和接受,每个消息只会给一个Consumer传送一次。
+发布/订阅(Pub/Sub)：
+    使用topic作为Destination,发布者向topic发送消息,订阅者接受来自topic的消息,发送到topic的任何消息都将自动传递给所有订阅者。</code></pre>
+  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-002.png" alt="抱歉,图片休息了"> </li>
+<li>使用API创建一个应用程序的通用步骤  <pre><code class="hljs plaintext">1. 获取链接工厂ConnectionFactory
+2. 使用链接工厂创建连接Connection
+3. 启动连接并创建会话Session
+4. 获取Destination
+5. 创建Poducer或者Consumer
+6. 发送或者接收message
+7. 关闭资源</code></pre></li>
+</ul>
+<h3 id="特性介绍"><a href="#特性介绍" class="headerlink" title="特性介绍"></a><code>特性介绍</code></h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="http://rocketmq.apache.org/">http://rocketmq.apache.org/</a></li>
+<li>Github: <a target="_blank" rel="noopener" href="https://github.com/apache/rocketmq">https://github.com/apache/rocketmq</a></li>
+</ul>
+<hr>
+<ul>
+<li>基础特性  <pre><code class="hljs plaintext">1. 支持发布/订阅（Pub/Sub）和点对点（P2P）消息模型
+2. 在一个队列中可靠的先进先出（FIFO）和严格的顺序传递
+3. 支持拉（pull）和推（push）两种消息模式
+4. 单一队列百万消息的堆积能力
+5. 支持多种消息协议，如 JMS、MQTT 等
+7. 分布式高可用的部署架构,满足至少一次消息传递语义
+8. 提供docker镜像用于隔离测试和云集群部署
+9. 提供配置、指标和监控等功能丰富的Dashboard</code></pre></li>
+<li>相关术语  <pre><code class="hljs plaintext">- Message
+    消息的载体。一个Message必须指定topic，相当于寄信的地址。
+    Message还有一个可选的tag设置，以便消费端可以基于tag进行过滤消息。也可以添加额外的键值对，例如你需要一个业务key来查找broker上的消息，方便在开发过程中诊断问题。
+- Message Queue
+    可以认为是一个长度无限的数组,offset就是下标。一个Topic下可以有多个Queue，Queue的引入使得消息存储可以分布式集群化，具有了水平扩展的能力。
+- Producer
+    消息生产者，负责产生消息，一般由业务系统负责产生消息。
+- Producer Group
+    生产者组，这类Producer通常发送一类消息，且发送逻辑一致。发送同一类消息的多个producer实例组成一个生产者组。
+    可以是多台机器，也可以是一台机器的多个进程。
+- Consumer
+    消息消费者，负责消费消息，一般是后台系统负责异步消费。
+- Consumer Group
+    消费者组，这类Consumer通常消费一类消息，且消费逻辑一致。消费同一类消息的多个consumer实例组成一个消费者组。
+    可以是多台机器，也可以是一台机器的多个进程。
+- Topic
+    消息主题(逻辑分类)，比如说你有订单类的消息，也有库存类的消息，那么就需要进行分类，一个是订单Topic存放订单相关的消息，一个是库存Topic存储库存相关的消息。
+- Tag
+    消息标签，可以被认为是对Topic进一步细化。一般在相同业务模块中通过引入标签来标记不同用途的消息。
+- Broker
+    消息中转角色，负责接收、存储、转发消息，一般也称为Server，在JMS规范中称为Provider。
+- Name Server
+    服务发现Server，用于生产者和消费者获取Broker路由信息的服务。</code></pre></li>
+<li>概念模型&amp;部署模型  <pre><code class="hljs plaintext">Name Server：
+    1. NameServer是一个几乎无状态节点，可集群部署，节点之间无任何信息同步（类似ZK）。
+    2. NameServer用于存储Topic、Broker关系信息，功能简单，稳定性高。
+        多个NameServer之间相互没有通信，单台NameServer宕机不影响其他NameServer与集群。
+        即使整个NameServer集群宕机，已经正常工作的Producer，Consumer，Broker仍然能正常工作，但新起的Producer, Consumer，Broker就无法工作。
+    3. NameServer压力不会太大，平时主要开销是在维持心跳和提供Topic-Broker的关系数据。
+        但有一点需要注意，Broker向NameServer发心跳时，会带上当前自己所负责的所有Topic信息，如果Topic个数太多（万级别），
+        会导致一次心跳中，就Topic的数据就几十M，网络情况差的话，网络传输失败，心跳失败，导致NameServer误认为Broker心跳失败。
+Broker：
+    1. Broker 部署相对复杂，Broker分为Master 与 Slave，一个Master可以对应多个 Slave，但是一个Slave只能对应一个Master。
+    2. Master 与 Slave 的对应关系通过指定相同的BrokerName，不同的 BrokerId 来定义，BrokerId为0表示Master，非 0 表示 Slave。
+    3. Master可以部署多个。每个Broker与NameServer 集群中的所有节点建立长连接，定时注册Topic信息到所有NameServer。
+    4. producer与NameServer集群中的其中一个节点（随机选择）建立长连接，定期从NameServer取Topic路由信息，并向提供Topic服务的Master建立长连接，且定时向Master发送心跳。
+Producer：
+    1. Producer 完全无状态，可集群部署。
+    2. Producer启动时，也需要指定NameServer的地址，从NameServer集群中选一台建立长连接。如果该NameServer宕机，会自动连其他NameServer。直到有可用的NameServer为止。
+    3. Producer每30秒从NameServer获取Topic跟Broker的映射关系，更新到本地内存中。
+        再跟Topic涉及的所有Broker建立长连接，每隔30秒发一次心跳。
+        在Broker端也会每10秒扫描一次当前注册的Producer，如果发现某个Producer超过2分钟都没有发心跳，则断开连接。
+    4. Producer发送时，会自动轮询当前所有可发送的broker，一条消息发送成功，下次换另外一个broker发送，以达到消息平均落到所有的broker上。
+    5. 假如某个Broker宕机，意味生产者最长需要30秒才能感知到。在这期间会向宕机的Broker发送消息。
+        当一条消息发送到某个Broker失败后，会往该broker自动再重发2次，假如还是发送失败，则抛出发送失败异常。业务捕获异常，重新发送即可。
+        客户端里会自动轮询另外一个Broker重新发送，这个对于用户是透明的。
+Consumer：
+    1. Consumer与NameServer集群中的其中一个节点（随机选择）建立长连接，定期从NameServer取Topic路由信息，并向提供Topic服务的Master、Slave建立长连接，且定时向 Master、Slave发送心跳。
+    2. Consumer既可以从Master订阅消息，也可以从Slave订阅消息，订阅规则由Broker配置决定。
+    3. Consumer启动时需要指定NameServer地址，与其中一个NameServer建立长连接。
+        消费者每隔30秒从NameServer获取所有Topic的最新队列情况，这意味着某个Broker如果宕机，客户端最多要30秒才能感知。
+        连接建立后，从NameServer中获取当前消费Topic所涉及的Broker，直连Broker。
+    4. Consumer跟Broker是长连接，会每隔30秒发心跳信息到Broker。
+        Broker端每10秒检查一次当前存活的Consumer，若发现某个Consumer 2分钟内没有心跳，就断开与该Consumer的连接，并且向该消费组的其他实例发送通知，触发该Consumer集群的负载均衡。</code></pre>
+  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-003.png" alt="抱歉,图片休息了"><br>  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-004.png" alt="抱歉,图片休息了"></li>
+<li>RocketMQ高可用</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left">情况</th>
+<th align="left">发送消息</th>
+<th align="left">存储消息</th>
+<th align="left">接收消息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">停掉一个namesrv</td>
+<td align="left">不受影响</td>
+<td align="left">不受影响</td>
+<td align="left">不受影响</td>
+</tr>
+<tr>
+<td align="left">停掉全部namesrv</td>
+<td align="left">受影响</td>
+<td align="left">不受影响</td>
+<td align="left">受影响</td>
+</tr>
+<tr>
+<td align="left">停掉单个master broker</td>
+<td align="left">不受影响</td>
+<td align="left">受影响(很小)</td>
+<td align="left">不受影响</td>
+</tr>
+<tr>
+<td align="left">停掉全部master broker</td>
+<td align="left">受影响</td>
+<td align="left">受影响</td>
+<td align="left">受影响</td>
+</tr>
+<tr>
+<td align="left">停掉全部salve broker</td>
+<td align="left">不受影响</td>
+<td align="left">不受影响</td>
+<td align="left">不受影响</td>
+</tr>
+<tr>
+<td align="left">恢复任意master broker</td>
+<td align="left">不受影响</td>
+<td align="left">受影响(很小)</td>
+<td align="left">不受影响</td>
+</tr>
+</tbody></table>
+<ul>
+<li>消息发布  <pre><code class="hljs plaintext">producer将消息发送给Broker时，会轮询的将消息发送到每个队列中（所有broker下的Queue合并成一个List去轮询）,来实现发送方的负载均衡。</code></pre></li>
+<li>消息存储  <pre><code class="hljs plaintext">RocketMQ的消息的存储是由Consume Queue和Commit Log配合来完成的。
+    Consume Queue中只存储很少的数据，消息主体都是通过Commit Log来进行读写。
+Consume Queue：
+    消息的逻辑队列，相当于字典的目录，用来指定消息在物理文件commit log上的位置。
+    存储了这个Queue在Commit Log中的起始offset，log大小和MessageTag的hashCode。
+    每个Topic下的每个Queue都有一个对应的ConsumeQueue文件，默认位置如下，仍然可通过配置文件修改：$&#123;rocketmq.home&#125;/store/consumequeue/$&#123;topicName&#125;/$&#123;queueId&#125;/$&#123;fileName&#125;
+    ---------------------
+    1. 根据topic和queueId来组织文件,TopicA和QueueId=0组成一个ConsumeQueue,TopicA和QueueId=1组成另-个ConsumeQueue
+    2. 按照消费端的GroupName来分组重试队列，如果消费端消费失败，消息将被发往重试队列中，比如图中的%RETRY%ConsumerGroupA
+    3. 按照消费端的GroupName来分组死信队列，如果消费端消费失败，并重试指定次数后，仍然失败，则发往死信队列，比如图中的%DLQ%ConsumerGroupA
+        注：死信队列（Dead Letter Queue）一般用于存放由于某种原因无法传递的消息，比如处理失败或者已经过期的消息。
+    4. Consume Queue文件中的存储单元是一个20字节定长的二进制数据，顺序写顺序读,包括
+        CommitLog Offset：8 Byte,存储这条消息在Commit Log文件中的实际偏移量
+        Size：4 Byte,存储消息的大小
+        Message Tag HashCode：8 Byte,存储消息的Tag的哈希值，主要用于订阅时消息过滤（订阅时如果指定了Tag，会根据HashCode来快速查找到订阅的消息）
+Commit Log：
+    消息存放的物理文件，每台broker上的commitlog被本机所有的queue共享，不做任何区分。
+    文件的默认位置如下，仍然可通过配置文件修改：$&#123;user.home&#125; \store\$&#123;commitlog&#125;\$&#123;fileName&#125;
+    ---------------------
+    1. CommitLog文件中的存储单元长度不固定，文件顺序写，随机读。按照顺序以及编号对应的内容依次存储。
+Consumer消费消息过程中使用了零拷贝中的mmap+write方式,因为有小块数据传输的需求，效果会比 sendfile 更好。
+    1. 使用 mmap + write 方式
+        优点：即使频繁调用，使用小块文件传输，效率也很高。
+        缺点：不能很好的利用DMA方式，会比sendfile多消耗CPU，内存安全性控制复杂，需要避免JVM Crash问题。
+    2. 使用 sendfile 方式
+        优点：可以利用DMA方式，消耗CPU较少，大块文件传输效率高，无内存安全新问题。
+        缺点：小块文件效率低于mmap方式，只能是BIO方式传输，不能使用NIO。</code></pre>
+  <pre><code class="hljs plaintext">RocketMQ存储目录结构
+|-- abort 
+|-- checkpoint 
+|-- config
+| |-- consumerOffset.json
+| |-- consumerOffset.json.bak
+| |-- delayOffset.json
+| |-- delayOffset.json.bak
+| |-- subscriptionGroup.json.bak
+| |-- topics.json
+| |-- topics.json.bak 
+|-- commitlog
+| |-- 00000003384434229248
+| |-- 000000033855079710
+| |-- 0000000338658171289
+|-- consumequeue
+  |-- %DLQ%ConsumerGroupA
+  | |-- 0
+  | | |-- 00000000000006000000
+  |-- %RETRY%ConsumerGroupA
+  | |-- 0
+  | | |-- 00000000000000000000
+  |-- %RETRY%ConsumerGroupB
+  | |-- 0
+  | | |-- 00000000000000000000
+  |-- SCHEDULE_TOPIC_XXXX
+  | |-- 2
+  | | |-- 00000000000006000000
+  | |-- 3
+  | | |-- 00000000000006000000
+  |-- TopicA
+  | |-- 0
+  | | |-- 00000000002604000000
+  | | |-- 00000000002610000000
+  | | |-- 00000000002616000000
+  | |-- 1
+  | | |-- 00000000002610000000
+  | | |-- 00000000002610000000
+  |-- TopicB
+  | |-- 0
+  | | |-- 00000000000732000000
+  | |-- 1
+  | | |-- 00000000000732000000
+  | |-- 2
+  | | |-- 00000000000732000000</code></pre>
+  <pre><code class="hljs plaintext">RocketMQ消息存储实现
+// Set the storage time
+msg.setStoreTimestamp(System.currentTimeMillis());
+// Set the message body BODY CRC (consider the most appropriate setting
+msg.setBodyCRC(UtilAll.crc32(msg.getBody()));
+StoreStatsService storeStatsService = this.defaultMessageStore.getStoreStatsService();
+synchronized (this) &#123;
+    long beginLockTimestamp = this.defaultMessageStore.getSystemClock().now();
+    // Here settings are stored timestamp, in order to ensure an orderly global
+    msg.setStoreTimestamp(beginLockTimestamp);
+    // MapedFile：操作物理文件在内存中的映射以及将内存数据持久化到物理文件中
+    MapedFile mapedFile = this.mapedFileQueue.getLastMapedFile();
+    // 将Message追加到文件commitlog
+    result = mapedFile.appendMessage(msg, this.appendMessageCallback);
+    switch (result.getStatus()) &#123;
+    case PUT_OK:break;
+    case END_OF_FILE:
+         // Create a new file, re-write the message
+         mapedFile = this.mapedFileQueue.getLastMapedFile();
+         result = mapedFile.appendMessage(msg, this.appendMessageCallback);
+     break;
+     DispatchRequest dispatchRequest = new DispatchRequest(
+                topic,// 1
+                queueId,// 2
+                result.getWroteOffset(),// 3
+                result.getWroteBytes(),// 4
+                tagsCode,// 5
+                msg.getStoreTimestamp(),// 6
+                result.getLogicsOffset(),// 7
+                msg.getKeys(),// 8
+                /**
+                 * Transaction
+                 */
+                msg.getSysFlag(),// 9
+                msg.getPreparedTransactionOffset());// 10
+    // 1.分发消息位置到ConsumeQueue
+    // 2.分发到IndexService建立索引
+    this.defaultMessageStore.putDispatchRequest(dispatchRequest);
+&#125;</code></pre></li>
+<li>消息订阅  <pre><code class="hljs plaintext">RocketMQ消息订阅有两种模式，一种是Push模式，即MQServer主动向消费端推送；另外一种是Pull模式，即消费端在需要时，主动到MQServer拉取。
+    但在具体实现时，Push和Pull模式都是采用消费端主动拉取的方式。</code></pre></li>
+<li>刷盘策略&amp;复制策略  <pre><code class="hljs plaintext">刷盘策略：
+    异步刷盘：ASYNC_FLUSH
+        消息被写入内存pagecache后，立即返回消息写成功的状态，吞吐量大；当内存里的消息积累到一定程度时，统一发出写磁盘动作，快速写入。
+    同步刷盘：SYNC_FLUSH
+        消息被写入内存pagecache后，线程等待,立即通知刷盘线程，刷盘完成后，唤醒等待线程,返回消息写成功的状态，此时消息已经被写入磁盘。</code></pre>
+  <pre><code class="hljs plaintext">复制策略：
+    异步复制：ASYNC_MASTER
+        只要master写成功就返回成功状态。好处是低延迟、高吞吐，缺点是如果master出故障，数据没有写入slave，就会有丢失。
+    同步复制(双写)：SYNC_MASTER
+        master和slave都写成功后返回成功状态。好处是如果master出故障，slave上有全部备份，容易恢复。缺点是增大延迟，降低吞吐量。</code></pre>
+  <pre><code class="hljs plaintext">推荐策略： 异步刷盘 + 同步复制。
+    如果要严格保证数据可靠，需采用同步刷盘和同步双写的方式，但性能会较其他方式低。</code></pre></li>
+</ul>
+<h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a><code>集群搭建</code></h3><ul>
+<li>集群部署模式  <pre><code class="hljs plaintext">单master：
+    优点：除了配置简单没什么优点，适合个人学习使用。
+    缺点：不可靠，该机器重启或宕机，将导致整个服务不可用。
+多master：
+    多个master节点组成集群，单个master节点宕机或者重启对应用没有影响。
+    优点：所有模式中性能最高。
+    缺点：单个master节点宕机期间，未被消费的消息在节点恢复之前不可用，消息的实时性就受到影响。
+多master多slave异步复制：
+    在多master模式的基础上，每个master节点都有至少一个对应的slave。master节点可读可写，但是slave只能读不能写，类似于mysql的主备模式。
+    优点：在master宕机时，消费者可以从slave读取消息，消息的实时性不会受影响，性能几乎和多master一样。
+    缺点：使用异步复制的同步方式有可能会有消息丢失的问题。
+多master多slave同步双写：
+    同多master多slave异步复制模式类似，区别在于master和slave之间的数据同步方式。
+    优点：同步双写的同步模式能保证数据不丢失。
+    缺点：发送单个消息RT会略长，性能相比异步复制低10%左右。</code></pre></li>
+<li>软件依赖  <pre><code class="hljs plaintext">rocketmq：https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.4.0/rocketmq-all-4.4.0-bin-release.zip
+jdk：https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</code></pre></li>
+<li>环境介绍(2M-2S-SYNC)  <pre><code class="hljs plaintext">192.168.9.230
+    NameServer、broker-a(master)、broker-b-s(slave)
+192.168.9.231
+    NameServer、broker-b(master)、broker-a-s(slave)</code></pre>
+  <pre><code class="hljs plaintext">防火墙设置：
+    如果是开发环境,直接关闭防火墙
+        CentOS6：# service iptables stop
+        CentOS7：# service firewalld stop
+    如果是生产环境,就需要配置防火墙，增加端口规则，默认nameserver端口是9876</code></pre></li>
+<li>开始部署<ol>
+<li>安装jdk并配置环境变量(省略,2台机器都要配置)</li>
+<li>下载RocketMQ程序包(只需在一台服务器上执行操作) <pre><code class="hljs plaintext">方法1：
+    1. 去RocketMQ官网找到并复制其链接地址
+    2. wget -P /opt/setups/ http://mirrors.shu.edu.cn/apache/rocketmq/4.4.0/rocketmq-all-4.4.0-bin-release.zip
+方法2：
+    1. 去RocketMQ官网找到指定版本的zip包,下载到本地
+    2. 通过rz等上传工具将程序包上传到/opt/setups目录中去
+方法3：
+    1. 从GitHub中checkout源码
+    2. 打开BUILDING文件找到&quot;Build distribution packages&quot;处的mvn命令
+    3. 在Maven窗口执行命令,生成的压缩包在rockemq目录下的&quot;distribution\target&quot;</code></pre></li>
+<li>解压到指定目录 <pre><code class="hljs plaintext"># mkdir -pv /usr/program
+# unzip rocketmq-all-4.4.0-bin-release.zip -d /usr/program/</code></pre></li>
+<li>配置环境变量,使用vim编辑&#x2F;etc&#x2F;profile.d&#x2F;my.sh文件 <pre><code class="hljs plaintext"># RocketMQ
+ROCKETMQ_HOME=/usr/program/rocketmq-all-4.4.0-bin-release
+PATH=$ROCKETMQ_HOME/bin:$PATH
+export ROCKETMQ_HOME
+export PATH</code></pre>
+ <pre><code class="hljs plaintext"># source /etc/profile.d/my.sh</code></pre></li>
+<li>创建存储等相关目录 <pre><code class="hljs plaintext"># mkdir -pv $&#123;ROCKETMQ_HOME&#125;/data/store/&#123;commitlog,consumequeue,index,checkpoint,slave/&#123;commitlog,consumequeue,index,checkpoint&#125;&#125;
+# tree -d $&#123;ROCKETMQ_HOME&#125;</code></pre></li>
+<li>配置集群参数 <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a.properties
+-----------------
+#整个broker集群的名字，创建topic时需要指定
+brokerClusterName=rocketmq-cluster
+##broker名字，注意此处不同的配置文件填写的不一样
+brokerName=broker-a
+##0表示master,&gt;0表示Slave
+brokerId=0
+#nameServer地址,分号分割
+namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
+#强制指定本机IP，需要根据每台机器进行修改。官方介绍可为空，系统默认自动识别，但多网卡时IP地址可能读取错误
+#brokerIP=192.168.0.1
+#在发送消息时，自动创建服务器不存在的topic，默认创建的队列数
+defaultTopicQueueNums=4
+#是否允许Broker自动创建topic，建议线下开启，线上关闭
+autoCreateTopicEnable=true
+#是否允许Broker自动创订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+##Broker对外服务的监听端口,同一台机器部署多个broker，端口号要不同，且端口号之间要相距大些
+listenPort=10911
+#删除文件时间点，默认凌晨4点
+deleteWhen=04
+#文件保留时间，默认72小时
+fileReservedTime=120
+#commitLog每个文件的大小,默认为1G
+mapedFileSizeCommitLog=1073741824
+#ConsumeQueue每个文件默认存30W条，根据业务情况调整
+mapedFileSizeConsumeQueue=3000000
+destoryMaoedFileIntervalForcibly=120000
+redeleteHangedFileInterval=120000
+#检测物理文件磁盘空间
+diskMaxUsedSpaceRatio=88
+##store存储路径,master与slave目录要不同
+storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store
+##commitLog存储路径
+storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/commitlog
+##消息队列存储路径
+storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/consumequeue
+##消息索引储路径
+storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/index
+##checkpoint文件存储路径
+storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/checkpoint
+#限制的消息大小
+maxMessageSize=65536
+flushCommitLogLeastPages=4
+flushConsumeQueueLeastPages=2
+flushCommitLogThoroughInterval=10000
+flushConsumeQueueThoroughInterval=60000
+checkTransactionMessageEnable=false
+#发消息线程池数量
+sendMessageThreadPoolNums=128
+#拉消息线程池数量
+pullMessageThreadPoolNums=128
+##Broker的角色
+#ASYNC_MASTER 异步复制master
+#SYNC_MASTER 同步双写master
+#SLAVE 从
+brokerRole=SYNC_MASTER
+##刷盘方式
+#ASYNC_FLUSH 异步刷盘
+#SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH</code></pre>
+ <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b-s.properties
+-----------------
+brokerClusterName=rocketmq-cluster
+brokerName=broker-b
+brokerId=1
+namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
+defaultTopicQueueNums=4
+autoCreateTopicEnable=true
+autoCreateSubscriptionGroup=true
+listenPort=10921
+deleteWhen=04
+fileReservedTime=120
+mapedFileSizeCommitLog=1073741824
+mapedFileSizeConsumeQueue=3000000
+destoryMaoedFileIntervalForcibly=120000
+redeleteHangedFileInterval=120000
+diskMaxUsedSpaceRatio=88
+storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store/slave
+storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/commitlog
+storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/consumequeue
+storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/index
+storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/checkpoint
+maxMessageSize=65536
+flushCommitLogLeastPages=4
+flushConsumeQueueLeastPages=2
+flushCommitLogThoroughInterval=10000
+flushConsumeQueueThoroughInterval=60000
+checkTransactionMessageEnable=false
+sendMessageThreadPoolNums=128
+pullMessageThreadPoolNums=128
+brokerRole=SLAVE
+flushDiskType=ASYNC_FLUSH</code></pre>
+ <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a-s.properties
+-----------------
+brokerClusterName=rocketmq-cluster
+brokerName=broker-a
+brokerId=1
+namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
+defaultTopicQueueNums=4
+autoCreateTopicEnable=true
+autoCreateSubscriptionGroup=true
+listenPort=10921
+deleteWhen=04
+fileReservedTime=120
+mapedFileSizeCommitLog=1073741824
+mapedFileSizeConsumeQueue=3000000
+destoryMaoedFileIntervalForcibly=120000
+redeleteHangedFileInterval=120000
+diskMaxUsedSpaceRatio=88
+storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store/slave
+storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/commitlog
+storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/consumequeue
+storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/index
+storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/checkpoint
+maxMessageSize=65536
+flushCommitLogLeastPages=4
+flushConsumeQueueLeastPages=2
+flushCommitLogThoroughInterval=10000
+flushConsumeQueueThoroughInterval=60000
+checkTransactionMessageEnable=false
+sendMessageThreadPoolNums=128
+pullMessageThreadPoolNums=128
+brokerRole=SLAVE
+flushDiskType=ASYNC_FLUSH</code></pre>
+ <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b.properties
+-----------------
+brokerClusterName=rocketmq-cluster
+brokerName=broker-b
+brokerId=0
+namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
+defaultTopicQueueNums=4
+autoCreateTopicEnable=true
+autoCreateSubscriptionGroup=true
+listenPort=10911
+deleteWhen=04
+fileReservedTime=120
+mapedFileSizeCommitLog=1073741824
+mapedFileSizeConsumeQueue=3000000
+destoryMaoedFileIntervalForcibly=120000
+redeleteHangedFileInterval=120000
+diskMaxUsedSpaceRatio=88
+storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store
+storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/commitlog
+storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/consumequeue
+storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/index
+storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/checkpoint
+maxMessageSize=65536
+flushCommitLogLeastPages=4
+flushConsumeQueueLeastPages=2
+flushCommitLogThoroughInterval=10000
+flushConsumeQueueThoroughInterval=60000
+checkTransactionMessageEnable=false
+sendMessageThreadPoolNums=128
+pullMessageThreadPoolNums=128
+brokerRole=SYNC_MASTER
+flushDiskType=ASYNC_FLUSH</code></pre></li>
+<li>修改日志配置文件 <pre><code class="hljs plaintext"># mkdir -pv $&#123;ROCKETMQ_HOME&#125;/logs
+# cd $&#123;ROCKETMQ_HOME&#125;/conf &amp;&amp; sed -i &#x27;s#$&#123;user.home&#125;#$&#123;ROCKETMQ_HOME&#125;#g&#x27; *.xml</code></pre></li>
+<li>修改启动参数 <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/bin/runserver.sh
+-----------------
+JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -server -Xms512m -Xmx512m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m&quot;</code></pre>
+ <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/bin/runbroker.sh
+-----------------
+JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -server -Xms1g -Xmx1g -Xmn512m&quot;</code></pre></li>
+<li>使用scp命令将mq项目复制到另一台服务器,并在另一台机器上执行<code>步骤4</code> <pre><code class="hljs plaintext"># scp -r $&#123;ROCKETMQ_HOME&#125; root@192.168.9.230:/usr/program/</code></pre></li>
+<li>启动nameserver和broker服务(2台机器都要执行)<pre><code class="hljs plaintext">输入命令jps或者查看$&#123;ROCKETMQ_HOME&#125;/logs下日志是否输出正常
+-----------------
+# nohup sh mqnamesrv &amp;
+# jps
+# nohup sh mqbroker -c $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a.properties &amp;
+# nohup sh mqbroker -c $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b-s.properties &amp;
+# jps</code></pre>
+<pre><code class="hljs plaintext">查看集群监控状态
+-----------------
+# sh mqadmin clusterlist -n 192.168.9.231:9876</code></pre>
+<img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-005.png" alt="抱歉,图片休息了"> </li>
+<li>停止nameserver和broker服务<pre><code class="hljs plaintext">或者通过jps命令查看进程号,kill -9 pid
+-----------------
+# sh mqshutdown broker
+# sh mqshutdown namesrv</code></pre></li>
+</ol>
+</li>
+</ul>
+<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a><code>性能测试</code></h3><h3 id="API-源码分析"><a href="#API-源码分析" class="headerlink" title="API&amp;源码分析"></a><code>API&amp;源码分析</code></h3><ul>
+<li>mq源码模块划分</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>broker</code></td>
+<td align="left"><code>broker模块：c和p端消息存储逻辑</code></td>
+</tr>
+<tr>
+<td align="left">client</td>
+<td align="left">客户端api：produce、consumer端 接受与发送api</td>
+</tr>
+<tr>
+<td align="left">common</td>
+<td align="left">公共组件：常量、基类、数据结构</td>
+</tr>
+<tr>
+<td align="left">tools</td>
+<td align="left">运维tools：命令行工具模块</td>
+</tr>
+<tr>
+<td align="left"><code>store</code></td>
+<td align="left"><code>存储模块：消息、索引、commitlog存储</code></td>
+</tr>
+<tr>
+<td align="left"><code>namesrv</code></td>
+<td align="left"><code>服务管理模块：服务注册topic等信息存储</code></td>
+</tr>
+<tr>
+<td align="left">remoting</td>
+<td align="left">远程通讯模块：netty+fastjson</td>
+</tr>
+<tr>
+<td align="left">logappender</td>
+<td align="left">日志适配模块</td>
+</tr>
+<tr>
+<td align="left"><code>example</code></td>
+<td align="left"><code>Demo列子</code></td>
+</tr>
+<tr>
+<td align="left">filtersrv</td>
+<td align="left">消息过滤器模块</td>
+</tr>
+<tr>
+<td align="left">srvutil</td>
+<td align="left">辅助模块</td>
+</tr>
+<tr>
+<td align="left">filter</td>
+<td align="left">过滤模块：消息过滤模块</td>
+</tr>
+<tr>
+<td align="left"><code>distribution</code></td>
+<td align="left"><code>部署、运维相关zip包中的代码</code></td>
+</tr>
+<tr>
+<td align="left">openmessaging</td>
+<td align="left">兼容openmessaging分布式消息模块</td>
+</tr>
+</tbody></table>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/453c6e7ff81c">https://www.jianshu.com/p/453c6e7ff81c</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b090138cf52c">https://www.jianshu.com/p/b090138cf52c</a></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>消息中间件之 RocketMQ</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-03-10, 10:06:31</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/10/af-mq-rocketmq.html" title="消息中间件之 RocketMQ">https://lvzhiqiang.top/2019/03/10/af-mq-rocketmq.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

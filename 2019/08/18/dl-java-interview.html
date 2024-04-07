@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Java常见面试题 | Tujidelv Code</title>
+  <meta name="keywords" content=" java ">
+  <meta name="description" content="Java常见面试题 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-dl-java-interview" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Java常见面试题</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="开发语言">开发语言</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">java</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2019-08-18 16:46</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">Java常见面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B6%E5%A8%83%E5%9F%BA%E7%A1%80%E4%B8%93%E9%A2%98"><span class="toc-text">家娃基础专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B8%93%E9%A2%98"><span class="toc-text">并发编程专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E4%B8%93%E9%A2%98"><span class="toc-text">性能调优专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B8%93%E9%A2%98"><span class="toc-text">数据结构与算法专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%93%E9%A2%98"><span class="toc-text">设计模式专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%B7%A5%E5%85%B7%E4%B8%93%E9%A2%98"><span class="toc-text">互联网工具专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E6%A1%86%E6%9E%B6%E4%B8%93%E9%A2%98"><span class="toc-text">源码框架专题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E4%B8%93%E9%A2%98"><span class="toc-text">分布式框架专题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java常见面试题"><a href="#Java常见面试题" class="headerlink" title="Java常见面试题"></a>Java常见面试题</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%AD%A3%E7%AF%87">正篇</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录自己面试时遇到的一些面试题。</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="家娃基础专题"><a href="#家娃基础专题" class="headerlink" title="家娃基础专题"></a>家娃基础专题</h3><ul>
+<li><p>对Java平台的理解</p>
+  <pre><code class="hljs plaintext">Java是一种面向对象的编程语言，最显著的特性有两个方面
+    一个是“书写一次，到处运行”（Write once, run anywhere），能够非常容易地获得跨平台能力；
+    另一个是垃圾收集（GC, Garbage Collection），Java 通过垃圾收集器（Garbage Collector）回收内存，大部分情况下，程序员不需要自己操心内存的分配和回收。
+对于“Java是解释执行”这句话，这个说法不太准确
+    我们开发的Java 的源代码，首先通过Javac编译成为字节码，然后在运行时，JVM 会通过类加载器（Class-Loader）加载字节码，并通过内嵌的解释器将其转换成为最终的机器码。
+    但是常见的JVM，比如我们大多数情况使用的 Oracle JDK 提供的 Hotspot JVM，都提供了JIT（Just-In-Time）编译器，也就是通常所说的动态编译器，
+    它能够在运行时将热点代码编译成机器码，这种情况下部分热点代码就属于编译执行，而不是解释执行了。
+ 在JDK 8 实际是解释和编译混合的一种模式，即所谓的混合模式（-Xmixed）
+    Oracle Hotspot JVM 内置了两个不同的 JIT compiler，C1对应前面说的client模式，适用于对于启动速度敏感的应用，比如普通 Java 桌面应用；
+    C2对应server模式，它的优化是为长时间运行的服务器端应用设计的。默认是采用所谓的分层编译（TieredCompilation）。</code></pre>
+</li>
+<li><p>Exception、Error的区别</p>
+  <pre><code class="hljs plaintext">Exception和Error都继承自Throwable类
+    只有Throwable类型的实例才可以被抛出（throw）或者捕获（catch），它是异常处理机制的基本组成类型。
+    Exception和Error体现了Java平台设计者对不同异常情况的分类。
+Error是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如 JVM 自身）处于非正常的、不可恢复状态。
+    既然是非正常情况，所以不便于也不需要捕获，常见的比如 OutOfMemoryError、StackOverflowError等都是Error的子类。
+Exception是程序正常运行中，可以预料的意外情况，对于这类异常，应该尽可能处理异常，使程序恢复，分为检查型（checked）异常和非检查型（unchecked）异常。
+    检查型异常：在源代码里必须显式地进行捕获处理，否则编译不通过;非RuntimeException都是此类异常.
+        IOException、SQLException、ClassNotFoundException等
+    非检查型异常：在源代码里可以不处理(可以修改代码更严谨),也可以处理;RuntimeException及其子类都是此类异常,Error类也可归为此类.
+        NullPointerException、IndexOutOfBoundsException、ClassCastException、IllegalArgumentException等</code></pre></li>
+<li><p>ClassNotFoundException与NoClassDefFoundError区别</p>
+  <pre><code class="hljs plaintext">前者的根本原因是.class文件找不到,例如少引了某个jar。
+    解决方法是通常需要检查一下classpath下能不能找到包含缺失.class文件的jar。
+后者是类加载器试图加载类的定义，但是找不到这个类的定义，而实际上这个.class文件是存在的。
+    解决方法是需要检查这个类定义中的初始化部分（如类属性定义、static 块等）的代码是否有抛异常的可能，如果是 static 块，可以考虑在其中
+    将异常捕获并打印堆栈等，或者直接在对类进行初始化调用（如 new Foobar()）时作 try  catch。</code></pre></li>
+<li><p>异常处理原则</p>
+  <pre><code class="hljs plaintext">尽量不要捕获通用异常,而应该捕获特定异常
+    这样能让自己的代码能够直观地体现出尽量多的信息,方便快速定位问题。
+不要生吞异常,即捕获后不要什么都不做
+    这样程序可能在后续代码以不可控的方式结束,没人能够轻易判断究竟是哪里抛出了异常，以及是什么原因产生了异常。
+只捕获有必要的代码段,尽量不要一个大的try包住整段的代码
+    try-catch代码段会产生额外的性能开销，它往往会影响JVM对代码进行优化。
+不要使用异常处理块控制代码流程
+    Java每实例化一个Exception，都会对当时的栈进行快照，这是一个相对比较重的操作。如果发生的非常频繁，这个开销可就不能被忽略了。</code></pre></li>
+<li><p>throw、throws的区别</p>
+  <pre><code class="hljs plaintext">throw：
+    在方法体中,后面跟的是异常对象,并且只能是一个
+    throw抛出的是一个异常对象,说明这里肯定有一个异常产生了
+throws：
+    在方法声明上,后面跟的是异常的类名,可以是多个
+    throws是声明方法有异常,是一种可能性,这个异常并不一定会产生</code></pre></li>
+<li><p>final、finally、finalize的区别</p>
+  <pre><code class="hljs plaintext">final：最终的意思,可以修饰类,变量,方法
+    修饰类,该类不能被继承;修饰变量,该变量常量,不能被重新赋值;修饰方法,该方法不能被重写
+finally：是异常处理的一种机制,用来保护重点代码一定要被执行,例如关闭资源,释放锁等 
+    一般来说,代码肯定会执行,特殊情况,例如在执行finally之前jvm退出了
+finalize：是Object类的一个方法,会在垃圾回收对象前调用,来释放资源,每个对象的finalize方法只会被GC调用一次
+    GC根据GCroot算法进行来分析对象的可达性来判断对象是否存活,如果不可达被判定为垃圾对象后,会先判断该对象是否覆盖finalize方法,
+    如果没有覆盖说明对象不需要经过特殊处理,可以直接回收,否则会将该对象放入一个F-Queue队列中,会被一个低优先级的线程调用,再次进行
+    可达性分析,来判断是否复活还是回收.不建议使用,容易引起挂起和死锁.</code></pre></li>
+<li><p>string、sringbuffer、stringbuilder的区别</p>
+  <pre><code class="hljs plaintext">String：长度和内容不可变的,内部被final修饰,缓存于字符串常量池中,底层结构是char[]
+    String对象是否真的不可变?可通过反射进行改变
+        String s = &quot;Hello World&quot;; //创建字符串&quot;Hello World&quot;,并赋给引用变量s
+        System.out.println(&quot;s=&quot; + s);
+        Field valueFieldOfString = String.class.getDeclaredField(&quot;value&quot;); //获取String类的value字段
+        valueFieldOfString.setAccessible(true); //改变value属性的访问权限
+        char[] value = (char[]) valueFieldOfString.get(s); //获取s对象上的value属性值
+        value[5] = &#x27;_&#x27;; //改变value所应用的数组中的第5个字符
+        System.out.println(&quot;s=&quot; + s);
+StringBuffer、StringBuilder：长度和内容可变的,内部被final修饰,继承自AbstractStringBuilder,默认大小是16,可指定,底层结构是char[]
+    append操作：会先判断char[]的总长度是否能容纳新添加的字符串,不够的话会进行扩容,默认扩容至是&quot;value.length * 2 + 2&quot;,如果该大小
+    小于最终需要的长度,则将后者设为需要扩容的长度,调用System.arraycopy方法来实现数组拷贝
+应用场景：
+    String：适用于内容不经常发生改变的场景,例如常量声明,少量的字符串拼接操作等
+    StringBuffer：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行多线程环境下,例如XML解析,HTTP参数解析与封装等
+        线程安全,效率低,采用synchronized
+    StringBuilder：适用于频繁进行字符串的运算(拼接,替换,删除等),并且运行单线程环境下,例如SQL语句拼装,JSON封装等
+        线程不安全,效率高</code></pre></li>
+<li><p>HashMap的原理实现</p>
+  <pre><code class="hljs plaintext">底层数据结构为哈希表/散列表,是一个元素为链表的数组,链表中的Node包括hash,key,value,next
+hashmap是非线程安全的,因为put的时候有个扩容操作,会有一个复制数组的操作,有可能会操作旧的数组
+jdk8对hashmap加入了红黑树,在链表的长度&gt;8的时候会进行一个红黑树的转换
+hashtable是线程安全的,get与put操作都是用synchronized实现的,会锁住整个表.
+ConcurrentHashMap是线程安全的
+    jdk1.7采用ReentrantLock锁住每个segment;
+    jdk1.8采用CAS+Synchronized只针对put上锁,如果key对应的元素不存在,则通过CAS进行操作,否则使用synchronized进行操作;get不上锁,因为Node的成员val是用volatile修饰.
+    这也是它比其他并发集合比如hashtable、用Collections.synchronizedMap()包装的hashmap安全效率高的原因之一。</code></pre></li>
+<li><p>synchronized和ReentrantLock区别</p>
+  <pre><code class="hljs plaintext">可重入性：
+    都是可重入锁/递归锁,指的是同一线程外层函数获得锁之后，内层递归函数仍然有获取该锁的代码，但不受影响。
+锁的实现：
+    Synchronized是依赖于JVM实现的，而ReenTrantLock是JDK实现的，前者的实现是比较难见到的，后者有直接的源码可供阅读。
+性能区别：
+    在Synchronized优化以前，synchronized的性能是比ReenTrantLock差很多的，但是自从Synchronized引入了偏向锁，轻量级锁（自旋锁）后，
+    两者的性能就差不多了，在两种方法都可用的情况下，官方甚至建议使用synchronized，其实synchronized的优化我感觉就借鉴了ReenTrantLock中的
+    CAS技术。都是试图在用户态就把加锁问题解决，避免进入内核态的线程阻塞。
+功能区别：
+    很明显Synchronized的使用比较方便简洁，并且由编译器去保证锁的加锁和释放，而ReenTrantLock需要手工声明来加锁和释放锁，为了避免忘记手工释放
+    锁造成死锁，所以最好在finally中声明释放锁。
+ReenTrantLock独有的能力：
+    1.ReenTrantLock可以通过带布尔值的构造函数指定是公平锁还是非公平锁。而synchronized只能是非公平锁。所谓的公平锁就是先等待的线程先获得锁。
+        公平锁是指多个线程在等待同一个锁时，必须按照申请的时间顺序来依次获得锁；而非公平锁则不能保证这一点。非公平锁在锁被释放时，任何一个等待锁的线程都有机会获得锁。
+    2.ReenTrantLock提供了一个Condition（条件）类，用来实现分组唤醒需要唤醒的线程们，而不是像synchronized要么随机唤醒一个线程要么唤醒全部线程。
+    3.ReenTrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制。
+什么情况下使用ReenTrantLock：如果你需要实现ReenTrantLock的三个独有功能时。</code></pre>
+  <pre><code class="hljs plaintext">自旋锁：
+    如果持有锁的线程能在很短时间内释放锁资源，那么那些等待竞争锁的线程就不需要做内核态和用户态之间的切换进入阻塞挂起状态，它们只需要等一等（自旋），
+    等持有锁的线程释放锁后即可立即获取锁，这样就避免用户线程和内核的切换的消耗。
+    但是线程自旋是需要消耗cpu的，说白了就是让cpu在做无用功，线程不能一直占用cpu自旋做无用功，所以需要设定一个自旋等待的最大时间。</code></pre></li>
+<li><p>equals和&#x3D;&#x3D;的区别</p>
+  <pre><code class="hljs plaintext">==：是一个比较运算符,基本类型比较的是值,引用类型比较的是地址值(是否为同一个对象的引用).
+equals：是Object类的一个方法,只能比较引用类型,重写前比较的是地址值,重写后一般是比较对象的属性.</code></pre></li>
+</ul>
+<h3 id="并发编程专题"><a href="#并发编程专题" class="headerlink" title="并发编程专题"></a>并发编程专题</h3><ul>
+<li>线程池相关  <pre><code class="hljs plaintext">线程池作用：
+    Java中的线程池是运用场景最多的并发框架，几乎所有需要异步或并发执行任务的程序都可以使用线程池。在开发过程中，合理地使用线程池能够带来3个好处。
+    第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。
+    第二：提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行。
+    第三：提高线程的可管理性。线程是稀缺资源，如果无限制地创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一分配、调优和监控。
+Executor框架的基本组成：
+    Executor框架的最顶层实现是ThreadPoolExecutor类,Executors工厂类中提供的newFixedThreadPool等方法其实也只是ThreadPoolExecutor的构造函数参数不同而已。
+        ThreadPoolExecutor 
+            extends AbstractExecutorService 
+                implements ExecutorService
+                    extends Executor
+    ThreadPoolExecutor参数：
+        corePoolSize：核心池的大小
+        maximumPoolSize：最大线程数
+        keepAliveTime：当线程数大于核心时,多余的空闲线程等待新任务的最长时间
+        unit：keepAliveTime的时间单位
+        workQueue：用来储存等待执行任务的队列
+        threadFactory：线程工厂
+        RejectedExecutionHandler：饱和/拒绝策略
+线程池四种创建方式：
+    Java通过Executors（jdk1.5并发包）提供四种线程池，分别为：
+    newCachedThreadPool 创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。
+        线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。
+    newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
+        定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()
+    newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。
+    newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+线程池大小选择策略：
+    具体根据实际情况具体分析,可通过压测实验
+    CPU密集型：cpu核心数 + 1
+    IO密集型：cpu核心数 * (1 + 平均等待时间/平均工作时间)</code></pre></li>
+<li>常见并发类  <pre><code class="hljs plaintext">CountDownLatch：计数器
+    CountDownLatch可以实现类似计数器的功能，计数器的初始值为线程的数量。每当一个线程完成了自己的任务后，计数器的值就会减1。当计数器值到达0时，它表示所有的线程已经完成了任务，然后在闭锁上等待的线程就可以恢复执行任务。
+    比如有一个任务A，它要等待其他4个任务执行完毕之后才能执行，此时就可以利用CountDownLatch来实现这种功能了。
+    常用方法：
+        countDown：计数器-1
+        await：減去为0,恢复任务继续执行
+Semaphore：计数信号量
+    Semaphore是一种基于计数的信号量。它可以设定一个阈值，基于此，多个线程竞争获取许可信号，完成任务后归还，超过阈值后，线程申请许可信号将会被阻塞。
+    Semaphore可以用来构建一些对象池，资源池之类的，比如数据库连接池，我们也可以创建计数为1的Semaphore，将其作为一种类似互斥锁的机制，这也叫二元信号量，表示两种互斥状态。
+    常用方法：
+        availablePermits：获取当前可用的资源数量
+        acquire：申请许可
+        release：释放许可</code></pre>
+  <pre><code class="hljs plaintext">并发队列Queue：
+    ConcurrentLinkedQueuｅ：基于链表的高性能非阻塞队列
+        通过无锁的方式，实现了高并发状态下的高性能，通常ConcurrentLinkedQueue性能好于BlockingQueue.它是一个基于链接节点的无界线程安全队列。该队列的元素遵循先进先出的原则。
+        常用方法：
+            add 和offer() 都是加入元素的方法(在ConcurrentLinkedQueue中这俩个方法没有任何区别)
+            poll() 和peek() 都是取头元素节点，区别在于前者会删除元素，后者不会。
+    BlockingQueue：阻塞队列
+        ArrayBlockingQueue：基于数组的并发阻塞队列
+            ArrayBlockingQueue是一个有边界的阻塞队列，它的内部实现是一个数组。有边界的意思是它的容量是有限的，我们必须在其初始化的时候指定它的容量大小，容量大小一旦指定就不可改变。
+            ArrayBlockingQueue是以先进先出的方式存储数据，最新插入的对象是尾部，最新移出的对象是头部。
+        LinkedBlockingQueue：基于链表的FIFO阻塞队列
+            LinkedBlockingQueue阻塞队列大小的配置是可选的，如果我们初始化时指定一个大小，它就是有边界的，如果不指定，它就是无边界的。说是无边界，其实是采用了默认大小为Integer.MAX_VALUE的容量。
+            它的内部实现是一个链表。和ArrayBlockingQueue一样，LinkedBlockingQueue 也是以先进先出的方式存储数据，最新插入的对象是尾部，最新移出的对象是头部。
+        PriorityBlockingQueue：带优先级的无界阻塞队列
+            PriorityBlockingQueue是一个没有边界的队列，它的排序规则和 java.util.PriorityQueue一样。
+        SynchronousQueue：并发同步阻塞队列
+            SynchronousQueue队列内部仅允许容纳一个元素。当一个线程插入一个元素后会被阻塞，除非这个元素被另一个线程消费。</code></pre></li>
+<li>线程间通信  <pre><code class="hljs plaintext">多个线程处理同一资源(共享数据),但是任务(处理方式)却不同.
+等待唤醒机制
+    Object类提供了3个方法：
+        wait(): 让线程处于等待状态，被wait的线程会被存储到线程池中。
+        notify(): 唤醒线程池中一个线程(任意)。如果对象调用了notify方法就会通知某个正在等待这个对象的控制权的线程可以继续运行。
+        notifyAll(): 唤醒线程池中的所有线程。如果对象调用了notifyAll方法就会通知所有等待这个对象控制权的线程继续运行。
+    以上方法为什么定义在Object类中?
+        这些方法的调用必需通过锁对象调用,而锁对象有可能是任意对象,所以这些方法必须定义在Object类中.</code></pre></li>
+</ul>
+<h3 id="性能调优专题"><a href="#性能调优专题" class="headerlink" title="性能调优专题"></a>性能调优专题</h3><ul>
+<li>零拷贝  <pre><code class="hljs plaintext">概念：
+    零拷贝技术是指计算机执行操作时,CPU不需要先将数据从某处内存复制到另一个特定区域.这种技术通常用于通过网络传输文件节省CPU周期和网络带宽.
+场景：
+    kafaka,netty,rocketmq,nginx,apache中都用到了零拷贝。
+好处：
+    Linux IO流程：先通过DMA拷贝将磁盘数据读入内核空间缓冲区,然后通过CPU拷贝从内核向用户进程空间缓冲区复制数据.
+    减少传输数据在存储器之间不必要的中间拷贝次数,从而有效提高数据传输效率
+    减少了用户进程空间和内核空间之间因为上下文切换而带来的开销
+实现：
+    1.java NIO - MappedByteBuffer,适合比较大的文件
+        FileChannel fileChannel = new RandomAcessFile(new File(&quot;data.zip&quot;),&quot;rw&quot;).getChannel();
+        MappedByteBuffer buffer = fileChannel.map(FileChannel.MapMode.READ_ONLY,0,fileChannel.size());
+    2.java NIO - FileChannel.transferTo,直接将当前通道内容传输到另一个通道,没有涉及到Buffer的任务操作,底层通过系统调用sendfile()
+        FileChannel fileChannel = new RandomAcessFile(new File(&quot;data.zip&quot;),&quot;rw&quot;).getChannel();
+        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(&quot;&quot;,1234));
+        fileChannel.transferTo(0,fileChannel.size(),socketChannel);</code></pre></li>
+</ul>
+<h3 id="数据结构与算法专题"><a href="#数据结构与算法专题" class="headerlink" title="数据结构与算法专题"></a>数据结构与算法专题</h3><ul>
+<li>B树(B-树)与B+树的区别  <pre><code class="hljs plaintext">B树与B+树的出现是为了减少磁盘IO的次数,基本思想就是
+    降低树的深度,每个节点存储多个元素
+    摒弃二叉树结构,采用多叉树
+B树：也叫平衡多路查找树
+    每个节点都存储key和data,所有节点组成这颗树,并且叶子节点指针为null.
+B+树：
+    只有叶子节点存储data,叶子节点包含了这棵树的所有键值,叶子节点不存储指针.
+        这意味着相同大小的磁盘页每个节点可以存储更多元素,使得查询的IO次数更少.
+    每个叶子节点增加了顺序访问指针(一个指向相邻叶子节点的指针).
+        使得所有节点形成有序链表,便于范围查询,这样一棵树成了数据库系统实现索引的首选数据结构。</code></pre></li>
+</ul>
+<h3 id="设计模式专题"><a href="#设计模式专题" class="headerlink" title="设计模式专题"></a>设计模式专题</h3><ul>
+<li>如何高效实现单例设计模式  <pre><code class="hljs plaintext">核心思想：
+    保证系统中一个类仅有一个实例,并且提供一个访问该实例的全局访问方法
+常见应用场景：
+    windows任务管理器,数据库连接池,java中的runtime,spring中bean的默认生命周期
+优点：
+    避免对象的频繁创建和销毁,提高性能
+实现：
+    饿汉式：
+        优点是访问性能高,线程安全;缺点是加载时就初始化,可能会造成资源浪费.
+    懒汉式：
+        优点是访问性能高,延迟初始化,提高了资源利用率;缺点是非线程安全
+    懒汉式 + synchronized：
+        优点是线程安全,延迟初始化,提高了资源利用率;缺点是getInstance()访问需要同步,并发访问性能低.
+    懒汉式 + double check + volatile：
+        优点是线程安全,延迟初始化,提高了资源利用率,getInstance()访问性能高.
+        public static Singleton getInstance()&#123;
+            if(instance == null)&#123;
+                synchronized(Singleton.class)&#123;
+                    if(instance == null)&#123;
+                        instance = new Singleton();
+                    &#125;
+                &#125;
+            &#125;
+            return instance;
+        &#125;
+    内部内Holder：
+        优点是线程安全,延迟初始化,提高了资源利用率,getInstance()访问性能高.
+        public final class Singleton&#123;
+            private Singleton()&#123;&#125;
+            private static class Holder&#123;
+                private static Singleton INSTANCE = new Singleton();
+            &#125;
+            public static Singleton getInstance()&#123;
+                return Holder.INSTANCE;
+            &#125;
+        &#125;
+    枚举(Enum)：
+        优点是线程安全,getInstance()访问性能高;缺点是不能延迟初始化
+        防止通过反射调用私有构造器来创建多个实例;提供了自动序列化机制,防止反序列化的时候创建新的对象.
+        public enum Singleon&#123;
+            INSTANCE;
+            void otherMethod()&#123;...&#125;
+        &#125;</code></pre></li>
+</ul>
+<h3 id="互联网工具专题"><a href="#互联网工具专题" class="headerlink" title="互联网工具专题"></a>互联网工具专题</h3><h3 id="源码框架专题"><a href="#源码框架专题" class="headerlink" title="源码框架专题"></a>源码框架专题</h3><h3 id="分布式框架专题"><a href="#分布式框架专题" class="headerlink" title="分布式框架专题"></a>分布式框架专题</h3><ul>
+<li>分布式事务解决方案  <pre><code class="hljs plaintext">本地事务：
+分布式事务：
+    单JVM跨库事务：
+        XA/JTA两阶段提交方案：
+            开源框架实现有atomikos,外加补偿机制.在CAP理论当中强调的是一致性,由于可用性较低,实际应用的并不多.
+    多JVM微服务：
+        CAP理论：
+            开发大规模分布式系统会遇到一致性,可用性,分区容错性3个特性,而一个分布式系统最多只能满足其中的2项.而分区容错性是分布式系统
+            必然要面对和解决的问题,因此我们要根据业务特点在一致性和可用性之间寻求平衡.
+            分区容错性：在任意分区网络故障的情况下系统仍能继续运行
+        BASE理论：
+            基本可用：指分布式系统在出现不可预知故障的时候,允许损失部分可用性.
+            软状态：允许系统中的数据存在中间状态,即允许数据同步的过程中存在延时.
+            最终一致：本质是需要系统保证最终数据能够达到一致,而不需要实时保证系统数据的强一致性.
+        柔性事务：
+            最大努力通知方案： 
+            TCC两阶段补偿性方案：
+                try：完成所有业务检查(一致性),预留业务资源(准隔离性)
+                confrim：确认执行业务操作,不做任务业务检查,只使用try阶段预留的业务资源
+                cancel：取消try阶段预留的业务资源
+                开源框架实现：atomikos商业版,tcc-transaction,spring-cloud-rest-tcc,支付宝tcc(XTS)
+                    分布式事务框架主要是帮我们解决了第二阶段的自动化;充当了一个协调器,根据预留操作的返回结果来自动化调用提交/取消操作.
+            可靠消息最终一致性方案：
+                基于RocketMQ：存在中间状态
+                基于普通消息队列：不存在中间状态,自己单独写个服务来实现中间状态
+    TCC与XA对比：
+        XA是资源(数据库)层面的分布式事务,强一致性,在两阶段提交的整个过程中,一直会持有资源的锁.
+        TCC是业务层面的分布式事务,最终一致性,不会一直持有资源的锁.针对整个系统提升了性能.</code></pre></li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Java常见面试题</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">6.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-08-18, 16:46:58</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/18/dl-java-interview.html" title="Java常见面试题">https://lvzhiqiang.top/2019/08/18/dl-java-interview.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

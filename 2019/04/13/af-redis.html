@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>分布式系列之 Redis&amp;Ehcache | Tujidelv Code</title>
+  <meta name="keywords" content=" 分布式 ">
+  <meta name="description" content="分布式系列之 Redis&amp;Ehcache | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-af-redis" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">分布式系列之 Redis&amp;Ehcache</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="应用框架">应用框架</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">分布式</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2019-04-13 16:56</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E5%88%97%E4%B9%8B-Redis-Ehcache"><span class="toc-text">分布式系列之 Redis&amp;Ehcache</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ehcache"><span class="toc-text">Ehcache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFEhcache"><span class="toc-text">什么是Ehcache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ehcache%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7"><span class="toc-text">Ehcache的主要特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ehcache%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D"><span class="toc-text">Ehcache使用介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ehcache%E7%BC%93%E5%AD%98%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5"><span class="toc-text">Ehcache缓存过期策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot%E6%95%B4%E5%90%88ehcache"><span class="toc-text">springboot整合ehcache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRedis"><span class="toc-text">什么是Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">Redis的应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Redis支持的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot%E6%95%B4%E5%90%88redis"><span class="toc-text">springboot整合redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85"><span class="toc-text">Redis发布订阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E4%BA%8B%E5%8A%A1"><span class="toc-text">Redis事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6"><span class="toc-text">Redis主从复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E5%93%A8%E5%85%B5%E6%9C%BA%E5%88%B6"><span class="toc-text">Redis哨兵机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-text">Redis持久化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2-%E6%8E%A8%E8%8D%903%E4%B8%BB3%E4%BB%8E"><span class="toc-text">Redis的集群部署(推荐3主3从)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="分布式系列之-Redis-Ehcache"><a href="#分布式系列之-Redis-Ehcache" class="headerlink" title="分布式系列之 Redis&amp;Ehcache"></a>分布式系列之 Redis&amp;Ehcache</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#Ehcache">Ehcache</a></li>
+<li><a href="#Redis">Redis</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>缓存的分类  <pre><code class="hljs plaintext">客户端缓存
+    浏览器页面缓存
+    App客户端缓存
+网络缓存
+    CDN内容分发缓存
+    Nginx代理缓存
+服务器缓存
+    数据库缓存
+    平台缓存</code></pre></li>
+<li>为什么使用缓存  <pre><code class="hljs plaintext">减轻服务器端压力，减少网络传输请求</code></pre></li>
+<li>缓存框架的分类  <pre><code class="hljs plaintext">单体式缓存框架/内置缓存框架/JVM缓存框架(只能针对于单个JVM中,缓存容器存放在JVM中,每个JVM互不影响)
+    Ehcache、Oscahche、Guava Caache
+    可自己基于Map集合来实现JVM缓存框架
+分布式缓存框架(共享缓存数据)
+    Redis、MemCache</code></pre></li>
+</ul>
+<h2 id="Ehcache"><a href="#Ehcache" class="headerlink" title="Ehcache"></a>Ehcache</h2><h3 id="什么是Ehcache"><a href="#什么是Ehcache" class="headerlink" title="什么是Ehcache"></a><code>什么是Ehcache</code></h3><pre><code class="hljs plaintext">Ehcache是纯java的开源缓存框架，具有快速、精干等特点，是Hibernate中默认的CacheProvider。
+它主要面向通用缓存、Java EE和轻量级容器，具有内存和磁盘存储、缓存加载器、缓存扩展、缓存异常处理程序。 
+Ehcache最初由Greg Luck于2003年开始开发。2009年,该项目被Terracotta购买。软件仍然开源,但一些新的主要功能(例如，快速可重启性之间的一致性的)只能在商业产品中使用。
+Ehcache 被广泛用于在Hibernate、Spring、Cocoon等其他开源系统。</code></pre>
+
+<h3 id="Ehcache的主要特性"><a href="#Ehcache的主要特性" class="headerlink" title="Ehcache的主要特性"></a><code>Ehcache的主要特性</code></h3><pre><code class="hljs plaintext">1.快速；
+2.简单；
+3.多种缓存策略；
+4.缓存数据有两级：内存和磁盘，因此无需担心容量问题；
+5.缓存数据会在虚拟机重启的过程中写入磁盘；
+6.可以通过 RMI、可插入 API 等方式进行分布式集群缓存；
+7.具有缓存和缓存管理器的侦听接口；
+8.支持多缓存管理器实例，以及一个实例的多个缓存区域；
+9.提供 Hibernate 的缓存实现；</code></pre>
+
+<h3 id="Ehcache使用介绍"><a href="#Ehcache使用介绍" class="headerlink" title="Ehcache使用介绍"></a><code>Ehcache使用介绍</code></h3><pre><code class="hljs plaintext">Ehcache是用来管理缓存的一个工具，其缓存的数据可以是存放在内存里面的，也可以是存放在硬盘上的。
+其核心是CacheManager，一切Ehcache的应用都是从CacheManager开始的。
+它是用来管理Cache（缓存）的，一个应用可以有多个CacheManager，而一个CacheManager下又可以有多个Cache。
+Cache内部保存的是一个个的Element，而一个Element中保存的是一个key和value的配对，相当于Map里面的一个Entry。</code></pre>
+
+<h3 id="Ehcache缓存过期策略"><a href="#Ehcache缓存过期策略" class="headerlink" title="Ehcache缓存过期策略"></a><code>Ehcache缓存过期策略</code></h3><pre><code class="hljs plaintext">当缓存需要被清理时（比如空间占用已经接近临界值了），需要使用某种淘汰算法来决定清理掉哪些数据。常用的淘汰算法有下面几种：
+    FIFO：First In First Out，先进先出。判断被存储的时间，离目前最远的数据优先被淘汰。
+    LRU：Least Recently Used，最近最少使用。判断最近被使用的时间，目前最远的数据优先被淘汰。
+    LFU：Least Frequently Used，最不经常使用。在一段时间内，数据被使用次数最少的，优先被淘汰。</code></pre>
+
+<h3 id="springboot整合ehcache"><a href="#springboot整合ehcache" class="headerlink" title="springboot整合ehcache"></a><code>springboot整合ehcache</code></h3><ol>
+<li>添加maven依赖 <pre><code class="hljs plaintext">&lt;!--开启 cache 缓存 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-cache&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;!-- ehcache缓存 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;
+    &lt;artifactId&gt;ehcache&lt;/artifactId&gt;
+    &lt;version&gt;2.9.1&lt;/version&gt;
+&lt;/dependency&gt;</code></pre></li>
+<li>添加Ehcache配置文件app1_ehcache.xml <pre><code class="hljs plaintext">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ehcache xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xsi:noNamespaceSchemaLocation=&quot;http://ehcache.org/ehcache.xsd&quot;&gt;
+
+	&lt;diskStore path=&quot;java.io.tmpdir/ehcache-rmi-4000&quot; /&gt;
+
+	&lt;!-- 默认缓存 --&gt;
+	&lt;defaultCache maxElementsInMemory=&quot;1000&quot; eternal=&quot;true&quot;
+		timeToIdleSeconds=&quot;120&quot; timeToLiveSeconds=&quot;120&quot; overflowToDisk=&quot;true&quot;
+		diskSpoolBufferSizeMB=&quot;30&quot; maxElementsOnDisk=&quot;10000000&quot;
+		diskPersistent=&quot;true&quot; diskExpiryThreadIntervalSeconds=&quot;120&quot;
+		memoryStoreEvictionPolicy=&quot;LRU&quot;&gt;
+	&lt;/defaultCache&gt;
+
+	&lt;!-- 自定义缓存 --&gt;
+	&lt;cache name=&quot;userCache&quot; maxElementsInMemory=&quot;1000&quot; eternal=&quot;false&quot;
+		timeToIdleSeconds=&quot;120&quot; timeToLiveSeconds=&quot;120&quot; overflowToDisk=&quot;true&quot;
+		diskSpoolBufferSizeMB=&quot;30&quot; maxElementsOnDisk=&quot;10000000&quot;
+		diskPersistent=&quot;false&quot; diskExpiryThreadIntervalSeconds=&quot;120&quot;
+		memoryStoreEvictionPolicy=&quot;LRU&quot;&gt;
+		&lt;cacheEventListenerFactory class=&quot;net.sf.ehcache.distribution.RMICacheReplicatorFactory&quot; /&gt;
+		&lt;!-- 用于在初始化缓存，以及自动设置 --&gt;
+		&lt;bootstrapCacheLoaderFactory class=&quot;net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory&quot; /&gt;
+	&lt;/cache&gt;
+&lt;/ehcache&gt;</code></pre>
+ <pre><code class="hljs plaintext">参数相关配置
+    1、diskStore ：
+        指定数据(.data and .index)存储位置，可指定磁盘中的文件夹位置
+    2、defaultCache ： 默认的管理策略
+        一、以下属性是必须的：
+        　　1、name： Cache的名称，必须是唯一的(ehcache会把这个cache放到HashMap里)。
+        　　2、maxElementsInMemory：在内存中缓存的element的最大数目。 
+        　　3、maxElementsOnDisk：在磁盘上缓存的element的最大数目，默认值为0，表示不限制。 
+        　　4、eternal：设定缓存的elements是否永远不过期。如果为true，则缓存的数据始终有效，如果为false那么还要根据timeToIdleSeconds，timeToLiveSeconds判断。 
+        　　5、overflowToDisk： 如果内存中数据超过内存限制，是否要缓存到磁盘上。 
+        二、以下属性是可选的：
+        　　1、timeToIdleSeconds： 对象空闲时间，指对象在多长时间没有被访问就会失效。只对eternal为false的有效。默认值0，表示一直可以访问。
+        　　2、timeToLiveSeconds： 对象存活时间，指对象从创建到失效所需要的时间。只对eternal为false的有效。默认值0，表示一直可以访问。
+        　　3、diskPersistent： 是否在磁盘上持久化。指重启jvm后，数据是否有效。默认为false。 
+        　　4、diskExpiryThreadIntervalSeconds： 对象检测线程运行时间间隔。标识对象状态的线程多长时间运行一次。
+        　　5、diskSpoolBufferSizeMB： DiskStore使用的磁盘大小，默认值30MB。每个cache使用各自的DiskStore。
+        　　6、memoryStoreEvictionPolicy： 如果内存中数据超过内存限制，向磁盘缓存时的策略。默认值LRU，可选FIFO、LFU。</code></pre></li>
+<li>配置yml <pre><code class="hljs plaintext">### 读取缓存配置
+cache:
+    type: ehcache
+    ehcache:
+        config: classpath:app1_ehcache.xml</code></pre></li>
+<li>项目使用 <pre><code class="hljs plaintext">@CacheConfig(cacheNames = &quot;userCache&quot;)
+public interface UserMapper &#123;
+	@Select(&quot;SELECT ID ,NAME,AGE FROM users where id=#&#123;id&#125;&quot;)
+	@Cacheable
+	List&lt;Users&gt; getUser(@Param(&quot;id&quot;) Long id);
+&#125;</code></pre>
+ <pre><code class="hljs plaintext">@Cacheable  加了该注解的方法表示可以缓存
+@CacheConfig 表示创建缓存配置，Key为userCache</code></pre></li>
+<li>启动 <pre><code class="hljs plaintext">//开启ehcache缓存模式
+@EnableCaching
+@MapperScan(basePackages = &#123; &quot;top.lvzhiqiang.mapper&quot; &#125;)
+@SpringBootApplication
+public class App &#123;
+	public static void main(String[] args) &#123;
+		SpringApplication.run(App.class, args);
+	&#125;
+&#125;</code></pre></li>
+<li>清除缓存 <pre><code class="hljs plaintext">@Autowired
+private CacheManager cacheManager;
+
+@RequestMapping(&quot;/remoKey&quot;)
+public void remoKey() &#123;
+    cacheManager.getCache(&quot;userCache&quot;).clear();
+&#125;</code></pre></li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><code>总结</code></h3><p><img src="/2019/04/13/af-redis/af-redis-001.png" alt="抱歉,图片休息了"><br><img src="/2019/04/13/af-redis/af-redis-002.png" alt="抱歉,图片休息了"> </p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a><code>什么是Redis</code></h3><pre><code class="hljs plaintext">Redis是由意大利人Salvatore Sanfilippo（网名：antirez）开发的一款开源、高性能的的非关系型内存数据库,并以key-value方式进行存储。
+Redis全称为：Remote Dictionary Server（远程数据服务），该软件使用C语言编写，官方提供的数据是可以达到100000+的qps。
+它支持数据的持久化来保证数据高可用、支持丰富的数据类型进行存储。并采用单线程模式来保证线程安全问题。
+-----------------------
+集群方式：
+    Redis主从复制+哨兵机制
+    Redis3.0分片集群</code></pre>
+<h3 id="Redis的应用场景"><a href="#Redis的应用场景" class="headerlink" title="Redis的应用场景"></a><code>Redis的应用场景</code></h3><ul>
+<li>会话session的一致性管理</li>
+<li>短信验证码,保证有效期</li>
+<li>缓存热点数据(经常被查询又不经常被修改)</li>
+<li>基于redis实现分布式锁</li>
+<li>网站计数器(由于单线程,高并发场景下,保证全局count唯一</li>
+<li>实现消息中间件的发布订阅功能(不推荐)</li>
+</ul>
+<h3 id="Redis支持的数据类型"><a href="#Redis支持的数据类型" class="headerlink" title="Redis支持的数据类型"></a><code>Redis支持的数据类型</code></h3><pre><code class="hljs plaintext">相关命令
+    ping：测试连接是否可以成功
+    quit：退出连接
+    dbsize：返回key的数量
+    info：输出redis信息
+    type key：返回数据类型
+    rename oldkey newkey：重命名
+    randomkey：随机返回一个key
+    select 0-15：选择数据库
+    move key 0-15：把key 移动到其他库
+    del key：删除某个key
+    key *：匹配显示所有key,支持正则
+    exists key：查看key是否存在</code></pre>
+<ul>
+<li>String（字符串）  <pre><code class="hljs plaintext">set key value
+get key</code></pre></li>
+<li>Hash（字典）  <pre><code class="hljs plaintext">hmset key  key1 value1 key2 value2
+hgetall key
+hget key key1</code></pre></li>
+<li>List（列表）  <pre><code class="hljs plaintext">lpush/rpush key value
+lrange key</code></pre></li>
+<li>Set（集合）  <pre><code class="hljs plaintext">sadd key value
+smembers key</code></pre></li>
+<li>Sorted Set（有序集合）  <pre><code class="hljs plaintext">zadd key value
+zrange key</code></pre></li>
+</ul>
+<h3 id="springboot整合redis"><a href="#springboot整合redis" class="headerlink" title="springboot整合redis"></a><code>springboot整合redis</code></h3><ol>
+<li>添加maven依赖 <pre><code class="hljs plaintext">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre></li>
+<li>修改yml文件 <pre><code class="hljs plaintext">spring:
+    redis:
+        database: 0
+        host: 192.168.1.103
+        port: 6379
+        password: 123456
+        jedis:
+            pool:
+                max-active: 8
+                max-wait: -1
+                max-idle: 8
+                min-idle: 0
+        timeout: 10000</code></pre></li>
+<li>代码 <pre><code class="hljs plaintext">@Service
+public class RedisService &#123;
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
+	
+	public void set(String key, Object object, Long time) &#123;
+		if (object instanceof String) &#123;// 存放String 类型
+			setString(key, object);
+		&#125;
+		if (object instanceof Set) &#123;// 存放 set类型
+			setSet(key, object);
+		&#125;
+		stringRedisTemplate.expire(key, time, TimeUnit.SECONDS);// 设置有效期 以秒为单位
+	&#125;
+	public void setString(String key, Object object) &#123;
+		String value = (String) object;// 如果是String 类型
+		stringRedisTemplate.opsForValue().set(key, value);
+	&#125;
+	public void setSet(String key, Object object) &#123;
+		Set&lt;String&gt; value = (Set&lt;String&gt;) object;
+		for (String oj : value) &#123;
+			stringRedisTemplate.opsForSet().add(key, oj);
+		&#125;
+	&#125;
+	public String getString(String key) &#123;
+		return stringRedisTemplate.opsForValue().get(key);
+	&#125;
+&#125;
+@RestController
+public class IndexControler &#123;
+	@Autowired
+	private RedisService redisService;
+
+	@RequestMapping(&quot;/setString&quot;)
+	public String setString(String key, String value) &#123;
+		redisService.set(key, value, 60l);
+		return &quot;success&quot;;
+	&#125;
+	@RequestMapping(&quot;/getString&quot;)
+	public String getString(String key) &#123;
+		return redisService.getString(key);
+	&#125;
+	...
+&#125;</code></pre></li>
+</ol>
+<h3 id="Redis发布订阅"><a href="#Redis发布订阅" class="headerlink" title="Redis发布订阅"></a><code>Redis发布订阅</code></h3><pre><code class="hljs plaintext">Redis发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。
+这点和设计模式中的观察者模式比较相似,pub/sub不仅仅解决发布者和订阅者直接代码级别耦合也解决两者在物理部署上的耦合。
+Redis客户端可以订阅任意数量的频道。
+----------------
+redis 127.0.0.1:6379&gt; SUBSCRIBE redisChat
+redis 127.0.0.1:6379&gt; UNSUBSCRIBE redisChat
+redis 127.0.0.1:6379&gt; PUBLISH redisChat &quot;Redis is a great caching technique&quot;</code></pre>
+
+<h3 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a><code>Redis事务</code></h3><pre><code class="hljs plaintext">redis对事务的支持目前还比较简单。redis只能保证一个client发起的事务中的命令可以连续的执行，而中间不会插入其他client的命令。
+由于redis是单线程来处理所有client的请求的所以做到这点是很容易的。一般情况下redis在接受到一个client发来的命令后会立即处理并返回处理结果，
+但是当一个client在一个连接中发出multi命令时，这个连接会进入一个事务上下文，该连接后续的命令并不是立即执行，而是先放到一个队列中。当从此连接
+受到exec命令后，redis会顺序的执行队列中的所有命令。并将所有命令的运行结果打包到一起返回给client.然后此连接就结束事务上下文。
+----------------
+redis集群对象JedisCluster不支持事务，但是，集群里边的每个节点支持事务
+----------------
+开启事物：multi
+回滚事物：discard
+提交事物：exec</code></pre>
+<pre><code class="hljs plaintext">//SpringBoot操作Redis事务
+public void setString(String key, Object object) &#123;
+    stringRedisTemplate.setEnableTransactionSupport(true);
+    stringRedisTemplate.multi();// 开启事务
+    try &#123;
+        // 如果是String 类型
+        String value = (String) object;
+        stringRedisTemplate.opsForValue().set(key, value);
+    &#125; catch (Exception e) &#123;
+        stringRedisTemplate.discard();// 回滚事务
+    &#125; finally &#123;
+        stringRedisTemplate.exec();// 提交事务
+    &#125;
+&#125;</code></pre>
+
+<h3 id="Redis主从复制"><a href="#Redis主从复制" class="headerlink" title="Redis主从复制"></a><code>Redis主从复制</code></h3><ul>
+<li>概述  <pre><code class="hljs plaintext">1、将redis数据库分为主数据库（master）和从数据库（slave），主数据库可以进行读写操作，当发生写操作的时候自动将数据同步到从数
+据库，而从数据库一般是只读的，并接收主数据库同步过来的数据，一个主数据库可以有多个从数据库，而一个从数据库只能有一个主数据库。
+2、通过redis的主从复制功能可以很好的实现数据库的读写分离，提高服务器的负载能力。主数据库主要进行写操作，而从数据库负责读操作。
+3、redis非集群模式只允许有一个主服务器,允许有多个从服务器。</code></pre></li>
+<li>图<br>  <img src="/2019/04/13/af-redis/af-redis-003.png" alt="抱歉,图片休息了"> </li>
+<li>搭建  <pre><code class="hljs plaintext">0.关闭防火墙
+1.下载Redis程序包
+2.解压到指定目录并编译安装
+    # cd /usr/program/redis-3.2.9
+    # make
+    # cd src
+    # make install PREFIX=/usr/program/redis-3.2.9
+3.配置环境变量,使用vim编辑/etc/profile.d/my.sh文件
+    REDIS_HOME=/usr/program/redis-3.2.9
+    PATH=$REDIS_HOME/bin:$PATH
+    export REDIS_HOME
+    export PATH
+4.配置redis为后台启动
+    # vim $&#123;REDIS_HOME&#125;/redis.conf //将daemonize no 改成daemonize yes
+    # vim $&#123;REDIS_HOME&#125;/redis.conf // requirepass 123456,指定密码
+    # vim $&#123;REDIS_HOME&#125;/redis.conf //将bind 127.0.0.1注释掉,开启外网访问
+5.开启redis
+    # redis-server $&#123;REDIS_HOME&#125;/redis.conf
+6.连接Redis客户端
+    # ./redis-cli -h 127.0.0.1 -p 6379 -a &quot;123456&quot;
+    PING 结果表示成功
+7.从服务器上修改redis.conf配置文件
+    # vim $&#123;REDIS_HOME&#125;/redis.conf //打开slaveof 192.168.33.130 6379,
+    # vim $&#123;REDIS_HOME&#125;/redis.conf //打开masterauth 123456,主redis服务器如果配置了密码,则需要配置</code></pre></li>
+</ul>
+<h3 id="Redis哨兵机制"><a href="#Redis哨兵机制" class="headerlink" title="Redis哨兵机制"></a><code>Redis哨兵机制</code></h3><ul>
+<li>概述  <pre><code class="hljs plaintext">1.redis的哨兵(sentinel) 系统用于管理多个Redis服务器,该系统执行以下三个任务:
+    监控(Monitoring): 哨兵(sentinel) 会不断地检查你的Master和Slave是否运作正常。
+    提醒(Notification):当被监控的某个Redis出现问题时, 哨兵(sentinel) 可以通过API向管理员或者其他应用程序发送通知。
+    自动故障迁移(Automatic failover):当一个Master不能正常工作时，哨兵(sentinel)会开始一次自动故障迁移操作,它会将失效Master的
+        其中一个Slave升级为新的Master, 并让失效Master的其他Slave改为复制新的Master; 
+        当客户端试图连接失效的Master时,集群也会向客户端返回新Master的地址,使得集群可以使用Master代替失效Master。
+2.哨兵(sentinel) 的一些设计思路和zookeeper非常类似
+3.哨兵是独立的一个应用程序(进程)</code></pre></li>
+<li>配置  <pre><code class="hljs plaintext">0.集群的所有服务器都要开启密码,即主服务器也要打开设置masterauth属性
+1.拷贝到etc目录
+    cp sentinel.conf  /usr/local/redis/etc
+2.修改sentinel.conf配置文件
+    sentinel monitor mymaster  192.168.110.133 6379 1  #主节点 名称 IP 端口号 选举次数
+    sentinel auth-pass mymaster 123456  
+    sentinel down-after-milliseconds mymaster 30  #修改心跳检测,默认为30秒,此改为30毫秒
+    sentinel parallel-syncs mymaster 2  #做多多少合格节点,可不配置
+3.启动哨兵模式
+    ./redis-server /usr/local/redis/etc/sentinel.conf --sentinel &amp;
+4.停止哨兵模式
+    kill</code></pre></li>
+</ul>
+<h3 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a><code>Redis持久化</code></h3><ul>
+<li>概念  <pre><code class="hljs plaintext">持久化就是把内存中的数据写到磁盘中去，防止服务宕机了内存数据丢失。
+Redis提供了两种持久化方式:RDB（默认开启）和AOF。</code></pre></li>
+<li>RDB持久化<ul>
+<li>RDB全称Redis DataBase,是以二进制文件形式在某个时间点将数据写入一个临时文件(会替换上次持久化的文件)，来达到数据恢复。</li>
+<li>RDB功能核心函数rdbSave(生成RDB文件)和rdbLoad（从文件加载内存）两个函数</li>
+<li>更多请参考<a target="_blank" rel="noopener" href="http://redisbook.readthedocs.io/en/latest/internal/rdb.html#id4">http://redisbook.readthedocs.io/en/latest/internal/rdb.html#id4</a>  <pre><code class="hljs plaintext">##持久化数据存储在本地的文件
+dbfilename dump.rdb
+##持久化数据存储在本地的路径，如果是在/redis/redis-3.0.6/src下启动的redis-cli，则数据会存储在当前src目录下
+dir ./
+##保存策略,即snapshot触发的时机
+###如下为900秒后，至少有一个变更操作，才会snapshot
+###可以通过“save “””来关闭snapshot功能  
+#以下分别表示更改了1个key时间隔900s进行持久化存储；300s内更改了10个key则发起快照保存；更改10000个key60s进行存储
+save 900 1
+save 300 10
+save 60 10000
+##当snapshot时出现错误无法继续时，是否阻塞客户端“变更操作”，“错误”可能因为磁盘已满/磁盘故障/OS级别异常等
+stop-writes-on-bgsave-error yes  
+##是否启用rdb文件压缩，默认为“yes”，压缩往往意味着“额外的cpu消耗”，同时也意味这较小的文件尺寸以及较短的网络传输时间
+rdbcompression yes</code></pre></li>
+</ul>
+</li>
+<li>AOF持久化<ul>
+<li>AOF全称Append-only file,将“操作+数据”以格式化指令的方式追加到操作日志文件的尾部，“日志文件”保存了历史所有的操作过程</li>
+<li>采用redis通讯协议(RESP)格式的命令文本进行存储  <pre><code class="hljs plaintext">##此选项为aof功能的开关，默认为“no”，可以通过“yes”来开启aof功能  
+appendonly yes
+##指定aof文件名称  
+appendfilename appendonly.aof
+##指定aof方式文件同步(保存)策略，有三个合法值：always everysec no,默认为everysec
+###always代表每执行一个命令保存一次,停机时最多只丢失一个命令的数据。
+###everysec代表每一秒钟保存一次 ,停机时一般情况下会丢失不超过2秒钟的数据,推荐。
+###no代表不保存,停机时会丢失操作系统最后一次对AOF文件触发SAVE操作之后的数据。
+appendfsync everysec  
+##在aof-rewrite期间，appendfsync是否暂缓文件同步，&quot;no&quot;表示“不暂缓”，“yes”表示“暂缓”，默认为“no”
+no-appendfsync-on-rewrite no  
+##aof文件rewrite触发的最小文件尺寸(mb,gb),只有大于此aof文件大于此尺寸是才会触发rewrite，默认“64mb”，建议“512mb”  
+auto-aof-rewrite-min-size 64mb  
+##相对于“上一次”rewrite，本次rewrite触发时aof文件应该增长的百分比。  
+###每一次rewrite之后，redis都会记录下此时“新aof”文件的大小(例如A)，那么当aof文件增长到A*(1 + p)之后  
+###触发下一次rewrite，每一次aof记录的添加，都会检测当前aof文件的尺寸。  
+auto-aof-rewrite-percentage 100</code></pre></li>
+</ul>
+</li>
+<li>RDB和AOF区别  <pre><code class="hljs plaintext">RDB
+    优点：使用单独子进程来进行持久化，主进程不会进行任何IO操作，保证了redis的高性能 
+    缺点：RDB是间隔一段时间进行持久化，如果持久化之间redis发生故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候
+AOF
+    优点：可以保持更高的数据完整性
+    缺点：AOF文件比RDB文件大，加载(恢复速度)慢。</code></pre></li>
+</ul>
+<h3 id="Redis的集群部署-推荐3主3从"><a href="#Redis的集群部署-推荐3主3从" class="headerlink" title="Redis的集群部署(推荐3主3从)"></a><code>Redis的集群部署(推荐3主3从)</code></h3><ol>
+<li>下载Redis程序包(只需在一台服务器上执行操作) <pre><code class="hljs plaintext">方法1：
+    1. 去Redis官网找到并复制其链接地址
+    2. wget -P /opt/setups/ http://download.redis.io/releases/redis-3.2.9.tar.gz
+方法2：
+    1. 去Redis官网找到指定版本的gz包,下载到本地
+    2. 通过rz等上传工具将程序包上传到/opt/setups目录中去</code></pre></li>
+<li>解压到指定目录并编译安装 <pre><code class="hljs plaintext"># mkdir -pv /usr/program
+# tar -xzf redis-3.2.9.tar.gz -C /usr/program/
+# cd /usr/program/redis-3.2.9
+# make</code></pre></li>
+<li>配置环境变量,使用vim编辑&#x2F;etc&#x2F;profile.d&#x2F;my.sh文件 <pre><code class="hljs plaintext"># Redis
+REDIS_HOME=/usr/program/redis-3.2.9
+PATH=$REDIS_HOME/src:$PATH
+export REDIS_HOME
+export PATH</code></pre>
+ <pre><code class="hljs plaintext"># source /etc/profile.d/my.sh</code></pre></li>
+<li>创建集群等相关目录 <pre><code class="hljs plaintext"># mkdir -pv $&#123;REDIS_HOME&#125;/cluster-conf/&#123;6379,6389&#125;
+# tree -d $&#123;REDIS_HOME&#125;
+# cp $&#123;REDIS_HOME&#125;/redis.conf $&#123;REDIS_HOME&#125;/cluster-conf/6379
+# cp $&#123;REDIS_HOME&#125;/redis.conf $&#123;REDIS_HOME&#125;/cluster-conf/6389</code></pre></li>
+<li>配置集群参数 <pre><code class="hljs plaintext"># vim $&#123;REDIS_HOME&#125;/cluster-conf/6379/redis.conf
+-----------------
+# myself
+##端口号
+port 6379
+##指定了记录日志的文件
+logfile &quot;/usr/program/redis-3.2.9/cluster-conf/6379/redis.log&quot;
+##数据目录，数据库的写入会在这个目录
+##rdb、aof文件也会写在这个目录
+dir /usr/program/redis-3.2.9/cluster-conf/6379/
+##是否开启集群
+cluster-enabled yes
+##集群配置文件的名称，每个节点都有一个集群相关的配置文件，持久化保存集群的信息。
+##这个文件并不需要手动配置，这个配置文件有Redis生成并更新，每个Redis集群节点需要
+##一个单独的配置文件，请确保与实例运行的系统中配置文件名称不冲突
+cluster-config-file nodes.conf
+##节点互连超时的阀值。集群节点超时毫秒数
+cluster-node-timeout 5000
+##默认redis使用的是rdb方式持久化，这种方式在许多应用中已经足够用了。
+##但是redis如果中途宕机，会导致可能有几分钟的数据丢失，根据save来策略进行持久化，
+##Append Only File是另一种持久化方式，可以提供更好的持久化特性。
+##Redis会把每次写入的数据在接收后都写入appendonly.aof 文件，每次启动时Redis都会
+##先把这个文件的数据读入内存里，先忽略RDB文件。
+appendonly yes
+##指定Redis只接收来自于该IP 地址的请求，如果不进行设置，那么将处理所有请求，
+##在生产环境中最好设置该项
+bind 0.0.0.0</code></pre>
+ <pre><code class="hljs plaintext"># vim $&#123;REDIS_HOME&#125;/cluster-conf/6389/redis.conf
+-----------------
+# myself
+port 6389
+logfile &quot;/usr/program/redis-3.2.9/cluster-conf/6389/redis.log&quot;
+dir /usr/program/redis-3.2.9/cluster-conf/6389/
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout 5000
+appendonly yes
+bind 0.0.0.0</code></pre></li>
+<li>使用scp命令将redis项目复制到另一台服务器,并在另一台机器上执行<code>步骤3</code> <pre><code class="hljs plaintext"># scp -r $&#123;REDIS_HOME&#125; root@192.168.9.230:/usr/program/</code></pre></li>
+<li>启动 <pre><code class="hljs plaintext">另一台机器也要执行
+-----------------
+# redis-server $&#123;REDIS_HOME&#125;/cluster-conf/6379/redis.conf &amp;
+# redis-server $&#123;REDIS_HOME&#125;/cluster-conf/6389/redis.conf &amp;</code></pre></li>
+<li>创建集群Cluster <pre><code class="hljs plaintext">让redis-trib程序创建一个包含二个主节点和二个从节点的集群。
+    给定redis-trib.rb程序的命令是create，表示希望创建一个新的集群。
+    选项--replicas 1表示为集群中的每个主节点创建一个从节点（百分比选举master,按先后顺序）。
+    之后跟着的其他参数则是实例的地址列表，我们希望程序使用这些地址所指示的实例来创建新集群。
+-----------------
+如在执行时提示/usr/bin/env: ruby: No such file or directory,需要安装ruby,因为redis-trib是用ruby写的
+    # yum install ruby
+-----------------
+如在执行时提示/usr/program/redis-3.2.9/src/redis-trib.rb:24:in `require&#x27;: no such file to load -- rubygems (LoadError)
+    # yum install rubygems
+-----------------
+如在执行时提示/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&#x27;: no such file to load -- redis (LoadError)
+    # gem install redis
+-----------------
+如在执行gem install redis提示redis requires Ruby version &gt;= 2.2.2.
+    1. 安装curl
+        yum install curl
+    2. 安装RVM
+        curl -L get.rvm.io | bash -s stable
+        gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C2..(此命令可通过上个命令的输出中找到)
+        curl -L get.rvm.io | bash -s stable
+        echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db(修改RVM的Ruby安装源到Ruby China的Ruby镜像服务器，这样能提高安装速度)
+        source /usr/local/rvm/scripts/rvm
+    3. 查看rvm库中已知的ruby版本
+        rvm list known
+    4. 安装一个ruby版本(贼TM慢)
+        rvm install 2.3.3
+    5. 使用一个ruby版本
+        rvm use 2.3.3
+    6. 设置默认版本
+        rvm use 2.3.3 --default
+    7. 卸载一个已知版本
+        rvm remove 2.0.0
+    8. 查看Ruby版本
+        ruby --version
+-----------------</code></pre>
+ <pre><code class="hljs plaintext"># redis-trib.rb create --replicas 1 192.168.9.231:6379 192.168.9.230:6379 192.168.9.232:6379 192.168.9.231:6389 192.168.9.230:6389 192.168.9.232:6389</code></pre></li>
+<li>查看 <pre><code class="hljs plaintext"></code></pre></li>
+<li>关闭服务<pre><code class="hljs plaintext"># redis-cli -h 192.168.9.231 -p 6379 shutdown</code></pre></li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>分布式系列之 Redis&amp;Ehcache</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">5.7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-04-13, 16:56:23</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/04/13/af-redis.html" title="分布式系列之 Redis&amp;Ehcache">https://lvzhiqiang.top/2019/04/13/af-redis.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

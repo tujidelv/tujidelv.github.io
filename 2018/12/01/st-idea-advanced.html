@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IDEA 札记：进阶 | Tujidelv Code</title>
+  <meta name="keywords" content=" jetbrains ">
+  <meta name="description" content="IDEA 札记：进阶 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-st-idea-advanced" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">IDEA 札记：进阶</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软件工具">软件工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">jetbrains</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2018-12-01 17:17</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IDEA-%E6%9C%AD%E8%AE%B0%EF%BC%9A%E8%BF%9B%E9%98%B6"><span class="toc-text">IDEA 札记：进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="toc-text">快捷键常用设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE-Eclipse-%E7%89%88"><span class="toc-text">常用快捷键(Eclipse 版)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctrl"><span class="toc-text">Ctrl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alt"><span class="toc-text">Alt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shift"><span class="toc-text">Shift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctrl-Alt"><span class="toc-text">Ctrl + Alt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctrl-Shift"><span class="toc-text">Ctrl + Shift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alt-Shift"><span class="toc-text">Alt + Shift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctrl-Shift-Alt"><span class="toc-text">Ctrl + Shift + Alt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E7%8E%87%E7%BC%96%E7%A0%81%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="toc-text">高效率编码功能介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven-%E9%85%8D%E7%BD%AE"><span class="toc-text">Maven 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-text">版本控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Debug-%E6%8A%80%E5%B7%A7"><span class="toc-text">Debug 技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="toc-text">实时代码模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%86%85%E5%AE%B9-Abbreviation%EF%BC%9A%E6%A8%A1%E6%9D%BF%E7%9A%84%E7%BC%A9%E7%95%A5%E5%90%8D-Description%EF%BC%9A%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%8F%8F%E8%BF%B0-Template-text%EF%BC%9A%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5-%E5%BA%94%E7%94%A8%E8%8C%83%E5%9B%B4%EF%BC%9A%E6%AF%94%E5%A6%82%E7%82%B9%E5%87%BBDefine-%E9%80%89%E6%8B%A9java-Edit-variables%EF%BC%9Ahttps-www-jetbrains-com-help-idea-template-variables-html-Database-%E2%80%9D-%E2%80%9D-Data-Source-MySQL-%E5%A1%AB%E5%86%99%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF-3%EF%BC%9A%E5%90%8C%E6%AD%A5%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E3%80%82%E8%BF%99%E4%B8%AA%E6%98%AF%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%9C%89%E4%B8%80%E4%BA%9B%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E5%BD%93%E6%88%91%E4%BB%AC%E9%85%8D%E7%BD%AE%E5%A5%BD%E8%BF%9E%E6%8E%A5%E4%B9%8B%E5%90%8E%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%8C%E9%82%A3%E5%B0%B1%E6%98%AF%E9%9C%80%E8%A6%81%E7%82%B9%E5%87%BB%E8%AF%A5%E6%8C%89%E9%92%AE%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5%E3%80%82%E8%BF%98%E6%9C%89%E4%B8%80%E7%A7%8D%E6%83%85%E5%86%B5%E5%B0%B1%E6%98%AF%E6%88%91%E4%BB%AC%E5%9C%A8IDEA%E4%B9%8B%E5%A4%96%E7%94%A8%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E6%AF%94%E5%A6%82%E6%96%B0%E5%BB%BA%E8%A1%A8%E3%80%82%E8%80%8C%E6%AD%A4%E6%97%B6IDEA%E7%9A%84-Database%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%90%8C%E6%AD%A5%E5%88%B0%E6%96%B0%E8%A1%A8%EF%BC%8C%E4%B9%9F%E6%98%AF%E9%9C%80%E8%A6%81%E7%82%B9%E5%87%BB%E6%AD%A4%E6%8C%89%E9%92%AE%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5%E7%9A%84-4%EF%BC%9A%E9%85%8D%E7%BD%AE%E5%BD%93%E5%89%8D%E8%BF%9E%E6%8E%A5%EF%BC%8C%E8%B7%9F%E6%88%91%E4%BB%AC%E9%A6%96%E6%AC%A1%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9A%84%E7%95%8C%E9%9D%A2%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84-5%EF%BC%9A%E6%96%AD%E5%BC%80%E5%BD%93%E5%89%8D%E7%9A%84%E8%BF%9E%E6%8E%A5-6%EF%BC%9A%E6%98%BE%E7%A4%BA%E7%9B%B8%E5%BA%94%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E6%8D%AE-7%EF%BC%9A%E7%BC%96%E8%BE%91%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E8%B1%A1-All-plugins%EF%BC%9A%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E6%8F%92%E4%BB%B6-Enabled%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E5%B7%B2%E7%BB%8F%E5%90%AF%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6-Disabled%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E5%B7%B2%E7%BB%8F%E7%A6%81%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6-Bundled%EF%BC%9A%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89IDEA%E8%87%AA%E5%B8%A6%E7%9A%84%E6%8F%92%E4%BB%B6-Custom%EF%BC%9A%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E6%88%91%E4%BB%AC%E8%87%AA%E8%A1%8C%E5%AE%89%E8%A3%85%E7%9A%84%E6%8F%92%E4%BB%B6%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%A0%E8%87%AA%E5%B7%B1%E8%A3%85%E4%BA%86%E5%BE%88%E5%A4%9A%E6%AC%A1%E6%8F%92%E4%BB%B6%E7%9A%84%E8%AF%9D%EF%BC%8C%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E4%BC%9A%E7%94%A8%E5%BE%97%E6%AF%94%E8%BE%83%E5%A4%9A-Material-Theme-UI-Power-Mode-II%EF%BC%9Aactivate-power-mode-Background-Image-Plus-Nyan-Progress-Bar-Gitee-NodeJS-Lombok-Alibaba-Java-Coding-Guidelines%EF%BC%9A%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%87%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%A3%80%E6%9F%A5%E6%8F%92%E4%BB%B6-JRebel-for-IntelliJ%EF%BC%9A%E7%83%AD%E9%83%A8%E7%BD%B2-Translation%EF%BC%9A%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6-Maven-Helper%EF%BC%9AMaven%E8%BE%85%E5%8A%A9%E6%8F%92%E4%BB%B6-MybatisX%EF%BC%9Amybatis%E6%A1%86%E6%9E%B6%E8%BE%85%E5%8A%A9%EF%BC%88%E5%85%8D%E8%B4%B9%EF%BC%89-Lombok-Plugin%EF%BC%9ALombok-%E5%8A%9F%E8%83%BD%E8%BE%85%E5%8A%A9%E6%8F%92%E4%BB%B6-Git-Flow-Integration%EF%BC%9AGit-Flow%E7%9A%84%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E6%93%8D%E4%BD%9C-ignore%EF%BC%9A%E5%90%84%E7%B1%BB%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7-GenerateAllSetter%EF%BC%9Anew-POJO%E7%B1%BB%E7%9A%84%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90set%E6%96%B9%E6%B3%95-GsonFormat%EF%BC%9A%E6%8A%8AJSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B4%E6%8E%A5%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%88%90%E7%B1%BB-Rainbow-Brackets%EF%BC%9A%E5%AF%B9%E5%90%84%E4%B8%AA%E5%AF%B9%E7%A7%B0%E6%8B%AC%E5%8F%B7%E8%BF%9B%E8%A1%8C%E7%9D%80%E8%89%B2%EF%BC%8C%E6%96%B9%E4%BE%BF%E6%9F%A5%E7%9C%8B-String-Manipulation%EF%BC%9A%E9%A9%BC%E5%B3%B0%E5%BC%8F%E5%91%BD%E5%90%8D%E5%92%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E5%91%BD%E5%90%8D%E4%BA%A4%E6%9B%BF%E5%8F%98%E5%8C%96"><span class="toc-text">填写模板的内容 Abbreviation：模板的缩略名 Description：模板的描述 Template text：模板的代码片段 应用范围：比如点击Define,选择java Edit variables：	https:&#x2F;&#x2F;www.jetbrains.com&#x2F;help&#x2F;idea&#x2F;template-variables.html  
+### &#96;数据库管理工具&#96;
+
+- IDEA 的 Database 最大特性就是对于 JavaWeb 项目来讲,对常用的 ORM 框架有很好的支持,比如配置好了 Database 之后，IDEA 会自动识别 domain 对象与数据表的关系，也可以通过 Database 的数据表直接生成 domain 对象等等。
+- 关联方式  Database-&gt;”+”-&gt;Data Source-&gt;MySQL,填写相关信息  - 常用操作  3：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在IDEA之外用其他工具操作数据库，比如新建表。而此时IDEA的 Database如果没有同步到新表，也是需要点击此按钮进行同步的  4：配置当前连接，跟我们首次设置连接的界面是一样的  5：断开当前的连接  6：显示相应数据库对象的数据  7：编辑修改当前数据库对象  
+## 插件推荐、开发介绍
+
+- 插件设置
+    - IDEA 对插件进行了很好的分类：启用的插件是被勾选的，如果要禁用一个插件，去掉勾选即可 All plugins：显示所有插件 Enabled：显示当前所有已经启用的插件 Disabled：显示当前所有已经禁用的插件 Bundled：显示所有IDEA自带的插件 Custom：显示所有我们自行安装的插件，如果你自己装了很多次插件的话，这个选项会用得比较多     - Install JetBrains plugin...：弹出IDEA公司自行开发的插件仓库列表，供下载安装	
+    - Browse repositories...：弹出插件仓库中所有插件列表供下载安装
+    - Install plugin from disk...：浏览本地的插件文件进行安装，而不是从服务器上下载并安装
+    
+    Tips：在国内的网络下，很经常出现显示不了插件列表，或是显示了插件列表，无法下载完成安装。这时候请自行开 VPN，一般都可以得到解决
+- 插件推荐
+    - 官方插件库：&lt;https:&#x2F;&#x2F;plugins.jetbrains.com&gt;
+    - 在用插件 Material Theme UI Power Mode II：activate-power-mode Background Image Plus Nyan Progress Bar Gitee NodeJS Lombok Alibaba Java Coding Guidelines：阿里巴巴出的代码规范检查插件 JRebel for IntelliJ：热部署 - 备用插件 Translation：翻译插件 Maven Helper：Maven辅助插件 MybatisX：mybatis框架辅助（免费） Lombok Plugin：Lombok 功能辅助插件 Git Flow Integration：Git Flow的图形界面操作 .ignore：各类版本控制忽略文件生成工具 GenerateAllSetter：new POJO类的快速生成set方法 GsonFormat：把JSON字符串直接实例化成类 Rainbow Brackets：对各个对称括号进行着色，方便查看 String Manipulation：驼峰式命名和下划线命名交替变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="IDEA-札记：进阶"><a href="#IDEA-札记：进阶" class="headerlink" title="IDEA 札记：进阶"></a>IDEA 札记：进阶</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE%E4%BB%8B%E7%BB%8D">快捷键设置介绍</a></li>
+<li><a href="#%E9%AB%98%E6%95%88%E7%8E%87%E7%BC%96%E7%A0%81%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D">高效率编码功能介绍</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90%E3%80%81%E5%BC%80%E5%8F%91%E4%BB%8B%E7%BB%8D">插件推荐、开发介绍</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>对IDEA进一步的了解及使用。</p>
+<h2 id="快捷键常用设置"><a href="#快捷键常用设置" class="headerlink" title="快捷键常用设置"></a>快捷键常用设置</h2><ul>
+<li><code>设置为 Eclipse 的快捷键</code>  <pre><code class="hljs plaintext">1.Keymap下拉框选中&quot;Eclipse&quot;并应用
+2.如需在此快捷键模板上修改,则点击旁边齿轮-&gt;Duplicate来拷贝一份模板,并输入自己的命名</code></pre></li>
+<li><code>筛选并修改快捷键</code>  <pre><code class="hljs plaintext">1.在搜索框输入快捷键描述内容							
+2.点击搜索框旁边图标并按下需要修改的快捷键							
+-------------------------
+Add Keyboard Shortcut：用来添加新的纯键盘快捷键组合
+Add Mouse Shortcut：用来添加新的键盘+鼠标快捷键组合，比如设置Ctrl+左键单击这类快捷组合。其中在弹出的添加面板中Click Pad是用来监听当前鼠标是左键单击还是右键单击
+Add Abbreviation：根据IDEA的版本文档解释，添加简称主要是为了方便Search Everywhere中使用我设置的简称搜索
+Remove：移出当前操作命令(一个操作命令同时支持多个快捷键组合)已设置的快捷键组合，由于IDEA默认就占用了很多快捷键组合，所以如果你要修改某个快捷键，建议还是删除掉旧的</code></pre></li>
+<li><code>导入已有的快捷键模板</code>  <pre><code class="hljs plaintext">File–&gt;import setttings–&gt;选中本地的快捷键jar文件–&gt;一路确认–&gt;重启。
+IDEA默认快捷键的配置文件所在地：$&#123;IDEA_home&#125;\lib\resources.jar\keymaps\*</code></pre></li>
+</ul>
+<h2 id="常用快捷键-Eclipse-版"><a href="#常用快捷键-Eclipse-版" class="headerlink" title="常用快捷键(Eclipse 版)"></a>常用快捷键(Eclipse 版)</h2><h3 id="Ctrl"><a href="#Ctrl" class="headerlink" title="Ctrl"></a><em><strong>Ctrl</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+<td align="left">在当前文件进行文本替换 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Z/Y</kbd></td>
+<td align="left">撤销/反撤销 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>X/C/V/A/S</kbd></td>
+<td align="left">剪切/复制/粘贴/全选/保存 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+<td align="left">删除光标所在行或选中行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>/</kbd></td>
+<td align="left">单行注释 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>O</kbd></td>
+<td align="left">查看当前类的结构 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>H/R</kbd></td>
+<td align="left">查找/替换(全局) <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+<td align="left">显示最近打开的文件记录列表 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>W</kbd></td>
+<td align="left">关闭当前打开的代码栏 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>L</kbd></td>
+<td align="left">在当前文件跳转到指定行处 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Up/Down</kbd></td>
+<td align="left">等效于鼠标滚轮向前/后效果 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Left/Right</kbd></td>
+<td align="left">光标跳转到当前单词/中文名的左/右侧开头位置 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>T</kbd></td>
+<td align="left">在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F12</kbd></td>
+<td align="left">调转到所选中的词的下一个引用位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F1</kbd></td>
+<td align="left">在光标所在的错误代码处显示错误信息</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>J</kbd></td>
+<td align="left">插入自定义动态代码模板</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+<td align="left">前往当前光标所在的方法的父类的方法/接口定义</td>
+</tr>
+</tbody></table>
+<h3 id="Alt"><a href="#Alt" class="headerlink" title="Alt"></a><em><strong>Alt</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Insert</kbd></td>
+<td align="left">新建文件 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Enter</kbd></td>
+<td align="left">万能解错/生成返回值变量 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>/</kbd></td>
+<td align="left">提示补全 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Up/Down</kbd></td>
+<td align="left">向上/下移动行/方法 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Left/Right</kbd></td>
+<td align="left">退回/前进到上一个/下一个操作的页面 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>R/D</kbd></td>
+<td align="left">在执行/调试 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>1,2,...,9</kbd></td>
+<td align="left">显示对应数值的他选项卡,其中1是Project用得最多 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F12</kbd></td>
+<td align="left">在项目下打开命令行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F1</kbd></td>
+<td align="left">显示当前文件选择目标弹出层,弹出层中有很多目标可以进行选择 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>`</kbd></td>
+<td align="left">显示版本控制常用操作菜单弹出层 <code>（必备）</code></td>
+</tr>
+</tbody></table>
+<h3 id="Shift"><a href="#Shift" class="headerlink" title="Shift"></a><em><strong>Shift</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left">向下开始新的一行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Tab</kbd></td>
+<td align="left">取消缩进 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>F11</kbd></td>
+<td align="left">弹出书签显示层 <code>（必备）</code></td>
+</tr>
+</tbody></table>
+<h3 id="Ctrl-Alt"><a href="#Ctrl-Alt" class="headerlink" title="Ctrl + Alt"></a><em><strong>Ctrl + Alt</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left">打开idea系统设置 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down</kbd></td>
+<td align="left">向下复制一行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd></td>
+<td align="left">添加到收藏 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left/Right</kbd></td>
+<td align="left">切换当前已打开的窗口中的子视图,如debug窗口中有output,debugger等子视图</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>H</kbd></td>
+<td align="left">查看方法的多层重写结构</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>/</kbd></td>
+<td align="left">方法参数提示显示</td>
+</tr>
+</tbody></table>
+<h3 id="Ctrl-Shift"><a href="#Ctrl-Shift" class="headerlink" title="Ctrl + Shift"></a><em><strong>Ctrl + Shift</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd></td>
+<td align="left">多行注释 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd></td>
+<td align="left">在 Debug 的状态下，选中对象，可快速查看该输入内容的调试结果 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left">向上开始新的一行 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left">格式化代码 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></td>
+<td align="left">优化导入的类 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd></td>
+<td align="left">大写转小写&#x2F;小写转大写 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+<td align="left">根据输入的类名查找类文件 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left">根据输入的文件名打开文件&#x2F;目录,打开目录需在末尾多加一个正斜杠 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Up/Down</kbd></td>
+<td align="left">当前光标跳转到当前文件的前&#x2F;后一个方法名位置 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></td>
+<td align="left">编辑器最大化 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd></td>
+<td align="left">查找方法在哪里被调用 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd></td>
+<td align="left">选择要粘贴的内容</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd></td>
+<td align="left">快速搜索类中的错误</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd></td>
+<td align="left">关闭打开的所有代码栏</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></td>
+<td align="left">查看类的继承结构图</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd></td>
+<td align="left">打开代码所在硬盘文件夹</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+<td align="left">复制当前文件磁盘路径到剪切板</td>
+</tr>
+</tbody></table>
+<h3 id="Alt-Shift"><a href="#Alt-Shift" class="headerlink" title="Alt + Shift"></a><em><strong>Alt + Shift</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Up/Down</kbd></td>
+<td align="left">递进式(取消)选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展(取消)选中范围<code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></td>
+<td align="left">生成构造器&#x2F;get&#x2F;set&#x2F;toString <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td>
+<td align="left">生成 try-catch 等 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C/X</kbd></td>
+<td align="left">收起&#x2F;打开所有的方法 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left">重构(修改变量名与方法名) <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd></td>
+<td align="left">抽取方法</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left">局部变量抽取为成员变量</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td>
+<td align="left">选择&#x2F;添加 task</td>
+</tr>
+</tbody></table>
+<h3 id="Ctrl-Shift-Alt"><a href="#Ctrl-Shift-Alt" class="headerlink" title="Ctrl + Shift + Alt"></a><em><strong>Ctrl + Shift + Alt</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left">打开当前项目设置 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd></td>
+<td align="left">无格式黏贴</td>
+</tr>
+</tbody></table>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a><em><strong>其他</strong></em></h3><table>
+<thead>
+<tr>
+<th align="left">快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Dobule Shift</kbd></td>
+<td align="left">查找文件 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Esc</kbd></td>
+<td align="left">从工具窗口进入代码文件窗口 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Tab</kbd></td>
+<td align="left">缩进 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>F3</kbd></td>
+<td align="left">进入光标所在的方法&#x2F;变量的接口或是定义处,等效于ctrl+左键单击 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>F11</kbd></td>
+<td align="left">添加书签 <code>（必备）</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>F2</kbd></td>
+<td align="left">光标所在的变量&#x2F;类名&#x2F;方法名等上面显示文档内容</td>
+</tr>
+<tr>
+<td align="left"><kbd>F4</kbd></td>
+<td align="left">查看继承关系</td>
+</tr>
+</tbody></table>
+<h2 id="高效率编码功能介绍"><a href="#高效率编码功能介绍" class="headerlink" title="高效率编码功能介绍"></a>高效率编码功能介绍</h2><h3 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a><code>Maven 配置</code></h3><ul>
+<li>Maven 常用设置(<code>同时在Other Settings中进行默认设置</code>)<br>  <img src="/2018/12/01/st-idea-advanced/st-idea-advanced-001.png" alt="抱歉,图片休息了"><br>  <img src="/2018/12/01/st-idea-advanced/st-idea-advanced-002.png" alt="抱歉,图片休息了"></li>
+<li>Maven 骨架创建 JavaWeb 项目(<code>创建普通maven项目时不用选择quickstart,默认就行</code>)<br>  <img src="/2018/12/01/st-idea-advanced/st-idea-advanced-003.png" alt="抱歉,图片休息了"></li>
+<li>Maven 组件界面介绍<br>  <img src="/2018/12/01/st-idea-advanced/st-idea-advanced-004.png" alt="抱歉,图片休息了"></li>
+</ul>
+<h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a><code>版本控制</code></h3><ul>
+<li>IDEA 对版本控制的支持是以插件化的方式实现的，旗舰版默认支持目前主流的版本控制软件：CVS、SVN、Git、Mercurial、Perforce、TFS。<br>又因为目前太多人使用 Github 进行协同或是项目版本管理，同时自带了 Github 插件，方便 Checkout 和管理你的 Github 项目，  <pre><code class="hljs plaintext">Background：后台进程处理			
+Confirmation：弹窗提示,是否提交,merge			
+Issue Navigation：问题导航			
+GitHub：github配置			
+CVS：cvs配置			
+Subversion：svn配置			
+TFS：工作流引擎管理</code></pre></li>
+<li>常用设置  <pre><code class="hljs plaintext">1. 设置子目录有文件被修改了，则该文件的所有上层目录都显示版本控制被修改的颜色
+    Version Control,勾选&#x27;Show directories with changed descendants&#x27;,默认是不勾选的
+2. 设置新建或者删除文件时Git做默认如何处理
+    Version Control-&gt;Confirmation,修改&#x27;When files are created&#x27;和&#x27;When files are deleted&#x27;
+3. 设置忽略文件
+    Version Control-&gt;Ignored Files,添加不想加入到版本控制的文件和目录.对于已经加入到版本控制的文件使用此功能，则表示该文件或目录无法再使用版本控制相关的操作，比如提交、更新等
+4. 关联本地git.exe
+    Version Control-&gt;Git,在Path to Git executable中选择
+5. 关联GitHub账户
+    Version Control-&gt;GitHub,选择&quot;+&quot;号关联
+6. 支持从当前登陆的GitHub账号上直接Clone项目到本地
+    VCS-&gt;Checkout from Version Control-&gt;Git
+    File-&gt;New-&gt;Project from Version Control-&gt;Git
+7. 支持将本地项目分享到你的GitHub账号上
+    VCS-&gt;Import into Version Control-&gt;Share Project On GitHub
+    此时会在GitHub上创建一个新的仓库，而非更新已经存在的仓库,默认采用https方式传输
+8. Commit Changes弹窗介绍
+    Before Commit：
+        Reformat code：格式化代码，如果是Web开发建议不要勾选，因为格式化JSP类文件，格式化效果不好。如果都是Java类则可以安心格式化
+        Rearrange code：重新编排代码，IDEA支持各种复杂的编排设置选项
+        Optimize imports：优化导入包，会自动去掉没有使用的包。这个建议都勾选，因其只对Java类有作用，所以不用担心有副作用
+        Perform code analysis：进行代码分析，这个建议不用在提交的时候处理，而是在开发完之后，要专门养成对代码进行分析的习惯。IDEA 集成了代码分析功能
+        Check TODO：检查代码中的TODO。记录待办事项
+        Cleanup：清除下版本控制系统，去掉一些版本控制系统的错误信息，建议勾选（主要针对 SVN，Git 不适用）
+    标识着不同颜色的文件：
+        红色：未被版本控制的文件，即未添加到版本控制的文件，例如我们添加到ignore中的文件
+        绿色：新加入版本的文件，即我们新创建的文件，还未提交到远程仓库
+        蓝色：修改过的文件，即远程仓库中已有该文件，我们这次对它进行了修改，但是还未提交
+9. 点击界面右下角位置可以切换分支和创建分支，以及合并、删除分支等操作</code></pre></li>
+</ul>
+<h3 id="Debug-技巧"><a href="#Debug-技巧" class="headerlink" title="Debug 技巧"></a><code>Debug 技巧</code></h3><ul>
+<li>Debug 设置				  <pre><code class="hljs plaintext">Settings-&gt;Build,Execution,Deployment-&gt;Debugger,Transport选中Shared memory
+表示设置Debug连接方式，默认是Socket。Shared memory是Windows特有的一个属性，一般在Windows系统下建议使用此设置，相对于Socket会快</code></pre></li>
+<li>Debug 常用快捷键  <pre><code class="hljs plaintext">Step Over(F6)：进入下一步，如果当前行断点是一个方法，则不进入当前方法体内
+Step Into(F5)：进入下一步，如果当前行断点是一个方法，则进入当前方法体内(自定义方法)
+Force Step Into(Alt+Shift+F7)：进入下一步，如果当前行断点是一个方法，则进入当前方法体内(所有方法,包括JDK库)
+Step Out(F7)：跳出
+Drop Frame：该按钮可以用来退回到当前停住的断点的上一层方法上，可以让过掉的断点重新来过
+Evaluate Expression(Ctrl+U)：选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果
+Resume Program(F8)：恢复程序运行，但如果该断点下面代码还有断点则停在下一个断点上
+Stop：停止
+View Breakpoints：查看所有断点
+Mute Breakpoints：点中，使得所有的断点失效
+Restore Layout：窗口还原</code></pre></li>
+<li>Debug 其他用法  <pre><code class="hljs plaintext">条件断点：调试的时候，在循环里增加条件判断，可以极大的提高效率，心情也能愉悦
+在断点处右击调出条件断点。可以在满足某个条件下，实施断点。</code></pre></li>
+</ul>
+<h3 id="实时代码模板"><a href="#实时代码模板" class="headerlink" title="实时代码模板"></a><code>实时代码模板</code></h3><ul>
+<li>功能介绍<ul>
+<li>它的原理就是配置一些常用代码字母缩写，在输入简写时可以出现你预定义的固定模式的代码，使得开发效率大大提高，同时也可以增加个性化。最简单的例子就是在 Java 中输入 sout 会出现 System.out.println()。</li>
+<li>官方介绍 Live Templates：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/using-live-templates.html">https://www.jetbrains.com/help/idea/using-live-templates.html</a></li>
+</ul>
+</li>
+<li>已有的常用模板<ul>
+<li>所处位置： Settings-&gt;Editor-&gt;General-&gt;Postfix Completion | Editor-&gt;Live Templates<ul>
+<li>二者的区别：Live Templates 可以自定义，而 Postfix Completion 不可以。同时，有些操作二者都提供了模板，Postfix Templates较Live Templates 能快 0.01 秒</li>
+</ul>
+</li>
+<li>举例  <pre><code class="hljs plaintext">        psvm : 可生成main方法
+        sout : 快捷输出System.out.println()
+            soutp =&gt; System.out.println(&quot;方法形参名 = &quot; + 形参名); 
+            soutm =&gt; System.out.println(&quot;当前类名.当前方法&quot;);
+            soutv =&gt; System.out.println(&quot;变量名 = &quot; + 变量); 
+            &quot;abc&quot;.sout =&gt; System.out.println(&quot;abc&quot;);
+        fori : 可生成普通for循环
+            iter =&gt; 可生成增强for循环
+            itar =&gt; 可生成普通for循环并赋值
+        list.for : 可生成list集合的增强for循环
+            list.fori =&gt; 可生成list集合的普通for循环
+            list.forr =&gt; 可生成list集合的普通for循环(倒序)
+        ifn：可生成if(xxx = null)
+            inn =&gt; 可生成if(xxx != null)
+            xxx.nn或xxx.null  (Postfix Completion)
+        prsf：可生成private static final
+            psf =&gt; 可生成public static final
+            psfi =&gt; 可生成public static final int
+            psfs =&gt; 可生成public static final String
+        ```			
+- 修改现有模板
+    - 如果对于现有的模板，感觉不习惯、不适应的，可以修改。
+    - 举例</code></pre>
+  修改Abbreviation：<br>  Settings-&gt;Editor-&gt;Live Templates,定位到other-&gt;psvm,将Abbreviation值改为main<br>  修改Template text：<br>  Settings-&gt;Editor-&gt;Live Templates,定位到plain-&gt;psfi,将Template text值改为public static final int $VAR1$ &#x3D; $VAR2$;$END$	  <pre><code class="hljs plaintext">- 自定义模板
+    - IDEA 提供了很多现成的 Templates,但你也可以根据自己的需要创建新的 Template。</code></pre></li>
+</ul>
+<ol>
+<li>定义一个模板组	<br> Settings-&gt;Editor-&gt;Live Templates,点击”+”号,选择Template Group…,</li>
+<li>选中自定义的模板组，点击”+”来定义模板	<br> Settings-&gt;Editor-&gt;Live Templates,点击”+”号,选择Live Template,	</li>
+<li><h2 id="填写模板的内容-Abbreviation：模板的缩略名-Description：模板的描述-Template-text：模板的代码片段-应用范围：比如点击Define-选择java-Edit-variables：https-www-jetbrains-com-help-idea-template-variables-html-Database-”-”-Data-Source-MySQL-填写相关信息-3：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在IDEA之外用其他工具操作数据库，比如新建表。而此时IDEA的-Database如果没有同步到新表，也是需要点击此按钮进行同步的-4：配置当前连接，跟我们首次设置连接的界面是一样的-5：断开当前的连接-6：显示相应数据库对象的数据-7：编辑修改当前数据库对象-All-plugins：显示所有插件-Enabled：显示当前所有已经启用的插件-Disabled：显示当前所有已经禁用的插件-Bundled：显示所有IDEA自带的插件-Custom：显示所有我们自行安装的插件，如果你自己装了很多次插件的话，这个选项会用得比较多-Material-Theme-UI-Power-Mode-II：activate-power-mode-Background-Image-Plus-Nyan-Progress-Bar-Gitee-NodeJS-Lombok-Alibaba-Java-Coding-Guidelines：阿里巴巴出的代码规范检查插件-JRebel-for-IntelliJ：热部署-Translation：翻译插件-Maven-Helper：Maven辅助插件-MybatisX：mybatis框架辅助（免费）-Lombok-Plugin：Lombok-功能辅助插件-Git-Flow-Integration：Git-Flow的图形界面操作-ignore：各类版本控制忽略文件生成工具-GenerateAllSetter：new-POJO类的快速生成set方法-GsonFormat：把JSON字符串直接实例化成类-Rainbow-Brackets：对各个对称括号进行着色，方便查看-String-Manipulation：驼峰式命名和下划线命名交替变化"><a href="#填写模板的内容-Abbreviation：模板的缩略名-Description：模板的描述-Template-text：模板的代码片段-应用范围：比如点击Define-选择java-Edit-variables：https-www-jetbrains-com-help-idea-template-variables-html-Database-”-”-Data-Source-MySQL-填写相关信息-3：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在IDEA之外用其他工具操作数据库，比如新建表。而此时IDEA的-Database如果没有同步到新表，也是需要点击此按钮进行同步的-4：配置当前连接，跟我们首次设置连接的界面是一样的-5：断开当前的连接-6：显示相应数据库对象的数据-7：编辑修改当前数据库对象-All-plugins：显示所有插件-Enabled：显示当前所有已经启用的插件-Disabled：显示当前所有已经禁用的插件-Bundled：显示所有IDEA自带的插件-Custom：显示所有我们自行安装的插件，如果你自己装了很多次插件的话，这个选项会用得比较多-Material-Theme-UI-Power-Mode-II：activate-power-mode-Background-Image-Plus-Nyan-Progress-Bar-Gitee-NodeJS-Lombok-Alibaba-Java-Coding-Guidelines：阿里巴巴出的代码规范检查插件-JRebel-for-IntelliJ：热部署-Translation：翻译插件-Maven-Helper：Maven辅助插件-MybatisX：mybatis框架辅助（免费）-Lombok-Plugin：Lombok-功能辅助插件-Git-Flow-Integration：Git-Flow的图形界面操作-ignore：各类版本控制忽略文件生成工具-GenerateAllSetter：new-POJO类的快速生成set方法-GsonFormat：把JSON字符串直接实例化成类-Rainbow-Brackets：对各个对称括号进行着色，方便查看-String-Manipulation：驼峰式命名和下划线命名交替变化" class="headerlink" title="填写模板的内容 Abbreviation：模板的缩略名 Description：模板的描述 Template text：模板的代码片段 应用范围：比如点击Define,选择java Edit variables：	https://www.jetbrains.com/help/idea/template-variables.html    Database-&gt;”+”-&gt;Data Source-&gt;MySQL,填写相关信息    3：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在IDEA之外用其他工具操作数据库，比如新建表。而此时IDEA的 Database如果没有同步到新表，也是需要点击此按钮进行同步的  4：配置当前连接，跟我们首次设置连接的界面是一样的  5：断开当前的连接  6：显示相应数据库对象的数据  7：编辑修改当前数据库对象   All plugins：显示所有插件 Enabled：显示当前所有已经启用的插件 Disabled：显示当前所有已经禁用的插件 Bundled：显示所有IDEA自带的插件 Custom：显示所有我们自行安装的插件，如果你自己装了很多次插件的话，这个选项会用得比较多  Material Theme UI Power Mode II：activate-power-mode Background Image Plus Nyan Progress Bar Gitee NodeJS Lombok Alibaba Java Coding Guidelines：阿里巴巴出的代码规范检查插件 JRebel for IntelliJ：热部署  Translation：翻译插件 Maven Helper：Maven辅助插件 MybatisX：mybatis框架辅助（免费） Lombok Plugin：Lombok 功能辅助插件 Git Flow Integration：Git Flow的图形界面操作 .ignore：各类版本控制忽略文件生成工具 GenerateAllSetter：new POJO类的快速生成set方法 GsonFormat：把JSON字符串直接实例化成类 Rainbow Brackets：对各个对称括号进行着色，方便查看 String Manipulation：驼峰式命名和下划线命名交替变化"></a>填写模板的内容<br> Abbreviation：模板的缩略名<br> Description：模板的描述<br> Template text：模板的代码片段<br> 应用范围：比如点击Define,选择java<br> Edit variables：	<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/template-variables.html">https://www.jetbrains.com/help/idea/template-variables.html</a><br>  <pre><code class="hljs plaintext">
+### `数据库管理工具`
+
+- IDEA 的 Database 最大特性就是对于 JavaWeb 项目来讲,对常用的 ORM 框架有很好的支持,比如配置好了 Database 之后，IDEA 会自动识别 domain 对象与数据表的关系，也可以通过 Database 的数据表直接生成 domain 对象等等。
+- 关联方式</code></pre><br>  Database-&gt;”+”-&gt;Data Source-&gt;MySQL,填写相关信息<br>  <pre><code class="hljs plaintext">- 常用操作</code></pre><br>  3：同步当前数据库连接。这个是最重要的操作，有一些情况下，当我们配置好连接之后，没有显示数据表，那就是需要点击该按钮进行同步。还有一种情况就是我们在IDEA之外用其他工具操作数据库，比如新建表。而此时IDEA的 Database如果没有同步到新表，也是需要点击此按钮进行同步的<br>  4：配置当前连接，跟我们首次设置连接的界面是一样的<br>  5：断开当前的连接<br>  6：显示相应数据库对象的数据<br>  7：编辑修改当前数据库对象<br>  <pre><code class="hljs plaintext">
+## 插件推荐、开发介绍
+
+- 插件设置
+    - IDEA 对插件进行了很好的分类：启用的插件是被勾选的，如果要禁用一个插件，去掉勾选即可</code></pre><br> All plugins：显示所有插件<br> Enabled：显示当前所有已经启用的插件<br> Disabled：显示当前所有已经禁用的插件<br> Bundled：显示所有IDEA自带的插件<br> Custom：显示所有我们自行安装的插件，如果你自己装了很多次插件的话，这个选项会用得比较多<br> <pre><code class="hljs plaintext">    - Install JetBrains plugin...：弹出IDEA公司自行开发的插件仓库列表，供下载安装	
+    - Browse repositories...：弹出插件仓库中所有插件列表供下载安装
+    - Install plugin from disk...：浏览本地的插件文件进行安装，而不是从服务器上下载并安装
+    
+    Tips：在国内的网络下，很经常出现显示不了插件列表，或是显示了插件列表，无法下载完成安装。这时候请自行开 VPN，一般都可以得到解决
+- 插件推荐
+    - 官方插件库：&lt;https://plugins.jetbrains.com&gt;
+    - 在用插件</code></pre><br> Material Theme UI<br> Power Mode II：activate-power-mode<br> Background Image Plus<br> Nyan Progress Bar<br> Gitee<br> NodeJS<br> Lombok<br> Alibaba Java Coding Guidelines：阿里巴巴出的代码规范检查插件<br> JRebel for IntelliJ：热部署<br> <pre><code class="hljs plaintext">- 备用插件</code></pre><br> Translation：翻译插件<br> Maven Helper：Maven辅助插件<br> MybatisX：mybatis框架辅助（免费）<br> Lombok Plugin：Lombok 功能辅助插件<br> Git Flow Integration：Git Flow的图形界面操作<br> .ignore：各类版本控制忽略文件生成工具<br> GenerateAllSetter：new POJO类的快速生成set方法<br> GsonFormat：把JSON字符串直接实例化成类<br> Rainbow Brackets：对各个对称括号进行着色，方便查看<br> String Manipulation：驼峰式命名和下划线命名交替变化</h2> IDE Features Trainer：IDEA官方出的学习辅助插件<br> Key promoter：快捷键提示<br> Grep Console：自定义设置控制台输出<br> CheckStyle-IDEA：代码规范检查<br> FindBugs-IDEA：潜在Bug检查<br> MetricsReloaded：代码复杂度检查<br> Statistic：代码统计<br> CodeGlance：在编辑代码最右侧，显示一块代码小地图<br> Markdown Navigator：书写Markdown文章<br> Eclipse Code Formatter：使用 Eclipse 的代码格式化风格，在一个团队中如果公司有规定格式化风格，这个可以使用<br> Jindent-Source Code Formatter：自定义类、方法、doc、变量注释模板<br> Properties to YAML Converter：把Properties的配置格式改为YAML格式<br> mongo4idea：mongo客户端<br> iedis：redis客户端<br> VisualVM Launcher：项目启动的时候也启动VisualVM<pre><code>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>Java 热部署插件 JRebel 安装及使用</li>
+<li>插件开发</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/judasn/IntelliJ-IDEA-Tutorial">https://github.com/judasn/IntelliJ-IDEA-Tutorial</a></li>
+</ul>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>IDEA 札记：进阶</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">4.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2018-12-01, 17:17:42</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/01/st-idea-advanced.html" title="IDEA 札记：进阶">https://lvzhiqiang.top/2018/12/01/st-idea-advanced.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>

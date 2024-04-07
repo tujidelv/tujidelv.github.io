@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Linux 系统入门：常用命令 | Tujidelv Code</title>
+  <meta name="keywords" content=" linux ">
+  <meta name="description" content="Linux 系统入门：常用命令 | Tujidelv Code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:site_name" content="Tujidelv Code">
+<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#100;&#x65;&#46;&#x6c;&#118;&#x40;&#102;&#111;&#x78;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:author" content="Tujide.lv">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.gif">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.gif"/>
+</a>
+<div class="author">
+    <span>Tujide.lv</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/tujidelv"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="weibo"
+               href="https://weibo.com/u/1963654824"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:tujide.lv@foxmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+    <a href="/1970/01/01/git-navi.html" target="_blank" style="color:#2a2935;">
+        <svg class="iconfont-svg" aria-hidden="true"></svg>
+    </a>
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(45)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="操作系统">
+            
+            操作系统
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="经典示例">
+            
+            经典示例
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="开发语言">
+            
+            开发语言
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="应用框架">
+            
+            应用框架
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="45">
+<input type="hidden" id="yelog_site_word_count" value="164.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://lawlite.me/">Lawlite的博客</a></li>
+            
+            <li><a target="_blank" href="https://blinkfox.github.io/">闪烁之狐</a></li>
+            
+            <li><a target="_blank" href="https://ihtcboy.com/">iHTCboy&#39;s blog</a></li>
+            
+            <li><a target="_blank" href="https://www.moewah.com/">喵斯基部落-运维之美</a></li>
+            
+            <li><a target="_blank" href="/null">--------------------</a></li>
+            
+            <li><a target="_blank" href="https://hexo.lvzhiqiang.top">hexo 轻博客</a></li>
+            
+            <li><a target="_blank" href="https://ytube.lvzhiqiang.top/">ytube 油管镜像</a></li>
+            
+            <li><a target="_blank" href="https://avbook.lvzhiqiang.top/">avbook 影片資料庫</a></li>
+            
+            <li><a target="_blank" href="https://search.lvzhiqiang.top/">searx 元搜索引擎</a></li>
+            
+            <li><a target="_blank" href="https://bt.lvzhiqiang.top/">bt 宝塔面板</a></li>
+            
+            <li><a target="_blank" href="https://magnet.lvzhiqiang.top/">magnet 磁力搜</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分布式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>互联网工程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鸡汤</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>投资理财</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BigData</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>css</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>eclipse</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fq</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>html</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodejs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>screenshot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        <a href="javascript:void(0);" id="top" data-tag="timeTop" data-author="timeTop">
+            <span class="post-title" style="width:auto;"><i class="fa fa-heart"></i>感谢陪伴</span>
+            <span class="post-date" id="timeTop" style="color:#cc8167;"></span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/07/29/af-zookeeper.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式协调工具之 Zookeeper">分布式协调工具之 Zookeeper</span>
+            <span class="post-date" title="2020-07-29 13:52:23">2020/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/05/26/af-nosql-hbase.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="NoSQL数据库之HBase">NoSQL数据库之HBase</span>
+            <span class="post-date" title="2020-05-26 15:19:46">2020/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2020/04/21/af-mq-kafka.html"
+           data-tag="BigData"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 Kafka">消息中间件之 Kafka</span>
+            <span class="post-date" title="2020-04-21 13:40:23">2020/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/16/st-baidupcs-go.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="度盘命令行下载利器BaiduPCS-Go">度盘命令行下载利器BaiduPCS-Go</span>
+            <span class="post-date" title="2020-04-16 14:32:42">2020/04/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-trojan-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：进阶">Trojan科学上网：进阶</span>
+            <span class="post-date" title="2020-04-06 18:28:31">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/04/06/st-vps-bt.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="VPS离线BT下载利器">VPS离线BT下载利器</span>
+            <span class="post-date" title="2020-04-06 16:39:17">2020/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/29/st-youtube-dl.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="命令行下载神器youtube-dl">命令行下载神器youtube-dl</span>
+            <span class="post-date" title="2020-03-29 17:28:33">2020/03/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/03/08/st-trojan-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="Trojan科学上网：基础">Trojan科学上网：基础</span>
+            <span class="post-date" title="2020-03-08 13:40:47">2020/03/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/01/13/st-jrebel-activate.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA热部署插件JRebel">IDEA热部署插件JRebel</span>
+            <span class="post-date" title="2020-01-13 16:26:33">2020/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/12/10/st-datagrip-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="DataGrip札记：基础">DataGrip札记：基础</span>
+            <span class="post-date" title="2019-12-10 09:52:05">2019/12/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-ide.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：开发环境Java + Node + Docker">MacOS 系统进阶：开发环境Java + Node + Docker</span>
+            <span class="post-date" title="2019-11-24 17:20:38">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/24/os-mac-terminal.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim">MacOS 系统进阶：终端方案iTerm2 + Zsh + Vim</span>
+            <span class="post-date" title="2019-11-24 14:02:26">2019/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/11/22/os-mac-package.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统进阶：包管理工具">MacOS 系统进阶：包管理工具</span>
+            <span class="post-date" title="2019-11-22 15:07:31">2019/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/10/31/te-personal-development.html"
+           data-tag="鸡汤"
+           data-author="" >
+            <span class="post-title" title="个人发展战略：基础">个人发展战略：基础</span>
+            <span class="post-date" title="2019-10-31 13:50:30">2019/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-software.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：常用软件">MacOS 系统入门：常用软件</span>
+            <span class="post-date" title="2019-10-27 18:53:39">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/10/27/os-mac-basic.html"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="MacOS 系统入门：系统使用">MacOS 系统入门：系统使用</span>
+            <span class="post-date" title="2019-10-27 16:01:06">2019/10/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2019/08/28/te-investment-financing.html"
+           data-tag="投资理财"
+           data-author="" >
+            <span class="post-title" title="投资理财：基础">投资理财：基础</span>
+            <span class="post-date" title="2019-08-28 17:01:01">2019/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/08/18/dl-java-interview.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java常见面试题">Java常见面试题</span>
+            <span class="post-date" title="2019-08-18 16:46:58">2019/08/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/13/af-redis.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系列之 Redis&amp;Ehcache">分布式系列之 Redis&amp;Ehcache</span>
+            <span class="post-date" title="2019-04-13 16:56:23">2019/04/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/04/04/af-springboot.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="微服务架构之 SpringBoot">微服务架构之 SpringBoot</span>
+            <span class="post-date" title="2019-04-04 18:17:48">2019/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-jvm.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 性能调优：JVM">Java 性能调优：JVM</span>
+            <span class="post-date" title="2019-03-30 15:08:39">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2019/03/30/dl-java-8.html"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Java 新特性：8">Java 新特性：8</span>
+            <span class="post-date" title="2019-03-30 15:04:29">2019/03/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2019/03/14/st-maven.html"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="Maven 札记：基础">Maven 札记：基础</span>
+            <span class="post-date" title="2019-03-14 17:44:01">2019/03/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2019/03/10/af-mq-rocketmq.html"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="消息中间件之 RocketMQ">消息中间件之 RocketMQ</span>
+            <span class="post-date" title="2019-03-10 10:06:31">2019/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-packages-install.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：常用程序包的安装与配置">Linux 系统应用：常用程序包的安装与配置</span>
+            <span class="post-date" title="2019-03-09 17:07:04">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-script-powerboot.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：添加开机启动服务/脚本">Linux 系统应用：添加开机启动服务/脚本</span>
+            <span class="post-date" title="2019-03-09 15:27:42">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/03/09/os-linux-db-backup.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统应用：Mysql数据库自动备份脚本">Linux 系统应用：Mysql数据库自动备份脚本</span>
+            <span class="post-date" title="2019-03-09 15:23:53">2019/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/21/os-linux-sysadmin-first.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包">Linux 系统管理：磁盘、文件系统、RAID、LVM2、程序包</span>
+            <span class="post-date" title="2019-01-21 21:19:31">2019/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2019/01/02/os-linux-shell.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：Shell 脚本">Linux 系统入门：Shell 脚本</span>
+            <span class="post-date" title="2019-01-02 20:51:18">2019/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/31/os-linux-command.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：常用命令">Linux 系统入门：常用命令</span>
+            <span class="post-date" title="2018-12-31 15:10:20">2018/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 操作系统 "
+           href="/2018/12/23/os-linux-basic.html"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 系统入门：基础">Linux 系统入门：基础</span>
+            <span class="post-date" title="2018-12-23 17:33:08">2018/12/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-advanced.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：进阶">SSR科学上网：进阶</span>
+            <span class="post-date" title="2018-12-09 15:50:16">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/09/st-ssr-basic.html"
+           data-tag="fq"
+           data-author="" >
+            <span class="post-title" title="SSR科学上网：基础">SSR科学上网：基础</span>
+            <span class="post-date" title="2018-12-09 13:14:25">2018/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 经典示例 "
+           href="/2018/12/02/te-select.html"
+           data-tag="html,css,javascript"
+           data-author="" >
+            <span class="post-title" title="可输入可选择可模糊查询的 select 下拉">可输入可选择可模糊查询的 select 下拉</span>
+            <span class="post-date" title="2018-12-02 19:00:12">2018/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-hexo.html"
+           data-tag="hexo,nodejs"
+           data-author="" >
+            <span class="post-title" title="Hexo 札记">Hexo 札记</span>
+            <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-ashampoo-snap.html"
+           data-tag="screenshot"
+           data-author="" >
+            <span class="post-title" title="阿香婆屏幕截图工具 Ashampoo Snap">阿香婆屏幕截图工具 Ashampoo Snap</span>
+            <span class="post-date" title="2018-12-01 18:18:35">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-finalshell.html"
+           data-tag="ssh"
+           data-author="" >
+            <span class="post-title" title="超强SSH客户端 FinalShell">超强SSH客户端 FinalShell</span>
+            <span class="post-date" title="2018-12-01 17:57:50">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-workflow.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：工作流">Git 札记：工作流</span>
+            <span class="post-date" title="2018-12-01 17:54:00">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-remote.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：远程库">Git 札记：远程库</span>
+            <span class="post-date" title="2018-12-01 17:46:49">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-git-basic.html"
+           data-tag="互联网工程"
+           data-author="" >
+            <span class="post-title" title="Git 札记：基础">Git 札记：基础</span>
+            <span class="post-date" title="2018-12-01 17:25:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-advanced.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：进阶">IDEA 札记：进阶</span>
+            <span class="post-date" title="2018-12-01 17:17:42">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-idea-basic.html"
+           data-tag="jetbrains"
+           data-author="" >
+            <span class="post-title" title="IDEA 札记：基础">IDEA 札记：基础</span>
+            <span class="post-date" title="2018-12-01 16:51:07">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2018/12/01/st-eclipse.html"
+           data-tag="eclipse"
+           data-author="" >
+            <span class="post-title" title="Eclipse 札记">Eclipse 札记</span>
+            <span class="post-date" title="2018-12-01 16:45:09">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 应用框架 "
+           href="/2018/12/01/af-nodejs.html"
+           data-tag="nodejs"
+           data-author="" >
+            <span class="post-title" title="NodeJS 札记">NodeJS 札记</span>
+            <span class="post-date" title="2018-12-01 16:28:22">2018/12/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 开发语言 "
+           href="/2018/12/01/dl-markdown.html"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 札记">Markdown 札记</span>
+            <span class="post-date" title="2018-12-01 15:54:44">2018/12/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-os-linux-command" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Linux 系统入门：常用命令</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="操作系统">操作系统</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">linux</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-04-07 09:26:09'>2018-12-31 15:10</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:11.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E5%85%A5%E9%97%A8%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux 系统入门：常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E5%88%86%E7%B1%BB"><span class="toc-text">未分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%85%E5%A4%84%E7%90%86"><span class="toc-text">待处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">日期相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-text">目录操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-text">目录管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B"><span class="toc-text">文本文件查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">文本文件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3%E7%AE%A1%E7%90%86"><span class="toc-text">文件的时间戳管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-text">系统管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-text">用户和组管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">文件权限管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91"><span class="toc-text">文本编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE"><span class="toc-text">文件查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E4%B8%89%E5%89%91%E5%AE%A2"><span class="toc-text">文本处理三剑客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%8F%8A%E5%BD%92%E6%A1%A3%E5%B7%A5%E5%85%B7"><span class="toc-text">压缩、解压缩及归档工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-系统入门：常用命令"><a href="#Linux-系统入门：常用命令" class="headerlink" title="Linux 系统入门：常用命令"></a>Linux 系统入门：常用命令</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%AD%A3%E7%AF%87">正篇</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
+<li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>记录一些常用命令…</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a><em><strong>未分类</strong></em></h3><ul>
+<li><code>which</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">显示命令的完整路径</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# which [options] [--] programname [...]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">--skip-alias:忽略别名</code></pre></li>
+</ul>
+</li>
+<li><code>whereis</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">增强版的which命令，会显示路径、源码文件、手册页</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# whereis [options] [-BMS directory... -f] name...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-b：仅搜索二进制程序路径
+-m：仅搜索使用手册文件路径</code></pre></li>
+</ul>
+</li>
+<li><code>whatis</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">查看COMMAND在哪些章节下有手册
+    使用mkwhatis命令可将当前系统上所有的帮助手册及与之对应的关键字创建为一个数据库,并且此数据库当中会保存关键字的简要说明信息
+    whatis能够在数据库里以我们指定的关键字去查找相应的说明</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# whatis [-dlv?V] [-r|-w] [-s list] [-m system[,...]] [-M path] [-L locale] [-C file] name ...</code></pre></li>
+</ul>
+</li>
+<li><code>echo</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">常用于显示变量值</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# echo [SHORT-OPTION]... [STRING]...
+    STRING可以使用引号，单引号和双引号均可用</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-n：不进行换行
+-e：让转义生效
+	\n：换行
+	\t：制表符</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]# echo &quot;how \tare you&quot;
+how \tare you
+[root@host ~]# echo -e &quot;how \tare you&quot;
+how     are you
+[root@host ~]# echo -e &quot;how \nare you&quot;
+how 
+are you
+[root@host ~]# echo &#x27;$SHELL&#x27;
+$SHELL
+[root@host ~]# echo &quot;$SHELL&quot;
+/bin/bash</code></pre></li>
+</ul>
+</li>
+<li><code>watch</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">阶段性地执行指定的COMMAND</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# watch [-n #] &lt;COMMAND&gt;</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-n #: 指定刷新间隔时间，单位是秒</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]watch -n1 &#x27;ifconfig eth0&#x27;</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="待处理"><a href="#待处理" class="headerlink" title="待处理"></a><em><strong>待处理</strong></em></h3><pre><code class="hljs plaintext">virt-what   用于查看服务器是kvm还是xen架构的虚拟化
+netstat -tunlp | grep 端口号    用于查看指定端口号的进程情况	
+	-t  tcp协议相关
+	-u  udp协议相关
+	-n  以数字显示IP和端口
+	-l  处于监听状态
+	-p  显示相关进程及PID
+ps：显示进程状态
+    常用组合：aux
+        u: 以用户为中心组织进程状态信息显示
+        a: 与终端相关的进程；
+        x: 与终端无关的进程；
+    常用组合：-ef
+        -e: 显示所有进程
+        -f: 显示完整格式程序信息
+    # ps -Lf pid | wc -l 查看线程个数（方便查看程序是否有误）
+top：显示当前系统中耗费资源最多的进程
+    有许多内置命令：
+        排序：
+            P：以占据的CPU百分比；
+            M：占据内存百分比；
+            T：累积占据CPU时长；
+        首部信息显示：
+            uptime信息：l命令
+            tasks及cpu信息：t命令
+                cpu分别显示：1 (数字)
+            memory信息：m命令
+        退出命令：q
+        修改刷新时间间隔：s
+        终止指定进程：k
+    选项：
+        -d #: 指定刷新时间间隔，默认为3秒；
+        -b: 以批次方式；
+        -n #: 显示多少批次；
+kill：向进程发送控制信号，以实现对进程管理
+    显示当前系统可用信号：
+        # kill -l
+        # man 7 signal
+    常用信号：
+        1) SIGHUP: 无须关闭进程而让其重读配置文件；
+        2) SIGINT: 中止正在运行的进程；相当于Ctrl+c；
+        9) SIGKILL: 杀死正在运行的进程；
+        15) SIGTERM：终止正在运行的进程；
+        18) SIGCONT：
+        19) SIGSTOP：
+    指定信号的方法：
+        (1) 信号的数字标识；1, 2, 9
+        (2) 信号完整名称；SIGHUP
+        (3) 信号的简写名称；HUP
+    向进程发信号：
+        kill [-SIGNAL] PID...
+lsof -i:端口号
+    用于查看某一端口的占用情况
+crontab：定时任务
+    crontab [-u user] [-l | -r | -e] [-i] 
+        -l: 列出所有任务；
+        -e: 编辑任务；
+        -r: 移除所有任务；
+        -i：同-r一同使用，以交互式模式让用户有选择地移除指定任务；
+        -u user: 仅root可运行，代为为指定用户管理cron任务；
+chkconfig：开机自启
+    --list：查看哪些服务开机自动运行
+    --add SRV_SCRIPT：添加脚本到开机自动启动项目中
+    --del SRV_SCRIPT：删除
+    SRV_SCRIPT on｜off：配置某服务是否开机自动运行
+wget：网络客户端工具
+    wget [option]... [URL]...
+        -q: 静默模式
+        -c: 续传
+        -P 指定下载文件的存放目录
+        -O 指定下载文件的名字，重命名
+        --limit-rates=: 指定传输速率
+rz
+sz
+scp
+hostname: 查看主机名</code></pre>
+
+<h3 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a><em><strong>日期相关</strong></em></h3><pre><code class="hljs plaintext">主板上有个纽扣电池为主板上的硬件时钟(晶体振荡器)供电，所以关机后再开机时间也是对的
+Linux系统启动时从硬件时钟读取日期和时间信息，读取完成以后，就不再与硬件相关联，并设为当前系统时间，之后靠内核振动次数计时（100次1秒）
+如时间不对，还可以和全球的时间服务器进行对表，精确度很高，最精确的是元子震荡时钟，价值1亿英镑
+	系统时钟:由linux内核通过cpu的工作频率进行的计时
+	硬件时钟</code></pre>
+<ul>
+<li><code>date</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">显示或设定系统时钟</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># date [OPTION]... [+FORMAT]</span>
+~]<span class="hljs-comment"># date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</span></code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">FORMAT：格式符
+date +&quot;%F %T&quot;      2016-04-12 20:35:20
+date +%Y-%m-%d-%H-%M-%S         2016-04-12-20-41-17
+date +%s           从1970年1月1号（unix元年）</code></pre></li>
+</ul>
+</li>
+<li><code>clock/hwclock</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">显示或设定硬件时钟</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># hwclock [function] [option...]</span></code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-s ,--hctosys ：以硬件为准，把系统时间调整为与硬件时钟相同
+-w ,--systohc ：以系统为准，把硬件时间调整为与系统时钟相同</code></pre></li>
+</ul>
+</li>
+<li><code>cal</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">日历</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># cal [options] [[[day] month] year]</span></code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a><em><strong>目录操作</strong></em></h3><ul>
+<li><code>pwd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">printing working directory,显示工作目录(当前目录)
+    一定意义上是读取$PWD变量的内容并显示</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># pwd [OPTION]...</span></code></pre></li>
+</ul>
+</li>
+<li><code>cd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">change directory,切换工作目录(当前目录)
+----------
+相关的环境变量：
+	PWD：保存了当前工作目录的路径
+	OLDPWD：保存了上一次的工作目录的路径
+cd后面可以跟相对路径和绝对路径，根据实际需求选择用哪个，相对路径中.或..经常使用</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># cd [-L|[-P [-e]]] [/PATH/TO/SOMEDIR]</span></code></pre></li>
+<li>常用操作  <pre><code class="hljs plaintext">~]# cd：切换回家目录，注意：bash中，~表示家目录(主目录)
+~]# cd ~：切换回自己的家目录
+~]# cd ~USERNAME：切换至指定用户的家目录
+~]# cd -：在上一次所在目录与当前目录之间来回切换,一定意义上是执行了cd $OLDPWD</code></pre></li>
+</ul>
+</li>
+<li><code>ls</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">list,显示指定路径下的文件列表</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># ls [OPTION]... [FILE]...</span></code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-a,--all：显示所有文件，包括隐藏文件
+-A：显示除.和..之外的所有文件
+-l：长格式列表，即显示文件的详细属性信息
+	-rw-------. 1 root root 1302 4月   4 22:39 initial-setup-ks.cfg
+		-：指的是Linux系统上的文件类型，并非通过file命令查看的文件内容格式的类型
+			-：普通(常规)文件，即f，有诸多变种格式，可通过file命令查看
+			d：directory，目录文件
+			b：block device，块设备文件，支持以&quot;block&quot;为单位进行随机访问
+			c：character device，字符设备文件，支持以&quot;character&quot;为单位进行线性访问
+				major number：主设备号，用于标识设备类型，进而确定要加载的驱动程序
+				minor number：次设备号，用于标识同一类型中的不同设备			
+			l：sysmbolic link，符号链接文件
+			s：socket，套接字文件;有很多服务器支持2种方式通信,如果跨主机只能基于协议通信,如果不跨主机建议使用套接字文件的方式通信
+			p：pipe，(命名)管道文件
+		rw-------：访问权限
+			rw-：文件属主的权限
+			---：文件属组的权限
+			---：其他用户（非属主、属组）的权限
+		1：表示文件被硬链接的次数
+		root：文件的属主(owner)
+		root：文件的属组(group)
+		1302：表示文件的大小(size)，单位是字节
+		4月   4 22:39：文件最近一次被修改的时间
+		    注:每个文件都有3个时间戳(访问,修改,改变),修改指的是文件内容发生的改变,改变指的是文件的属性发生的改变;修改一定会改变,改变不一定会修改
+		initial-setup-ks.cfg：文件名
+-h：对文件大小单位换算，换算后结果可能为非精确值
+-d：显示目录自身的相关属性而非其内部的文件列表，一般与-l结合使用
+-r：reverse，逆序显示,没有-r时默认升序显示
+-R：recursive，递归显示</code></pre></li>
+<li>命令实例  <pre><code class="hljs bash">[root@host ~]<span class="hljs-comment"># ls -lhd /etc</span>
+drwxr-xr-x. 79 root root 4.0K Dec 24 19:42 /etc</code></pre></li>
+</ul>
+</li>
+<li><code>basename</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">显示路径的基名</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># basename /PATH/TO/SOMEFILE</span>
+    SOMEFILE</code></pre></li>
+</ul>
+</li>
+<li><code>dirname</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">显示路径的目录名</code></pre></li>
+<li>命令格式  <pre><code class="hljs bash">~]<span class="hljs-comment"># dirname /PATH/TO/SOMEFILE</span>
+    /PATH/TO</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="目录管理"><a href="#目录管理" class="headerlink" title="目录管理"></a><em><strong>目录管理</strong></em></h3><ul>
+<li><code>mkdir</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">make directories</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# mkdir [OPTION]... DIRECTORY...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-p：自动按需创建父目录;不会报错,即便目录已经存在
+-v：verbose，显示详细过程
+-m MODE：创建目录时直接给定权限</code></pre></li>
+</ul>
+</li>
+<li><code>rmdir</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">remove empty directories</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# rmdir [OPTION]... DIRECTORY...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-p：删除某目录后，如果其父目录为空，则一并删除之
+-v：显示过程</code></pre></li>
+</ul>
+</li>
+<li><code>tree</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">以树状结构来显示目录的层级结构</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# tree [options] [directory]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-d：只显示目录
+-L level：指定要显示的层级，如果不指定则显示所有的层级
+-P pattern：只显示由指定pattern匹配到的路径</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a><em><strong>文件管理</strong></em></h3><ul>
+<li><p><code>dd</code></p>
+<ul>
+<li>命令功能  <pre><code class="hljs plaintext">convert and copy a file(转换并复制文件),cp是通过文件系统复制的,而dd是通过块接口复制的,虽然都是复制但dd要底层的多,效率更高</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# dd if=/PATH/FROM/SRC of=/PATH/TO/DEST [OPTIONS...]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">bs=#：block size, 复制单元大小,单位是字节；
+count=#：复制多少个bs；</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">磁盘拷贝：
+    ~]# dd if=/dev/sda of=/dev/sdb
+备份MBR：
+    ~]# dd if=/dev/sda of=/tmp/mbr.bak bs=512 count=1
+破坏MBR中的bootloader：使用bs=512可以快速清除磁盘上的分区表
+    ~]# dd if=/dev/zero of=/dev/sda bs=256 count=1
+    
+    两个特殊设备：
+        /dev/null: 数据黑洞；
+        /dev/zero：吐零机；</code></pre></li>
+</ul>
+</li>
+<li><p><code>cp</code></p>
+<ul>
+<li>命令功能  <pre><code class="hljs plaintext">copy,默认下源文件不能是目录，除非加上相应的选项-r</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">单源复制：cp [OPTION]... [-T] SOURCE DEST
+	如果DEST不存在，则事先创建此文件，并复制源文件的数据流至DEST中
+	如果DEST存在
+		如果DEST是非目录文件，则覆盖目标文件,此时建议使用-i选项
+		如果DEST是目录文件，则先在DEST目录下创建一个与源文件同名的文件，并复制其数据流
+多源复制：cp [OPTION]... SOURCE... DIRECTORY
+		cp [OPTION]... -t DIRECTORY SOURCE...    前一形式的变种
+	如果DEST不存在，错误
+	如果DEST存在
+		如果DEST是非目录文件，错误
+		如果DEST是目录文件，分别复制每个文件至目标目录中，并保持原名</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-i：交互式复制，即覆盖之前提醒用户确认
+-f：强制覆盖目标文件
+-r,-R：递归复制目录及内部的所有内容
+-d：复制符号链接文件本身，而非其指向的源文件
+-a：相当于-dR --preserve=all          archive，用于实现归档(备份)
+	--preserve=
+		mode：权限
+		ownership：属主和属组
+		timestamps：时间戳
+		context：安全标签	
+		xattr：扩展属性
+		links：符号链接
+		all：上述所有属性
+-v：verbose，显示详细过程</code></pre></li>
+</ul>
+</li>
+<li><p><code>mv</code></p>
+<ul>
+<li>命令功能  <pre><code class="hljs plaintext">move(rename),此时源文件不区分目录或是文件;如果source和dest都在同一目录,即是重命名操作</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# mv [OPTION]... [-T] SOURCE DEST
+~]# mv [OPTION]... SOURCE... DIRECTORY
+	~]# mv [OPTION]... -t DIRECTORY SOURCE...		前一形式的变种</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-i：交互式移动，即移动之前提醒用户确认
+-f：强制移动</code></pre></li>
+</ul>
+</li>
+<li><p><code>rm</code></p>
+<ul>
+<li>命令功能  <pre><code class="hljs plaintext">remove,默认下不能删除目录的，除非加上相应的选项-r
+    注意：所有不用的文件建议不要直接删除，而是移动至某个专用目录。也就是模拟回收站。</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# rm [OPTION]... FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-i：interactive,删除时提醒,管理员账号默认加上此选项
+-f：force,删除时不提醒
+-r,-R：recursive删除目录</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">例如：rm -rf /PATH/TO/DIR
+	危险操作：rm -rf /*</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文本文件查看"><a href="#文本文件查看" class="headerlink" title="文本文件查看"></a><em><strong>文本文件查看</strong></em></h3><ul>
+<li><code>cat</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">文件连接并显示的命令</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# cat [OPTION]... [FILE]...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-n：给显示的文本行编号	
+-E：显示行结束符$，文本文件在磁盘上存储是没有行的，之所以显示出有行，是因为文本文件查看工具可以读取行结束符并将他们显示为行</code></pre></li>
+</ul>
+</li>
+<li><code>tac</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">与cat命令相反显示文件文件内容</code></pre></li>
+</ul>
+</li>
+<li><code>more</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">分页显示文本文件内容，空格向后，b向前
+特点：操作方式同man命令,翻屏至文件尾部后自动退出</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# more [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-d：显示翻页及退出提示</code></pre></li>
+</ul>
+</li>
+<li><code>less</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">分页显示文本文件内容，空格向后，b向前
+特点：man命令就是调用less命令</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# less [OPTION...] FILE...</code></pre></li>
+</ul>
+</li>
+<li><code>head</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">查看文件的前n行</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# head [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-c #：指定获取前#字节
+-n #：指定获取前#行
+	-#：简写
+	没有该选项默认10行</code></pre></li>
+</ul>
+</li>
+<li><code>tail</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">查看文件的后n行
+注：tailf命令等同于tail -f -n 10</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# tail [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-c #：指定获取后#字节
+-n #：指定获取后#行
+	-#：简写
+	没有该选项默认10行
+-f：查看文件尾部内容结束后不退出，跟随显示新增的行。常用于人工监控日志增长的新行内容
+-F：同上，与f不同的是会保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪，而f会停止追踪</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文本文件处理"><a href="#文本文件处理" class="headerlink" title="文本文件处理"></a><em><strong>文本文件处理</strong></em></h3><ul>
+<li><code>wc</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">统计文本的行数,单词数,字符数/字节数</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# wc [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-l：lines
+-w：words
+-c：characters</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]# ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 144.34.204.26  netmask 255.255.224.0  broadcast 144.34.223.255
+        inet6 fe80::a8aa:ff:fe12:2acd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether aa:aa:00:12:2a:cd  txqueuelen 1000  (Ethernet)
+        RX packets 258312  bytes 18661074 (17.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 224427  bytes 24548808 (23.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 64  bytes 5568 (5.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 64  bytes 5568 (5.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@host ~]# ifconfig | wc -l
+18</code></pre></li>
+</ul>
+</li>
+<li><code>cut</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">以指定字符作为分隔符对每行进行切割</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# cut OPTION... FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-d DELIMITER：指明分隔符,默认空白字符
+-f FILEDS：要显示哪些字段
+	#：第#个字段
+	#,#[,#]：离散的多个字段,例如1,3,6
+	#-#：连续的多个字段,例如1-6
+	混合使用：1-3,7
+--output-delimiter=STRING：修改输出时的分隔符</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-bus-proxy:x:999:998:systemd Bus Proxy:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:998:997:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:997:995::/var/lib/chrony:/sbin/nologin
+[root@host ~]# cut -d: -f1,7 --output-delimiter=&#x27; &#x27; /etc/passwd
+root /bin/bash
+bin /sbin/nologin
+daemon /sbin/nologin
+adm /sbin/nologin
+lp /sbin/nologin
+sync /bin/sync
+shutdown /sbin/shutdown
+halt /sbin/halt
+mail /sbin/nologin
+operator /sbin/nologin
+games /sbin/nologin
+ftp /sbin/nologin
+nobody /sbin/nologin
+systemd-bus-proxy /sbin/nologin
+systemd-network /sbin/nologin
+dbus /sbin/nologin
+polkitd /sbin/nologin
+tss /sbin/nologin
+sshd /sbin/nologin
+postfix /sbin/nologin
+chrony /sbin/nologin</code></pre></li>
+</ul>
+</li>
+<li><code>sort</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">对文件内容进行排序</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# sort [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-f：忽略字符大小写
+-r：逆序排序
+-t DELIMITER：字段分隔符
+-k #：以指定字段为标准排序
+-n：以数值大小进行排序,默认是以字符进行排序
+-u：uniq,排序后去重</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# sort -t: -k3 -n /etc/passwd | tail -1 | cut -d: -f1  #显示/etc/passwd文件中ID号最大的用户的用户名
+~]# history | cut -d&#x27;&#x27; -f5 | sort -u</code></pre></li>
+</ul>
+</li>
+<li><code>uniq</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">对文件中连续且完全相同的内容去重,一般先排序再去重</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# uniq [OPTION...] FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-c：显示每行重复出现的次数
+-d：仅显示重复过的行
+-u：仅显示不曾重复的行</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# history | cut -d&#x27;&#x27; -f5 | sort | uniq -c</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件的时间戳管理"><a href="#文件的时间戳管理" class="headerlink" title="文件的时间戳管理"></a><em><strong>文件的时间戳管理</strong></em></h3><ul>
+<li><code>stat</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">display file or file system status,显示文件的元数据信息
+---------------------
+文件：两类数据
+	元数据：metadata
+	数据：data
+时间戳：每个文件都有3个时间戳
+	最近访问时间(access time)：2016-04-24 21:20:42.477903125 +0800   			读取文件内容
+	最近修改时间(modify time)：2016-04-24 20:40:08.887958504 +0800			数据(文件内容)改变
+	最近改变时间(change time)：2016-04-24 20:40:08.887958504 +0800			元数据改变</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# stat [OPTION]... FILE...</code></pre></li>
+</ul>
+</li>
+<li><code>touch</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">change file timestamps,修改文件元数据中的时间戳信息(atime或mtime改了ctime也会改),也可以创建文件</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# touch [OPTION]... FILE...</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-c：指定的文件路径不存在时，默认会创建空文件，使用此选项时将不予创建。
+-a：仅修改access time
+-m：仅修改modify time
+-t STAMP：
+	[[CC]YY]MMDDhhmm[.ss]</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a><em><strong>系统管理</strong></em></h3><ul>
+<li><code>关机/重启命令</code>  <pre><code class="hljs plaintext">CentOS 7：
+	~]# systemctl poweroff
+	~]# systemctl reboot
+*（通用）：
+	~]# poweroff || ~]# halt
+	~]# reboot
+		-f：强制,不调用shuwdown
+		-p：切断电源
+shutdown：安全关机重启方式,会先保存未保存的数据
+	shutdown [OPTIONS...] TIME [MESSAGE]
+		OPTIONS：
+			-h：halt  关机
+			-r：reboot  重启
+			-c：cancel  取消关机或重启
+		TIME：
+			now：立刻
+			hh:mm：绝对时间表示法,指明具体时间
+			+m：相对时间表示法,从命令提交开始多久之后,例如+3,单位是分钟
+		MESSAGE：
+			关机或重启提示语</code></pre></li>
+<li><code>用户登录信息查看命令</code>  <pre><code class="hljs plaintext">whoami：显示当前登录的有效用户
+who：查看系统当前所有的登录信息(会话)
+	who [option]... ，
+	-b：系统此次启动的时间
+	-r：运行级别
+w：增强版的who命令，查看系统当前所有的登录信息(会话)及所做的操作</code></pre></li>
+</ul>
+<h3 id="用户和组管理"><a href="#用户和组管理" class="headerlink" title="用户和组管理"></a><em><strong>用户和组管理</strong></em></h3><ul>
+<li><code>id</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">查看用户相关的ID信息</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# id [OPTION]... [USER]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-u：UID
+-g：GID
+-G：Groups</code></pre></li>
+</ul>
+</li>
+<li><code>su</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">切换用户或以其他用户身份执行命令
+----------------
+切换用户的方式：
+	su Username：非登录式切换,即不会读取目标用户的配置文件
+	su - Username：登录式切换(完全切换),即会读取目标用户的配置文件
+注：root su至其他用户无须密码,非root用户切换时需要密码</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# su [options...] [-] [user [args...]]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-c &#x27;COMMAND&#x27;：换个身份执行命令</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# su - user7 -c &#x27;echo $PATH&#x27;</code></pre></li>
+</ul>
+</li>
+<li><code>useradd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">用户创建</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# useradd [options] LOGIN</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-u UID：[UID_MIN,UID_MAX],最小值和最大值定义在/etc/login.defs文件中
+	没有该选项默认使用最近一个最大UID值+1
+-g GID：指明用户所属基本组,可为组名,也可为GID,组必须事先存在
+-c &quot;COMMENT&quot;：指明用户的注释信息
+-d /PATH/TO/HOME_DIR：指明用户的家目录,一般来讲此目录事先不要已存在
+-s SHELL：指明用户的默认shell,可用shell列表在/etc/shells文件中
+-G GROUP1[,GROUP2,...[,GROUPN]]：指明用户的附加组,组必须事先存在
+-r：创建系统用户
+-D 选项：默认值设定,可在/etc/default/useradd文件中查看</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# useradd -D -s /bin/tcsh</code></pre></li>
+</ul>
+</li>
+<li><code>usermod</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">用户属性修改</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# usermod [options] LOGIN</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-u UID：新UID
+-g GID：新GID
+-G GROUP1[,GROUP2,...[,GROUPN]]：新附加组,原来的附加组将会被覆盖;若要保留原有,则要同时使用-a选项,表示append
+-c &quot;COMMENT&quot;：新的注释信息
+-d /PATH/TO/HOME_DIR：新的家目录,原有家目录中的文件不会同时移动至新的家目录;若要移动,则同时使用-m选项
+-s SHELL：新的默认shell
+-l login_name：新的名
+------
+-L：lock指定用户
+-U：unlock指定用户
+------
+-e YYYY-MM-DD：指明用户账号过期日期
+-f INACTIVE：设定非活动期限</code></pre></li>
+</ul>
+</li>
+<li><code>userdel</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">用户删除</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# userdel [OPTION]... LOGIN</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">&#x27;-r：删除用户家目录,默认不删除用户的家目录</code></pre></li>
+</ul>
+</li>
+<li><code>groupadd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">组添加</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# groupadd [OPTIONS...] group_name</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-g GID：指定GID，[GID_MIN,GID_MAX],最小值和最大值定义在/etc/login.defs文件中	
+	没有该选项默认是上一个组的GID+1
+-r：创建系统组</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# groupadd -r -g 306 mariadb   创建一个系统组mariadb，并且指定GID为306</code></pre></li>
+</ul>
+</li>
+<li><code>groupmod</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">组属性修改</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# groupmod [OPTIONS...] GROUP</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-g GID：修改GID</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">~]# groupmod -g 702 mariadb    group -n  perconaserver mariadb</code></pre></li>
+</ul>
+</li>
+<li><code>groupdel</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">组删除</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# groupdel [选项] GROUP</code></pre></li>
+</ul>
+</li>
+<li><code>passwd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">给用户添加密码</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# passwd [OPTIONS] UserName：修改指定用户的密码 ,仅root用户权限
+~]# passwd：修改自己的密码</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-l：锁定指定用户
+-u：解锁指定用户
+	
+-n mindays：指定最短使用期限
+-x maxdays：指定最大使用期限
+-w warndays：提前多少天开始警告
+-i inactivedays：非活动期限
+
+-S：查看最后一次密码修改的日期
+
+--stdin：从标准输入接收用户密码,passwd默认是交互式的从标准输入接收密码</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">echo &quot;PASSWORD&quot; | passwd --stdin USERNAME
+~]# echo &#x27;centos&#x27; |passwd --stdin user1 &amp;&gt; /dev/null
+~]# echo $?</code></pre></li>
+</ul>
+</li>
+<li><code>gpasswd</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">组密码添加</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# gpassed [OPTION]... GROUP</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-u user：将user添加至指定组中
+-d user：删除用户user的以当前组为组名的附加组
+
+-A user1,user2,...：设置有管理权限的用户列表</code></pre></li>
+</ul>
+</li>
+<li><code>newgrp</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">临时切换基本组
+    如果用户本不属于此组,则需要密码</code></pre></li>
+</ul>
+</li>
+<li><code>chage</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">修改用户属性(密码相关)</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# chage [OPTION]... LOGIN</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">-d：LAST_DAY	
+-E,--expiredate EXPIRE_DATE
+-I,--inactive INACTIVE
+-m,--mindays MIN_DAYS
+-M,--maxdays MAX_DAYS
+-W,--warndays WARN_DAYS</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a><em><strong>文件权限管理</strong></em></h3><ul>
+<li><code>chmod</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">change mode,修改文件权限</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# chmod [OPTION]... OCTAL-MODE FILE...
+	-R：递归修改权限
+~]# chmod [OPTION]... MODE[,MODE]... FILE...
+	MODE：
+		修改一类用户的所有权限：
+			u=
+			g=
+			o=
+			ug=
+			a=
+			u=,g=
+		修改一类用户的某位或某些权限
+			u+
+			u-
+~]# chmod [OPTION]... --reference=RFILE FILE...
+	参考RFILE文件的权限,将FILE的权限修改为同RFILE</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]# chmod 640 a.txt
+----------
+[root@host ~]# chmod u=rwx a.txt
+[root@host ~]# chmod g= a.txt
+[root@host ~]# chmod ug=rw a.txt
+[root@host ~]# chmod u=rwx,g=r a.txt
+[root@host ~]# chmod a=r a.txt
+----------
+[root@host ~]# chmod u+w,o-r a.txt
+[root@host ~]# chmod +x a.txt
+----------
+[root@host ~]# chmod --reference=./c.txt a.txt</code></pre></li>
+</ul>
+</li>
+<li><code>chown</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">修改文件的属主,仅root可用</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# chown [OPTION]... [OWNER][:[GROUP]] FILE...
+	-R：递归
+	命令中的冒号可用.替换
+	用法：
+		OWNER
+		OWNER:GROUP
+		:GROUP
+~]# chown [OPTION]... --reference=RFILE FILE...</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">[root@host ~]# chown tom fstab
+[root@host ~]# chown jerry:jerry fstab
+[root@host ~]# chown :root fstab
+[root@host ~]# chown -R tom:tom /home/fedora</code></pre></li>
+</ul>
+</li>
+<li><code>chgrp</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">修改文件的属组,仅root可用</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# chgrp [OPTION]... GROUP FILE...
+~]# chgrp [OPTION]... --reference=RFILE FILE...</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a><em><strong>文本编辑</strong></em></h3><p><strong>行编辑器</strong></p>
+<ul>
+<li><code>sed</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">==&gt; Linux文本处理三剑客</code></pre></li>
+</ul>
+</li>
+</ul>
+<p><strong>全屏编辑器</strong></p>
+<ul>
+<li><code>nano</code><ul>
+<li>常用操作  <pre><code class="hljs plaintext">^O，Ctrl+O，保存当前文件
+^X，Ctrl+X，退出编辑文本
+^W，Ctrl+W，搜索文本位置
+-------------------
+^G，Ctrl+G，显示帮助文本
+^R，Ctrl+R，读取其他文件并插入光标位置
+^Y，Ctrl+Y，跳至上一屏幕
+^K，Ctrl+K，剪切当前一行
+^C，Ctrl+C，显示光标位置
+^J，Ctrl+J，对其当前段落（以空格为分隔符）
+^V，Ctrl+V，跳至下一屏幕
+^U，Ctrl+U，粘贴文本至光标处
+^T，Ctrl+T，运行拼写检查</code></pre></li>
+</ul>
+</li>
+<li><code>vi</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">Visual Interface(可视化接口),vim的前身,linux上著名的功能极其强大的入门曲线非常陡峭的文本编辑器</code></pre></li>
+</ul>
+</li>
+<li><code>vim</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">Vi IMproved(vi增强版),可视化模式化的编辑</code></pre></li>
+<li>常用操作  <pre><code class="hljs plaintext">打开文件：
+	~]# vim [OPTION]... FILE...	
+		+#：打开文件后，直接让光标处于第#行的行首;没有#光标默认处于尾部	
+		+/PATTEN：打开文件后，直接让光标处于第一个被PATTEN匹配到的行的行首
+关闭文件：
+	:q	退出
+	:q!	强制退出,丢弃做出的修改
+	:wq	保存退出
+	:x	保存退出
+
+	ZZ	保存退出(命令模式下)				
+基本模式：
+	编辑模式：也叫命令模式，默认处于此模式，对文本进行复制，剪切， 粘贴等
+	输入模式：也叫插入模式，对文件内容进行编辑
+	末行模式：内置的命令行接口，可实现许多强大的功能
+模式转换：
+	编辑模式--&gt;输入模式
+		i：insert,在光标所在处输入	
+		a：append,在光标所在处后面输入
+		o：open,在当前光标所在行的下方打开一个新行输入
+		I：在当前光标所在行的行首输入
+		A：在当前光标所在行的行尾输入
+		O：在当前光标所在行的上方打开一个新行输入
+		c：change,
+		C：
+	输入模式--&gt;编辑模式
+		ESC
+	编辑模式--&gt;末行模式
+		:
+	末行模式--&gt;编辑模式
+		ESC
+光标跳转：
+	字符间跳转：
+		h(左),j(下),k(上),l(右)
+
+		#COMMAND：跳转由#指定一次跳转的字符数
+	单词间跳转：
+		w：下一个单词的词首
+		e：当前或下一个单词的词尾
+		b：当前或前一个单词的词首
+
+		#COMMAND：跳转由#指定一次跳转的单词数
+	行首行尾跳转：					
+		^：跳转至行首的第一个非空白字符				
+		0：跳转至行首				
+		$：跳转至行尾				
+	行间移动：					
+		#G：跳转至由#指定行				
+		G：跳转至最后一行				
+		1G或gg：跳转至第一行				
+	句间移动：了解即可					
+		)
+		(
+	段落间移动：了解即可
+		&#125;
+		&#123;
+	ctrl+g显示当前光标所在行位置及文件状态信息
+编辑命令：
+	剪切命令：
+		x：删除光标处的字符
+		#x：删除光标处起始的#个字符
+		xp：交换光标所在处的字符及其后面字符的位置
+			
+		d(常用)：可结合光标跳转字符，实现范围删除
+			d$,d^,d0,dw,de,db,#COMMAND...
+			dd：删除光标所在行
+				#dd：多行删除	
+	粘贴命令(p,put,paste)：
+		p(小写)：缓冲区存储的如果为整行,则粘贴至当前光标所在行的下方;否则粘贴至当前光标所在处的后面
+		P(大写)：缓冲区存储的如果为整行,则粘贴至当前光标所在行的上方;否则粘贴至当前光标所在处的前面
+	复制命令(y,yank)：
+		y：工作行为相似于d命令
+			y$,y^,y0,yw,de,yb,#COMMAND...
+			yy：复制光标所在行
+				#yy：多行复制	
+	改变命令(c,change)：
+		c：修改，同d命令,但同时会进入插入模式
+			c$,c^,c0,cw,ce,cb,#COMMAND...
+			cc：
+				#cc：
+				
+	可视化模式：经常结合编辑命令中的d,y进行复制剪切
+		v(小写)：按字符选定光标划过的区域
+		V(大写)：按行选定光标划过的区域
+	撤销命令：
+		u(undo)：撤销此前的操作
+			#u：撤销指定次数的操作
+	撤销此前的撤销操作：
+		Ctrl+r
+	重复前一个编辑操作：常用于和dd配合使用
+		.
+	%可以在当前有括号的光标处查找配对的括号)&#125;],常用于程序调试时查找不配对的括号
+	r输入一个字符可替换光标所在位置的字符
+末行命令：
+	1.地址定界：
+		:start_pos,end_pos
+			#：具体第#行,例如2表示第2行
+			#,#：从左侧#表示行起始,到右侧#表示行结尾
+			#,+#：从左侧#表示行起始,加上右侧#表示的行数
+			.：当前行
+			$：最后一行
+			%：全文,相当于1,$
+		使用方法：后跟一个编辑命令
+			d,y,...
+			w /APTH/TO/SOMEWHERE：将范围内的行另存至指定文件中
+			r /APTH/FROM/SOMEWHERE：在指定位置插入指定文件中的所有内容
+	2.查找：同less命令的查找
+		/PATTERN：从当前光标所在处向文件尾部查找
+		?PATTERN：从当前光标所在处向文件首部查找
+			n:与查找命令方向相同
+			N:与查找命令方向相反
+	3.查找并替换：需结合地址定界一起使用
+		s/要查找的内容/替换为的内容/修饰符
+			要查找的内容：可使用模式
+			替换为的内容：不能使用模式,但可以使用\1,\2,...等后向引用符号;还可以使用&quot;&amp;&quot;引用前面查找时查找到的整个内容
+			修饰符：
+				i：忽略大小写
+				g：全局替换,默认情况下,每一行只替换第一次出现的内容
+				c：询问用户是否替换
+		查找替换中的分隔符/可替换为其他字符,例如
+			s@@@
+			s###
+		练习：
+			1.复制/etc/grub2.cfg至/tmp/目录,用直接替换命令删除/tmp/grub2.cfg文件中的行首的空白字符
+				%s/^[[:space:]]\+//g
+			2.复制/etc/rc.d/init.d/functions文件至/tmp目录,用查找替换命令为/tmp/functions的每行开头为空白字符的行的行首添加一个#号
+				%s/^[[:space:]]/#&amp;/
+	4.多文件模式下的操作：一般窗口没有分割时
+		:next   下一个
+		:prev   前一个
+		:first  第一个
+		:last   最后一个
+
+		:wall   保存所有
+		:qall   退出所有
+		:wqall  保存退出所有
+	5.获取帮助
+		:help
+		:help keywords
+	6.执行外部命令
+		:! COMMAND  用于执行一个外部命令
+		:r ! COMMAND  读取外部命令的输出放到光标处
+窗口分割模式：
+	窗口间切换：Ctrl+w,Arrow
+	单文件：
+		Ctrl+w,s：split,水平分割
+		Ctrl+w,v：vertical,垂直分割
+	多文件：
+		vim -o|O FILE1 FILE2 FILE3...
+			-o：水平分割
+			-O：垂直分割
+定制vim的工作特性：
+	配置文件：永久有效	
+		全局：/etc/vimrc
+		个人(需手动创建该文件)：~/.vimrc
+	末行命令：当前vim进程有效
+						
+	1.行号
+		显示：set number,简写为set nu	
+		取消显示：set nonumber,简写为set nonu
+	2.括号匹配
+		匹配：set showmatch,简写为set sm
+		取消匹配：set noshowmatch,简写为set nosm
+	3.自动缩进(autoindent)
+		启用：set ai
+		禁用：set noai
+	4.高亮(HighLight)搜索
+		启用：set hlsearch
+		禁用：set nohlsearch
+	5.语法(syntax)高亮
+		启用:syntax on
+		禁用：syntax off
+	6.忽略字符大小写(ignorecase)
+		启用:set ic
+		禁用:set noic
+翻屏操作：
+	ctrl+f：向文件尾部翻一屏
+	ctrl+b：向文件首部翻一屏
+	ctrl+d：向文件尾部翻半屏
+	ctrl+u：向文件首部翻半屏
+vim自带的练习教程：
+	vimtutor</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a><em><strong>文件查找</strong></em></h3><p><code>在文件系统上查找符合条件的文件；分为非实时查找(数据库查找)和实时查找</code></p>
+<ul>
+<li><code>locate</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">依赖于事先构建好的索引;索引的构建是在系统较为空闲时自动进行(周期性任务);
+可手动更新数据库(updatedb),与makewhatis类似,索引构建过程中需要遍历整个根文件系统,极消耗资源
+-----------------------
+工作特点：
+	查找速度快
+	模糊查找：根据整个路径名和文件名
+	非实时查找</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# locate KEYWORD</code></pre></li>
+</ul>
+</li>
+<li><code>find</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">实时查找工具,通过遍历指定路径下的文件系统完成文件查找
+-----------------------
+工作特点：
+	查找速度略慢
+	精确查找：根据文件本身的名字而非整个路径名
+	实时查找</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# find [OPTION]... [查找路径] [查找条件] [处理动作]
+	查找路径：指定具体目标路径,可以多个;默认为当前目录
+	查找条件：指定的查找标准,可以是文件名/大小/类型/权限等标准进行;默认为找出指定路径下的所有文件
+		根据文件名：
+			-name &quot;文件名称&quot;：支持使用文件名通配（globbing）
+				*,?,[],[^]
+			-iname &quot;文件名称&quot;：不区分字母大小写
+
+			-regex &quot;PATTEN&quot;：以PATTE匹配整个文件路径字符串，而不仅仅是文件名称
+		根据属主/属组：
+			-user USERNAME：查找属主为指定用户的文件
+			-group GROUPNAME：查找属组为指定组的文件
+
+			-uid UserID：查找属主为指定UID号的文件
+			-gid GroupID：查找属组为指定GID号的文件
+
+			-nouser：查找没有属主的文件,如用户删了
+			-nogroup：查找没有属组的文件,如用户删了,私有组也没了
+		根据文件类型：
+			-type TYPE：
+				可参考ls命令中的各类型代表字符
+		根据文件大小：
+			-size [+|-]#UNIT
+				常用单位：K,M,G
+
+			#UNIT：(#-1,#]
+			-#UNIT：(0,#-1]
+			+#UNIT：(#,无穷大)
+		根据时间戳：
+			以&quot;天&quot;为单位：
+				-atime [+|-]#
+					#：[#,#+1)
+					+#：[#+1,无穷大)
+					-#：[0,#)
+				-mtime [+|-]#
+				-ctime [+|-]#
+			以&quot;分钟&quot;为单位：
+				-amin [+|-]#
+				-mmin [+|-]#
+				-cmin [+|-]#
+		根据权限：
+			-perm [/|-]MODE
+				MODE：精确权限匹配
+				/MODE：任何一类(u,g,o)对象的权限中只要能有一位匹配即可
+				-MODE：每一类对象都必须同时拥有为其指定的权限标准
+		组合条件：
+			与：-a,可以省略
+			或：-o
+			非：-not,!
+
+            摩根定律：
+                !A -a !B 相当于 !(A -o B)
+                !A -o !B 相当于 !(A -a B)
+	处理动作：对符合条件的文件做什么操作;默认输出至屏幕
+		-print：默认的处理动作,显示至屏幕
+		-ls：类似于对查找到的文件执行&quot;ls -l&quot;命令
+		-delete：删除查找到的文件
+		-fls /PATH/TO/SOMEFILE：查找到的所有文件的长格式信息保存至指定文件中
+		-ok COMMAND &#123;&#125; \：对查找到的每个文件执行由COMMAND指定的命令
+			对于每个文件执行命令之前,都会交互式要求用户确认
+		-exec COMMAND &#123;&#125; \：对查找到的每个文件执行由COMMAND指定的命令,不会要求用户确认
+			&#123;&#125;：用于引用查找到的文件名称自身
+
+		注：find传递查找到的文件至后面指定的命令时,查找到所有符合条件的文件会一次性传递个后面的命令,
+		有些命令不能接受过多参数,此时命令可能会失败,另一种方式可规避此问题：
+			find | xargs COMMAND</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">练习1：查找/var目录下属主为root,且属组为mail的所有文件或目录
+    ~]# find /var -user root -group mail
+练习2：查找/usr目录下不属于root、bin或hadoop的所有文件或目录
+    ~]# find /usr -not -user root -a -not -user bin -a -not -user hadoop
+    ~]# find /usr -not \( -user root -o -user bin -o -user hadoop \)
+练习3：查找/etc目录下最近一周内其内容被修改过,同时属主不为root,也不是hadoop的文件或目录
+    ~]# find /etc -mtime -7 -a -not -user root -a  -not -user hadoop
+    ~]# find /etc -mtime -7 -a -not \( -user root -o -user hadoop \)
+练习4：查找当前系统上没有属主或属组,且最近一个周内曾被访问过的文件或目录
+    ~]# find / -nouser -a -nogroup -a -atime -7
+练习5：查找/etc目录下大于1M且类型为普通文件的所有文件或目录
+    ~]# find /etc -size +1M -type f
+练习6：查找/etc目录下所有用户都没有写权限的文件
+    ~]# find /etc -not -perm /222 -ls
+练习7：查找/etc目录下至少有一类用户没有执行权限的文件
+    ~]# find /etc -not -perm -111 -ls
+练习8：查找/etc/init.d目录下,所有用户者都有执行权限,且其他用户有写权限的文件
+    ~]# find /etc/itit.d -perm -113 -ls</code></pre>
+  <img src="/2018/12/31/os-linux-command/os-linux-command-001.png" alt="抱歉,图片休息了"></li>
+</ul>
+</li>
+</ul>
+<h3 id="文本处理三剑客"><a href="#文本处理三剑客" class="headerlink" title="文本处理三剑客"></a><em><strong>文本处理三剑客</strong></em></h3><ul>
+<li><code>grep</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">Global search REgular expression and Print out the line,文本过滤(搜索)工具
+-----------------------
+作用：根据用户指定的&quot;模式&quot;对目标文本逐行进行匹配检查,并打印匹配到的行
+-----------------------
+egrep：默认支持扩展正则表达式来匹配
+fgrep：不支持正则表达式搜索(即不基于正则表达式引擎做模式匹配),而仅仅是找给定的字符串,因此执行性能快很多</code></pre></li>
+<li>命令格式  <pre><code class="hljs plaintext">~]# grep [OPTIONS] PATTERN [FILE...]</code></pre></li>
+<li>命令参数  <pre><code class="hljs plaintext">--color=auto：对匹配到的文本着色显示
+    有些系统默认没带此参数时可设置别名：alias grep=&#x27;grep --color=auto&#x27;
+-v：显示不能够被pattern匹配到的行
+-i：忽略字符大小写
+-o：仅显示匹配到的字符串
+-q：静默模式,不输出任何信息
+-A #：after,显示匹配到的后#行
+-B #：before,显示匹配到的前#行
+-C #：context,显示匹配到的前后各#行
+
+-E：支持使用扩展的正则表达式ERE,相当于egrep</code></pre></li>
+<li>常用操作  <pre><code class="hljs plaintext">模式：由正则表达式字符及文本字符所编写的过滤条件
+	基本正则表达式：BRE
+		元字符：
+			字符匹配：
+				.：匹配任意单个字符
+				[]：匹配指定范围内的任意单个字符
+				[^]：匹配指定范围外的任意单个字符
+			次数匹配：用在要指定次数的字符后面,用于指定前面的字符要出现的次数
+				\?：0或1次
+				*：0或多次(任意次)
+				\+：1次或多次
+				\&#123;m\&#125;：恰好m次
+				\&#123;m,n\&#125;：最少m次,最多n次
+					\&#123;0,n\&#125;：最多n次
+					\&#123;m,\&#125;：最少m次
+			位置锚定：
+				^：行首锚定，用于模式的最左侧
+				$：行尾锚定，用于模式的最右侧
+				^PATTERN$：用于模式匹配整行
+					^$：空行(不包括空白字符)
+					^[[:space:]]*$：
+				\&lt;或\b：词首锚定,用于单词模式的左侧
+				\&gt;或\b：词尾锚定,用于单词模式的右侧
+				\&lt;PATTERN\&gt;：匹配整个单词
+			分组：
+				\(\)：将一个或多个字符捆绑在一起,当作一个整体进行处理
+				注：分组括号中的模式匹配到的内容会被正则表达式引擎记录于内部(greb程序)的变量中,这些变量的命名方式为\1,\2,\3,...
+					\1：从左侧起,第一个左括号以及与之匹配右括号之间的模式所匹配到的字符
+
+				后向引用：引用前面的分组括号中的模式所匹配字符,而非模式本身
+					~]# grep &#x27;\([[:alpha:]]\&#123;1,3\&#125;t\).*\1&#x27; /etc/passwd
+	扩展正则表达式：ERE
+    	元字符：
+    		字符匹配,次数匹配,位置锚定,分组：
+    			同BRE,其中?,+,&#123;&#125;,()不需要转义	
+    		或者：
+    			a|b
+    				C|cat：C或cat</code></pre></li>
+<li>命令实例  <pre><code class="hljs plaintext">练习1：显示/proc/meminfo文件中以大小s开头的行(要求:使用2种方式)
+    ~]# grep -i &#x27;^s&#x27; /proc/meminfo      grep &#x27;^[Ss]&#x27; /proc/meminfo
+练习2：显示/etc/passwd文件中不以/bin/bash结尾的行
+    ~]# grep -v &#x27;/bin/bash$&#x27; /etc/passwd
+练习3：如果用户root存在,显示其默认的shell程序
+    ~]# id root &amp;&gt; /dev/null &amp;&amp; grep &#x27;^root\&gt;&#x27; /etc/passwd | cut -d: -f7
+练习4：找出/etc/passwd中的两位或三位数
+    ~]# grep &#x27;\&lt;[0-9]\&#123;2,3\&#125;\&gt;&#x27; /etc/passwd
+练习5：显示/etc/grub2.cfg(或conf)文件中,至少以一个空白字符开头的行且后面存在非空白字符的行
+    ~]# grep &#x27;^[[:space:]]\+[^[:space:]]&#x27; /etc/grub2.cfg							
+练习6：找出&quot;netstat -tan&quot;命令的结果中以&quot;LISTEN&quot;后跟0,1或多个空白字符结尾的行
+    ~]# netstat -tan | grep &#x27;LISTEN[[:space:]]*$&#x27;			
+练习7：添加用户bash,testbash,basher以及nologin(其shell为/sbin/nologin),而后找出/etc/passwd文件中用户名同shell名的行
+    ~]# grep &#x27;^\([[:alnum:]]\+\&gt;\).*\1$&#x27; /etc/passwd
+------------------------------------
+练习1：显示当前系统root,centos或user1用户的默认shell和UID
+    ~]# grep -E &#x27;^(root|centos|user1)\&gt;&#x27; /etc/passwd | cut -d: -f1,3,7
+练习2：找出/etc/rc.d/init.d/functions文件(centos6)中某单词后面跟一个小括号的行
+    ~]# grep -E -o &#x27;^[_[:alpha:]]+\(\)&#x27; /etc/rc.d/init.d/functions
+练习3-1：使用echo输出一绝对路径,使用egrep取出其基名
+    ~]# echo &quot;/mnt/sdc/&quot; | grep -E -o &#x27;[^/]+/?$&#x27; | cut -d&quot;/&quot; -f1
+练习3-2：使用echo输出一绝对路径,使用egrep取出路径的目录名,类似于dirname命令的结果
+    ~]# echo &quot;/mnt/sdc/&quot; | grep -E -o &#x27;.*/\&lt;&#x27;
+    ~]# echo &quot;/mnt/sdc&quot; | grep -E -o &#x27;.*/\&lt;&#x27;
+练习4：找出ifconfig命令结果中1-255之间的数值
+    ~]# ifconfig | grep -E -o &#x27;\&lt;([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\&gt;&#x27;
+练习5：找出ifconfig命令结果中的IP地址
+    ~]# ifconfig | grep -E -o &#x27;[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;&#x27;
+    ~]# ifconfig | grep -E -o &#x27;([0-9]+\.)&#123;3&#125;[0-9]+&#x27;</code></pre></li>
+</ul>
+</li>
+<li><code>sed</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">stream editor,文本编辑工具</code></pre></li>
+</ul>
+</li>
+<li><code>awk</code><ul>
+<li>命令功能  <pre><code class="hljs plaintext">gnu awk,文本报告生成器</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="压缩、解压缩及归档工具"><a href="#压缩、解压缩及归档工具" class="headerlink" title="压缩、解压缩及归档工具"></a><em><strong>压缩、解压缩及归档工具</strong></em></h3><pre><code class="hljs plaintext">压缩：根据一定算法
+归档：能实现将多个文件打包成单个文件，即为归档文件
+------------------------
+压缩、解压缩工具：
+    compress/uncompress, .Z
+        早期时候使用的工具,很多程序包的源码以.Z的格式出现,现在很少见到.
+    gzip/gunzip, .gz
+        早期时候非常常用的工具,现在的发行版上依然会使用,采用&#x27;LZ77&#x27;的压缩算法,压缩比不是特别高,但在早期时候非常快速高效
+        只能压缩文件,不能压缩目录,并且为了节约空间默认会删除原文件,只保留压缩后的文件
+    bzip2/bunzip2, .bz2
+        采用比gzip更为高效的压缩算法(基于LZ77/LZ78),来实现更高压缩比
+        只能压缩文件,不能压缩目录,并且为了节约空间默认会删除原文件,只保留压缩后的文件
+    xz/unxz, xz
+        目前比较推崇使用的工具,xz的压缩比比bzip2更大,CentOS5不支持,需要额外安装
+        只能压缩文件,不能压缩目录,并且为了节约空间默认会删除原文件,只保留压缩后的文件
+归档工具：
+    zip/unzip, zip
+        非常通用的比较古老的工具,各种操作系统基本都支持,不但是一个归档工具还是一个压缩/解压缩工具
+        能对目录进行,将目录下的所有文件(需指明/dir/*)打包成单个文件,再进行压缩
+    tar</code></pre>
+<ul>
+<li><code>gzip/gunzip</code>  <pre><code class="hljs plaintext">gzip [OPTION]... FILE ...
+    -d: 解压缩，相当于gunzip
+    -c: 将压缩后的结果输出至标准输出,这样会保留原文件
+        gzip -c /path/to/somefile &gt; /path/to/somecfile.gz
+    -#：指定压缩比，默认为6，范围为1-9,压缩比越大,压缩后生成的文件越小,所消耗的时间越长
+    
+    zcat somefile.gz: 不解压查看gzip压缩后的文件的内容</code></pre></li>
+<li><code>bzip2/bunzip2</code>  <pre><code class="hljs plaintext">bzip2 [OPTION]... FILE ...
+    -k: keep, 保留原文件
+    -d：解压缩，相当于bunzip2
+    -#：指定压缩比，默认为6，范围为1-9,压缩比越大,压缩后生成的文件越小,所消耗的时间越长
+    
+    bzcat somefile.gz: 不解压查看bzip2压缩后的文件的内容</code></pre></li>
+<li><code>xz/unxz</code>  <pre><code class="hljs plaintext">xz [OPTION]... FILE ...
+    -k: keep, 保留原文件
+    -d：解压缩，相当于unxz
+    -#：指定压缩比，默认为6，范围为1-9,压缩比越大,压缩后生成的文件越小,所消耗的时间越长
+    
+    xzcat somefile.gz: 不解压查看xz压缩后的文件的内容</code></pre></li>
+<li><code>zip/unzip</code>  <pre><code class="hljs plaintext">zip ZIPFILE.zip src_file...
+    zip pam.d.zip pam.d/*
+unzip ZIPFILE.zip
+    -d：解压到指定位置</code></pre></li>
+<li><code>tar</code>  <pre><code class="hljs plaintext">tar [OPTION]... 
+    (1) 创建归档
+        tar -c -f /PATH/TO/SOMEFILE.tar FILE...
+        tar -cf /PATH/TO/SOMEFILE.tar FILE...
+    (2) 查看归档文件中的文件列表
+        tar -t -f /PATH/TO/SOMEFILE.tar
+    (3) 展开归档
+        tar -x -f /PATH/TO/SOMEFILE.tar
+        tar -x -f /PATH/TO/SOMEFILE.tar -C /PATH/TO/DIR
+        
+    tar可直接通过选项调用压缩工具针对归档文件执行压缩或解压：解压并展开归档时可以不用带以下参数就能自动判断压缩格式
+        -z: gzip
+        -j: bzip2
+        -J: xz
+    -C DIR：解压到指定目录,目录必须事先存在
+    -v：创建/展开归档文件的时候显示文件</code></pre></li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li>未完待续…</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Linux 系统入门：常用命令</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">11.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
+    <p><span class="copy-title">发布时间:</span>2018-12-31, 15:10:20</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-07, 09:26:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/12/31/os-linux-command.html" title="Linux 系统入门：常用命令">https://lvzhiqiang.top/2018/12/31/os-linux-command.html</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '4bdc7aeb9be54f5ffd64',
+            clientSecret: 'db1b2cd5f2b8929f7737bdc8c9f4cd05ba754d30',
+            repo: 'tujidelv.github.io',
+            owner: 'tujidelv',
+            admin: ['tujidelv'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2013-2024 Tujide.lv
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/tujidelv/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #c1bfc1;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+<!--自定义-->
+<!--start网站加入点击爱心，心动特效-->
+<script>
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("💗","富强","💗","民主","💗","文明","💗","和谐","💗","自由","💗","平等","💗","公正","💗","法治","💗","爱国","💗","敬业","💗","诚信","💗","友善","💗");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "font-size": "0.5em",
+            "animation": "heartbeat .25s infinite .1s",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style>
+@keyframes heartbeat {
+    to {
+        transform: scale(1.4);
+    }
+}
+</style>
+<!--end网站加入点击爱心，心动特效-->
+<!--start为你的网站加入鼠标滑过抖动样式-->
+<style>
+#title-list-nav a:hover {
+    border-radius: 20px;
+    background: #6f9fc7;
+    color: #fff;
+    -webkit-animation: links .2s 2
+}
+</style>
+<!--end为你的网站加入鼠标滑过抖动样式-->
+<!--start为你得网站加入动态彩色飘带，让网页动起来-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/piao.js', function () {
+        if ($(window).width() >= 1024) {
+            $(".nav").css("background","transparent");
+        }
+    });
+});
+</script>
+<!--end为你得网站加入动态彩色飘带，让网页动起来-->
+<!--start主页添加格言鉴赏-->
+<script>
+jQuery(document).ready(function($) {
+    $.getScript('/js/gyjs.js', function () {
+    });
+});
+</script>
+<!--end主页添加格言鉴赏-->
+<!--start为你得网站加入毫秒级别建站时间-->
+<script>
+setInterval(function() {
+    var start_timestamp = 1543404968000; //2018-11-28 19:36:08
+    var times = new Date().getTime() - new Date(start_timestamp).getTime();
+    times = Math.floor(times);
+    var days = Math.floor(times / 1000 / (60 * 60 * 24));
+    times %= 60 * 60 * 24000;
+    var hours = Math.floor(times / 1000 / (60 * 60));
+    times %= 60 * 60000;
+    var minutes = Math.floor(times / 60 / 1000);
+    times %= 60000;
+    var seconds = Math.floor(times / 1000);
+    times %= 1000;
+    var ms = Math.floor(times);
+    if (String(ms).length == 1) {
+        ms = "00" + String(ms)
+    };
+    if (String(ms).length == 2) {
+        ms = "0" + String(ms)
+    };
+    $("#timeTop").html(days + " 天 " + hours + " 小时 " + minutes + " 分 " + seconds + " 秒 " + ms + " 毫 ")
+}, 1);
+</script>
+<!--end为你得网站加入毫秒级别建站时间-->
+<!--start添加音乐-->
+<div style="position:absolute; bottom: 0; right: 0;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1294924781&auto=1&height=66"></iframe>
+</div>
+<!--end添加音乐-->
+</html>
