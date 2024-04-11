@@ -6,15 +6,15 @@
   <meta name="keywords" content=" 分布式 ">
   <meta name="description" content="分布式协调工具之 Zookeeper | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta name="description" content="Tujidelv的技术小窝">
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="https://lvzhiqiang.top/404.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://lvzhiqiang.top/categories/index.html">
 <meta property="og:site_name" content="Tujidelv Code">
-<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:description" content="Tujidelv的技术小窝">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-11-28T12:54:46.000Z">
-<meta property="article:modified_time" content="2024-04-07T01:26:09.697Z">
+<meta property="article:published_time" content="2018-11-28T12:22:45.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
 <meta property="article:author" content="Tujide.lv">
 <meta name="twitter:card" content="summary">
 
@@ -204,26 +204,6 @@
     
         
             
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
                 
     <li>
         <div data-rel="前端">
@@ -251,6 +231,47 @@
             
             开发语言
             <small>(2)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="运维">
+            <i class="fold iconfont icon-right"></i>
+            运维
+            <small>(12)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="运维&lt;---&gt;Linux">
+            
+            Linux
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="运维&lt;---&gt;Mac">
+            
+            Mac
+            <small>(5)</small>
         </div>
         
     </li>
@@ -317,10 +338,6 @@
     
         
             
-        
-    
-        
-            
                 
     <li>
         <div data-rel="阅读">
@@ -362,42 +379,25 @@
     
         
             
-                
-    <li>
-        <div data-rel="运维">
-            <i class="fold iconfont icon-right"></i>
-            运维
-            <small>(12)</small>
-        </div>
         
-            <ul class="sub hide">
-                
-                    
-    <li>
-        <div data-rel="运维&lt;---&gt;Linux">
+    
+        
             
-            Linux
-            <small>(7)</small>
-        </div>
         
-    </li>
-
-                
-                    
-    <li>
-        <div data-rel="运维&lt;---&gt;Mac">
+    
+        
             
-            Mac
-            <small>(5)</small>
-        </div>
         
-    </li>
-
-                
-            </ul>
+    
         
-    </li>
-
+            
+        
+    
+        
+            
+        
+    
+        
             
         
     
@@ -1056,7 +1056,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-04-11 11:31:47'>2020-07-29 13:52</time>
+            发布时间 : <time class="date" title='最后更新: 2024-04-11 11:42:03'>2020-07-29 13:52</time>
         
     </div>
     <div class="article-meta">
@@ -1355,7 +1355,7 @@ Zookeeper使用的基本时间，服务器之间或客户端与服务器之间�
 <h3 id="监听服务器节点动态上下线"><a href="#监听服务器节点动态上下线" class="headerlink" title="监听服务器节点动态上下线"></a>监听服务器节点动态上下线</h3><p><img src="/2020/07/29/af-zookeeper/af-zookeeper-005.png" alt="抱歉,图片休息了"></p>
 <ul>
 <li>在集群上创建&#x2F;servers节点  <pre><code class="hljs plaintext">[zk: localhost:2181(CONNECTED) 10] create /servers &quot;servers&quot;</code></pre></li>
-<li>服务器端向ZK注册并写入信息  <pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
+<li>服务器端向ZK注册并写入信息<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
 <span class="hljs-keyword">import</span> org.apache.zookeeper.CreateMode;
 <span class="hljs-keyword">import</span> org.apache.zookeeper.WatchedEvent;
 <span class="hljs-keyword">import</span> org.apache.zookeeper.Watcher;
@@ -1366,7 +1366,7 @@ Zookeeper使用的基本时间，服务器之间或客户端与服务器之间�
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">connectString</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hadoop102:2181,hadoop103:2181,hadoop104:2181&quot;</span>;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">sessionTimeout</span> <span class="hljs-operator">=</span> <span class="hljs-number">2000</span>;
     <span class="hljs-keyword">private</span> <span class="hljs-type">ZooKeeper</span> <span class="hljs-variable">zk</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">parentNode</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;/servers&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">parentNode</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;/servers&quot;</span>;
     
     <span class="hljs-comment">// 创建到zk的客户端连接</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getConnect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException&#123;
@@ -1397,7 +1397,7 @@ Zookeeper使用的基本时间，服务器之间或客户端与服务器之间�
         server.business(args[<span class="hljs-number">0</span>]);
     &#125;
 &#125;</code></pre></li>
-<li>客户端向ZK注册并监听  <pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
+<li>客户端向ZK注册并监听<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
 <span class="hljs-keyword">import</span> java.util.ArrayList;
 <span class="hljs-keyword">import</span> java.util.List;
 <span class="hljs-keyword">import</span> org.apache.zookeeper.WatchedEvent;
@@ -1408,7 +1408,7 @@ Zookeeper使用的基本时间，服务器之间或客户端与服务器之间�
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">connectString</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hadoop102:2181,hadoop103:2181,hadoop104:2181&quot;</span>;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">sessionTimeout</span> <span class="hljs-operator">=</span> <span class="hljs-number">2000</span>;
     <span class="hljs-keyword">private</span> <span class="hljs-type">ZooKeeper</span> <span class="hljs-variable">zk</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">parentNode</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;/servers&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">parentNode</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;/servers&quot;</span>;
 
     <span class="hljs-comment">// 创建到zk的客户端连接</span>
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getConnect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
@@ -1475,7 +1475,7 @@ Zookeeper使用的基本时间，服务器之间或客户端与服务器之间�
     <p><span class="copy-title">字数:</span><span class="post-count">3.4k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2020-07-29, 13:52:23</p>
-    <p><span class="copy-title">最后更新:</span>2024-04-11, 11:31:47</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-11, 11:42:03</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/29/af-zookeeper.html" title="分布式协调工具之 Zookeeper">https://lvzhiqiang.top/2020/07/29/af-zookeeper.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
