@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>消息中间件之 RocketMQ | Tujidelv Code</title>
-  <meta name="keywords" content=" 分布式 ">
-  <meta name="description" content="消息中间件之 RocketMQ | Tujidelv Code">
+  <title>VPS监控：哪吒监控 | Tujidelv Code</title>
+  <meta name="keywords" content=" linux ">
+  <meta name="description" content="VPS监控：哪吒监控 | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
@@ -1036,9 +1036,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-af-mq-rocketmq" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-st-monitoring-nezha" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">消息中间件之 RocketMQ</h1>
+        <h1 class="article-title">VPS监控：哪吒监控</h1>
     
     <div class="article-meta">
         
@@ -1048,9 +1048,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后端">后端</a> > 
+            <a  data-rel="运维">运维</a> > 
             
-            <a  data-rel="后端&lt;---&gt;Java">Java</a>
+            <a  data-rel="运维&lt;---&gt;Linux">Linux</a>
             
         </span>
         
@@ -1058,19 +1058,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">分布式</a>
+            <a class="color1">linux</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-04-11 11:31:47'>2019-03-10 10:06</time>
+            发布时间 : <time class="date" title='最后更新: 2024-04-23 18:08:24'>2024-04-23 14:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:7k</span>
+        <span>字数:273</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1100,7 +1100,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8B-RocketMQ"><span class="toc-text">消息中间件之 RocketMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%8E%86%E5%8F%B2"><span class="toc-text">简介及历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JMS%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="toc-text">JMS基本概念及使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D"><span class="toc-text">特性介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-text">集群搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">API&amp;源码分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS%E7%9B%91%E6%8E%A7%EF%BC%9A%E5%93%AA%E5%90%92%E7%9B%91%E6%8E%A7"><span class="toc-text">VPS监控：哪吒监控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-Github-%E7%9A%84-Client-ID-%E5%92%8C%E5%AF%86%E9%92%A5"><span class="toc-text">获取 Github 的 Client ID 和密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="toc-text">运行面板安装脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE"><span class="toc-text">管理面板配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1"><span class="toc-text">服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-text">任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%8A%E8%AD%A6"><span class="toc-text">告警</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE"><span class="toc-text">设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1116,660 +1116,453 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="消息中间件之-RocketMQ"><a href="#消息中间件之-RocketMQ" class="headerlink" title="消息中间件之 RocketMQ"></a>消息中间件之 RocketMQ</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+        <h1 id="VPS监控：哪吒监控"><a href="#VPS监控：哪吒监控" class="headerlink" title="VPS监控：哪吒监控"></a>VPS监控：哪吒监控</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E6%AD%A3%E7%AF%87">正篇</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE">管理面板配置</a></li>
 <li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li>
 <li><a href="#%E7%BB%93%E6%9D%9F%E8%AF%AD">结束语</a></li>
 </ul>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>整理下学习RoctetMQ时的知识点.</p>
-<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="简介及历史"><a href="#简介及历史" class="headerlink" title="简介及历史"></a><code>简介及历史</code></h3><ul>
-<li>什么是RocketMQ  <pre><code class="hljs plaintext">阿里开源的用 java 编写的以队列为模型的分布式消息中间件，具有高可用、高吞吐量等特点。
-- 消息
-    - 消息即为数据，数据就会有规则，有长度，有大小。
-    - 标准JMS（JSR914）：https://www.jcp.org/en/jsr/detail?id=914
-- 中间件
-    - 为我们提供发送消息的程序或者服务。
-    - 主流的有： RocketMQ(没有严格遵循jms规范)、 Kafka、ActiveMQ（严格遵循jms规范）、RabbitMQ、zeroMQ</code></pre></li>
-<li>为什么要用消息中间件<br>  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-001.png" alt="抱歉,图片休息了"> </li>
-<li>为什么选择 RocketMQ  <pre><code class="hljs plaintext">1. 稳定无单点故障,原生支持分布式,不会因为某台机器或者某个节点宕机而影响系统正常使用
-2. 可严格保证消息的顺序性
-3. 经历过双十一
-4. java语言实现,java版本的kafka
-5. 架构轻,分布式协调采用NameServer来代替了Zookeeper
-6. 开源社区活跃</code></pre></li>
-<li>发展历史  <pre><code class="hljs plaintext">1. 2007年，淘宝实施了“五彩石”项目，“五彩石”用于将交易系统从单机变成分布式，也是在这个过程中产生了阿里巴巴第一代消息引擎——Notify。
-2. 2010年，阿里巴巴B2B部门基于ActiveMQ的5.1版本也开发了自己的一款消息引擎，称为Napoli。
-    这款消息引擎在B2B里面广泛地被使用，不仅仅是在交易领域，在很多的后台异步解耦等方面也得到了广泛的应用。
-3. 2011年，业界出现了现在被很多大数据领域所推崇的Kafka消息引擎，阿里巴巴在研究了Kafka的整体机制和架构设计之后，基于Kafka的设计使用Java进行了完全重写并推出了MetaQ 1.0版本。
-    主要是用于解决顺序消息和海量堆积的问题。
-4. 2012年，阿里巴巴对MetaQ进行了架构重组升级，开发出了MetaQ 2.0，这时就发现MetaQ原本基于Kafka的架构在阿里巴巴如此庞大的体系下很难进行水平扩展，所以在2012年的时候就开发了RocketMQ 3.0版本。
-    RocketMQ 3.0和MetaQ 3.0这两者是等价的版本，只不过阿里内部使用的称为MetaQ 3.0，外部开源称之为RocketMQ 3.0。
-5. 2015年，又基于RocketMQ开发了阿里云上的Aliware MQ和Notify 3.0。
-    MetaQ主要使用了拉模型，解决了顺序消息和海量堆积问题。
-    Notify主要使用了推模型，解决了事务消息。
-    Aliware MQ则是提供了商业化的版本。
-6. 2016年，阿里巴巴将RocketMQ的内核引擎捐赠给了Apache基金会。</code></pre></li>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>开源、轻量、易用的服务器监控、运维工具。</li>
+<li>一键安装：支持一键安装面板和监控服务，使用方便。主流系统包括Linux、Windows、MacOS、OpenWRT以及群晖均受支持。</li>
+<li>实时监控：支持同时监控多个服务器的状态，提供历史延迟图表，并可监控网页、端口可用性和SSL证书状态。支持故障和流量等状态告警，可通过Telegram、邮件、微信等多种通知方式进行提醒。</li>
+<li>轻松运维：可使用API获取服务器状态，支持WebSSH、DDNS和流量监控，可设置定时和触发任务并批量执行服务器任务。</li>
 </ul>
-<h3 id="JMS基本概念及使用"><a href="#JMS基本概念及使用" class="headerlink" title="JMS基本概念及使用"></a><code>JMS基本概念及使用</code></h3><ul>
-<li>JMS全称<code>Java消息服务(Java Message Service)</code>，是Java平台上有关面向MOM的技术规范,旨在提供标准的生产、发布、订阅和消费消息的API简化企业应用的开发。<ul>
-<li>类似于JDBC和关系型数据通信方式的抽象。</li>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<p>哪吒监控接入 Github、Gitlab、Gitee 作为后台管理员账号。</p>
+</blockquote>
+<h3 id="获取-Github-的-Client-ID-和密钥"><a href="#获取-Github-的-Client-ID-和密钥" class="headerlink" title="获取 Github 的 Client ID 和密钥"></a>获取 Github 的 Client ID 和密钥</h3><ol>
+<li>打开<a target="_blank" rel="noopener" href="https://github.com/settings/developers">Developer Settings</a>，依次选择OAuth Apps - New OAuth App 新建授权应用。</li>
+<li>填写应用信息。<ul>
+<li>Application name - 随意填写。</li>
+<li>Homepage URL - 填写面板的访问域名，如：”<a target="_blank" rel="noopener" href="https://monitor.lvzhiqiang.top" . ">https://monitor.lvzhiqiang.top&quot;。</a></li>
+<li>Authorization callback URL- 填写回调地址，如：”<a target="_blank" rel="noopener" href="https://monitor.lvzhiqiang.top/oauth2/callback%22%E3%80%82">https://monitor.lvzhiqiang.top/oauth2/callback&quot;。</a></li>
 </ul>
 </li>
-<li>JMS提供的元素  <pre><code class="hljs plaintext">Provider提供方：服务提供者
-Producer生产者：生产和发布JMS消息的客户端
-Consumer消费者：订阅和消费JMS消息的客户端
-Client客户端：生产或订阅消息的基于Java的应用&amp;进程
-Message消息：服务端与客户端之间的传输数据对象
-Queue队列 ：包含待读取消息的准备区域（点对点）
-Topic主题：发布消息的分布机制（发布&amp;订阅）
-Destination：消息被寻址,发送以及接受的对象</code></pre></li>
-<li>JMS消息的组成  <pre><code class="hljs plaintext">消息头：提供消息的接受端和发送端两个客户端和JMS规范的元数据,JMS消息的复杂性在这里
-    1. 由JMS规范提供的，客户端调用send()方法时，自动设置的消息头。
-        JMSDestination：
-            JMS发送消息的目的地。这对于使用来自多个目的地的消息的客户端很有价值。
-            相关方法：public abstract Destination getJMSDestination()
-        JMSDeliveryMode：
-            JMS传送模式。支持两种模式：持久模式和非持久模式。默认的传递模式是持久。
-            相关方法：public abstract int getJMSDeliveryMode()
-        JMSMessageID：
-            JMS消息ID。它是一个String类型的值，唯一标识了一条消息，并且必须以ID开头。
-            相关方法：public abstract String getJMSMessageID()
-        JMSTimestamp：
-            JMS时间戳。它包含的是JMS提供者接受消息的时间，而不是该消息实际传送的时间。这条消息头用于确认发送消息和它被消费者实际接受的时间间隔。
-            相关方法：public abstract long getJMSTimestamp()
-        JMSExpiration：
-            JMS消息的超时时间。这个头信息被用来阻止过期消息的传递。对于那些数据仅在某一个时间段内有效的消息来说，非常有用的。
-            相关方法：public abstract long getJMSExpiration()
-        JMSRedelivered：
-            JMS重发。表示该消息将被重新传送给消费者。如果该消息被重新传送，JMSRedelivered消息头就为true，否则为false。
-            相关方法：public abstract boolean getJMSRedelivered()
-        JMSPriority：
-            JMS优先级。在传送一条消息时，消息生产者能够为该消息分配一个优先级。
-            相关方法：public abstract int getJMSPriority()
-    2. 开发者分配的消息头。
-        JMSReplyTo：
-            JMS响应。一个JMS消息生产者可能会要求消费者对一条消息作出应答,JMSReplyTo消息头包含了一个javax.jms.Destination，表明JMS消费者应该应答的地址。
-            相关方法：public abstract Destination getJMSReplyTo()。
-        JMSCorrelationID：
-            JMS关联ID。提供了一个消息头，用于将当前的消息和先前的某些消息或应用程序特定的ID关联起来，这个消息头通常用于将响应消息与请求消息。
-            相关方法：public abstract String getJMSCorrelationID()。
-        JMSType：
-            JMS类型。用于语义标识消息类型，是由JMS客户端设置的一个可选消息头。它的主要作用是标示消息结构和有效负载的类型。
-            相关方法：public abstract String getJMSType()。
-消息属性：消息属性就像可以分配一条消息的附加消息头一样。它们允许开发者添加有关消息的不透明附加消息。它们还用于暴露消息选择器在消息过滤时使用的数据。
-    1. 应用程序特定的属性
-    2. JMS定义的属性
-    3. 提供者特定的属性
-消息体：消息的实际内容，JMS为消息体定义了六种类型载体,通过这个类型,你可以发送各种各样的数据。
-    1. StreamMessage：Java原始类型的流数据
-    2. MapMessage：key-value键值队作为数据载体。key一般使用字符串，value可以为Java原始类型。
-    3. TextMessage：文本消息、字符串数据载体,一般用来发送简单的文本,XML数据
-    4. ObjectMessage：序列化后的完整Java类。包括使用复杂Java类型。也支持集合
-    5. BytesMessage：使用一个二进制数据来做数据载体。
-    6. Message：最基础的消息体，没有数据载体。仅仅包含了消息体和属性，一般用做简单的时间通知。</code></pre></li>
-<li>JMS消息模型(消息传递方式)  <pre><code class="hljs plaintext">点对点(P2P)：
-    使用queue作为Destination,消息可被同步或异步的发送和接受,每个消息只会给一个Consumer传送一次。
-发布/订阅(Pub/Sub)：
-    使用topic作为Destination,发布者向topic发送消息,订阅者接受来自topic的消息,发送到topic的任何消息都将自动传递给所有订阅者。</code></pre>
-  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-002.png" alt="抱歉,图片休息了"> </li>
-<li>使用API创建一个应用程序的通用步骤  <pre><code class="hljs plaintext">1. 获取链接工厂ConnectionFactory
-2. 使用链接工厂创建连接Connection
-3. 启动连接并创建会话Session
-4. 获取Destination
-5. 创建Poducer或者Consumer
-6. 发送或者接收message
-7. 关闭资源</code></pre></li>
-</ul>
-<h3 id="特性介绍"><a href="#特性介绍" class="headerlink" title="特性介绍"></a><code>特性介绍</code></h3><ul>
-<li>官网：<a target="_blank" rel="noopener" href="http://rocketmq.apache.org/">http://rocketmq.apache.org/</a></li>
-<li>Github: <a target="_blank" rel="noopener" href="https://github.com/apache/rocketmq">https://github.com/apache/rocketmq</a></li>
-</ul>
-<hr>
-<ul>
-<li>基础特性  <pre><code class="hljs plaintext">1. 支持发布/订阅（Pub/Sub）和点对点（P2P）消息模型
-2. 在一个队列中可靠的先进先出（FIFO）和严格的顺序传递
-3. 支持拉（pull）和推（push）两种消息模式
-4. 单一队列百万消息的堆积能力
-5. 支持多种消息协议，如 JMS、MQTT 等
-7. 分布式高可用的部署架构,满足至少一次消息传递语义
-8. 提供docker镜像用于隔离测试和云集群部署
-9. 提供配置、指标和监控等功能丰富的Dashboard</code></pre></li>
-<li>相关术语  <pre><code class="hljs plaintext">- Message
-    消息的载体。一个Message必须指定topic，相当于寄信的地址。
-    Message还有一个可选的tag设置，以便消费端可以基于tag进行过滤消息。也可以添加额外的键值对，例如你需要一个业务key来查找broker上的消息，方便在开发过程中诊断问题。
-- Message Queue
-    可以认为是一个长度无限的数组,offset就是下标。一个Topic下可以有多个Queue，Queue的引入使得消息存储可以分布式集群化，具有了水平扩展的能力。
-- Producer
-    消息生产者，负责产生消息，一般由业务系统负责产生消息。
-- Producer Group
-    生产者组，这类Producer通常发送一类消息，且发送逻辑一致。发送同一类消息的多个producer实例组成一个生产者组。
-    可以是多台机器，也可以是一台机器的多个进程。
-- Consumer
-    消息消费者，负责消费消息，一般是后台系统负责异步消费。
-- Consumer Group
-    消费者组，这类Consumer通常消费一类消息，且消费逻辑一致。消费同一类消息的多个consumer实例组成一个消费者组。
-    可以是多台机器，也可以是一台机器的多个进程。
-- Topic
-    消息主题(逻辑分类)，比如说你有订单类的消息，也有库存类的消息，那么就需要进行分类，一个是订单Topic存放订单相关的消息，一个是库存Topic存储库存相关的消息。
-- Tag
-    消息标签，可以被认为是对Topic进一步细化。一般在相同业务模块中通过引入标签来标记不同用途的消息。
-- Broker
-    消息中转角色，负责接收、存储、转发消息，一般也称为Server，在JMS规范中称为Provider。
-- Name Server
-    服务发现Server，用于生产者和消费者获取Broker路由信息的服务。</code></pre></li>
-<li>概念模型&amp;部署模型  <pre><code class="hljs plaintext">Name Server：
-    1. NameServer是一个几乎无状态节点，可集群部署，节点之间无任何信息同步（类似ZK）。
-    2. NameServer用于存储Topic、Broker关系信息，功能简单，稳定性高。
-        多个NameServer之间相互没有通信，单台NameServer宕机不影响其他NameServer与集群。
-        即使整个NameServer集群宕机，已经正常工作的Producer，Consumer，Broker仍然能正常工作，但新起的Producer, Consumer，Broker就无法工作。
-    3. NameServer压力不会太大，平时主要开销是在维持心跳和提供Topic-Broker的关系数据。
-        但有一点需要注意，Broker向NameServer发心跳时，会带上当前自己所负责的所有Topic信息，如果Topic个数太多（万级别），
-        会导致一次心跳中，就Topic的数据就几十M，网络情况差的话，网络传输失败，心跳失败，导致NameServer误认为Broker心跳失败。
-Broker：
-    1. Broker 部署相对复杂，Broker分为Master 与 Slave，一个Master可以对应多个 Slave，但是一个Slave只能对应一个Master。
-    2. Master 与 Slave 的对应关系通过指定相同的BrokerName，不同的 BrokerId 来定义，BrokerId为0表示Master，非 0 表示 Slave。
-    3. Master可以部署多个。每个Broker与NameServer 集群中的所有节点建立长连接，定时注册Topic信息到所有NameServer。
-    4. producer与NameServer集群中的其中一个节点（随机选择）建立长连接，定期从NameServer取Topic路由信息，并向提供Topic服务的Master建立长连接，且定时向Master发送心跳。
-Producer：
-    1. Producer 完全无状态，可集群部署。
-    2. Producer启动时，也需要指定NameServer的地址，从NameServer集群中选一台建立长连接。如果该NameServer宕机，会自动连其他NameServer。直到有可用的NameServer为止。
-    3. Producer每30秒从NameServer获取Topic跟Broker的映射关系，更新到本地内存中。
-        再跟Topic涉及的所有Broker建立长连接，每隔30秒发一次心跳。
-        在Broker端也会每10秒扫描一次当前注册的Producer，如果发现某个Producer超过2分钟都没有发心跳，则断开连接。
-    4. Producer发送时，会自动轮询当前所有可发送的broker，一条消息发送成功，下次换另外一个broker发送，以达到消息平均落到所有的broker上。
-    5. 假如某个Broker宕机，意味生产者最长需要30秒才能感知到。在这期间会向宕机的Broker发送消息。
-        当一条消息发送到某个Broker失败后，会往该broker自动再重发2次，假如还是发送失败，则抛出发送失败异常。业务捕获异常，重新发送即可。
-        客户端里会自动轮询另外一个Broker重新发送，这个对于用户是透明的。
-Consumer：
-    1. Consumer与NameServer集群中的其中一个节点（随机选择）建立长连接，定期从NameServer取Topic路由信息，并向提供Topic服务的Master、Slave建立长连接，且定时向 Master、Slave发送心跳。
-    2. Consumer既可以从Master订阅消息，也可以从Slave订阅消息，订阅规则由Broker配置决定。
-    3. Consumer启动时需要指定NameServer地址，与其中一个NameServer建立长连接。
-        消费者每隔30秒从NameServer获取所有Topic的最新队列情况，这意味着某个Broker如果宕机，客户端最多要30秒才能感知。
-        连接建立后，从NameServer中获取当前消费Topic所涉及的Broker，直连Broker。
-    4. Consumer跟Broker是长连接，会每隔30秒发心跳信息到Broker。
-        Broker端每10秒检查一次当前存活的Consumer，若发现某个Consumer 2分钟内没有心跳，就断开与该Consumer的连接，并且向该消费组的其他实例发送通知，触发该Consumer集群的负载均衡。</code></pre>
-  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-003.png" alt="抱歉,图片休息了"><br>  <img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-004.png" alt="抱歉,图片休息了"></li>
-<li>RocketMQ高可用</li>
-</ul>
-<hr>
-<table>
-<thead>
-<tr>
-<th align="left">情况</th>
-<th align="left">发送消息</th>
-<th align="left">存储消息</th>
-<th align="left">接收消息</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">停掉一个namesrv</td>
-<td align="left">不受影响</td>
-<td align="left">不受影响</td>
-<td align="left">不受影响</td>
-</tr>
-<tr>
-<td align="left">停掉全部namesrv</td>
-<td align="left">受影响</td>
-<td align="left">不受影响</td>
-<td align="left">受影响</td>
-</tr>
-<tr>
-<td align="left">停掉单个master broker</td>
-<td align="left">不受影响</td>
-<td align="left">受影响(很小)</td>
-<td align="left">不受影响</td>
-</tr>
-<tr>
-<td align="left">停掉全部master broker</td>
-<td align="left">受影响</td>
-<td align="left">受影响</td>
-<td align="left">受影响</td>
-</tr>
-<tr>
-<td align="left">停掉全部salve broker</td>
-<td align="left">不受影响</td>
-<td align="left">不受影响</td>
-<td align="left">不受影响</td>
-</tr>
-<tr>
-<td align="left">恢复任意master broker</td>
-<td align="left">不受影响</td>
-<td align="left">受影响(很小)</td>
-<td align="left">不受影响</td>
-</tr>
-</tbody></table>
-<ul>
-<li>消息发布  <pre><code class="hljs plaintext">producer将消息发送给Broker时，会轮询的将消息发送到每个队列中（所有broker下的Queue合并成一个List去轮询）,来实现发送方的负载均衡。</code></pre></li>
-<li>消息存储  <pre><code class="hljs plaintext">RocketMQ的消息的存储是由Consume Queue和Commit Log配合来完成的。
-    Consume Queue中只存储很少的数据，消息主体都是通过Commit Log来进行读写。
-Consume Queue：
-    消息的逻辑队列，相当于字典的目录，用来指定消息在物理文件commit log上的位置。
-    存储了这个Queue在Commit Log中的起始offset，log大小和MessageTag的hashCode。
-    每个Topic下的每个Queue都有一个对应的ConsumeQueue文件，默认位置如下，仍然可通过配置文件修改：$&#123;rocketmq.home&#125;/store/consumequeue/$&#123;topicName&#125;/$&#123;queueId&#125;/$&#123;fileName&#125;
-    ---------------------
-    1. 根据topic和queueId来组织文件,TopicA和QueueId=0组成一个ConsumeQueue,TopicA和QueueId=1组成另-个ConsumeQueue
-    2. 按照消费端的GroupName来分组重试队列，如果消费端消费失败，消息将被发往重试队列中，比如图中的%RETRY%ConsumerGroupA
-    3. 按照消费端的GroupName来分组死信队列，如果消费端消费失败，并重试指定次数后，仍然失败，则发往死信队列，比如图中的%DLQ%ConsumerGroupA
-        注：死信队列（Dead Letter Queue）一般用于存放由于某种原因无法传递的消息，比如处理失败或者已经过期的消息。
-    4. Consume Queue文件中的存储单元是一个20字节定长的二进制数据，顺序写顺序读,包括
-        CommitLog Offset：8 Byte,存储这条消息在Commit Log文件中的实际偏移量
-        Size：4 Byte,存储消息的大小
-        Message Tag HashCode：8 Byte,存储消息的Tag的哈希值，主要用于订阅时消息过滤（订阅时如果指定了Tag，会根据HashCode来快速查找到订阅的消息）
-Commit Log：
-    消息存放的物理文件，每台broker上的commitlog被本机所有的queue共享，不做任何区分。
-    文件的默认位置如下，仍然可通过配置文件修改：$&#123;user.home&#125; \store\$&#123;commitlog&#125;\$&#123;fileName&#125;
-    ---------------------
-    1. CommitLog文件中的存储单元长度不固定，文件顺序写，随机读。按照顺序以及编号对应的内容依次存储。
-Consumer消费消息过程中使用了零拷贝中的mmap+write方式,因为有小块数据传输的需求，效果会比 sendfile 更好。
-    1. 使用 mmap + write 方式
-        优点：即使频繁调用，使用小块文件传输，效率也很高。
-        缺点：不能很好的利用DMA方式，会比sendfile多消耗CPU，内存安全性控制复杂，需要避免JVM Crash问题。
-    2. 使用 sendfile 方式
-        优点：可以利用DMA方式，消耗CPU较少，大块文件传输效率高，无内存安全新问题。
-        缺点：小块文件效率低于mmap方式，只能是BIO方式传输，不能使用NIO。</code></pre>
-  <pre><code class="hljs plaintext">RocketMQ存储目录结构
-|-- abort 
-|-- checkpoint 
-|-- config
-| |-- consumerOffset.json
-| |-- consumerOffset.json.bak
-| |-- delayOffset.json
-| |-- delayOffset.json.bak
-| |-- subscriptionGroup.json.bak
-| |-- topics.json
-| |-- topics.json.bak 
-|-- commitlog
-| |-- 00000003384434229248
-| |-- 000000033855079710
-| |-- 0000000338658171289
-|-- consumequeue
-  |-- %DLQ%ConsumerGroupA
-  | |-- 0
-  | | |-- 00000000000006000000
-  |-- %RETRY%ConsumerGroupA
-  | |-- 0
-  | | |-- 00000000000000000000
-  |-- %RETRY%ConsumerGroupB
-  | |-- 0
-  | | |-- 00000000000000000000
-  |-- SCHEDULE_TOPIC_XXXX
-  | |-- 2
-  | | |-- 00000000000006000000
-  | |-- 3
-  | | |-- 00000000000006000000
-  |-- TopicA
-  | |-- 0
-  | | |-- 00000000002604000000
-  | | |-- 00000000002610000000
-  | | |-- 00000000002616000000
-  | |-- 1
-  | | |-- 00000000002610000000
-  | | |-- 00000000002610000000
-  |-- TopicB
-  | |-- 0
-  | | |-- 00000000000732000000
-  | |-- 1
-  | | |-- 00000000000732000000
-  | |-- 2
-  | | |-- 00000000000732000000</code></pre>
-  <pre><code class="hljs plaintext">RocketMQ消息存储实现
-// Set the storage time
-msg.setStoreTimestamp(System.currentTimeMillis());
-// Set the message body BODY CRC (consider the most appropriate setting
-msg.setBodyCRC(UtilAll.crc32(msg.getBody()));
-StoreStatsService storeStatsService = this.defaultMessageStore.getStoreStatsService();
-synchronized (this) &#123;
-    long beginLockTimestamp = this.defaultMessageStore.getSystemClock().now();
-    // Here settings are stored timestamp, in order to ensure an orderly global
-    msg.setStoreTimestamp(beginLockTimestamp);
-    // MapedFile：操作物理文件在内存中的映射以及将内存数据持久化到物理文件中
-    MapedFile mapedFile = this.mapedFileQueue.getLastMapedFile();
-    // 将Message追加到文件commitlog
-    result = mapedFile.appendMessage(msg, this.appendMessageCallback);
-    switch (result.getStatus()) &#123;
-    case PUT_OK:break;
-    case END_OF_FILE:
-         // Create a new file, re-write the message
-         mapedFile = this.mapedFileQueue.getLastMapedFile();
-         result = mapedFile.appendMessage(msg, this.appendMessageCallback);
-     break;
-     DispatchRequest dispatchRequest = new DispatchRequest(
-                topic,// 1
-                queueId,// 2
-                result.getWroteOffset(),// 3
-                result.getWroteBytes(),// 4
-                tagsCode,// 5
-                msg.getStoreTimestamp(),// 6
-                result.getLogicsOffset(),// 7
-                msg.getKeys(),// 8
-                /**
-                 * Transaction
-                 */
-                msg.getSysFlag(),// 9
-                msg.getPreparedTransactionOffset());// 10
-    // 1.分发消息位置到ConsumeQueue
-    // 2.分发到IndexService建立索引
-    this.defaultMessageStore.putDispatchRequest(dispatchRequest);
-&#125;</code></pre></li>
-<li>消息订阅  <pre><code class="hljs plaintext">RocketMQ消息订阅有两种模式，一种是Push模式，即MQServer主动向消费端推送；另外一种是Pull模式，即消费端在需要时，主动到MQServer拉取。
-    但在具体实现时，Push和Pull模式都是采用消费端主动拉取的方式。</code></pre></li>
-<li>刷盘策略&amp;复制策略  <pre><code class="hljs plaintext">刷盘策略：
-    异步刷盘：ASYNC_FLUSH
-        消息被写入内存pagecache后，立即返回消息写成功的状态，吞吐量大；当内存里的消息积累到一定程度时，统一发出写磁盘动作，快速写入。
-    同步刷盘：SYNC_FLUSH
-        消息被写入内存pagecache后，线程等待,立即通知刷盘线程，刷盘完成后，唤醒等待线程,返回消息写成功的状态，此时消息已经被写入磁盘。</code></pre>
-  <pre><code class="hljs plaintext">复制策略：
-    异步复制：ASYNC_MASTER
-        只要master写成功就返回成功状态。好处是低延迟、高吞吐，缺点是如果master出故障，数据没有写入slave，就会有丢失。
-    同步复制(双写)：SYNC_MASTER
-        master和slave都写成功后返回成功状态。好处是如果master出故障，slave上有全部备份，容易恢复。缺点是增大延迟，降低吞吐量。</code></pre>
-  <pre><code class="hljs plaintext">推荐策略： 异步刷盘 + 同步复制。
-    如果要严格保证数据可靠，需采用同步刷盘和同步双写的方式，但性能会较其他方式低。</code></pre></li>
-</ul>
-<h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a><code>集群搭建</code></h3><ul>
-<li>集群部署模式  <pre><code class="hljs plaintext">单master：
-    优点：除了配置简单没什么优点，适合个人学习使用。
-    缺点：不可靠，该机器重启或宕机，将导致整个服务不可用。
-多master：
-    多个master节点组成集群，单个master节点宕机或者重启对应用没有影响。
-    优点：所有模式中性能最高。
-    缺点：单个master节点宕机期间，未被消费的消息在节点恢复之前不可用，消息的实时性就受到影响。
-多master多slave异步复制：
-    在多master模式的基础上，每个master节点都有至少一个对应的slave。master节点可读可写，但是slave只能读不能写，类似于mysql的主备模式。
-    优点：在master宕机时，消费者可以从slave读取消息，消息的实时性不会受影响，性能几乎和多master一样。
-    缺点：使用异步复制的同步方式有可能会有消息丢失的问题。
-多master多slave同步双写：
-    同多master多slave异步复制模式类似，区别在于master和slave之间的数据同步方式。
-    优点：同步双写的同步模式能保证数据不丢失。
-    缺点：发送单个消息RT会略长，性能相比异步复制低10%左右。</code></pre></li>
-<li>软件依赖  <pre><code class="hljs plaintext">rocketmq：https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.4.0/rocketmq-all-4.4.0-bin-release.zip
-jdk：https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</code></pre></li>
-<li>环境介绍(2M-2S-SYNC)  <pre><code class="hljs plaintext">192.168.9.230
-    NameServer、broker-a(master)、broker-b-s(slave)
-192.168.9.231
-    NameServer、broker-b(master)、broker-a-s(slave)</code></pre>
-  <pre><code class="hljs plaintext">防火墙设置：
-    如果是开发环境,直接关闭防火墙
-        CentOS6：# service iptables stop
-        CentOS7：# service firewalld stop
-    如果是生产环境,就需要配置防火墙，增加端口规则，默认nameserver端口是9876</code></pre></li>
-<li>开始部署<ol>
-<li>安装jdk并配置环境变量(省略,2台机器都要配置)</li>
-<li>下载RocketMQ程序包(只需在一台服务器上执行操作) <pre><code class="hljs plaintext">方法1：
-    1. 去RocketMQ官网找到并复制其链接地址
-    2. wget -P /opt/setups/ http://mirrors.shu.edu.cn/apache/rocketmq/4.4.0/rocketmq-all-4.4.0-bin-release.zip
-方法2：
-    1. 去RocketMQ官网找到指定版本的zip包,下载到本地
-    2. 通过rz等上传工具将程序包上传到/opt/setups目录中去
-方法3：
-    1. 从GitHub中checkout源码
-    2. 打开BUILDING文件找到&quot;Build distribution packages&quot;处的mvn命令
-    3. 在Maven窗口执行命令,生成的压缩包在rockemq目录下的&quot;distribution\target&quot;</code></pre></li>
-<li>解压到指定目录 <pre><code class="hljs plaintext"># mkdir -pv /usr/program
-# unzip rocketmq-all-4.4.0-bin-release.zip -d /usr/program/</code></pre></li>
-<li>配置环境变量,使用vim编辑&#x2F;etc&#x2F;profile.d&#x2F;my.sh文件 <pre><code class="hljs plaintext"># RocketMQ
-ROCKETMQ_HOME=/usr/program/rocketmq-all-4.4.0-bin-release
-PATH=$ROCKETMQ_HOME/bin:$PATH
-export ROCKETMQ_HOME
-export PATH</code></pre>
- <pre><code class="hljs plaintext"># source /etc/profile.d/my.sh</code></pre></li>
-<li>创建存储等相关目录 <pre><code class="hljs plaintext"># mkdir -pv $&#123;ROCKETMQ_HOME&#125;/data/store/&#123;commitlog,consumequeue,index,checkpoint,slave/&#123;commitlog,consumequeue,index,checkpoint&#125;&#125;
-# tree -d $&#123;ROCKETMQ_HOME&#125;</code></pre></li>
-<li>配置集群参数 <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a.properties
------------------
-#整个broker集群的名字，创建topic时需要指定
-brokerClusterName=rocketmq-cluster
-##broker名字，注意此处不同的配置文件填写的不一样
-brokerName=broker-a
-##0表示master,&gt;0表示Slave
-brokerId=0
-#nameServer地址,分号分割
-namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
-#强制指定本机IP，需要根据每台机器进行修改。官方介绍可为空，系统默认自动识别，但多网卡时IP地址可能读取错误
-#brokerIP=192.168.0.1
-#在发送消息时，自动创建服务器不存在的topic，默认创建的队列数
-defaultTopicQueueNums=4
-#是否允许Broker自动创建topic，建议线下开启，线上关闭
-autoCreateTopicEnable=true
-#是否允许Broker自动创订阅组，建议线下开启，线上关闭
-autoCreateSubscriptionGroup=true
-##Broker对外服务的监听端口,同一台机器部署多个broker，端口号要不同，且端口号之间要相距大些
-listenPort=10911
-#删除文件时间点，默认凌晨4点
-deleteWhen=04
-#文件保留时间，默认72小时
-fileReservedTime=120
-#commitLog每个文件的大小,默认为1G
-mapedFileSizeCommitLog=1073741824
-#ConsumeQueue每个文件默认存30W条，根据业务情况调整
-mapedFileSizeConsumeQueue=3000000
-destoryMaoedFileIntervalForcibly=120000
-redeleteHangedFileInterval=120000
-#检测物理文件磁盘空间
-diskMaxUsedSpaceRatio=88
-##store存储路径,master与slave目录要不同
-storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store
-##commitLog存储路径
-storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/commitlog
-##消息队列存储路径
-storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/consumequeue
-##消息索引储路径
-storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/index
-##checkpoint文件存储路径
-storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/checkpoint
-#限制的消息大小
-maxMessageSize=65536
-flushCommitLogLeastPages=4
-flushConsumeQueueLeastPages=2
-flushCommitLogThoroughInterval=10000
-flushConsumeQueueThoroughInterval=60000
-checkTransactionMessageEnable=false
-#发消息线程池数量
-sendMessageThreadPoolNums=128
-#拉消息线程池数量
-pullMessageThreadPoolNums=128
-##Broker的角色
-#ASYNC_MASTER 异步复制master
-#SYNC_MASTER 同步双写master
-#SLAVE 从
-brokerRole=SYNC_MASTER
-##刷盘方式
-#ASYNC_FLUSH 异步刷盘
-#SYNC_FLUSH 同步刷盘
-flushDiskType=ASYNC_FLUSH</code></pre>
- <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b-s.properties
------------------
-brokerClusterName=rocketmq-cluster
-brokerName=broker-b
-brokerId=1
-namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
-defaultTopicQueueNums=4
-autoCreateTopicEnable=true
-autoCreateSubscriptionGroup=true
-listenPort=10921
-deleteWhen=04
-fileReservedTime=120
-mapedFileSizeCommitLog=1073741824
-mapedFileSizeConsumeQueue=3000000
-destoryMaoedFileIntervalForcibly=120000
-redeleteHangedFileInterval=120000
-diskMaxUsedSpaceRatio=88
-storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store/slave
-storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/commitlog
-storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/consumequeue
-storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/index
-storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/checkpoint
-maxMessageSize=65536
-flushCommitLogLeastPages=4
-flushConsumeQueueLeastPages=2
-flushCommitLogThoroughInterval=10000
-flushConsumeQueueThoroughInterval=60000
-checkTransactionMessageEnable=false
-sendMessageThreadPoolNums=128
-pullMessageThreadPoolNums=128
-brokerRole=SLAVE
-flushDiskType=ASYNC_FLUSH</code></pre>
- <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a-s.properties
------------------
-brokerClusterName=rocketmq-cluster
-brokerName=broker-a
-brokerId=1
-namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
-defaultTopicQueueNums=4
-autoCreateTopicEnable=true
-autoCreateSubscriptionGroup=true
-listenPort=10921
-deleteWhen=04
-fileReservedTime=120
-mapedFileSizeCommitLog=1073741824
-mapedFileSizeConsumeQueue=3000000
-destoryMaoedFileIntervalForcibly=120000
-redeleteHangedFileInterval=120000
-diskMaxUsedSpaceRatio=88
-storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store/slave
-storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/commitlog
-storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/consumequeue
-storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/index
-storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/slave/checkpoint
-maxMessageSize=65536
-flushCommitLogLeastPages=4
-flushConsumeQueueLeastPages=2
-flushCommitLogThoroughInterval=10000
-flushConsumeQueueThoroughInterval=60000
-checkTransactionMessageEnable=false
-sendMessageThreadPoolNums=128
-pullMessageThreadPoolNums=128
-brokerRole=SLAVE
-flushDiskType=ASYNC_FLUSH</code></pre>
- <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b.properties
------------------
-brokerClusterName=rocketmq-cluster
-brokerName=broker-b
-brokerId=0
-namesrvAddr=192.168.9.230:9876;192.168.9.231:9876
-defaultTopicQueueNums=4
-autoCreateTopicEnable=true
-autoCreateSubscriptionGroup=true
-listenPort=10911
-deleteWhen=04
-fileReservedTime=120
-mapedFileSizeCommitLog=1073741824
-mapedFileSizeConsumeQueue=3000000
-destoryMaoedFileIntervalForcibly=120000
-redeleteHangedFileInterval=120000
-diskMaxUsedSpaceRatio=88
-storePathRootDir=$&#123;ROCKETMQ_HOME&#125;/data/store
-storePathCommitLog=$&#123;ROCKETMQ_HOME&#125;/data/store/commitlog
-storePathConsumeQueue=$&#123;ROCKETMQ_HOME&#125;/data/store/consumequeue
-storePathIndex=$&#123;ROCKETMQ_HOME&#125;/data/store/index
-storeCheckpoint=$&#123;ROCKETMQ_HOME&#125;/data/store/checkpoint
-maxMessageSize=65536
-flushCommitLogLeastPages=4
-flushConsumeQueueLeastPages=2
-flushCommitLogThoroughInterval=10000
-flushConsumeQueueThoroughInterval=60000
-checkTransactionMessageEnable=false
-sendMessageThreadPoolNums=128
-pullMessageThreadPoolNums=128
-brokerRole=SYNC_MASTER
-flushDiskType=ASYNC_FLUSH</code></pre></li>
-<li>修改日志配置文件 <pre><code class="hljs plaintext"># mkdir -pv $&#123;ROCKETMQ_HOME&#125;/logs
-# cd $&#123;ROCKETMQ_HOME&#125;/conf &amp;&amp; sed -i &#x27;s#$&#123;user.home&#125;#$&#123;ROCKETMQ_HOME&#125;#g&#x27; *.xml</code></pre></li>
-<li>修改启动参数 <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/bin/runserver.sh
------------------
-JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -server -Xms512m -Xmx512m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m&quot;</code></pre>
- <pre><code class="hljs plaintext"># vim $&#123;ROCKETMQ_HOME&#125;/bin/runbroker.sh
------------------
-JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -server -Xms1g -Xmx1g -Xmn512m&quot;</code></pre></li>
-<li>使用scp命令将mq项目复制到另一台服务器,并在另一台机器上执行<code>步骤4</code> <pre><code class="hljs plaintext"># scp -r $&#123;ROCKETMQ_HOME&#125; root@192.168.9.230:/usr/program/</code></pre></li>
-<li>启动nameserver和broker服务(2台机器都要执行)<pre><code class="hljs plaintext">输入命令jps或者查看$&#123;ROCKETMQ_HOME&#125;/logs下日志是否输出正常
------------------
-# nohup sh mqnamesrv &amp;
-# jps
-# nohup sh mqbroker -c $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-a.properties &amp;
-# nohup sh mqbroker -c $&#123;ROCKETMQ_HOME&#125;/conf/2m-2s-sync/broker-b-s.properties &amp;
-# jps</code></pre>
-<pre><code class="hljs plaintext">查看集群监控状态
------------------
-# sh mqadmin clusterlist -n 192.168.9.231:9876</code></pre>
-<img src="/2019/03/10/af-mq-rocketmq/af-mq-rocketmq-005.png" alt="抱歉,图片休息了"> </li>
-<li>停止nameserver和broker服务<pre><code class="hljs plaintext">或者通过jps命令查看进程号,kill -9 pid
------------------
-# sh mqshutdown broker
-# sh mqshutdown namesrv</code></pre></li>
+<li>Register application 注册应用。</li>
+<li>保存页面中的 Client ID，然后点击 “Generate a new client secret“，创建一个新的 Client Secret，新建的密钥仅会显示一次，请妥善保存。</li>
 </ol>
+<h3 id="运行面板安装脚本"><a href="#运行面板安装脚本" class="headerlink" title="运行面板安装脚本"></a>运行面板安装脚本</h3><pre><code class="hljs bash"><span class="hljs-comment"># GitHub 源</span>
+curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x nezha.sh &amp;&amp; sudo ./nezha.sh
+<span class="hljs-comment"># Gitee 源</span>
+curl -L https://gitee.com/naibahq/nezha/raw/master/script/install.sh -o nezha.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x nezha.sh &amp;&amp; sudo CN=<span class="hljs-literal">true</span> ./nezha.sh</code></pre>
+
+<ol>
+<li>填写相关信息<ul>
+<li>请输入 OAuth2 提供商(github&#x2F;gitlab&#x2F;gitee，默认 github): - 直接回车，默认github。</li>
+<li>请输入 Oauth2 应用的 Client ID: - 之前保存的 Client ID。</li>
+<li>请输入 Oauth2 应用的 Client Secret: - 之前保存的密钥。</li>
+<li>请输入 GitHub&#x2F;Gitee 登录名作为管理员，多个以逗号隔开: - 填写你的用户名，不是你登陆的账号或者自定义的别名。</li>
+<li>请输入站点标题: - 随意。</li>
+<li>输入站点访问端口: (默认 8008) - 服务面板的访问端口，可自定义。</li>
+<li>请输入用于 Agent 接入的 RPC 端口: (默认 5555) - 客户端和服务面板的通讯端口。</li>
+</ul>
 </li>
+<li>配置反向代理<ul>
+<li>在宝塔面板中新建一个站点，域名填写公开访问域名，如 “monitor.lvzhiqiang.top”。</li>
+<li>然后点击”设置”进入站点设置选项，选择“反向代理” - “添加反向代理”。</li>
+<li>自定义一个代理名称，在下方”目标 URL”中填入 <a target="_blank" rel="noopener" href="http://127.0.0.1/">http://127.0.0.1</a> 然后点击”保存”。</li>
+<li>打开刚刚新建的反向代理右边的“配置文件”，将配置文件替换为以下内容： <pre><code class="hljs plaintext">#PROXY-START/
+location / &#123;
+   proxy_pass http://127.0.0.1:8008;
+   proxy_set_header Host $http_host;
+   proxy_set_header      Upgrade $http_upgrade;
+&#125;
+location ~ ^/(ws|terminal/.+)$  &#123;
+   proxy_pass http://127.0.0.1:8008;
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection &quot;Upgrade&quot;;
+   proxy_set_header Host $http_host;
+&#125;
+#PROXY-END/</code></pre></li>
 </ul>
-<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a><code>性能测试</code></h3><h3 id="API-源码分析"><a href="#API-源码分析" class="headerlink" title="API&amp;源码分析"></a><code>API&amp;源码分析</code></h3><ul>
-<li>mq源码模块划分</li>
+</li>
+<li>此时可以直接使用域名，如：”<a target="_blank" rel="noopener" href="http://monitor.lvzhiqiang.top/">http://monitor.lvzhiqiang.top</a>“ 来访问面板。</li>
+<li>将来如果需要再次运行脚本来打开管理脚本 ，可以运行：<code>bash ./nezha.sh</code>。</li>
+</ol>
+<h2 id="管理面板配置"><a href="#管理面板配置" class="headerlink" title="管理面板配置"></a>管理面板配置</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><blockquote>
+<p>服务器区域负责管理 Agent，是哪吒探针中最基础的区域，也是其他功能的基础。</p>
+</blockquote>
+<ol>
+<li>新增服务器<ul>
+<li>第一步是新增服务器，可以自定义名称、分组、排序和备注。</li>
+<li>拥有相同分组的服务器会在受支持的主题中划分到一起进行显示，备注仅会在后台显示，无需担心泄露信息。</li>
 </ul>
-<hr>
+</li>
+<li>安装 Agent<ul>
+<li>点击新添加的服务器旁，绿色的 Linux 图标按钮，复制一键安装命令。</li>
+<li>在被控端服务器中运行复制的一键安装命令，等待安装完成后返回到 Dashboard 主页查看服务器是否上线。</li>
+</ul>
+</li>
+</ol>
+<h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><blockquote>
+<p>服务区域是设置 Agent 监控外部网站或服务器的功能设置区，设置好的服务监控可以在主页中的 “服务” 页查看过去 30 天的可用性监控结果。</p>
+</blockquote>
+<ol>
+<li><p>添加监控</p>
+<ul>
+<li>名称 - 自定义一个名称，例如上海电信。</li>
+<li>类型 - 选择一个监控类型，目前哪吒监控支持三种监控类型，分别是 “HTTP-GET”、“ICMP-Ping” 和 “TCP-Ping”。</li>
+<li>目标 - 根据你选择的类型不同，目标的设置方法也不同 <pre><code class="hljs plaintext">HTTP-GET: 选择此类型，你应该输入一个URL作为目标，URL需添加 http:// 或 https:// 如果你的目标URL是 https:// ,将会同时监控该URL的SSL证书，当SSL证书到期或发生变更，会触发提醒。
+ICMP-Ping: 选择此类型时，你应该输入一个域名或IP，不含端口号，例如：1.1.1.1 或 example.com
+TCP-Ping: 选择此类型时，你应该输入一个域名或IP并包含端口号，例如：1.1.1.1:80 或 example.com:22</code></pre></li>
+<li>请求间隔： 设定 Agent 每次请求目标的时间间隔，以秒为单位。</li>
+<li>覆盖范围： 选择一条规则来确定要使用哪些 Agent 来请求目标。</li>
+<li>特定服务器： 配合覆盖范围使用，选择规则内需要排除的 Agent。</li>
+<li>通知方式组： 选择你已经在 “告警” 页设置好的通知方式，点击这里了解详情。</li>
+<li>启用故障通知： 根据需要选择是否接收目标故障通知，默认为不勾选。</li>
+</ul>
+</li>
+<li><p>延迟监控</p>
 <table>
 <thead>
 <tr>
-<th align="left">名称</th>
-<th align="left">作用</th>
+<th>地区</th>
+<th>电信</th>
+<th>移动</th>
+<th>联通</th>
+<th>教育</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><code>broker</code></td>
-<td align="left"><code>broker模块：c和p端消息存储逻辑</code></td>
+<td>上海</td>
+<td>202.96.209.133</td>
+<td>183.194.219.220</td>
+<td>210.22.97.1</td>
+<td>202.120.2.119</td>
 </tr>
 <tr>
-<td align="left">client</td>
-<td align="left">客户端api：produce、consumer端 接受与发送api</td>
+<td>北京</td>
+<td>49.7.37.74</td>
+<td>112.34.111.194</td>
+<td>111.206.209.44</td>
+<td>166.111.4.100</td>
 </tr>
 <tr>
-<td align="left">common</td>
-<td align="left">公共组件：常量、基类、数据结构</td>
+<td>广州</td>
+<td>183.47.126.35</td>
+<td>120.233.18.250</td>
+<td>157.148.58.29</td>
+<td>202.116.64.8</td>
 </tr>
 <tr>
-<td align="left">tools</td>
-<td align="left">运维tools：命令行工具模块</td>
+<td>河北</td>
+<td>27.185.242.215</td>
+<td>111.62.229.100</td>
+<td>61.182.138.156</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>store</code></td>
-<td align="left"><code>存储模块：消息、索引、commitlog存储</code></td>
+<td>山西</td>
+<td>1.71.157.41</td>
+<td>183.201.244.91</td>
+<td>60.221.18.41</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>namesrv</code></td>
-<td align="left"><code>服务管理模块：服务注册topic等信息存储</code></td>
+<td>辽宁</td>
+<td>123.184.58.41</td>
+<td>36.131.156.145</td>
+<td>218.61.211.132</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">remoting</td>
-<td align="left">远程通讯模块：netty+fastjson</td>
+<td>吉林</td>
+<td>123.172.127.217</td>
+<td>111.27.127.176</td>
+<td>122.143.8.41</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">logappender</td>
-<td align="left">日志适配模块</td>
+<td>黑龙江</td>
+<td>42.101.84.132</td>
+<td>111.42.190.25</td>
+<td>113.7.211.140</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>example</code></td>
-<td align="left"><code>Demo列子</code></td>
+<td>江苏</td>
+<td>58.215.210.220</td>
+<td>36.156.92.132</td>
+<td>122.96.235.165</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">filtersrv</td>
-<td align="left">消息过滤器模块</td>
+<td>浙江</td>
+<td>115.220.14.91</td>
+<td>117.147.213.41</td>
+<td>101.69.194.224</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">srvutil</td>
-<td align="left">辅助模块</td>
+<td>安徽</td>
+<td>223.247.108.251</td>
+<td>112.29.198.100</td>
+<td>112.132.208.41</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">filter</td>
-<td align="left">过滤模块：消息过滤模块</td>
+<td>福建</td>
+<td>106.126.10.28</td>
+<td>112.50.96.88</td>
+<td>36.248.48.139</td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><code>distribution</code></td>
-<td align="left"><code>部署、运维相关zip包中的代码</code></td>
+<td>江西</td>
+<td>106.227.22.132</td>
+<td>117.168.150.249</td>
+<td>116.153.69.224</td>
+<td></td>
 </tr>
 <tr>
-<td align="left">openmessaging</td>
-<td align="left">兼容openmessaging分布式消息模块</td>
+<td>山东</td>
+<td>144.123.160.140</td>
+<td>120.220.145.91</td>
+<td>112.240.56.143</td>
+<td></td>
+</tr>
+<tr>
+<td>河南</td>
+<td>171.15.110.220</td>
+<td>111.7.99.220</td>
+<td>123.6.65.101</td>
+<td></td>
+</tr>
+<tr>
+<td>湖北</td>
+<td>111.170.8.60</td>
+<td>111.47.131.101</td>
+<td>122.189.226.138</td>
+<td></td>
+</tr>
+<tr>
+<td>湖南</td>
+<td>113.240.117.108</td>
+<td>120.226.192.91</td>
+<td>116.162.28.220</td>
+<td></td>
+</tr>
+<tr>
+<td>广东</td>
+<td>183.36.23.111</td>
+<td>183.240.65.191</td>
+<td>112.90.211.100</td>
+<td></td>
+</tr>
+<tr>
+<td>海南</td>
+<td>124.225.43.220</td>
+<td>111.29.29.219</td>
+<td>153.0.226.35</td>
+<td></td>
+</tr>
+<tr>
+<td>四川</td>
+<td>118.123.218.220</td>
+<td>183.220.151.41</td>
+<td>101.206.163.49</td>
+<td></td>
+</tr>
+<tr>
+<td>贵州</td>
+<td>58.42.61.132</td>
+<td>61.243.18.220</td>
+<td>117.187.254.132</td>
+<td></td>
+</tr>
+<tr>
+<td>云南</td>
+<td>222.221.102.220</td>
+<td>36.147.44.219</td>
+<td>14.204.150.41</td>
+<td></td>
+</tr>
+<tr>
+<td>陕西</td>
+<td>124.115.14.100</td>
+<td>111.19.148.100</td>
+<td>123.139.127.132</td>
+<td></td>
+</tr>
+<tr>
+<td>甘肃</td>
+<td>118.182.228.91</td>
+<td>117.157.16.41</td>
+<td>59.81.94.53</td>
+<td></td>
+</tr>
+<tr>
+<td>青海</td>
+<td>223.221.216.219</td>
+<td>111.12.152.170</td>
+<td>116.177.237.137</td>
+<td></td>
+</tr>
+<tr>
+<td>内蒙古</td>
+<td>110.76.186.70</td>
+<td>117.161.76.41</td>
+<td>116.114.98.41</td>
+<td></td>
+</tr>
+<tr>
+<td>广西</td>
+<td>222.217.93.55</td>
+<td>36.136.112.41</td>
+<td>171.39.5.51</td>
+<td></td>
+</tr>
+<tr>
+<td>西藏</td>
+<td>113.62.176.89</td>
+<td>117.180.234.41</td>
+<td>43.242.165.35</td>
+<td></td>
+</tr>
+<tr>
+<td>宁夏</td>
+<td>222.75.44.220</td>
+<td>111.51.155.214</td>
+<td>116.129.226.28</td>
+<td></td>
+</tr>
+<tr>
+<td>新疆</td>
+<td>110.157.243.45</td>
+<td>36.189.208.164</td>
+<td>116.178.77.40</td>
+<td></td>
+</tr>
+<tr>
+<td>天津</td>
+<td>42.81.98.35</td>
+<td>111.31.236.35</td>
+<td>116.78.119.56</td>
+<td></td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>119.84.131.101</td>
+<td>221.178.81.101</td>
+<td>113.207.69.190</td>
+<td></td>
 </tr>
 </tbody></table>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/453c6e7ff81c">https://www.jianshu.com/p/453c6e7ff81c</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b090138cf52c">https://www.jianshu.com/p/b090138cf52c</a></p>
+</li>
+</ol>
+<h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><blockquote>
+<ol>
+<li>在任务区域中，可以设置计划任务，触发任务，多服务器批量执行任务。</li>
+<li>哪吒监控支持推送命令到 Agent 执行，因此此功能非常灵活，使用此功能可以定期结合 restic、rclone 给服务器备份，定期重启某项服务来重置网络连接。也可以配合告警通知，在触发告警时执行某项任务，如 CPU 在长时期处于高占用的情况下运行某个脚本。</li>
+</ol>
+</blockquote>
+<ul>
+<li>添加计划任务<ul>
+<li>名称 - 自定义一个任务名称。</li>
+<li>任务类型 - 选择任务的类型。<br>   计划任务 - 按下方设置的计划时间，周期性执行任务。<br>   触发任务 - 仅被 API 或告警规则触发的任务，每次触发执行一次。</li>
+<li>计划 - （使用触发任务类型时不生效）设置计划时间，时间的格式为： * * * * * * 分别对应 秒 分 时 天 月 星期，详情见<a target="_blank" rel="noopener" href="https://pkg.go.dev/github.com/robfig/cron/v3#hdr-CRON_Expression_Format">计划表达式格式</a>。<br>   如：0 0 3 * * * 对应为 每天3点。</li>
+<li>命令 - 你可以在这里设置需要执行的命令，就像写 Shell&#x2F;Bat 脚本一样，但是不推荐换行，多个命令使用 &amp;&amp;&#x2F;&amp; 连接。<br>   例如执行定期重启命令，可以在这里输入 reboot。</li>
+<li>覆盖范围 和 特定服务器 - 跟“服务”页中的设置类似，选择规则来确定哪些 Agent 执行计划任务。<br>   使用触发任务类型时，可选择由触发的服务器执行。</li>
+<li>通知方式组 - 选择你已经在 “告警” 页设置好的通知方式。</li>
+<li>推送成功的消息 - 勾选此项，任务执行成功后会触发消息通知。</li>
+</ul>
+</li>
+</ul>
+<h3 id="告警"><a href="#告警" class="headerlink" title="告警"></a>告警</h3><blockquote>
+<p>哪吒监控支持对服务器的负载、CPU、内存、硬盘、流量、月流量、进程数、连接数进行监控，并在其中某项达到用户设定值时发送告警通知。</p>
+</blockquote>
+<ul>
+<li><p>基本规则</p>
+<pre><code class="hljs plaintext">- type：可选取一个或多个类型，如在一个规则中选择了多个类型，需要同时满足所有选择的类型才会触发通知（可参考后面的示例）
+    - cpu、memory、swap、disk
+    - net_in_speed 入站网速、net_out_speed 出站网速、net_all_speed 双向网速、transfer_in 入站流量、transfer_out 出站流量、transfer_all 双向流量
+    - offline 离线监控
+    - load1、load5、load15 负载
+    - process_count 进程数 目前取线程数占用资源太多，暂时不支持
+    - tcp_conn_count、udp_conn_count 连接数
+- duration：持续数秒，数秒内采样记录 30% 以上触发阈值才会报警（防数据插针）
+- min 或 max：
+    - 流量、网速类数值 为字节（1KB=1024B，1MB = 1024*1024B）
+    - 内存、硬盘、CPU 以占用百分比计数
+    - 离线监控无需设置此项
+- cover：
+    - 0 监控所有，通过 ignore 忽略特定服务器
+    - 1 忽略所有，通过 ignore 监控特定服务器
+    - 例如：[&#123;&quot;type&quot;:&quot;offline&quot;,&quot;duration&quot;:10, &quot;cover&quot;:0, &quot;ignore&quot;:&#123;&quot;5&quot;: true&#125;&#125;]
+- ignore: 选择忽略特定服务器，搭配 cover 使用，内容为服务器 id 和布尔值，例如：&#123;&quot;1&quot;: true, &quot;2&quot;:false&#125;</code></pre></li>
+<li><p>流量监控规则</p>
+<pre><code class="hljs plaintext">- type:
+  - transfer_in_cycle 周期内的入站流量
+  - transfer_out_cycle 周期内的出站流量
+  - transfer_all_cycle 周期内双向流量和
+- cycle_start： 统计周期开始日期（可以是你机器计费周期的开始日期），时间格式为RFC3339，例如北京时间为2022-01-11T08:00:00.00+08:00
+- cycle_interval：每隔多少个周期单位（例如，周期单位为天，该值为 7，则代表每隔 7 天统计一次）
+- cycle_unit： 统计周期单位，默认hour,可选(hour, day, week, month, year)
+- min/max、cover、ignore 参考基本规则配置</code></pre></li>
+</ul>
+<hr>
+<ul>
+<li>通知方式<ul>
+<li>API接口<pre><code class="hljs plaintext">名称：企业微信-jav
+URL：https://jav.lvzhiqiang.top/coin/serverMonitorAlarm
+请求方式: POST
+请求类型: JSON
+Body: &#123;&quot;内容&quot;: &quot;#NEZHA#&quot;&#125;</code></pre></li>
+<li>企业微信<pre><code class="hljs plaintext">名称：企业微信-群聊机器人
+URL：https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxx
+请求方式: POST
+请求类型: JSON
+Body: &#123;&quot;msgtype&quot;:&quot;markdown&quot;,&quot;markdown&quot;:&#123;&quot;content&quot;:&quot;# 哪吒通知消息\n\n\&quot;#NEZHA#\&quot;&quot;&#125;&#125;</code></pre></li>
+</ul>
+</li>
+<li>告警规则<ul>
+<li>离线通知<ul>
+<li>[{“type”:”offline”,”duration”:10}]</li>
+</ul>
+</li>
+<li>流量告警<ul>
+<li>[{“type”:”transfer_all_cycle”,”max”:1099511627776,”cycle_start”:”2024-04-14T00:00:00+08:00”,”cycle_interval”:1,”cycle_unit”:”month”,”cover”:1,”ignore”:{“1”:true}}]</li>
+</ul>
+</li>
+<li>网速报警<ul>
+<li>[{“type”:”net_out_speed”,”max”:5242880,”duration”:10,”ignore”:{“3”:true}}]</li>
+</ul>
+</li>
+<li>CPU100%<ul>
+<li>[{“type”:”cpu”,”max”:98,”duration”:10}]</li>
+</ul>
+</li>
+<li>CPU+内存<ul>
+<li>CPU 持续 10s 超过 50% 且 内存持续 20s 占用低于 20% 的报警</li>
+<li>[{“type”:”cpu”,”max”:50,”duration”:10},{“type”:”memory”,”min”:20,”duration”:20}]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><ol>
+<li>未接入 CDN 的面板服务器域名&#x2F;IP<ul>
+<li>设置好通信域名，此域名不可以接入CDN，这里以示例通信域名 “monitor-data.lvzhiqiang.top” 来做演示。</li>
+<li>进入后台管理面板，转到“设置”页，在“未接入 CDN 的面板服务器域名&#x2F;IP”项中填入通信域名，然后点击”保存”。</li>
+</ul>
+</li>
+<li>调整最大TCPPing值<ul>
+<li>修改文件：&#x2F;nezha&#x2F;data&#x2F;config.yaml，调整MaxTCPPingValue值。</li>
+</ul>
+</li>
+<li>隐藏服务中的状态文字<pre><code class="hljs css">&lt;style&gt;
+<span class="hljs-selector-class">.service-status</span> <span class="hljs-selector-class">.delay-today-text</span>&#123;<span class="hljs-attribute">display</span>: none;<span class="hljs-attribute">visibility</span>: hidden;&#125;
+&lt;/style&gt;</code></pre></li>
+<li>设置页面宽度<pre><code class="hljs css">&lt;style&gt;
+<span class="hljs-selector-class">.container</span> &#123;
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">1540px</span>;
+&#125;
+&lt;/style&gt;</code></pre></li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://bigdata.icu/tools/soft/nezha.html">https://bigdata.icu/tools/soft/nezha.html</a><br><a target="_blank" rel="noopener" href="https://nezha.wiki/">https://nezha.wiki</a></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
 <li>未完待续…</li>
 </ul>
@@ -1786,12 +1579,12 @@ JAVA_OPT=&quot;$&#123;JAVA_OPT&#125; -server -Xms1g -Xmx1g -Xmn512m&quot;</code>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>消息中间件之 RocketMQ</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">7k</span></p>
+    <p><span class="copy-title">文章标题:</span>VPS监控：哪吒监控</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">273</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-03-10, 10:06:31</p>
-    <p><span class="copy-title">最后更新:</span>2024-04-11, 11:31:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/10/af-mq-rocketmq.html" title="消息中间件之 RocketMQ">https://lvzhiqiang.top/2019/03/10/af-mq-rocketmq.html</a>
+    <p><span class="copy-title">发布时间:</span>2024-04-23, 14:25:00</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-23, 18:08:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/04/23/st-monitoring-nezha.html" title="VPS监控：哪吒监控">https://lvzhiqiang.top/2024/04/23/st-monitoring-nezha.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>
