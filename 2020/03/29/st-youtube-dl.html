@@ -6,15 +6,15 @@
   <meta name="keywords" content=" fq ">
   <meta name="description" content="命令行下载神器youtube-dl | Tujidelv Code">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#x64;&#101;&#46;&#108;&#x76;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#108;&#46;&#x63;&amp;#">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:type" content="website">
-<meta property="og:title" content="关于&amp;留言板">
-<meta property="og:url" content="https://lvzhiqiang.top/about/index.html">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://lvzhiqiang.top/404.html">
 <meta property="og:site_name" content="Tujidelv Code">
-<meta property="og:description" content="个人简介 吕志强 来自哪里：一位对未来有些迷茫的已婚大叔 近期目标：爱生活、爱技术、爱看书 考察名言：好记性不如不如烂笔头  联系方式 QQ：920165830 Email：&#116;&#117;&#106;&#105;&#x64;&#101;&#46;&#108;&#x76;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#108;&#46;&#x63;&amp;#">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-11-28T12:37:57.000Z">
-<meta property="article:modified_time" content="2024-04-07T01:26:09.750Z">
+<meta property="article:published_time" content="2018-11-28T12:54:46.000Z">
+<meta property="article:modified_time" content="2024-04-07T01:26:09.697Z">
 <meta property="article:author" content="Tujide.lv">
 <meta name="twitter:card" content="summary">
 
@@ -442,7 +442,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="165.6k">
+<input type="hidden" id="yelog_site_word_count" value="165.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -931,7 +931,7 @@
         
         <a  class="全部文章 软件 其他归档 "
            href="/2018/12/01/af-hexo.html"
-           data-tag="hexo,nodejs"
+           data-tag="nodejs,hexo"
            data-author="" >
             <span class="post-title" title="Hexo 札记">Hexo 札记</span>
             <span class="post-date" title="2018-12-01 18:25:23">2018/12/01</span>
@@ -1074,12 +1074,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-04-29 15:54:59'>2020-03-29 17:28</time>
+            发布时间 : <time class="date" title='最后更新: 2024-04-30 10:58:15'>2020-03-29 17:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.7k</span>
+        <span>字数:2.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1292,7 +1292,17 @@ youtube-dl -U</code></pre></li>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
 <li>未完待续…</li>
 </ul>
-<pre><code class="hljs plaintext">youtube-dl -F -i --proxy &quot;socks5://127.0.0.1:1080&quot; --cookies /opt/setups/cookies.txt --download-archive archive.txt --write-info-json --all-subs --write-all-thumbnails -o &quot;%(upload_date)s_%(title)s_%(id)s.%(ext)s&quot;</code></pre>
+<pre><code class="hljs plaintext">youtube-dl -F -i --proxy &quot;socks5://127.0.0.1:1080&quot; --cookies /opt/setups/cookies.txt --download-archive archive.txt --write-info-json --all-subs --write-all-thumbnails -o &quot;%(upload_date)s_%(title)s_%(id)s.%(ext)s&quot;
+
+# 只下载音频而不下载视频
+# 同时指定音频格式(aac、flac、mp3、m4a、opus、vorbis、wav，默认为best)
+# 同时指定音频的质量（0到9，默认5，数值越小越好）
+youtube-dl -x --audio-format flac --audio-quality 0 https://www.youtube.com/watch?v=9MpO8lw_Rj4
+
+# 下载视频
+youtube-dl -i -o &quot;C:\Users\l1024v\Desktop\%(upload_date)s_%(title)s_%(id)s_%(width)s*%(height)s.%(ext)s&quot; &quot;https://zh.chaturbate.com/sellapink&quot;
+youtube-dl -i -o &quot;C:\Users\l1024v\Desktop\%(upload_date)s_%(title)s_%(id)s_%(width)s*%(height)s.%(ext)s&quot; &quot;https://www.youtube.com/watch?v=_rEG3jesVfM&quot;
+youtube-dl -i -o &quot;C:\Users\l1024v\Desktop\%(upload_date)s_%(title)s_%(id)s_%(width)s*%(height)s.%(ext)s&quot; &quot;https://space.bilibili.com/1371751867/favlist?fid=970837181&quot;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
@@ -1307,10 +1317,10 @@ youtube-dl -U</code></pre></li>
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>命令行下载神器youtube-dl</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">2.7k</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">2.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2020-03-29, 17:28:33</p>
-    <p><span class="copy-title">最后更新:</span>2024-04-29, 15:54:59</p>
+    <p><span class="copy-title">最后更新:</span>2024-04-30, 10:58:15</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/29/st-youtube-dl.html" title="命令行下载神器youtube-dl">https://lvzhiqiang.top/2020/03/29/st-youtube-dl.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
