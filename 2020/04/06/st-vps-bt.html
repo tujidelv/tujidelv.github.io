@@ -442,7 +442,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="49">
-<input type="hidden" id="yelog_site_word_count" value="171k">
+<input type="hidden" id="yelog_site_word_count" value="171.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1092,12 +1092,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-04-10 17:49:31'>2020-04-06 16:39</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-22 11:21:29'>2020-04-06 16:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.2k</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1127,7 +1127,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qBittorrent"><span class="toc-text">qBittorrent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transmission"><span class="toc-text">Transmission</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aria2"><span class="toc-text">Aria2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E5%9B%9E%E6%9C%AC%E5%9C%B0"><span class="toc-text">取回本地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85caddy"><span class="toc-text">安装caddy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h5ai"><span class="toc-text">h5ai</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-web"><span class="toc-text">python web</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8tracker"><span class="toc-text">常用tracker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qBittorrent"><span class="toc-text">qBittorrent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transmission"><span class="toc-text">Transmission</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aria2"><span class="toc-text">Aria2</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1157,24 +1157,22 @@
 <li>Transmission占用系统资源少，对硬件的配置要求非常的低，甚至在路由器上面都可以运行，对于需要长期挂着是一个很好的选择。</li>
 </ul>
 <h3 id="qBittorrent"><a href="#qBittorrent" class="headerlink" title="qBittorrent"></a><code>qBittorrent</code></h3><ol>
-<li>docker安装 <pre><code class="hljs plaintext">docker pull linuxserver/qbittorrent</code></pre></li>
-<li>完成后输入 <pre><code class="hljs plaintext">docker create \
-  --name=qbittorrent \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Aisa/Shanghai \
-  -e UMASK_SET=022 \
-  -e WEBUI_PORT=8080 \
-  -p 8999:8999 \
-  -p 8999:8999/udp \
-  -p 8080:8080 \
-  -v /path/to/appdata/config:/config \
-  -v /path/to/downloads:/downloads \
-  --restart unless-stopped \
-  linuxserver/qbittorrent</code></pre></li>
-<li>创建好后启动 <pre><code class="hljs plaintext">docker start qbittorrent</code></pre></li>
+<li>docker cli安装 <pre><code class="hljs plaintext">docker run -d \
+--name=qbittorrent \
+-e PUID=1000 \
+-e PGID=1000 \
+-e TZ=Etc/UTC \
+-e WEBUI_PORT=8080 \
+-e TORRENTING_PORT=6881 \
+-p 8080:8080 \
+-p 6881:6881 \
+-p 6881:6881/udp \
+-v /path/to/qbittorrent/appdata:/config \
+-v /path/to/downloads:/downloads `#optional` \
+--restart unless-stopped \
+lscr.io/linuxserver/qbittorrent:latest</code></pre></li>
 <li>进入主界面 <pre><code class="hljs plaintext">1.输入IP:端口号即可进入qbittorrent 的管理界面
-2.默认账号密码admin/admin
+2.admin 用户的临时密码将在启动时打印到容器日志中。您必须在设置的 Web UI 部分更改用户名/密码。如果不更改密码，每次容器启动时都会生成一个新密码。
 3.进入&quot;Option-&gt;Web UI-&gt;Language&quot;,将语言设置成中文
 4.进入&quot;Option-&gt;高级&quot;,勾选&quot;总是向同级的所有Tracker汇报&quot;,适合下载一些冷门的资源
 5.进入&quot;Option-&gt;BitTorrent&quot;,可在做种限制中勾选&quot;当分享率达到&quot;,来设置上传大小,例如设置2代表当上传2倍大小时就停止上传给其他用户
@@ -1182,77 +1180,110 @@
 <img src="/2020/04/06/st-vps-bt/st-vps-bt-001.png" alt="抱歉,图片休息了" title="qbittorrent"></li>
 </ol>
 <h3 id="Transmission"><a href="#Transmission" class="headerlink" title="Transmission"></a><code>Transmission</code></h3><ol>
-<li>docker安装 <pre><code class="hljs plaintext">docker run -d \
+<li>docker cli安装 <pre><code class="hljs plaintext">docker run -d \
 --restart=always \
 --name transmission \
--v /path3/to/torrents:/to_download \
--v /path3/to/download:/output \
--p 9091:9091 \
+-u $(id -u) \
+-v /path/to/incoming/torrents:/to_download \
+-v /path/to/downloaded/files:/output \
+-p 9091:80 \
 -p 51413:51413 \
--e USERNAME=admin \
--e PASSWORD=admin \
+-p 51413:51413/udp \
+-e PORT=80 \
 jaymoulin/transmission</code></pre></li>
 <li>进入主界面 <pre><code class="hljs plaintext">1.输入IP:9091即可进入transmission 的管理界面
-2.默认账号密码是空,按回车就可以进入</code></pre>
+2.默认账号密码是空,按回车就可以进入
+可使用 docker exec transmission configure &lt;username&gt; &lt;password&gt; 命令配置您的凭据。容器将重新启动并且您的凭据将被应用。默认凭据为空（没有用户名，没有密码）。</code></pre>
 <img src="/2020/04/06/st-vps-bt/st-vps-bt-003.png" alt="抱歉,图片休息了" title="Transmission"></li>
 </ol>
 <h3 id="Aria2"><a href="#Aria2" class="headerlink" title="Aria2"></a><code>Aria2</code></h3><ol>
-<li>docker安装 <pre><code class="hljs plaintext"># 最快速启动
-docker run -d --name aria2-ui -v /path2/down:/data -p 80:80 wahyd4/aria2-ui</code></pre>
- <pre><code class="hljs plaintext"># 加密下载界面
+<li>docker安装 <pre><code class="hljs plaintext"># Quick run 最快速启动
+docker run -d --name aria2-ui -p 8000:80 wahyd4/aria2-ui</code></pre>
+ <pre><code class="hljs plaintext"># Full features run 全功能运行
 docker run -d --name ariang \
-  -p 80:80 \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e ENABLE_AUTH=true \
-  -e RPC_SECRET=Hello \
-  -e ARIA2_SSL=false \
-  -e ARIA2_USER=user \
-  -e ARIA2_PWD=pwd \
-  -v /home/down:/data \
-  wahyd4/aria2-ui</code></pre></li>
-<li>进入主界面 <pre><code class="hljs plaintext">Aria2: http://ip:port/ui/
-FileManger: http://ip:port
-FileManger可作为网盘来使用,说caddy的功能差不多</code></pre></li>
-<li>补充<ul>
-<li>根据个人的需求来选择，如果觉得不需要加密Aria2的管理界面的，其实用第一种方式就行了。非常简单，一行命令即可。</li>
-<li>同时也可以结合TransdroneAPP来使用，使用它来管理多个下载工具也是比较方便的。<img src="/2020/04/06/st-vps-bt/dowload.png" width="16" height="16" align="center"><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19Nj1htcK49zyexF9qP7Stw">网盘下载</a> <code>提取码v7aa</code><br><img src="/2020/04/06/st-vps-bt/st-vps-bt-004.png" alt="抱歉,图片休息了" title="Aria2主界面"><br><img src="/2020/04/06/st-vps-bt/st-vps-bt-005.png" alt="抱歉,图片休息了" title="FileManger主界面"></li>
+-p 80:80 \
+-p 443:443 \
+-e PUID=1000 \
+-e PGID=1000 \
+-e ENABLE_AUTH=true \
+-e RPC_SECRET=Hello \
+-e DOMAIN=https://example.com \
+-e ARIA2_SSL=false \
+-e ARIA2_USER=user \
+-e ARIA2_PWD=password \
+-e ARIA2_EXTERNAL_PORT=443 \
+-e CADDY_LOG_LEVEL=ERROR \
+-v /yourdata:/data \
+-v /app/.cache:/app/.cache \
+-v /app/a.db:/app/filebrowser.db \
+-v /to_yoursslkeys/:/app/conf/key \
+-v &lt;conf files folder&gt;:/app/conf \
+wahyd4/aria2-ui</code></pre></li>
+<li>进入主界面<ul>
+<li>Aria2: <a target="_blank" rel="noopener" href="http://yourip:8000/">http://yourip:8000</a></li>
+<li>FileManger: <a target="_blank" rel="noopener" href="http://yourip:8000/files">http://yourip:8000/files</a><ul>
+<li>FileManger可作为网盘来使用，和caddy的功能差不多</li>
+</ul>
+</li>
+<li>Rclone: <a target="_blank" rel="noopener" href="http://yourip:8000/rclone">http://yourip:8000/rclone</a></li>
+<li>首次登录 Filebrowser 时，请使用 admin &#x2F; admin 作为用户名和密码。如果您不更新 ARIA2_USER 和 ARIA2_PWD ，请使用 user &#x2F; password 登录 Rclone。 <pre><code class="hljs plaintext">3. 补充
+    - 根据个人的需求来选择，如果觉得不需要加密Aria2的管理界面的，其实用第一种方式就行了。非常简单，一行命令即可。
+    - 同时也可以结合TransdroneAPP来使用，使用它来管理多个下载工具也是比较方便的。&lt;img src=&quot;st-vps-bt/dowload.png&quot; width=&quot;16&quot; height=&quot;16&quot; align=&quot;center&quot; /&gt;[网盘下载](https://pan.baidu.com/s/19Nj1htcK49zyexF9qP7Stw) `提取码v7aa`
+![抱歉,图片休息了](st-vps-bt/st-vps-bt-004.png &quot;Aria2主界面&quot;)
+![抱歉,图片休息了](st-vps-bt/st-vps-bt-005.png &quot;FileManger主界面&quot;)
+
+## 取回本地
+
+- 下载好的文件存在服务器里，想把它取回到电脑或者手机，有以下几种方法。 
+- 第三种适合于临时下载的，前两种适合长时间的。如果机器本身有装docker，那我建议使用第二种。当然第一种也有好处，就是可以绑定指定的域名。
+- 各取所需吧，适合自己的需求的才是最好的。
+
+### `安装caddy`
+
+1. 安装</code></pre>
+ wget -N –no-check-certificate <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh">https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh</a> &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh <pre><code class="hljs plaintext">2. 写入配置</code></pre>
+ echo “:2015 {<br>  root &#x2F;path&#x2F;to&#x2F;downloads<br>  timeouts none<br>  gzip<br>  browse<br> }” &gt; &#x2F;usr&#x2F;local&#x2F;caddy&#x2F;Caddyfile <pre><code class="hljs plaintext">3. 启动caddy</code></pre>
+ &#x2F;etc&#x2F;init.d&#x2F;caddy start <pre><code class="hljs plaintext">4. 浏览器访问</code></pre>
+ 1.如不能访问,记得开放相关端口<br> 2.完成后就可以在浏览器里，输入IP地址:端口号来访问下载好的文件了。如果是MP4文件的话，还可以支持在线播放。<br> 3.默认密码是admin&#x2F;adminadmin <pre><code class="hljs plaintext">![抱歉,图片休息了](st-vps-bt/st-vps-bt-002.png &quot;caddy&quot;)
+
+### `h5ai`
+
+&gt; 这是一个 PHP 程序，原本它是要求机器本身有 PHP 才能用的，不过现在使用 docker 来安装的话，也可以非常迅速就安装好。
+</code></pre>
+docker run -d -p 8055:80 -v &#x2F;home&#x2F;tr&#x2F;download:&#x2F;h5ai –name h5ai ilemonrain&#x2F;h5ai:full -d<pre><code class="hljs plaintext">装好后在浏览器输入 ip:8085 就可以看到里面的内容
+
+### `python web`
+
+这个是最简单的，基本所有的服务器都可以，而且不用额外安装其它的程序。只需要在 ssh 时进入到指定的文件夹，然后输入这条命令即可。
+</code></pre>
+python -m SimpleHTTPServer</li>
 </ul>
 </li>
 </ol>
-<h2 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h2><ul>
-<li>下载好的文件存在服务器里，想把它取回到电脑或者手机，有以下几种方法。 </li>
-<li>第三种适合于临时下载的，前两种适合长时间的。如果机器本身有装docker，那我建议使用第二种。当然第一种也有好处，就是可以绑定指定的域名。</li>
-<li>各取所需吧，适合自己的需求的才是最好的。</li>
-</ul>
-<h3 id="安装caddy"><a href="#安装caddy" class="headerlink" title="安装caddy"></a><code>安装caddy</code></h3><ol>
-<li>安装 <pre><code class="hljs plaintext">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre></li>
-<li>写入配置 <pre><code class="hljs plaintext">echo &quot;:2015 &#123;  
- root /path/to/downloads
- timeouts none  
- gzip  
- browse  
-&#125;&quot; &gt; /usr/local/caddy/Caddyfile</code></pre></li>
-<li>启动caddy <pre><code class="hljs plaintext">/etc/init.d/caddy start</code></pre></li>
-<li>浏览器访问 <pre><code class="hljs plaintext">1.如不能访问,记得开放相关端口
-2.完成后就可以在浏览器里，输入IP地址:端口号来访问下载好的文件了。如果是MP4文件的话，还可以支持在线播放。
-3.默认密码是admin/adminadmin</code></pre>
-<img src="/2020/04/06/st-vps-bt/st-vps-bt-002.png" alt="抱歉,图片休息了" title="caddy"></li>
-</ol>
-<h3 id="h5ai"><a href="#h5ai" class="headerlink" title="h5ai"></a><code>h5ai</code></h3><blockquote>
-<p>这是一个 PHP 程序，原本它是要求机器本身有 PHP 才能用的，不过现在使用 docker 来安装的话，也可以非常迅速就安装好。</p>
-</blockquote>
-<pre><code class="hljs plaintext">docker run -d -p 8055:80 -v /home/tr/download:/h5ai --name h5ai ilemonrain/h5ai:full -d</code></pre>
-<p>装好后在浏览器输入 ip:8085 就可以看到里面的内容</p>
-<h3 id="python-web"><a href="#python-web" class="headerlink" title="python web"></a><code>python web</code></h3><p>这个是最简单的，基本所有的服务器都可以，而且不用额外安装其它的程序。只需要在 ssh 时进入到指定的文件夹，然后输入这条命令即可。</p>
-<pre><code class="hljs plaintext">python -m SimpleHTTPServer</code></pre>
-<p>会默认采用8000端口,此时输入 <strong>IP:8000</strong> 或者 <strong>域名:8000</strong> ，即可访问当前目录下的文件，如果有 index.html 则会默认加载。</p>
-<p>然后想要停止时，按<code>CTRL + C</code> 取消。<br>不过这种方法有挺多缺点的，比如不支持断点续传，开启时需一直保持 ssh 连接着，显示的文件信息简陋等。</p>
-<h2 id="常用tracker"><a href="#常用tracker" class="headerlink" title="常用tracker"></a>常用tracker</h2><p><a target="_blank" rel="noopener" href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a><br><a target="_blank" rel="noopener" href="https://trackerslist.com/all.txt">https://trackerslist.com/all.txt</a><br><img src="/2020/04/06/st-vps-bt/st-vps-bt-006.png" alt="抱歉,图片休息了" title="tracker"></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://powersee.github.io/">https://powersee.github.io</a><br><a target="_blank" rel="noopener" href="https://github.com/c0re100/qBittorrent-Enhanced-Edition">https://github.com/c0re100/qBittorrent-Enhanced-Edition</a><br><a target="_blank" rel="noopener" href="https://github.com/ronggang/transmission-web-control">https://github.com/ronggang/transmission-web-control</a><br><a target="_blank" rel="noopener" href="https://github.com/wahyd4/aria2-ariang-docker">https://github.com/wahyd4/aria2-ariang-docker</a></p>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
-<li>未完待续…</li>
-</ul>
+<pre><code>会默认采用8000端口,此时输入 **IP:8000** 或者 **域名:8000** ，即可访问当前目录下的文件，如果有 index.html 则会默认加载。
+
+然后想要停止时，按`CTRL + C` 取消。
+不过这种方法有挺多缺点的，比如不支持断点续传，开启时需一直保持 ssh 连接着，显示的文件信息简陋等。
+
+## 常用tracker
+
+&lt;https://github.com/ngosang/trackerslist&gt;
+&lt;https://trackerslist.com/all.txt&gt;
+![抱歉,图片休息了](st-vps-bt/st-vps-bt-006.png &quot;tracker&quot;)
+
+## 参考链接
+
+&lt;https://powersee.github.io&gt;
+&lt;https://github.com/c0re100/qBittorrent-Enhanced-Edition&gt;
+&lt;https://github.com/linuxserver/docker-qbittorrent&gt;
+&lt;https://github.com/ronggang/transmission-web-control&gt;
+&lt;https://gitlab.com/jaymoulin/docker-transmission&gt;
+&lt;https://github.com/wahyd4/aria2-ariang-docker&gt;
+
+## 结束语
+
+- 未完待续...
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 tujide.lv@foxmail.com </span>
@@ -1267,10 +1298,10 @@ FileManger可作为网盘来使用,说caddy的功能差不多</code></pre></li>
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>VPS离线BT下载利器</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Tujide.lv">Tujide.lv</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-06, 16:39:17</p>
-    <p><span class="copy-title">最后更新:</span>2024-04-10, 17:49:31</p>
+    <p><span class="copy-title">最后更新:</span>2024-07-22, 11:21:29</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/06/st-vps-bt.html" title="VPS离线BT下载利器">https://lvzhiqiang.top/2020/04/06/st-vps-bt.html</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
