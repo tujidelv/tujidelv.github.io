@@ -421,13 +421,25 @@ $(".full-toc .full,.semicircle").click(function (e) {
         $fullBtn.children().removeClass("min").addClass("max");
         $(".nav, .hide-list").addClass("fullscreen");
         content.delay(200).queue(function () {
+            $("#post .pjax").css("max-width",$(window).width() * 0.75);
             $fullBtn.addClass('fullscreen').dequeue();
+
+            content.clearQueue();
         });
     } else {
         $fullBtn.children().removeClass("max").addClass("min");
         $(".nav, .hide-list").removeClass("fullscreen");
+
         content.delay(300).queue(function () {
+            if($(window).innerWidth() <= 1468){
+                $("#post .pjax").css("max-width","780px");
+            }else{
+                $("#post .pjax").css("max-width","1000px");
+            }
+
             $fullBtn.removeClass('fullscreen').dequeue();
+
+            content.clearQueue();
         });
     }
 });
@@ -699,7 +711,7 @@ function bind() {
             $this.addClass('active')
         }
         clickScrollTo = true
-		    var targetOffsetTop = $(decodeURI($this.attr("href")))[0].offsetTop
+            var targetOffsetTop = $(decodeURI($this.attr("href")))[0].offsetTop
         container.animate({scrollTop: container.scrollTop > targetOffsetTop ? (targetOffsetTop + 20) : (targetOffsetTop - 20)}, 500, 'swing', function () {
             clickScrollTo = false
         });

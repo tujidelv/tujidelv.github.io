@@ -1219,7 +1219,7 @@
   animation: fadeOuts 0.2s;
 }
 #post .pjax article {
-  padding: 2.5em;
+  padding: 2.5em 0 2.5em 0;
   -background: #fff;
 /* Inline code */
 }
